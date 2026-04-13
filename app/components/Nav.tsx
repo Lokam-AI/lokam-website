@@ -16,68 +16,31 @@ export default function Nav() {
   return (
     <>
       {/* Announcement bar */}
-      <div
-        style={{
-          height: 44,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "white",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-jakarta)",
-            fontWeight: 500,
-            fontSize: 13.5,
-            lineHeight: "20px",
-            color: "#202020",
-            margin: 0,
-          }}
-        >
+      <div className="h-11 flex items-center justify-center bg-white px-4">
+        <p className="font-sans font-medium text-[13.5px] leading-5 text-[#202020] text-center m-0">
           Backed by World Auto Group, IL – our customer turned investor.
         </p>
       </div>
 
       {/* Navbar */}
-      <header style={{ background: "#2c697b", height: 67 }}>
-        <div
-          style={{
-            maxWidth: 1330,
-            margin: "0 auto",
-            padding: "0 50px",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <a href="/" style={{ flexShrink: 0 }}>
+      <header className="h-[67px] bg-brand-nav">
+        <div className="max-w-[1330px] mx-auto px-6 md:px-[50px] h-full flex items-center justify-between">
+          <a href="/" className="flex-shrink-0">
             <Image
               src="/assets/image-47.png"
               alt="Lokam"
               width={108}
               height={34}
-              style={{ objectFit: "contain", display: "block" }}
+              className="object-contain block"
             />
           </a>
 
-          <nav className="hidden md:flex items-center" style={{ gap: 40 }}>
+          <nav className="hidden md:flex items-center gap-10">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  fontWeight: 400,
-                  fontSize: 14.1,
-                  lineHeight: "17.5px",
-                  color: "white",
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 4,
-                }}
+                className="flex items-center gap-1 text-white text-[14.1px] leading-[17.5px] no-underline font-display font-normal"
               >
                 {l.label}
                 {l.chevron && <ChevronDown size={11} />}
@@ -94,16 +57,13 @@ export default function Nav() {
         </div>
 
         {open && (
-          <div
-            style={{ background: "#2c697b", padding: "12px 24px" }}
-            className="md:hidden border-t border-white/20 flex flex-col gap-3"
-          >
+          <div className="md:hidden bg-brand-nav border-t border-white/20 px-6 py-3 flex flex-col gap-3">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "var(--font-inter)", fontSize: 14, color: "white", textDecoration: "none" }}
+                className="text-white text-sm font-display no-underline"
               >
                 {l.label}
               </a>
