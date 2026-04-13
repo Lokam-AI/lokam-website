@@ -8,15 +8,17 @@ export default function Hero() {
       {/* ── Car + content: car overlaid with text ── */}
       <div style={{ position: "relative" }}>
 
-        {/* Car image — sets the container height */}
-        <Image
-          src="/assets/car.png"
-          alt=""
-          width={4096}
-          height={3058}
-          style={{ width: "100%", height: "auto", display: "block" }}
-          priority
-        />
+        {/* Car image — crop 122px from top (white studio gap) */}
+        <div style={{ overflow: "hidden" }}>
+          <Image
+            src="/assets/car.png"
+            alt=""
+            width={4096}
+            height={3058}
+            style={{ width: "100%", height: "auto", display: "block", marginTop: -165 }}
+            priority
+          />
+        </div>
 
         {/* Content overlaid on top of car */}
         <div
