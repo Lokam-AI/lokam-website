@@ -40,7 +40,7 @@ export default function Nav() {
       </div>
 
       {/* Navbar */}
-      <header style={{ background: "#2c697b", height: 80 }}>
+      <header style={{ background: "#2c697b", height: 67 }}>
         <div
           style={{
             maxWidth: 1330,
