@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:    var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter),   ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Brand — from Figma */
+  --color-brand:        #085856;
+  --color-brand-mid:    #307d93;
+  --color-brand-nav:    #2c697b;
+  --color-brand-trust:  #004839;
+
+  /* Backgrounds */
+  --color-bg:           #ffffff;
+  --color-bg-subtle:    #f4f4f5;
+
+  /* Text */
+  --color-text:         #000000;
+  --color-text-body:    #3b3b3b;
+  --color-text-muted:   #6b7280;
+  --color-text-light:   #cfcdd6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  to   { transform: translateX(calc(-50%)); }
+}
+
+.animate-marquee { animation: marquee 30s infinite linear; }
