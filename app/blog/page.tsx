@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const featuredPost = {
+/* const featuredPost = {
   tag: "CSI Calls",
   title: "How Metro Toyota Added $84,000/Month Using Lokam's AI CSI Follow-Up",
   excerpt:
@@ -19,7 +19,7 @@ const featuredPost = {
     { value: "38", label: "At-Risk Customers Recovered", sub: "first month" },
     { value: "$84k", label: "Monthly Revenue Added", sub: "per month" },
   ],
-};
+}; */
 
 type Post = {
   category: string;
@@ -155,7 +155,13 @@ function BlogCard({ post }: { post: Post }) {
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [email, setEmail] = useState("");
-  const filteredPosts = posts.filter((p) => matchesCategory(p, activeCategory));
+  const [query, setQuery] = useState("");
+  const filteredPosts = posts.filter((p) => {
+    const q = query.trim().toLowerCase();
+    const matchesCat = matchesCategory(p, activeCategory);
+    const matchesQuery = !q || p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q);
+    return matchesCat && matchesQuery;
+  });
 
   return (
     <>
@@ -201,6 +207,8 @@ export default function BlogPage() {
             <input
               type="text"
               placeholder="Search articles..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               className="flex-1 bg-transparent text-sm font-sans text-[#0A2E2B] placeholder-[#8AADA8] outline-none"
             />
           </div>
@@ -209,12 +217,11 @@ export default function BlogPage() {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 pb-20">
 
           {/* ── Featured Post ── */}
-          <div
+          {/* <div
             className="rounded-3xl p-5 sm:p-7 md:p-10 mb-10"
             style={{ background: "linear-gradient(to bottom right, #00988B, #00D3BD)" }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 lg:gap-12">
-              {/* Left */}
               <div className="flex flex-col justify-between gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-5">
@@ -253,8 +260,6 @@ export default function BlogPage() {
                   </span>
                 </div>
               </div>
-
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-3">
                 {featuredPost.stats.map((s) => (
                   <div
@@ -275,7 +280,7 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* ── Category Tabs ── */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 mb-8 scrollbar-hide">
@@ -296,11 +301,22 @@ export default function BlogPage() {
           </div>
 
           {/* ── Blog Grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredPosts.map((post) => (
-              <BlogCard key={post.title} post={post} />
-            ))}
-          </div>
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredPosts.map((post) => (
+                <BlogCard key={post.title} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-20 gap-2">
+              <p className="font-sans font-semibold text-[#0A2E2B]" style={{ fontSize: 16 }}>
+                No articles found.
+              </p>
+              <p className="font-sans text-sm text-[#8AADA8]">
+                Try a different search term or category.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* ── Newsletter CTA ── */}
