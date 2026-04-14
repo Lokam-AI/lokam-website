@@ -1,82 +1,77 @@
 export default function Footer() {
   return (
-    <footer style={{ background: "#085856" }}>
-      {/* TODO: div-tta-footer-maindiv.svg can be used as background overlay here */}
-      <div className="max-w-[1330px] mx-auto px-[50px] py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            {/* TODO: replace with <Image src="/image-47.png" …> — Lokam logo */}
-            <span
-              className="text-white text-2xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              lokam
+    <footer className="relative overflow-hidden" style={{ backgroundColor: "#0a1628" }}>
+      {/* Background image */}
+      <img
+        src="/assets/footer-bg.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ opacity: 0.92 }}
+      />
+
+      {/* Top glowing border */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(to right, transparent, #4ecfaa, #00866D, #4ecfaa, transparent)", boxShadow: "0 0 8px rgba(78,207,170,0.5)" }}
+      />
+
+      {/* Main content */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-8 pt-14 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-10 mb-12">
+
+          {/* Col 1 — Brand */}
+          <div>
+            <span className="font-sans font-semibold text-white text-xl tracking-tight">
+              Lokam
             </span>
-            <p
-              className="mt-4 text-white/60 text-sm leading-6"
-              style={{ fontFamily: "var(--font-jakarta)", maxWidth: 220 }}
-            >
+            <p className="mt-3 font-sans text-sm leading-6" style={{ color: "rgba(255,255,255,0.55)", maxWidth: 220 }}>
               Voice AI for automotive dealerships. Built to recover revenue, not just report on it.
             </p>
           </div>
 
-          {/* Links */}
-          {[
-            {
-              title: "Product",
-              links: ["How It Works", "ROI Calculator", "Integrations", "Pricing"],
-            },
-            {
-              title: "Company",
-              links: ["About", "Case Studies", "Blogs", "Careers"],
-            },
-            {
-              title: "Legal",
-              links: ["Privacy Policy", "Terms of Service", "Contact Us"],
-            },
-          ].map((group) => (
-            <div key={group.title}>
-              <h4
-                className="text-white text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
-                {group.title}
-              </h4>
-              <ul className="flex flex-col gap-3">
-                {group.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
-                      className="text-white/60 text-sm hover:text-white transition-colors"
-                      style={{ fontFamily: "var(--font-jakarta)" }}
-                    >
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {/* Col 2 — Lokam Inc. */}
+          <div>
+            <h4 className="font-sans font-semibold text-white text-sm mb-3">Lokam Inc.</h4>
+            <div className="flex items-start gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <p className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
+                2261 Market Street STE 46073<br />San Francisco, CA 94114
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <div className="max-w-[1330px] mx-auto px-[50px] py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p
-            className="text-white/50 text-xs"
-            style={{ fontFamily: "var(--font-jakarta)" }}
-          >
-            © 2026 Lokam Inc. All rights reserved.
+          {/* Col 3 — Backed by */}
+          <div>
+            <h4 className="font-sans font-semibold text-sm mb-3" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Backed by
+            </h4>
+            <img
+              src="/assets/nvdia.svg"
+              alt="Nvidia Inception Program"
+            />
+          </div>
+
+        </div>
+
+        {/* Bottom bar */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.25)" }}
+        >
+          <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            © 2025 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             {["Privacy Policy", "Terms of Service", "Contact"].map((l) => (
               <a
                 key={l}
                 href="#"
-                className="text-white/50 text-xs hover:text-white transition-colors"
-                style={{ fontFamily: "var(--font-jakarta)" }}
+                className="font-sans text-xs hover:text-white transition-colors"
+                style={{ color: "rgba(255,255,255,0.4)" }}
               >
                 {l}
               </a>

@@ -22,7 +22,7 @@ export default function LogoCloud() {
       <div className="relative w-full overflow-hidden bg-white">
         <div className="relative z-30 max-w-[1166px] mx-auto border-x border-b border-white/10 pt-[83px] md:pt-[83px] pb-12 md:pb-[60px] px-4">
 
-          <h2 className="font-display font-medium text-2xl md:text-4xl leading-[52px] text-[#00483a] text-center m-0">
+          <h2 className="font-sans font-medium text-2xl md:text-4xl leading-[52px] text-[#00483a] text-center m-0">
             Trusted By
           </h2>
 
@@ -34,7 +34,7 @@ export default function LogoCloud() {
           <div className="mt-10 md:mt-[76px] overflow-hidden">
             <div className="flex animate-marquee-reverse gap-[126px] w-max">
               {[...["Acme Corp", "Globex", "Initech", "Umbrella", "Hooli"], ...["Acme Corp", "Globex", "Initech", "Umbrella", "Hooli"]].map((name, i) => (
-                <span key={i} className="font-display font-semibold text-lg text-gray-400 flex-shrink-0 tracking-tight">
+                <span key={i} className="font-sans font-semibold text-lg text-gray-400 flex-shrink-0 tracking-tight">
                   {name}
                 </span>
               ))}
@@ -47,7 +47,7 @@ export default function LogoCloud() {
       <div className="relative z-30 bg-[url('/assets/integrations-bg.png')] bg-cover bg-center pt-12 md:pt-[60px] pb-14 md:pb-[72px] px-4">
         <div className="max-w-[1166px] mx-auto">
 
-          <p className="font-display font-medium text-xl md:text-[32px] leading-[52px] text-white text-center mb-10 md:mb-[79px]">
+          <p className="font-sans font-medium text-xl md:text-[32px] leading-[52px] text-white text-center mb-10 md:mb-[79px]">
             Integrates with Your Dealership Tools
           </p>
 
@@ -55,7 +55,7 @@ export default function LogoCloud() {
           <div className="overflow-hidden">
             <div className="flex animate-marquee gap-[123px] w-max">
               {[...["CDK Global", "Reynolds", "DealerSocket", "VinSolutions", "TEKION"], ...["CDK Global", "Reynolds", "DealerSocket", "VinSolutions", "TEKION"]].map((name, i) => (
-                <span key={i} className="font-display font-semibold text-lg text-white/50 flex-shrink-0 tracking-tight">
+                <span key={i} className="font-sans font-semibold text-lg text-white/50 flex-shrink-0 tracking-tight">
                   {name}
                 </span>
               ))}

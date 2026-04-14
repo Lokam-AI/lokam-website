@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 function ROICard({
   title,
@@ -27,7 +28,7 @@ function ROICard({
     >
       {/* Title */}
       <h3
-        className="font-display font-semibold text-center py-4 px-6"
+        className="font-sans font-semibold text-center py-4 px-6"
         style={{ fontSize: 18, color: "#0a3d3d" }}
       >
         {title}
@@ -35,7 +36,7 @@ function ROICard({
 
       {/* Image */}
       <div className="w-full overflow-hidden aspect-[16/7] lg:aspect-auto lg:h-[260px]">
-        <img src={image} alt={imageAlt} className="w-full h-full object-cover" />
+        <Image src={image} alt={imageAlt} width={600} height={260} className="w-full h-full object-cover" />
       </div>
 
       {/* Body */}
@@ -77,8 +78,8 @@ export default function ROI() {
       <div className="max-w-[1200px] mx-auto px-8">
         {/* Heading */}
         <h2
-          className="font-display text-center mb-12 font-medium text-[clamp(32px,4vw,50px)] leading-tight"
-          style={{ letterSpacing: -1, color: "#085856" }}
+          className="font-sans font-medium text-center mb-12"
+          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
         >
           Calculate your ROI
         </h2>
@@ -94,7 +95,7 @@ export default function ROI() {
         >
           <ROICard
             title="ROI Calculator - Sales"
-            image="/assets/roi-sales.svg"
+            image="/assets/sales.png"
             imageAlt="ROI Calculator Sales"
 
             inputLabel="Unsold desktops per month"
@@ -104,7 +105,7 @@ export default function ROI() {
           />
           <ROICard
             title="ROI Calculator - Service"
-            image="/assets/roi-service.svg"
+            image="/assets/service.png"
             imageAlt="ROI Calculator Service"
 
             inputLabel="Repair Orders (ROs) per month"

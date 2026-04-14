@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const csiSteps = [
   {
@@ -141,35 +141,35 @@ function CallCard({
   name,
   badge,
   totalSeconds,
+  src,
 }: {
   label: string;
   name: string;
   badge: string;
   totalSeconds: number;
+  src: string;
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [duration, setDuration] = useState(totalSeconds);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  useEffect(() => {
-    if (isPlaying) {
-      intervalRef.current = setInterval(() => {
-        setCurrentTime((prev) => {
-          if (prev >= totalSeconds) { setIsPlaying(false); return 0; }
-          return prev + 0.1;
-        });
-      }, 100);
-    } else {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    }
-    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
-  }, [isPlaying, totalSeconds]);
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isPlaying) { audio.pause(); setIsPlaying(false); }
+    else { audio.play(); setIsPlaying(true); }
+  };
 
-  const playedBarCount = Math.floor((currentTime / totalSeconds) * waveformBars.length);
+  const playedBarCount = Math.floor((currentTime / duration) * waveformBars.length);
 
   const handleWaveformClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const audio = audioRef.current;
+    if (!audio) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    setCurrentTime((e.clientX - rect.left) / rect.width * totalSeconds);
+    const newTime = ((e.clientX - rect.left) / rect.width) * duration;
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
   };
 
   const badgeCfg = badgeStyles[badge] ?? badgeStyles["Positive"];
@@ -185,6 +185,13 @@ function CallCard({
         boxShadow: "0 0 36px #125669",
       }}
     >
+      <audio
+        ref={audioRef}
+        src={src}
+        onTimeUpdate={() => setCurrentTime(audioRef.current?.currentTime ?? 0)}
+        onLoadedMetadata={() => setDuration(audioRef.current?.duration ?? totalSeconds)}
+        onEnded={() => { setIsPlaying(false); setCurrentTime(0); }}
+      />
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-1.5">
@@ -203,7 +210,7 @@ function CallCard({
       </div>
 
       {/* Name */}
-      <div className="font-display mb-3" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>
+      <div className="font-sans mb-3" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>
         {name}
       </div>
 
@@ -246,7 +253,7 @@ function CallCard({
           {formatTime(currentTime)}
         </span>
         <button
-          onClick={() => setIsPlaying((p) => !p)}
+          onClick={togglePlay}
           className="flex items-center justify-center rounded-full focus:outline-none flex-shrink-0"
           style={{ width: 48, height: 48, backgroundColor: "#5ecfb1", border: "0.5px solid #004839", cursor: "pointer", boxShadow: "0 2px 10px rgba(94,207,177,0.45)" }}
           aria-label={isPlaying ? "Pause" : "Play"}
@@ -263,7 +270,7 @@ function CallCard({
           )}
         </button>
         <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40, textAlign: "right" }}>
-          {formatTime(totalSeconds)}
+          {formatTime(duration)}
         </span>
       </div>
     </div>
@@ -285,10 +292,10 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
               )}
             </div>
             <div className="pt-2 pb-6">
-              <h4 className="font-display font-semibold text-[17px] leading-tight text-[#111827] mb-1">
+              <h4 className="font-sans font-semibold text-[17px] leading-tight text-[#111827] mb-1">
                 {step.title}
               </h4>
-              <p className="font-sans font-normal text-[15px] leading-6 text-[#3b3b3b]" style={{ maxWidth: step.maxWidth }}>
+              <p className="font-sans" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: step.maxWidth }}>
                 {step.desc}
               </p>
             </div>
@@ -328,10 +335,10 @@ export default function HowItWorks() {
       </svg>
       {/* Header */}
       <div className="text-center mb-14 md:mb-20 relative z-10">
-        <h2 className="font-display font-semibold text-[clamp(28px,3vw,44px)] leading-tight text-[#004839] mb-4">
+        <h2 className="font-sans font-medium mb-4" style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}>
           How Lokam Works?
         </h2>
-        <p className="font-sans text-sm md:text-[15px] text-[#6b7280]">
+        <p className="text-center" style={{ color: "#000", fontSize: 20, lineHeight: "30px", fontWeight: 500 }}>
           Two workflows. One system. Zero missed opportunities.
         </p>
       </div>
@@ -341,29 +348,29 @@ export default function HowItWorks() {
         {/* ── CSI Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
           <div className="flex-shrink-0 w-[520px] relative z-10">
-            <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
+            <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
               Automate Your CSI Calls
             </h3>
-            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8" style={{ maxWidth: 360 }}>
+            <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
               Stop relying on manual calls that never happen. Lokam&apos;s AI reaches every customer, every time.
             </p>
             <StepList steps={csiSteps} />
           </div>
           <div className="flex-shrink-0 relative z-10">
-            <CallCard label="Sample Service Call" name="Sarah Jenkins" badge="Positive" totalSeconds={84} />
+            <CallCard label="Sample Service Call" name="Linda Jenkins" badge="Positive" totalSeconds={84} src="/assets/service.mp4" />
           </div>
         </div>
 
         {/* ── Showroom Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
           <div className="flex-shrink-0 relative z-10">
-            <CallCard label="Sample Sales Call" name="Michael Chen" badge="In Lead" totalSeconds={228} />
+            <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" />
           </div>
           <div className="flex-shrink-0 w-[520px] translate-x-[64px] relative z-10">
-            <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
+            <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
               Automate Unsold Showroom<br />Lead Follow-Up
             </h3>
-            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8" style={{ maxWidth: 360 }}>
+            <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
               Don&apos;t let walk-outs leave the deal. Engage them and bring them back with our AI follow-up system.
             </p>
             <StepList steps={walkoutSteps} />

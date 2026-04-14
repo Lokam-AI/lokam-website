@@ -38,8 +38,8 @@ export default function Testimonial() {
       {/* Heading */}
       <div className="text-center mb-10">
         <h2
-          className="font-display font-semibold text-[clamp(28px,3vw,44px)] leading-tight"
-          style={{ color: "#085856" }}
+          className="font-sans font-medium"
+          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
         >
           Hear from our customers
         </h2>

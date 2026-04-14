@@ -40,7 +40,7 @@ export default function Nav() {
               <a
                 key={l.label}
                 href={l.href}
-                className="flex items-center gap-1 text-white text-[14.1px] leading-[17.5px] no-underline font-display font-normal"
+                className="flex items-center gap-1 text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal"
               >
                 {l.label}
                 {l.chevron && <ChevronDown size={11} />}
@@ -63,7 +63,7 @@ export default function Nav() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-white text-sm font-display no-underline"
+                className="text-white text-sm font-sans no-underline"
               >
                 {l.label}
               </a>

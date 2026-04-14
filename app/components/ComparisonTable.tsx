@@ -59,7 +59,7 @@ export default function ComparisonTable() {
           <span className="text-xs font-semibold tracking-widest uppercase text-[--color-teal]">
             Why Lokam
           </span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl font-800 text-[--color-slate] leading-tight">
+          <h2 className="mt-3 font-sans text-4xl lg:text-5xl font-800 text-[--color-slate] leading-tight">
             How Lokam Beats Manual BDC Outreach
           </h2>
           <p className="mt-4 text-[--color-slate-2]">
