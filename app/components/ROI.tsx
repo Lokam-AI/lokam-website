@@ -35,7 +35,7 @@ function ROICard({
       </h3>
 
       {/* Image */}
-      <div className="w-full overflow-hidden aspect-[16/7] lg:aspect-auto lg:h-[260px]">
+      <div className="w-full overflow-hidden aspect-video lg:aspect-auto lg:h-[260px]">
         <Image src={image} alt={imageAlt} width={600} height={260} className="w-full h-full object-cover" />
       </div>
 
@@ -45,7 +45,7 @@ function ROICard({
           <p className="font-sans text-xs mb-2" style={{ color: "#444" }}>
             {inputLabel}
           </p>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="number"
               placeholder={inputPlaceholder}
@@ -55,7 +55,7 @@ function ROICard({
               style={{ borderColor: "#d1d5db", color: "#111" }}
             />
             <button
-              className="flex items-center justify-center gap-1.5 text-white text-sm font-medium whitespace-nowrap font-sans flex-shrink-0 px-4 h-[51px] sm:w-[189px]"
+              className="flex items-center justify-center gap-1.5 text-white text-sm font-medium whitespace-nowrap font-sans px-4 h-[51px] w-full sm:w-[189px]"
               style={{ backgroundColor: "#307D93", borderRadius: 8.08 }}
             >
               {buttonText}
@@ -86,11 +86,10 @@ export default function ROI() {
 
         {/* Outer bordered container */}
         <div
-          className="rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-6"
+          className="rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 md:p-[35px]"
           style={{
             border: "1px solid #b2d8e4",
             boxShadow: "0 16px 60px rgba(17,112,98,0.55), 0 4px 24px rgba(0,0,0,0.22), 0 1px 4px rgba(0,0,0,0.15)",
-            padding: "35px 35px 35px",
           }}
         >
           <ROICard
