@@ -88,6 +88,7 @@ export default function Testimonial() {
                 ref={playerRef}
                 playbackId={PLAYBACK_ID}
                 loop
+                defaultHiddenCaptions
                 style={{
                   width: "100%",
                   height: "100%",
@@ -128,7 +129,11 @@ export default function Testimonial() {
                 <button
                   className="flex items-center justify-center rounded-md focus:outline-none pointer-events-auto"
                   style={{ width: 30, height: 30, backgroundColor: "rgba(255,255,255,0.85)" }}
-                  onClick={(e) => { e.stopPropagation(); setShowModal(true); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (playerRef.current) { playerRef.current.pause(); setIsPlaying(false); }
+                    setShowModal(true);
+                  }}
                   aria-label="Expand video"
                 >
                   <ExpandIcon />
@@ -159,7 +164,7 @@ export default function Testimonial() {
               Close
             </button>
             <iframe
-              src={`https://player.mux.com/${PLAYBACK_ID}?autoplay=true`}
+              src={`https://player.mux.com/${PLAYBACK_ID}?autoplay=true&default-hidden-captions=true`}
               className="w-full rounded-xl"
               style={{ border: "none", aspectRatio: "16/9" }}
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
