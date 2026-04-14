@@ -2,18 +2,19 @@
 
 export default function LogoCloud() {
   return (
-    <section className="relative z-10 -mt-[129px]">
+    <section className="relative z-10" style={{ marginTop: "clamp(-129px, -9vw, -60px)" }}>
 
       {/* trusted-by-bg.svg */}
       <img
         src="/assets/trusted-by-bg.svg"
         alt=""
         aria-hidden="true"
-        className="absolute top-[-317px] left-0 w-full pointer-events-none z-20"
+        className="absolute left-0 w-full pointer-events-none z-20"
         style={{
-          clipPath: "inset(313px 0 0 0)",
-          maskImage: "linear-gradient(to bottom, transparent 0px, black 300px)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0px, black 300px)",
+          top: "calc(-22vw)",
+          clipPath: "inset(21.7vw 0 0 0)",
+          maskImage: "linear-gradient(to bottom, transparent 0px, black 20vw)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0px, black 20vw)",
         }}
       />
 
@@ -43,7 +44,7 @@ export default function LogoCloud() {
       </div>
 
       {/* ── Integrates With ── */}
-      <div className="bg-[url('/assets/integrations-bg.png')] bg-cover bg-center pt-12 md:pt-[60px] pb-14 md:pb-[72px] px-4">
+      <div className="relative z-30 bg-[url('/assets/integrations-bg.png')] bg-cover bg-center pt-12 md:pt-[60px] pb-14 md:pb-[72px] px-4">
         <div className="max-w-[1166px] mx-auto">
 
           <p className="font-display font-medium text-xl md:text-[32px] leading-[52px] text-white text-center mb-10 md:mb-[79px]">
