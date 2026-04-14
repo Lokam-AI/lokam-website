@@ -250,7 +250,7 @@ export default function BlogPage() {
                   <div
                     key={s.label}
                     className="rounded-2xl p-4 flex flex-col gap-1"
-                    style={{ background: "#49D2C2" }}
+                    style={{ background: "#49D2C2", border: "0.5px solid rgba(255,255,255,0.6)" }}
                   >
                     <span className="font-sans font-bold text-white" style={{ fontSize: "clamp(20px, 5vw, 30px)" }}>
                       {s.value}
