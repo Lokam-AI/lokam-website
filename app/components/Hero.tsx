@@ -14,7 +14,7 @@ export default function Hero() {
             height={1911}
             priority
             sizes="100vw"
-            className="block w-full h-full object-cover object-center absolute inset-0 md:static md:h-auto md:-mt-[11.5%]"
+            className="block w-full h-full object-cover object-center absolute inset-0 md:static md:w-full md:h-auto md:-mt-[11.5%]"
           />
         </div>
 

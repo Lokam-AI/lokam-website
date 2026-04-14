@@ -59,7 +59,7 @@ export default function Footer() {
               alt="Nvidia Inception Program"
               width={120}
               height={40}
-              className="h-auto"
+              className="w-auto h-10"
             />
           </div>
 

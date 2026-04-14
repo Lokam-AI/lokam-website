@@ -96,8 +96,69 @@ function DropdownMenu({
   );
 }
 
+function MobileAccordion({
+  label,
+  href,
+  items,
+  onNavigate,
+}: {
+  label: string;
+  href: string;
+  items: { label: string; href: string }[];
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-white/10">
+      <button
+        className="w-full flex items-center justify-between py-4 font-sans text-sm font-medium text-white bg-transparent border-0 cursor-pointer"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span>{label}</span>
+        <ChevronDown
+          size={16}
+          className="transition-transform duration-200 text-white/60"
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+        />
+      </button>
+
+      {open && (
+        <div className="pb-3 flex flex-col gap-0.5">
+          <a
+            href={href}
+            onClick={onNavigate}
+            className="font-sans text-xs font-semibold no-underline py-2 px-3 rounded-lg"
+            style={{ color: "#5ecfb1" }}
+          >
+            View all {label} →
+          </a>
+          {items.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={onNavigate}
+              className="font-sans text-sm no-underline py-2 px-3 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  const close = () => setOpen(false);
 
   return (
     <>
@@ -109,7 +170,7 @@ export default function Nav() {
       </div>
 
       {/* Navbar */}
-      <header className="h-[67px] bg-brand-nav">
+      <header className="h-[67px] bg-brand-nav relative z-50">
         <div className="max-w-[1330px] mx-auto px-6 md:px-[50px] h-full flex items-center justify-between">
           <a href="/" className="flex-shrink-0">
             <Image
@@ -121,6 +182,7 @@ export default function Nav() {
             />
           </a>
 
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
             <a href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               About
@@ -140,41 +202,71 @@ export default function Nav() {
             </a>
           </nav>
 
+          {/* Hamburger button */}
           <button
-            className="md:hidden text-white p-1"
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-white hover:bg-white/10 transition-colors"
             onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-
-        {open && (
-          <div className="md:hidden bg-brand-nav border-t border-white/20 px-6 py-3 flex flex-col gap-3">
-            <a href="/about" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">About</a>
-            <a href="/case-studies" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Case Studies</a>
-            {caseStudyLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-white/70 text-sm font-sans no-underline pl-3">
-                {l.label}
-              </a>
-            ))}
-            <a href="/blog" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Blogs</a>
-            {blogLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-white/70 text-xs font-sans no-underline pl-3">
-                {l.label}
-              </a>
-            ))}
-            <a href="/#contact" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Contact Us</a>
-            <a
-              href="https://app.lokam.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center h-9 rounded-lg border border-white/40 text-white text-sm font-sans font-medium no-underline"
-            >
-              Log in
-            </a>
-          </div>
-        )}
       </header>
+
+      {/* Mobile menu — full-screen overlay */}
+      {open && (
+        <div className="md:hidden fixed inset-0 z-40 flex flex-col" style={{ top: 111 /* announcement 44px + nav 67px */ }}>
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/40" onClick={close} />
+
+          {/* Panel */}
+          <div
+            className="relative flex flex-col h-full max-h-[calc(100dvh-111px)] overflow-y-auto"
+            style={{ backgroundColor: "#2c697b" }}
+          >
+            <div className="px-6 pt-2 pb-8 flex flex-col flex-1">
+
+              {/* Main links */}
+              <div className="border-b border-white/10">
+                <a href="/about" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
+                  About
+                </a>
+              </div>
+
+              <MobileAccordion label="Case Studies" href="/case-studies" items={caseStudyLinks} onNavigate={close} />
+              <MobileAccordion label="Blogs" href="/blog" items={blogLinks} onNavigate={close} />
+
+              <div className="border-b border-white/10">
+                <a href="/#contact" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
+                  Contact Us
+                </a>
+              </div>
+
+              {/* CTAs */}
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href="https://app.lokam.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-11 rounded-xl border border-white/40 text-white text-sm font-sans font-medium no-underline"
+                >
+                  Log in
+                </a>
+                <a
+                  href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={close}
+                  className="flex items-center justify-center h-11 rounded-xl text-white text-sm font-sans font-medium no-underline"
+                  style={{ backgroundColor: "#307D93" }}
+                >
+                  Book a demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
