@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white">
+    <section className="bg-[#F4F3F9] md:bg-white">
       <div className="relative">
 
         {/* Car image — min-height on mobile so content overlay always fits */}
@@ -14,7 +14,7 @@ export default function Hero() {
             height={1911}
             priority
             sizes="100vw"
-            className="block w-full h-full object-cover object-center absolute inset-0 md:static md:w-full md:h-auto md:-mt-[11.5%]"
+            className="block w-full h-full object-cover object-[center_80%] absolute inset-0 scale-150 md:scale-100 md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
           />
         </div>
 

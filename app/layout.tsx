@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Lokam — Voice AI for Automotive Dealerships",
   description:
     "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Live at your store in under 4 hours.",
-  alternates: {
+alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
