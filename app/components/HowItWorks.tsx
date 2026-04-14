@@ -1,17 +1,22 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 const csiSteps = [
   {
     title: "Immediate Outreach",
     desc: "Lokam's AI calls every customer within 24 hours post-service.",
+    maxWidth: 360,
   },
   {
     title: "Instant Escalation",
     desc: "Instantly escalates detractors with full context and transcripts to your service manager.",
+    maxWidth: 400,
   },
   {
     title: "Review Generation",
     desc: "Automatically sends Google review links to promoters via SMS.",
+    maxWidth: 400,
   },
 ];
 
@@ -19,51 +24,247 @@ const walkoutSteps = [
   {
     title: "Objection Discovery",
     desc: "Identifies the primary objections (price, trade-in, spouse) holding them back.",
+    maxWidth: 360,
   },
   {
     title: "Hot Lead Handoff",
     desc: "Instantly escalates hot leads to the sales team with full context.",
+    maxWidth: 370,
   },
   {
     title: "Deal Closing Insights",
     desc: "Gives you every insight to close more deals before they buy a competitor's vehicle.",
+    maxWidth: 400,
   },
 ];
 
-const waveHeights = [18, 28, 14, 36, 22, 42, 16, 30, 24, 40, 12, 34, 20, 38, 26, 44, 18, 32, 14, 28, 36, 20, 42, 16, 30, 24, 38, 12, 34, 22, 40, 18, 28, 36, 14, 42, 22, 30, 16, 24];
+// Exact waveform data from Figma reference
+const waveformBars = [
+  { height: 18, opacity: 1 },
+  { height: 28, opacity: 1 },
+  { height: 38, opacity: 1 },
+  { height: 52, opacity: 1 },
+  { height: 44, opacity: 1 },
+  { height: 60, opacity: 1 },
+  { height: 72, opacity: 1 },
+  { height: 64, opacity: 1 },
+  { height: 80, opacity: 1 },
+  { height: 88, opacity: 1 },
+  { height: 76, opacity: 1 },
+  { height: 92, opacity: 1 },
+  { height: 84, opacity: 1 },
+  { height: 96, opacity: 1 },
+  { height: 88, opacity: 1 },
+  { height: 72, opacity: 1 },
+  { height: 60, opacity: 1 },
+  { height: 48, opacity: 1 },
+  { height: 36, opacity: 1 },
+  { height: 24, opacity: 1 },
+  { height: 14, opacity: 0.5 },
+  { height: 10, opacity: 0.4 },
+  { height: 8, opacity: 0.35 },
+  { height: 8, opacity: 0.3 },
+  { height: 8, opacity: 0.3 },
+  { height: 8, opacity: 0.28 },
+  { height: 8, opacity: 0.28 },
+  { height: 8, opacity: 0.26 },
+  { height: 8, opacity: 0.26 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 8, opacity: 0.25 },
+  { height: 10, opacity: 0.3 },
+  { height: 14, opacity: 0.4 },
+  { height: 20, opacity: 0.5 },
+  { height: 28, opacity: 1 },
+  { height: 40, opacity: 1 },
+  { height: 56, opacity: 1 },
+  { height: 68, opacity: 1 },
+  { height: 80, opacity: 1 },
+  { height: 92, opacity: 1 },
+  { height: 100, opacity: 1 },
+  { height: 92, opacity: 1 },
+  { height: 84, opacity: 1 },
+  { height: 76, opacity: 1 },
+  { height: 88, opacity: 1 },
+  { height: 96, opacity: 1 },
+  { height: 80, opacity: 1 },
+  { height: 68, opacity: 1 },
+  { height: 52, opacity: 1 },
+  { height: 36, opacity: 1 },
+  { height: 22, opacity: 1 },
+];
 
-function Waveform({ color = "#085856" }: { color?: string }) {
-  return (
-    <div className="flex items-center gap-[2px] h-12">
-      {waveHeights.map((h, i) => (
-        <div
-          key={i}
-          className="rounded-full flex-shrink-0"
-          style={{ width: 3, height: h, background: color, opacity: i < waveHeights.length / 2 ? 1 : 0.3 }}
-        />
-      ))}
-    </div>
-  );
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
-function CallCard({ label, name, duration = "01:24", type }: { label: string; name: string; duration?: string; type: "service" | "sales" }) {
-  const isService = type === "service";
+interface BadgeConfig {
+  bg: string;
+  border: string;
+  dot: string;
+  text: string;
+  color: string;
+}
+
+const badgeStyles: Record<string, BadgeConfig> = {
+  Positive: {
+    bg: "#d6f5ec",
+    border: "#b2ead8",
+    dot: "#3db88a",
+    text: "Positive",
+    color: "#2a9d6e",
+  },
+  "In Lead": {
+    bg: "#d6ecf5",
+    border: "#b2d8ea",
+    dot: "#3d8ab8",
+    text: "In Lead",
+    color: "#2a6e9d",
+  },
+};
+
+function CallCard({
+  label,
+  name,
+  badge,
+  totalSeconds,
+}: {
+  label: string;
+  name: string;
+  badge: string;
+  totalSeconds: number;
+}) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      intervalRef.current = setInterval(() => {
+        setCurrentTime((prev) => {
+          if (prev >= totalSeconds) { setIsPlaying(false); return 0; }
+          return prev + 0.1;
+        });
+      }, 100);
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    }
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [isPlaying, totalSeconds]);
+
+  const playedBarCount = Math.floor((currentTime / totalSeconds) * waveformBars.length);
+
+  const handleWaveformClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCurrentTime((e.clientX - rect.left) / rect.width * totalSeconds);
+  };
+
+  const badgeCfg = badgeStyles[badge] ?? badgeStyles["Positive"];
+
   return (
-    <div className="bg-white rounded-2xl shadow-[0px_4px_24px_rgba(0,0,0,0.10)] p-5 w-full max-w-[340px]">
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-[11px] font-sans font-semibold text-[#6b7280] tracking-wider uppercase">{label}</span>
-        <span className="bg-[#085856] text-white text-[11px] font-sans font-medium px-2.5 py-1 rounded-full">AI Agent</span>
-      </div>
-      <p className="font-display font-semibold text-[17px] text-[#111827] mb-4">{name}</p>
-      <Waveform color={isService ? "#085856" : "#307d93"} />
-      <div className="flex items-center justify-between mt-3">
-        <span className="font-mono text-xs text-[#6b7280]">00:00</span>
-        <div className="w-8 h-8 rounded-full bg-[#085856] flex items-center justify-center flex-shrink-0">
-          <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
-            <path d="M2 1.5L8.5 6L2 10.5V1.5Z" fill="white" />
-          </svg>
+    <div
+      className="bg-white"
+      style={{
+        width: 588,
+        borderRadius: 24,
+        height: 340,
+        padding: "90px 30px 5px",
+        boxShadow: "0 0 36px #125669",
+      }}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-1.5">
+          <img src="/assets/phone.svg" alt="" className="flex-shrink-0" style={{ width: 22, height: 22 }} />
+          <span className="font-sans font-semibold text-[#9ca3af] uppercase" style={{ fontSize: 8, letterSpacing: "0.10em" }}>
+            {label}
+          </span>
         </div>
-        <span className="font-mono text-xs text-[#6b7280]">{duration}</span>
+        <div
+          className="flex items-center gap-1 rounded-full"
+          style={{ backgroundColor: badgeCfg.bg, border: `1px solid ${badgeCfg.border}`, padding: "2.5px 7px" }}
+        >
+          <span className="rounded-full flex-shrink-0" style={{ width: 5, height: 5, backgroundColor: badgeCfg.dot, display: "inline-block" }} />
+          <span className="font-sans" style={{ color: badgeCfg.color, fontWeight: 600, fontSize: 10 }}>{badgeCfg.text}</span>
+        </div>
+      </div>
+
+      {/* Name */}
+      <div className="font-display mb-3" style={{ fontWeight: 700, fontSize: 15, color: "#111", lineHeight: 1.3 }}>
+        {name}
+      </div>
+
+      {/* Waveform — overflow hidden so bars stay within card */}
+      <div
+        className="overflow-hidden cursor-pointer select-none mb-3"
+        style={{ height: 42 }}
+        onClick={handleWaveformClick}
+        role="slider"
+        aria-label="Audio progress"
+        aria-valuenow={Math.round(currentTime)}
+        aria-valuemin={0}
+        aria-valuemax={totalSeconds}
+      >
+        <div className="flex items-center" style={{ height: 42, gap: 2 }}>
+          {waveformBars.map((bar, i) => {
+            const isPlayed = i < playedBarCount;
+            const isDot = bar.opacity < 0.5;
+            return (
+              <div
+                key={i}
+                style={{
+                  width: isDot ? 3 : 3,
+                  height: isDot ? 3 : Math.round(bar.height * 0.39),
+                  borderRadius: isDot ? "50%" : 2,
+                  backgroundColor: "#5ecfb1",
+                  opacity: isPlayed ? 1 : isDot ? bar.opacity + 0.1 : 0.35,
+                  flexShrink: 0,
+                  transition: "opacity 0.1s",
+                }}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="flex items-center justify-between">
+        <span className="font-sans" style={{ fontSize: 10, color: "#888", fontWeight: 500, minWidth: 30 }}>
+          {formatTime(currentTime)}
+        </span>
+        <button
+          onClick={() => setIsPlaying((p) => !p)}
+          className="flex items-center justify-center rounded-full focus:outline-none flex-shrink-0"
+          style={{ width: 30, height: 30, backgroundColor: "#5ecfb1", border: "none", cursor: "pointer", boxShadow: "0 2px 10px rgba(94,207,177,0.45)" }}
+          aria-label={isPlaying ? "Pause" : "Play"}
+        >
+          {isPlaying ? (
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="white">
+              <rect x="5" y="4" width="4" height="16" rx="1" fill="white" />
+              <rect x="15" y="4" width="4" height="16" rx="1" fill="white" />
+            </svg>
+          ) : (
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 1 }}>
+              <path d="M8 5v14l11-7L8 5z" fill="white" />
+            </svg>
+          )}
+        </button>
+        <span className="font-sans" style={{ fontSize: 10, color: "#888", fontWeight: 500, minWidth: 30, textAlign: "right" }}>
+          {formatTime(totalSeconds)}
+        </span>
       </div>
     </div>
   );
@@ -87,7 +288,7 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
               <h4 className="font-display font-semibold text-[17px] leading-tight text-[#111827] mb-1">
                 {step.title}
               </h4>
-              <p className="font-sans font-normal text-[15px] leading-6 text-[#3b3b3b]">
+              <p className="font-sans font-normal text-[15px] leading-6 text-[#3b3b3b]" style={{ maxWidth: step.maxWidth }}>
                 {step.desc}
               </p>
             </div>
@@ -106,53 +307,47 @@ export default function HowItWorks() {
         <h2 className="font-display font-semibold text-[clamp(28px,3vw,44px)] leading-tight text-[#004839] mb-4">
           How Lokam Works?
         </h2>
-        <span className="inline-block bg-[#f4f4f5] text-[#3b3b3b] font-sans text-sm md:text-[15px] px-4 py-2 rounded-full">
+        <p className="font-sans text-sm md:text-[15px] text-[#6b7280]">
           Two workflows. One system. Zero missed opportunities.
-        </span>
+        </p>
       </div>
 
-      <div className="max-w-[1100px] mx-auto space-y-20 md:space-y-28">
+      <div className="max-w-[1400px] mx-auto space-y-20 md:space-y-28">
 
         {/* ── CSI Workflow ── */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Left: steps */}
-          <div>
+        <div className="flex justify-center items-center gap-[34px]">
+          <div className="flex-shrink-0 w-[520px]">
             <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
               Automate Your CSI Calls
             </h3>
-            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8">
+            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8" style={{ maxWidth: 360 }}>
               Stop relying on manual calls that never happen. Lokam&apos;s AI reaches every customer, every time.
             </p>
             <StepList steps={csiSteps} />
           </div>
-
-          {/* Right: call card */}
-          <div className="flex justify-center md:justify-end">
-            <CallCard label="Sample Service Call" name="Sarah Jenkins" duration="01:24" type="service" />
+          <div className="flex-shrink-0">
+            <CallCard label="Sample Service Call" name="Sarah Jenkins" badge="Positive" totalSeconds={84} />
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-[#e5e7eb]" />
-
         {/* ── Showroom Workflow ── */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Left: call card */}
-          <div className="flex justify-center md:justify-start order-2 md:order-1">
-            <CallCard label="Sample Sales Call" name="Michael Chen" duration="03:48" type="sales" />
+        <div className="flex justify-center items-center gap-[34px]">
+          <div className="flex-shrink-0">
+            <CallCard label="Sample Sales Call" name="Michael Chen" badge="In Lead" totalSeconds={228} />
           </div>
-
-          {/* Right: steps */}
-          <div className="order-1 md:order-2">
+          <div className="flex-shrink-0 w-[520px] translate-x-[64px]">
             <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
-              Automate Unsold Showroom Lead Follow-Up
+              Automate Unsold Showroom<br />Lead Follow-Up
             </h3>
-            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8">
+            <p className="font-sans text-[15px] leading-6 text-[#6b7280] mb-8" style={{ maxWidth: 360 }}>
               Don&apos;t let walk-outs leave the deal. Engage them and bring them back with our AI follow-up system.
             </p>
             <StepList steps={walkoutSteps} />
           </div>
         </div>
+
+        {/* Divider */}
+        <div className="h-px bg-[#e5e7eb]" />
 
       </div>
     </section>
