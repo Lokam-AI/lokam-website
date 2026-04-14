@@ -66,14 +66,18 @@ export default function Footer() {
             © 2025 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            {["Privacy Policy", "Terms of Service", "Contact"].map((l) => (
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Contact", href: "/#contact" },
+            ].map((l) => (
               <a
-                key={l}
-                href="#"
+                key={l.label}
+                href={l.href}
                 className="font-sans text-xs hover:text-white transition-colors"
                 style={{ color: "rgba(255,255,255,0.4)" }}
               >
-                {l}
+                {l.label}
               </a>
             ))}
           </div>

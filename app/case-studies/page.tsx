@@ -17,7 +17,7 @@ const featuredStudy = {
     "Within 90 days of deployment, Metro Toyota recovered more than $84k in monthly revenue from improved CSI outcomes, Google review lifts, and repeat service visits.",
   date: "Jan 2026",
   readTime: "5 min read",
-  href: "#",
+  href: "/case-studies/metro-toyota",
   stats: [
     { value: "91%",   label: "Contact Rate",          sub: "vs 28% industry avg" },
     { value: "$84k",  label: "Revenue/Month",          sub: "recovered" },
@@ -49,7 +49,7 @@ const studies: Study[] = [
       { value: "+11 pts", label: "CSI score lift" },
     ],
     excerpt: "Riverside Honda's service team was missing at-risk customers daily. Lokam's AI follow-up caught detractors within 24 hours and turned them into repeat buyers.",
-    href: "#",
+    href: "/case-studies/riverside-honda",
   },
   {
     metric: "$4 CSI",
@@ -62,7 +62,7 @@ const studies: Study[] = [
       { value: "2×", label: "Survey response rate" },
     ],
     excerpt: "Replacing a manual BDC process with Lokam cut Valley Ford's cost-per-CSI-contact from $40 to $4 while doubling survey response rates in 60 days.",
-    href: "#",
+    href: "/case-studies/valley-ford",
   },
   {
     metric: "+$61k/mo",
@@ -75,7 +75,7 @@ const studies: Study[] = [
       { value: "68%", label: "Contact rate" },
     ],
     excerpt: "Sunrise Ford's sales team was losing 60–70 unsold showroom visitors per month to competitors. Lokam's AI follow-up turned 31 of them into sold deals in the first 30 days.",
-    href: "#",
+    href: "/case-studies/sunrise-ford",
   },
   {
     metric: "$31k ROI",
@@ -87,8 +87,8 @@ const studies: Study[] = [
       { value: "3×", label: "Stores rolled out" },
       { value: "0", label: "BDC headcount added" },
     ],
-    excerpt: "A multi-rooftop rollout across 3 stores delivered measurable ROI within the first quarter — with zero additional BDC headcount added.",
-    href: "#",
+    excerpt: "A multi-rooftop rollout across 3 stores delivered measurable, compounding ROI within the first quarter, with zero additional BDC headcount added at any store.",
+    href: "/case-studies/capital-auto-group",
   },
   {
     metric: "+12 pts",
@@ -100,8 +100,8 @@ const studies: Study[] = [
       { value: "54→66", label: "NPS score" },
       { value: "#1", label: "In 12-store group" },
     ],
-    excerpt: "Structured post-service follow-up with branded caller ID drove Pacific Subaru's NPS from 54 to 66 — the highest across their entire 12-store group.",
-    href: "#",
+    excerpt: "Structured post-service follow-up with branded caller ID drove Pacific Subaru's NPS from 54 to 66, the highest across their entire 12-store group.",
+    href: "/case-studies/pacific-subaru",
   },
   {
     metric: "$180k/mo",
@@ -114,11 +114,21 @@ const studies: Study[] = [
       { value: "15–20", label: "Extra cars/mo" },
     ],
     excerpt: "Scott Falcone scaled Lokam across 4 rooftops, turning unsold desklog and service detractors into a predictable $180k monthly revenue engine.",
-    href: "#",
+    href: "/case-studies/world-auto-group",
   },
 ];
 
 const CATEGORIES = ["All", "Service & CSI", "Sales & BDC", "AI Automations", "Multi-Store"];
+
+const MULTI_STORE_DEALERS = ["Capital Auto Group", "World Auto Group"];
+
+function matchesCategory(study: Study, category: string): boolean {
+  if (category === "All") return true;
+  if (category === "Service & CSI") return study.category === "SERVICE & CSI";
+  if (category === "Sales & BDC") return study.category === "SALES & BDC" || study.category === "SALES FOLLOW-UP";
+  if (category === "Multi-Store") return MULTI_STORE_DEALERS.includes(study.dealership);
+  return false;
+}
 
 const CHIP_STYLES: Record<string, { bg: string; color: string }> = {
   "SERVICE & CSI":   { bg: "#D6F5EF", color: "#0C8074" },
@@ -208,13 +218,15 @@ function StudyCard({ study }: { study: Study }) {
       </p>
 
       {/* Row 6: read link */}
-      <a
-        href={study.href}
-        className="inline-flex items-center gap-1 font-sans font-semibold text-sm"
-        style={{ color: "#0CB4A7" }}
-      >
-        Read case study <span>›</span>
-      </a>
+      <div className="border-t border-[#E2F0EE] pt-4">
+        <a
+          href={study.href}
+          className="inline-flex items-center gap-1 font-sans font-semibold text-sm"
+          style={{ color: "#0CB4A7" }}
+        >
+          Read case study <span>›</span>
+        </a>
+      </div>
       </div>
     </article>
   );
@@ -224,6 +236,7 @@ function StudyCard({ study }: { study: Study }) {
 
 export default function CaseStudiesPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const filteredStudies = studies.filter((s) => matchesCategory(s, activeCategory));
 
   return (
     <>
@@ -373,11 +386,26 @@ export default function CaseStudiesPage() {
           </div>
 
           {/* ── Case Study Grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {studies.map((study) => (
-              <StudyCard key={study.dealership} study={study} />
-            ))}
-          </div>
+          {filteredStudies.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredStudies.map((study) => (
+                <StudyCard key={study.dealership} study={study} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-20 gap-3">
+              <p className="font-sans font-semibold text-[#0A2E2B]" style={{ fontSize: 16 }}>
+                More case studies coming soon.
+              </p>
+              <p className="font-sans text-sm text-[#8AADA8]">
+                Check back or{" "}
+                <a href="https://calendly.com/saleeq-lokam/30-minutes-meeting" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#0CB4A7" }}>
+                  book a demo
+                </a>{" "}
+                to see Lokam in action.
+              </p>
+            </div>
+          )}
 
           {/* ── Pagination ── */}
           <div className="overflow-x-auto mt-10 mb-16">

@@ -1,59 +1,25 @@
+import { notFound } from "next/navigation";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// ─── Static params ────────────────────────────────────────────────────────────
 
-const cs = {
-  badge: "Case Study",
-  title: "Metro Toyota Added $84,000/Month With Lokam's AI Follow-Up",
-  meta: [
-    { label: "Dealership",      value: "Metro Toyota" },
-    { label: "Location",        value: "Phoenix, AZ" },
-    { label: "Deployed",        value: "Feb 2024" },
-    { label: "Time to Results", value: "60 days" },
-  ],
-  heroStats: [
-    { value: "91%",  label: "CSI Contact Rate" },
-    { value: "$84K", label: "Monthly Revenue Added" },
-    { value: "38",   label: "Customers Saved" },
-    { value: "4.6★", label: "Google Rating" },
-  ],
-  quote: {
-    text: "\"I was skeptical that an AI could handle a detractor call with empathy. Then I listened to the transcript. Lokam de-escalated a furious customer, collected the full story, and had my service manager calling back within 10 minutes. That customer left us a 5-star review.\"",
-    author: "Derek Holt — General Manager, Metro Toyota",
-    location: "Phoenix, AZ",
-  },
-  before: [
-    { metric: "CSI Contact Rate",       value: "52%" },
-    { metric: "Calls Made / Month",     value: "~300 of 600" },
-    { metric: "At-Risk Detected Early", value: "Rarely" },
-    { metric: "Google Rating",          value: "3.9 ★" },
-    { metric: "OEM CSI Bonus",          value: "Missed 4 months straight" },
-    { metric: "Advisor Time on Calls",  value: "~3 hrs/day" },
-  ],
-  after: [
-    { metric: "CSI Contact Rate",       value: "91%" },
-    { metric: "Calls Made / Month",     value: "620 of 830" },
-    { metric: "At-Risk Detected Early", value: "Every time" },
-    { metric: "Google Rating",          value: "4.6 ★" },
-    { metric: "OEM CSI Bonus",          value: "Hit every month since" },
-    { metric: "Advisor Time on Calls",  value: "0 hrs/day" },
-  ],
-  related: [
-    { category: "SALES FOLLOW-UP", dealership: "Sunrise Ford",       metric: "+$61k/mo recovered",         href: "#" },
-    { category: "SERVICE CSI",     dealership: "Greenfield Honda",   metric: "CSI score: 52 → 94",         href: "#" },
-    { category: "SALES FOLLOW-UP", dealership: "Lakeside Chevrolet", metric: "31 deals closed from walk-outs", href: "#" },
-  ],
-};
+export function generateStaticParams() {
+  return caseStudies.map((s) => ({ slug: s.slug }));
+}
 
-const CHIP: Record<string, { bg: string; color: string }> = {
-  "SALES FOLLOW-UP": { bg: "#D6EBF5", color: "#1B6A8A" },
-  "SERVICE CSI":     { bg: "#D6F5EF", color: "#0C8074" },
-};
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
-// ─── Page ────────────────────────────────────────────────────────────────────
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const cs = getStudyBySlug(slug);
+  if (!cs) notFound();
 
-export default function CaseStudyPage() {
   return (
     <>
       <Nav />
@@ -98,7 +64,7 @@ export default function CaseStudyPage() {
             ))}
           </div>
 
-          {/* Hero stats — single container with dividers */}
+          {/* Hero stats */}
           <div
             className="flex flex-col sm:flex-row rounded-2xl overflow-hidden mb-10"
             style={{ border: "1px solid #C8E8E0", background: "#F5FDFB" }}
@@ -152,10 +118,7 @@ export default function CaseStudyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Before */}
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{ border: "1px solid #F5C6C0" }}
-            >
+            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid #F5C6C0" }}>
               <div className="flex items-center gap-2 px-6 py-4 border-b border-[#F5C6C0]" style={{ background: "#FFF8F7" }}>
                 <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: "#F97066" }} />
                 <span className="font-sans font-semibold text-sm text-[#0A2E2B]">Before Lokam</span>
@@ -173,10 +136,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* After */}
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{ border: "1px solid #B2E8E0" }}
-            >
+            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid #B2E8E0" }}>
               <div className="flex items-center gap-2 px-6 py-4 border-b border-[#B2E8E0]" style={{ background: "#F0FBF9" }}>
                 <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: "#0CB4A7" }} />
                 <span className="font-sans font-semibold text-sm text-[#0A2E2B]">After Lokam</span>
@@ -238,7 +198,7 @@ export default function CaseStudyPage() {
           >
             <div>
               <p className="font-sans font-bold text-white" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>
-                Want results like Metro Toyota?
+                Want results like these?
               </p>
               <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Live at your dealership in under 4 hours · No IT required.
@@ -255,6 +215,17 @@ export default function CaseStudyPage() {
             </a>
           </div>
         </section>
+
+        {/* ── Back to case studies ── */}
+        <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-14">
+          <a
+            href="/case-studies"
+            className="inline-flex items-center gap-2 font-sans text-sm font-medium"
+            style={{ color: "#0CB4A7" }}
+          >
+            ← Back to all case studies
+          </a>
+        </div>
 
       </main>
       <Footer />

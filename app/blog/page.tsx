@@ -12,7 +12,7 @@ const featuredPost = {
     "Within 90 days of deployment, Metro Toyota recovered more than $84k from improved CSI outcomes, with a significant lift in Google reviews and repeat service visits.",
   date: "Jan 2026",
   readTime: "5 min read",
-  href: "#",
+  href: "/case-studies/metro-toyota",
   stats: [
     { value: "52%",  label: "Contact Rate (Before)",         sub: "industry avg" },
     { value: "91%", label: "Contact Rate (After)", sub: "+39 pts" },
@@ -89,6 +89,15 @@ const posts: Post[] = [
 
 const CATEGORIES = ["All", "Service & CSI", "Sales & BDC", "AI Automations", "Industry Reads", "Case Studies"];
 
+function matchesCategory(post: Post, category: string): boolean {
+  if (category === "All") return true;
+  if (category === "Service & CSI") return post.category === "SERVICES & CSI";
+  if (category === "Sales & BDC") return post.category === "SALES & BDC";
+  if (category === "AI Automations") return post.category === "AI AUTOMATIONS";
+  if (category === "Industry Reads") return post.category === "RECENT NEWS";
+  return false;
+}
+
 const CHIP_STYLES: Record<string, { bg: string; color: string }> = {
   "SERVICES & CSI":  { bg: "#D6F5EF", color: "#0C8074" },
   "SALES & BDC":     { bg: "#D6EBF5", color: "#1B6A8A" },
@@ -146,6 +155,7 @@ function BlogCard({ post }: { post: Post }) {
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [email, setEmail] = useState("");
+  const filteredPosts = posts.filter((p) => matchesCategory(p, activeCategory));
 
   return (
     <>
@@ -287,7 +297,7 @@ export default function BlogPage() {
 
           {/* ── Blog Grid ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <BlogCard key={post.title} post={post} />
             ))}
           </div>
