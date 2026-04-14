@@ -301,9 +301,33 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-white py-16 md:py-24 px-4">
+    <section id="how-it-works" className="relative bg-white py-16 md:py-24 px-4 overflow-hidden">
+      {/* Background gradient — CSI (top, flipped vertically) */}
+      <svg className="absolute top-0 left-0 w-full h-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style={{ transform: "scaleY(-1)" }}>
+        <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_csi)" fillOpacity="0.13"/>
+        <defs>
+          <radialGradient id="paint0_radial_csi" cx="0" cy="0" r="1" gradientTransform="matrix(196.578 -1037.08 1439.22 423.043 591.514 879.828)" gradientUnits="userSpaceOnUse">
+            <stop stopColor="white"/>
+            <stop offset="0.487941" stopColor="white"/>
+            <stop offset="0.713185" stopColor="#0CB0A2"/>
+            <stop offset="1" stopColor="#C5FDFF"/>
+          </radialGradient>
+        </defs>
+      </svg>
+      {/* Background gradient — Showroom (bottom, normal) */}
+      <svg className="absolute bottom-0 left-0 w-full h-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_lead)" fillOpacity="0.13"/>
+        <defs>
+          <radialGradient id="paint0_radial_lead" cx="0" cy="0" r="1" gradientTransform="matrix(196.578 -1037.08 1439.22 423.043 591.514 879.828)" gradientUnits="userSpaceOnUse">
+            <stop stopColor="white"/>
+            <stop offset="0.487941" stopColor="white"/>
+            <stop offset="0.713185" stopColor="#0CB0A2"/>
+            <stop offset="1" stopColor="#C5FDFF"/>
+          </radialGradient>
+        </defs>
+      </svg>
       {/* Header */}
-      <div className="text-center mb-14 md:mb-20">
+      <div className="text-center mb-14 md:mb-20 relative z-10">
         <h2 className="font-display font-semibold text-[clamp(28px,3vw,44px)] leading-tight text-[#004839] mb-4">
           How Lokam Works?
         </h2>
@@ -316,7 +340,7 @@ export default function HowItWorks() {
 
         {/* ── CSI Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
-          <div className="flex-shrink-0 w-[520px]">
+          <div className="flex-shrink-0 w-[520px] relative z-10">
             <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
               Automate Your CSI Calls
             </h3>
@@ -325,17 +349,17 @@ export default function HowItWorks() {
             </p>
             <StepList steps={csiSteps} />
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative z-10">
             <CallCard label="Sample Service Call" name="Sarah Jenkins" badge="Positive" totalSeconds={84} />
           </div>
         </div>
 
         {/* ── Showroom Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative z-10">
             <CallCard label="Sample Sales Call" name="Michael Chen" badge="In Lead" totalSeconds={228} />
           </div>
-          <div className="flex-shrink-0 w-[520px] translate-x-[64px]">
+          <div className="flex-shrink-0 w-[520px] translate-x-[64px] relative z-10">
             <h3 className="font-display font-semibold text-[clamp(20px,2vw,30px)] leading-snug text-[#085856] mb-3">
               Automate Unsold Showroom<br />Lead Follow-Up
             </h3>

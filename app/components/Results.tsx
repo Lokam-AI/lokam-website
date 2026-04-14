@@ -6,17 +6,19 @@ export default function Results() {
         <div className="h-px" style={{ background: "#0000001a" }} />
       </div>
 
-      {/* Full-width product screenshot */}
-      {/* TODO: replace with <Image src="/image-49.png" …> — full-width dashboard screenshot */}
-      <div
-        className="relative w-full"
-        style={{ height: 296, background: "linear-gradient(135deg, #f0f7f9 0%, #daeef4 50%, #c2e4ed 100%)" }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-sm text-center" style={{ color: "#2c697b", opacity: 0.5 }}>
-            [ image-49.png — full-width product screenshot<br />add to /public once assets are exported ]
-          </p>
-        </div>
+      {/* Full-width gradient */}
+      <div className="relative w-full overflow-hidden" style={{ height: 296 }}>
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_results)" fillOpacity="0.13"/>
+          <defs>
+            <radialGradient id="paint0_radial_results" cx="0" cy="0" r="1" gradientTransform="matrix(196.578 -1037.08 1439.22 423.043 591.514 879.828)" gradientUnits="userSpaceOnUse">
+              <stop stopColor="white"/>
+              <stop offset="0.487941" stopColor="white"/>
+              <stop offset="0.713185" stopColor="#0CB0A2"/>
+              <stop offset="1" stopColor="#C5FDFF"/>
+            </radialGradient>
+          </defs>
+        </svg>
       </div>
     </section>
   );

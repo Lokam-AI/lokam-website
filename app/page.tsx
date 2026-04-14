@@ -2,7 +2,6 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import LogoCloud from "./components/LogoCloud";
 import HowItWorks from "./components/HowItWorks";
-import Results from "./components/Results";
 import ROI from "./components/ROI";
 import Testimonial from "./components/Testimonial";
 import CTA from "./components/CTA";
@@ -16,7 +15,6 @@ export default function Home() {
         <Hero />
         <LogoCloud />
         <HowItWorks />
-        <Results />
         <ROI />
         <Testimonial />
         <CTA />
