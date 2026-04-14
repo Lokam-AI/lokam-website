@@ -301,7 +301,7 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative bg-white py-16 md:py-24 px-4 overflow-hidden">
+    <section id="how-it-works" className="relative bg-white pt-16 md:pt-24 pb-8 px-4 overflow-hidden">
       {/* Background gradient — CSI (top, flipped vertically) */}
       <svg className="absolute top-0 left-0 w-full h-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style={{ transform: "scaleY(-1)" }}>
         <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_csi)" fillOpacity="0.13"/>
@@ -336,7 +336,7 @@ export default function HowItWorks() {
         </p>
       </div>
 
-      <div className="max-w-[1400px] mx-auto space-y-20 md:space-y-28">
+      <div className="max-w-[1400px] mx-auto space-y-10 md:space-y-14">
 
         {/* ── CSI Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
@@ -370,10 +370,8 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-[#e5e7eb]" />
-
       </div>
+
     </section>
   );
 }

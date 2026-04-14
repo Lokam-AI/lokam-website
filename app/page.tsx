@@ -15,6 +15,7 @@ export default function Home() {
         <Hero />
         <LogoCloud />
         <HowItWorks />
+        <div className="mx-auto h-px bg-[#1F9F74]" style={{ maxWidth: 1100, opacity: 0.35 }} />
         <ROI />
         <Testimonial />
         <CTA />

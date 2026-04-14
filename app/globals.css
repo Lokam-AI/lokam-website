@@ -33,6 +33,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Mux Player — force white/black theme, no pink */
+mux-player {
+  --accent-color: #ffffff;
+  --media-primary-color: #ffffff;
+  --media-secondary-color: #000000;
+}
+
 @keyframes marquee {
   0%   { transform: translateX(0); }
   to   { transform: translateX(calc(-50%)); }
