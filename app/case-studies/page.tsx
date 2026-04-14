@@ -268,21 +268,16 @@ export default function CaseStudiesPage() {
           </p>
 
           {/* Hero stats */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-12">
-            {heroStats.map((s, i) => (
-              <div key={s.label} className="flex items-center gap-6">
-                <div className="text-center">
-                  <p
-                    className="font-display font-bold leading-none"
-                    style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#00968B" }}
-                  >
-                    {s.value}
-                  </p>
-                  <p className="font-sans text-sm text-[#4A6B68] mt-1">{s.label}</p>
-                </div>
-                {i < heroStats.length - 1 && (
-                  <div className="hidden sm:block w-px h-10 bg-[#C8E8E0]" />
-                )}
+          <div className="mt-10 grid grid-cols-3 gap-4 max-w-lg mx-auto">
+            {heroStats.map((s) => (
+              <div key={s.label} className="text-center">
+                <p
+                  className="font-display font-bold leading-none"
+                  style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#00968B" }}
+                >
+                  {s.value}
+                </p>
+                <p className="font-sans text-sm text-[#4A6B68] mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -297,7 +292,7 @@ export default function CaseStudiesPage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 lg:gap-12">
               {/* Left */}
-              <div className="flex flex-col justify-between gap-6">
+              <div className="flex flex-col justify-between gap-6 min-w-0">
                 <div>
                   <div className="flex items-center gap-2 mb-5">
                     <span
@@ -385,7 +380,8 @@ export default function CaseStudiesPage() {
           </div>
 
           {/* ── Pagination ── */}
-          <div className="flex items-center justify-center gap-2 mt-10 mb-16">
+          <div className="overflow-x-auto mt-10 mb-16">
+          <div className="flex flex-nowrap items-center justify-center gap-2">
             <button
               className="flex items-center justify-center rounded-lg w-9 h-9 transition-colors"
               style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
@@ -416,10 +412,11 @@ export default function CaseStudiesPage() {
               </svg>
             </button>
           </div>
+          </div>
 
           {/* ── Bottom CTA ── */}
           <div
-              className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-2xl bg-white px-8 py-8 md:py-7 mb-12"
+              className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-2xl bg-white px-5 sm:px-8 py-6 mb-12"
               style={{ marginTop: "34px", border: "1px solid #C8E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.07)" }}
             >
               {/* Left */}

@@ -88,7 +88,7 @@ export default function CaseStudyPage() {
           </h1>
 
           {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-x-1 gap-y-1.5 mb-8">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 mb-8">
             {cs.meta.map((m, i) => (
               <span key={m.label} className="font-sans text-sm text-[#4A6B68] flex items-center gap-1">
                 <span className="font-medium text-[#0A2E2B]">{m.label}:</span>
@@ -106,8 +106,7 @@ export default function CaseStudyPage() {
             {cs.heroStats.map((s, i) => (
               <div
                 key={s.label}
-                className="flex-1 flex flex-col items-center justify-center py-4 px-4 gap-1.5"
-                style={i > 0 ? { borderLeft: "1px solid #C8E8E0" } : {}}
+                className={`flex-1 flex flex-col items-center justify-center py-4 px-4 gap-1.5${i > 0 ? " border-t sm:border-t-0 sm:border-l border-[#C8E8E0]" : ""}`}
               >
                 <span
                   className="font-display font-bold leading-none"
@@ -129,7 +128,7 @@ export default function CaseStudyPage() {
         {/* ── Quote ── */}
         <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-12">
           <div
-            className="rounded-2xl p-7 md:p-10"
+            className="rounded-2xl p-5 sm:p-7 md:p-10"
             style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.07)" }}
           >
             <p className="font-sans text-base md:text-lg leading-8 text-[#1A2E2B] mb-6">
@@ -167,8 +166,8 @@ export default function CaseStudyPage() {
                   className="flex items-center justify-between px-6 py-3.5 border-b border-[#FDE8E6] last:border-0"
                   style={{ background: i % 2 === 0 ? "#fff" : "#FFFAF9" }}
                 >
-                  <span className="font-sans text-sm text-[#4A6B68]">{row.metric}</span>
-                  <span className="font-sans text-sm font-semibold" style={{ color: "#F97066" }}>{row.value}</span>
+                  <span className="font-sans text-sm text-[#4A6B68] min-w-0">{row.metric}</span>
+                  <span className="font-sans text-sm font-semibold flex-shrink-0 ml-2" style={{ color: "#F97066" }}>{row.value}</span>
                 </div>
               ))}
             </div>
@@ -188,8 +187,8 @@ export default function CaseStudyPage() {
                   className="flex items-center justify-between px-6 py-3.5 border-b border-[#D6F0EC] last:border-0"
                   style={{ background: i % 2 === 0 ? "#fff" : "#FAFFFE" }}
                 >
-                  <span className="font-sans text-sm text-[#4A6B68]">{row.metric}</span>
-                  <span className="font-sans text-sm font-semibold" style={{ color: "#0CB4A7" }}>{row.value}</span>
+                  <span className="font-sans text-sm text-[#4A6B68] min-w-0">{row.metric}</span>
+                  <span className="font-sans text-sm font-semibold flex-shrink-0 ml-2" style={{ color: "#0CB4A7" }}>{row.value}</span>
                 </div>
               ))}
             </div>
@@ -234,7 +233,7 @@ export default function CaseStudyPage() {
         {/* ── Bottom CTA ── */}
         <section className="px-4 md:px-8 pb-12">
           <div
-            className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl px-8 py-6"
+            className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl px-5 sm:px-8 py-6"
             style={{ background: "#0A3530" }}
           >
             <div>

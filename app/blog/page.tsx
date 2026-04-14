@@ -38,7 +38,7 @@ const posts: Post[] = [
       "Late response times are silently costing dealerships leads, deals, and reputation — and most stores don't know it's happening.",
     date: "Jan 2026",
     readTime: "4 min read",
-    href: "#",
+    href: "/blog/why-your-bdc-is-losing-customers-before-the-workday-even-starts",
   },
   {
     category: "SERVICES & CSI",
@@ -47,7 +47,7 @@ const posts: Post[] = [
       "A missed CSI call isn't just a missed survey — it's a negative review waiting to happen and a customer walking to your competitor.",
     date: "Jan 2026",
     readTime: "3 min read",
-    href: "#",
+    href: "/blog/the-hidden-cost-of-a-single-missed-csi-call",
   },
   {
     category: "SALES & BDC",
@@ -56,7 +56,7 @@ const posts: Post[] = [
       "Most dealerships follow up too late, too generically, or not at all. Here's what actually moves the needle on unsold desklog re-engagement.",
     date: "Feb 2026",
     readTime: "5 min read",
-    href: "#",
+    href: "/blog/what-unsold-customers-actually-want-to-hear-and-when",
   },
   {
     category: "RECENT NEWS",
@@ -65,7 +65,7 @@ const posts: Post[] = [
       "From AI-driven follow-up to electrification headwinds, here's what dealership operators were talking about on the show floor.",
     date: "Feb 2026",
     readTime: "6 min read",
-    href: "#",
+    href: "/blog/nada-2026-the-5-biggest-themes-for-fixed-ops-and-bdc-leaders",
   },
   {
     category: "SERVICES & CSI",
@@ -74,7 +74,7 @@ const posts: Post[] = [
       "A surprising number of dealerships are losing service retention among Spanish-speaking customers simply because no one calls them back in their language.",
     date: "Feb 2026",
     readTime: "4 min read",
-    href: "#",
+    href: "/blog/multilingual-customers-monolingual-dealerships-the-nada-gap",
   },
   {
     category: "AI AUTOMATIONS",
@@ -83,7 +83,7 @@ const posts: Post[] = [
       "Contact rates double when customers see the dealership name on their phone. Here's the simple change that separates top performers from the rest.",
     date: "Mar 2026",
     readTime: "3 min read",
-    href: "#",
+    href: "/blog/branded-caller-id-the-single-biggest-lever-for-contact-rate",
   },
 ];
 
@@ -183,7 +183,7 @@ export default function BlogPage() {
           </p>
 
           {/* Search */}
-          <div className="mt-8 mx-auto flex items-center gap-2 rounded-xl px-4 py-2.5 bg-white max-w-sm"
+          <div className="mt-8 mx-auto flex items-center gap-2 rounded-xl px-4 py-2.5 bg-white max-w-sm w-full"
             style={{ border: "1px solid #C8E8E0", boxShadow: "0 2px 8px rgba(12,176,162,0.1)" }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AADA8" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
@@ -255,7 +255,7 @@ export default function BlogPage() {
                     <span className="font-sans font-bold text-white" style={{ fontSize: "clamp(20px, 5vw, 30px)" }}>
                       {s.value}
                     </span>
-                    <span className="font-sans text-xs leading-4 text-white font-medium">
+                    <span className="font-sans text-xs leading-4 text-white font-medium break-words">
                       {s.label}
                     </span>
                     <span className="font-sans text-xs leading-4" style={{ color: "rgba(255,255,255,0.7)" }}>
