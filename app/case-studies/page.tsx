@@ -228,7 +228,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <Nav />
-      <main className="bg-white">
+      <main style={{ background: "linear-gradient(to bottom right, #ffffff 80%, rgba(0, 211, 189, 0.3) 100%)" }}>
 
         {/* ── Hero ── */}
         <section className="pt-16 pb-12 text-center px-4">
@@ -274,7 +274,7 @@ export default function CaseStudiesPage() {
                 <div className="text-center">
                   <p
                     className="font-display font-bold leading-none"
-                    style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#0CB4A7" }}
+                    style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#00968B" }}
                   >
                     {s.value}
                   </p>
@@ -383,34 +383,81 @@ export default function CaseStudiesPage() {
               <StudyCard key={study.dealership} study={study} />
             ))}
           </div>
-        </div>
 
-        {/* ── Bottom CTA ── */}
-        <section
-          className="py-16 px-4"
-          style={{ background: "linear-gradient(to bottom right, #00988B, #00D3BD)" }}
-        >
-          <div className="max-w-[680px] mx-auto text-center">
-            <h2
-              className="font-display font-bold text-white mb-4"
-              style={{ fontSize: "clamp(24px, 3.5vw, 42px)", letterSpacing: "-1px", lineHeight: "1.1" }}
+          {/* ── Pagination ── */}
+          <div className="flex items-center justify-center gap-2 mt-10 mb-16">
+            <button
+              className="flex items-center justify-center rounded-lg w-9 h-9 transition-colors"
+              style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
             >
-              Ready to write your own case study?
-            </h2>
-            <p className="font-sans text-base text-white mb-8" style={{ opacity: 0.8 }}>
-              Join 200+ dealerships already using Lokam to recover lost revenue from service and sales follow-up.
-            </p>
-            <a
-              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-sans font-semibold text-sm"
-              style={{ background: "#fff", color: "#0A3530" }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            {[1, 2, 3, 4].map((page) => (
+              <button
+                key={page}
+                className="flex items-center justify-center rounded-lg w-9 h-9 font-sans font-medium text-sm transition-colors"
+                style={
+                  page === 1
+                    ? { background: "#009589", color: "#fff", border: "1px solid #009589" }
+                    : { background: "#fff", color: "#4A6B68", border: "1px solid #C8E8E0" }
+                }
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              className="flex items-center justify-center rounded-lg w-9 h-9 transition-colors"
+              style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
             >
-              Book a Free Demo →
-            </a>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
           </div>
-        </section>
+
+          {/* ── Bottom CTA ── */}
+          <div
+              className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-2xl bg-white px-8 py-8 md:py-7 mb-12"
+              style={{ marginTop: "34px", border: "1px solid #C8E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.07)" }}
+            >
+              {/* Left */}
+              <div className="flex flex-col gap-3">
+                <h2
+                  className="font-sans font-bold text-[#0A2E2B]"
+                  style={{ fontSize: "clamp(18px, 2.5vw, 24px)", letterSpacing: "-0.4px" }}
+                >
+                  Ready to write your own case study?
+                </h2>
+                <p className="font-sans text-sm text-[#4A6B68]" style={{ maxWidth: 440 }}>
+                  Join 200+ dealerships already using Lokam to recover revenue, protect CSI, and close more deals — with zero added headcount.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 mt-1">
+                  {["No setup fee", "Live in under a week", "Cancel anytime"].map((item) => (
+                    <span key={item} className="inline-flex items-center gap-1.5 font-sans text-xs text-[#0C8074]">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0CB4A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="m9 12 2 2 4-4" />
+                      </svg>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right */}
+              <a
+                href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-sans font-semibold text-sm text-white whitespace-nowrap transition-all duration-200 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98]"
+                style={{ background: "#009589", color: "#fff", boxShadow: "0 8px 24px #D1FBF4" }}
+              >
+                Deploy Lokam Today →
+              </a>
+          </div>
+        </div>
 
       </main>
       <Footer />
