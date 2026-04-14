@@ -36,7 +36,7 @@ export default function CTA() {
         {/* Heading */}
         <h2
           className="font-sans font-medium text-center mb-12"
-          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
+          style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
           We&apos;d Love To Hear From You
         </h2>

@@ -335,7 +335,7 @@ export default function HowItWorks() {
       </svg>
       {/* Header */}
       <div className="text-center mb-14 md:mb-20 relative z-10">
-        <h2 className="font-sans font-medium mb-4" style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}>
+        <h2 className="font-sans font-medium mb-4" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}>
           How Lokam Works?
         </h2>
         <p className="text-center" style={{ color: "#000", fontSize: 20, lineHeight: "30px", fontWeight: 500 }}>

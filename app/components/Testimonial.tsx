@@ -39,7 +39,7 @@ export default function Testimonial() {
       <div className="text-center mb-10">
         <h2
           className="font-sans font-medium"
-          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
+          style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
           Hear from our customers
         </h2>
@@ -55,7 +55,7 @@ export default function Testimonial() {
           <div className="flex flex-col justify-center px-8 py-10 lg:px-14 lg:py-12">
             <p
               className="font-sans font-light text-base lg:text-xl leading-7 lg:leading-8 text-black"
-              style={{ maxWidth: 420 }}
+              style={{ maxWidth: "min(420px, 100%)" }}
             >
               &ldquo;Lokam boosted our Google ratings from 4.0 to 4.6 in 5 weeks
               by catching service detractors in real time. On sales, it uncovered

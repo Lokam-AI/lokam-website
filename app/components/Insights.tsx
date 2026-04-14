@@ -32,11 +32,11 @@ export default function Insights() {
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-8">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-8">
         {/* Heading */}
         <h2
           className="font-sans font-medium text-center mb-14 md:mb-20"
-          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
+          style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
           Insight To Win Back Customers<br />and Close More Deals
         </h2>

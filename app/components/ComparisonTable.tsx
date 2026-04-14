@@ -67,10 +67,8 @@ export default function ComparisonTable() {
           </p>
         </div>
 
-        <div
-          className="rounded-2xl overflow-hidden"
-          style={{ boxShadow: "var(--shadow-card)", border: "1px solid var(--color-ash-2)" }}
-        >
+        <div className="overflow-x-auto rounded-2xl" style={{ boxShadow: "var(--shadow-card)", border: "1px solid var(--color-ash-2)" }}>
+        <div className="min-w-[600px]">
           {/* Table header */}
           <div className="grid grid-cols-[1fr_1fr_1fr] bg-[--color-ink]">
             <div className="px-6 py-4 text-xs font-semibold uppercase tracking-widest text-[--color-mist]">
@@ -111,7 +109,7 @@ export default function ComparisonTable() {
           ))}
 
           {/* Footer CTA row */}
-          <div className="bg-[--color-ink] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-[--color-ink] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 min-w-[600px]">
             <p className="text-sm text-[--color-mist]">
               Ready to see the difference for your dealership?
             </p>
@@ -123,6 +121,7 @@ export default function ComparisonTable() {
               Book a Free Demo
             </a>
           </div>
+        </div>
         </div>
       </div>
     </section>

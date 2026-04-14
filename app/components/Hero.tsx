@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-sans font-medium text-center mt-[25px] w-[min(760px,90vw)] m-0 mt-[25px]" style={{ color: "#095857", fontSize: 50, lineHeight: "53px", letterSpacing: "-1px" }}>
+          <h1 className="font-sans font-medium text-center mt-[25px] w-[min(760px,90vw)] m-0 mt-[25px]" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.06", letterSpacing: "-1px" }}>
             Sell More Cars &amp; Increase
             <br />
             service retention
@@ -63,13 +63,13 @@ export default function Hero() {
               href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-[165px] h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white no-underline flex-shrink-0"
+              className="flex items-center justify-center px-6 h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white no-underline"
             >
               Book a demo
             </a>
             <a
               href="#roi"
-              className="flex items-center justify-center w-[197px] h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline flex-shrink-0"
+              className="flex items-center justify-center px-6 h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
             >
               Calculate your ROI
             </a>

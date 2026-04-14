@@ -75,11 +75,11 @@ function ROICard({
 export default function ROI() {
   return (
     <section id="roi" className="bg-white pt-12 pb-20">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-8">
         {/* Heading */}
         <h2
           className="font-sans font-medium text-center mb-12"
-          style={{ color: "#095857", fontSize: 50, lineHeight: "56px", letterSpacing: "-1px" }}
+          style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
           Calculate your ROI
         </h2>
