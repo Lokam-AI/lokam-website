@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 
 export default function Hero() {
   return (
@@ -8,15 +8,19 @@ export default function Hero() {
 
         {/* Car image — crop top white studio space (11.5% scales with viewport) */}
         <div className="overflow-hidden">
-          <Image
-            src="/assets/car.png"
-            alt=""
-            width={4096}
-            height={3058}
-            className="w-full h-auto block"
-            style={{ marginTop: "-11.5%" }}
-            priority
-          />
+          <picture>
+            <source srcSet="/assets/car.avif" type="image/avif" />
+            <img
+              src="/assets/car.jpg"
+              alt=""
+              width={2560}
+              height={1911}
+              className="w-full h-auto block"
+              style={{ marginTop: "-11.5%" }}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
 
         {/* Content overlaid on top of car */}

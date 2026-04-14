@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const csiSteps = [
   {
@@ -142,23 +142,41 @@ function CallCard({
   badge,
   totalSeconds,
   src,
+  onPlay,
+  shouldPause,
 }: {
   label: string;
   name: string;
   badge: string;
   totalSeconds: number;
   src: string;
+  onPlay: () => void;
+  shouldPause: boolean;
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(totalSeconds);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Pause this card when the other one starts playing
+  useEffect(() => {
+    if (shouldPause && isPlaying) {
+      audioRef.current?.pause();
+      setIsPlaying(false);
+    }
+  }, [shouldPause]);
+
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (isPlaying) { audio.pause(); setIsPlaying(false); }
-    else { audio.play(); setIsPlaying(true); }
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      onPlay(); // notify parent so the other card gets paused
+      audio.play();
+      setIsPlaying(true);
+    }
   };
 
   const playedBarCount = Math.floor((currentTime / duration) * waveformBars.length);
@@ -307,6 +325,8 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
 }
 
 export default function HowItWorks() {
+  const [activePlayer, setActivePlayer] = useState<"csi" | "sales" | null>(null);
+
   return (
     <section id="how-it-works" className="relative bg-white pt-16 md:pt-24 pb-8 px-4 overflow-hidden">
       {/* Background gradient — CSI (top, flipped vertically) */}
@@ -357,14 +377,14 @@ export default function HowItWorks() {
             <StepList steps={csiSteps} />
           </div>
           <div className="flex-shrink-0 relative z-10">
-            <CallCard label="Sample Service Call" name="Linda Jenkins" badge="Positive" totalSeconds={84} src="/assets/service.mp4" />
+            <CallCard label="Sample Service Call" name="Linda Jenkins" badge="Positive" totalSeconds={84} src="/assets/service.mp4" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
           </div>
         </div>
 
         {/* ── Showroom Workflow ── */}
         <div className="flex justify-center items-center gap-[34px]">
           <div className="flex-shrink-0 relative z-10">
-            <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" />
+            <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
           </div>
           <div className="flex-shrink-0 w-[520px] translate-x-[64px] relative z-10">
             <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
