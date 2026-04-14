@@ -1,0 +1,41 @@
+# Lokam
+> Voice AI platform for automotive dealerships. Automates customer follow-up after service visits and showroom interactions.
+
+## What Lokam Does
+Lokam places AI-powered phone calls to every customer after a service visit or unsold showroom interaction. It identifies detractors early, escalates issues to managers, generates Google reviews from promoters, and re-engages unsold leads — all without BDC headcount.
+
+## Key Facts
+- 85% contact rate vs 45–50% industry average
+- First call placed within 12–24 hours of customer departure
+- Integrates with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION
+- Live at a dealership in under 4 hours
+- Supports multilingual outreach (English and Spanish)
+- 200+ dealers served, $2.4M+ total revenue recovered
+
+## Pages
+- /: Product overview, how it works, ROI calculator, customer testimonials
+- /blog: Articles on automotive AI, CSI automation, BDC best practices, dealership operations
+- /case-studies: Customer success stories with measurable outcomes from real dealerships
+
+## Blog Topics
+- CSI call automation and contact rate improvement
+- Unsold lead re-engagement strategies
+- BDC performance and AI follow-up
+- Branded caller ID and spam label prevention
+- Multilingual dealership outreach
+- NADA industry trends
+
+## Case Studies
+- Metro Toyota (Phoenix, AZ): 91% contact rate, $84k/month recovered
+- Riverside Honda (Riverside, CA): +$17k/month, +11 pts CSI
+- Valley Ford (Phoenix, AZ): 90% cost reduction on CSI follow-up
+- Sunrise Ford (Dallas, TX): 31 walk-out conversions in first month
+- Capital Auto Group (Atlanta, GA): $31k ROI, 3 rooftops, zero BDC headcount added
+- Pacific Subaru (Portland, OR): NPS 54 → 66, ranked #1 in 12-store group
+- World Auto Group (Chicago, IL): $180k/month recovered across 4 rooftops
+
+## Contact
+- Phone: +1 980 944 6263
+- Email: founder@lokam.ai
+- Address: 2261 Market Street STE 46073, San Francisco, CA 94114
+- Demo: https://calendly.com/saleeq-lokam/30-minutes-meeting

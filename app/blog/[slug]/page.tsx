@@ -1,12 +1,58 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { blogPosts, getPostBySlug, CHIP_STYLES } from "../../../lib/blog-posts";
+
+const SITE_URL = "https://lokam-website.vercel.app";
 
 // ─── Static params ────────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
+}
+
+// ─── Metadata ─────────────────────────────────────────────────────────────────
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  return {
+    title: `${post.title} | Lokam`,
+    description: post.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url,
+      type: "article",
+      siteName: "Lokam",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+const MONTH_MAP: Record<string, string> = {
+  Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
+  Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12",
+};
+
+function toISODate(humanDate: string): string {
+  const [month, year] = humanDate.split(" ");
+  return `${year}-${MONTH_MAP[month] ?? "01"}-01`;
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -21,9 +67,57 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const chip = CHIP_STYLES[post.category] ?? { bg: "#E8F5F2", color: "#0C8074" };
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const isoDate = toISODate(post.date);
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: postUrl,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: {
+      "@type": "Person",
+      name: "Saleeq",
+      jobTitle: "Co-founder & CEO",
+      worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+      url: `${SITE_URL}/about`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Lokam",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    articleSection: post.category,
+    keywords: ["automotive dealership", "voice AI", "CSI calls", "BDC", post.category.toLowerCase()],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Nav />
       <main
         style={{
@@ -43,6 +137,24 @@ export default async function BlogPostPage({
             <span className="font-sans text-xs text-[#8AADA8]">
               {post.date} · {post.readTime}
             </span>
+          </div>
+
+          {/* Author + date */}
+          <div className="flex items-center gap-2.5 mb-5">
+            <div
+              className="flex-shrink-0 flex items-center justify-center rounded-full font-sans font-bold text-white text-xs"
+              style={{ width: 28, height: 28, background: "linear-gradient(135deg, #00988B, #00D3BD)" }}
+            >
+              S
+            </div>
+            <div className="flex items-center gap-1.5 font-sans text-xs text-[#4A6B68]">
+              <span>By</span>
+              <a href="/about" className="font-semibold" style={{ color: "#0CB4A7" }}>Saleeq</a>
+              <span>·</span>
+              <span>Co-founder &amp; CEO, Lokam</span>
+              <span>·</span>
+              <time dateTime={isoDate}>{post.date}</time>
+            </div>
           </div>
 
           <h1
@@ -140,6 +252,32 @@ export default async function BlogPostPage({
           </div>
         </article>
 
+        {/* ── Author bio ── */}
+        <div
+          className="max-w-[780px] mx-auto px-4 md:px-8 pt-2 pb-10"
+        >
+          <div
+            className="flex items-start gap-4 rounded-2xl p-5"
+            style={{ background: "#F4FBF9", border: "1px solid #C8E8E0" }}
+          >
+            <div
+              className="flex-shrink-0 flex items-center justify-center rounded-full font-sans font-bold text-white"
+              style={{ width: 44, height: 44, background: "linear-gradient(135deg, #00988B, #00D3BD)", fontSize: 18 }}
+            >
+              S
+            </div>
+            <div>
+              <p className="font-sans font-semibold text-sm text-[#0A2E2B]">
+                Saleeq —{" "}
+                <span className="font-normal" style={{ color: "#39B39B" }}>Co-founder &amp; CEO, Lokam</span>
+              </p>
+              <p className="font-sans text-xs leading-6 text-[#4A6B68] mt-1">
+                Previously built enterprise automation products. Focused on helping automotive dealerships recover revenue through AI-powered customer follow-up. <a href="/about" style={{ color: "#0CB4A7" }}>Meet the full team →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* ── CTA ── */}
         <section className="px-4 md:px-8 pb-16">
           <div
@@ -175,15 +313,19 @@ export default async function BlogPostPage({
           </div>
         </section>
 
-        {/* ── Back to blog ── */}
-        <div className="max-w-[780px] mx-auto px-4 md:px-8 pb-14">
-          <a
-            href="/blog"
-            className="inline-flex items-center gap-2 font-sans text-sm font-medium"
-            style={{ color: "#0CB4A7" }}
-          >
-            ← Back to all articles
-          </a>
+        {/* ── Internal links ── */}
+        <div className="max-w-[780px] mx-auto px-4 md:px-8 pb-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
+              ← Back to all articles
+            </a>
+            <a href="/case-studies" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+              See dealer case studies →
+            </a>
+            <a href="/#how-it-works" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+              How Lokam works →
+            </a>
+          </div>
         </div>
       </main>
       <Footer />

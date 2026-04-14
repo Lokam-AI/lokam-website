@@ -1,7 +1,9 @@
 "use client";
 import { useRef, useState } from "react";
-import MuxPlayer from "@mux/mux-player-react";
+import dynamic from "next/dynamic";
 import type MuxPlayerElement from "@mux/mux-player";
+
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false });
 
 const PLAYBACK_ID = "ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600";
 

@@ -48,7 +48,9 @@ export default function Insights() {
             alt="Lokam dashboard showing customer insights and deal analytics"
             width={1051}
             height={600}
-            className="w-full max-w-[1051px] h-auto"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1051px"
+            className="w-full max-w-[1051px] h-auto rounded-2xl"
+            style={{ boxShadow: "0 0 60px rgba(17, 112, 98, 0.4), 0 20px 60px rgba(0, 0, 0, 0.15)" }}
           />
         </div>
       </div>

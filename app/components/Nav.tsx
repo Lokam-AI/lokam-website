@@ -122,13 +122,21 @@ export default function Nav() {
           </a>
 
           <nav className="hidden md:flex items-center gap-10">
-            <a href="/" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
-              Home
+            <a href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+              About
             </a>
             <DropdownMenu label="Case Study" href="/case-studies" items={caseStudyLinks} />
             <DropdownMenu label="Blogs" href="/blog" items={blogLinks} />
             <a href="/#contact" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               Contact Us
+            </a>
+            <a
+              href="https://app.lokam.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-5 h-9 rounded-lg border border-white/40 text-white text-[13.5px] font-sans font-medium no-underline hover:bg-white/10 transition-colors"
+            >
+              Log in
             </a>
           </nav>
 
@@ -142,7 +150,7 @@ export default function Nav() {
 
         {open && (
           <div className="md:hidden bg-brand-nav border-t border-white/20 px-6 py-3 flex flex-col gap-3">
-            <a href="/" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Home</a>
+            <a href="/about" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">About</a>
             <a href="/case-studies" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Case Studies</a>
             {caseStudyLinks.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-white/70 text-sm font-sans no-underline pl-3">
@@ -156,6 +164,14 @@ export default function Nav() {
               </a>
             ))}
             <a href="/#contact" onClick={() => setOpen(false)} className="text-white text-sm font-sans no-underline">Contact Us</a>
+            <a
+              href="https://app.lokam.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-9 rounded-lg border border-white/40 text-white text-sm font-sans font-medium no-underline"
+            >
+              Log in
+            </a>
           </div>
         )}
       </header>

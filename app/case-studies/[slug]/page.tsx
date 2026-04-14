@@ -1,12 +1,49 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
+
+const SITE_URL = "https://lokam-website.vercel.app";
 
 // ─── Static params ────────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
   return caseStudies.map((s) => ({ slug: s.slug }));
+}
+
+// ─── Metadata ─────────────────────────────────────────────────────────────────
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = getStudyBySlug(slug);
+  if (!cs) return {};
+
+  const dealership = cs.meta.find((m) => m.label === "Dealership" || m.label === "Dealership Group")?.value ?? "";
+  const description = `Case study: ${dealership} achieved ${cs.heroStats[0].value} ${cs.heroStats[0].label} using Lokam Voice AI.`;
+  const url = `${SITE_URL}/case-studies/${cs.slug}`;
+
+  return {
+    title: `${cs.title} | Lokam`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: cs.title,
+      description,
+      url,
+      type: "article",
+      siteName: "Lokam",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: cs.title,
+      description,
+    },
+  };
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -20,8 +57,47 @@ export default async function CaseStudyPage({
   const cs = getStudyBySlug(slug);
   if (!cs) notFound();
 
+  const studyUrl = `${SITE_URL}/case-studies/${cs.slug}`;
+  const dealership = cs.meta.find((m) => m.label === "Dealership" || m.label === "Dealership Group")?.value ?? cs.slug;
+
+  const deployedMeta = cs.meta.find((m) => m.label === "Deployed");
+  const deployedDate = deployedMeta
+    ? new Date(`01 ${deployedMeta.value}`).toISOString().split("T")[0]
+    : "2024-01-01";
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: cs.title,
+    url: studyUrl,
+    datePublished: deployedDate,
+    dateModified: "2026-04-14",
+    author: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+    description: `Case study: ${dealership} achieved ${cs.heroStats[0].value} ${cs.heroStats[0].label} using Lokam Voice AI.`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": studyUrl },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE_URL}/case-studies` },
+      { "@type": "ListItem", position: 3, name: dealership, item: studyUrl },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom right, rgba(25, 171, 141, 0.1) 20%, #ffffff 80%)" }}>
 
@@ -218,13 +294,17 @@ export default async function CaseStudyPage({
 
         {/* ── Back to case studies ── */}
         <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-14">
-          <a
-            href="/case-studies"
-            className="inline-flex items-center gap-2 font-sans text-sm font-medium"
-            style={{ color: "#0CB4A7" }}
-          >
-            ← Back to all case studies
-          </a>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a href="/case-studies" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
+              ← Back to all case studies
+            </a>
+            <a href="/blog" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+              Read our blog →
+            </a>
+            <a href="/#roi" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+              Calculate your ROI →
+            </a>
+          </div>
         </div>
 
       </main>

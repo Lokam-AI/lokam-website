@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -7,18 +7,15 @@ export default function Hero() {
 
         {/* Car image — min-height on mobile so content overlay always fits */}
         <div className="overflow-hidden relative min-h-[460px] md:min-h-0">
-          <picture>
-            <source srcSet="/assets/car.avif" type="image/avif" />
-            <img
-              src="/assets/car.jpg"
-              alt=""
-              width={2560}
-              height={1911}
-              className="block w-full h-full object-cover object-center absolute inset-0 md:static md:h-auto md:-mt-[11.5%]"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
+          <Image
+            src="/assets/car.jpg"
+            alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
+            width={2560}
+            height={1911}
+            priority
+            sizes="100vw"
+            className="block w-full h-full object-cover object-center absolute inset-0 md:static md:h-auto md:-mt-[11.5%]"
+          />
         </div>
 
         {/* Content overlaid on top of car */}
@@ -37,8 +34,8 @@ export default function Hero() {
             />
             <div className="relative h-8 rounded-full bg-white flex items-center gap-1.5 px-3.5 pl-2 shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_4px_8px_rgba(0,0,0,0.06),0px_10px_16px_rgba(0,0,0,0.04)]">
               <div className="relative w-5 h-5 flex-shrink-0">
-                <img src="/assets/Icon.svg"       alt="" className="absolute w-5 h-5" style={{ left: 1.5, top: 1.5 }} />
-                <img src="/assets/Icon-small.svg" alt="" className="absolute w-5 h-5" style={{ left: -1, top: -1 }} />
+                <Image src="/assets/Icon.svg" alt="" width={20} height={20} className="absolute w-5 h-5" style={{ left: 1.5, top: 1.5 }} />
+                <Image src="/assets/Icon-small.svg" alt="" width={20} height={20} className="absolute w-5 h-5" style={{ left: -1, top: -1 }} />
               </div>
               <span className="font-sans font-medium text-[13.5px] leading-5 text-[#272727] whitespace-nowrap">
                 Voice AI follow up for dealerships.

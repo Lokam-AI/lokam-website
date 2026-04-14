@@ -36,7 +36,7 @@ function ROICard({
 
       {/* Image */}
       <div className="w-full overflow-hidden aspect-video lg:aspect-auto lg:h-[260px]">
-        <Image src={image} alt={imageAlt} width={600} height={260} className="w-full h-full object-cover" />
+        <Image src={image} alt={imageAlt} width={600} height={260} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-full object-cover" />
       </div>
 
       {/* Body */}

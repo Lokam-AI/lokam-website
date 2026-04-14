@@ -1,13 +1,18 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden" style={{ backgroundColor: "#0a1628" }}>
       {/* Background image */}
-      <img
+      <Image
         src="/assets/footer-bg.png"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        fill
+        sizes="100vw"
+        className="object-cover pointer-events-none"
         style={{ opacity: 0.92 }}
+        loading="lazy"
       />
 
       {/* Top glowing border */}
@@ -49,9 +54,12 @@ export default function Footer() {
             <h4 className="font-sans font-semibold text-sm mb-3" style={{ color: "rgba(255,255,255,0.55)" }}>
               Backed by
             </h4>
-            <img
+            <Image
               src="/assets/nvdia.svg"
               alt="Nvidia Inception Program"
+              width={120}
+              height={40}
+              className="h-auto"
             />
           </div>
 
@@ -63,7 +71,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.25)" }}
         >
           <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-            © 2025 Lokam Inc. All rights reserved.
+            © 2026 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             {[

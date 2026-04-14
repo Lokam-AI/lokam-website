@@ -1,6 +1,10 @@
-"use client";
-
 export default function TrustedBy() {
+  const dealers = [
+    "Family Hyundai",
+    "World Kia Joliet",
+    "World Hyundai Matteson",
+  ];
+
   return (
     <section className="relative overflow-hidden bg-white" style={{ marginTop: "clamp(-165px, -11.5vw, -70px)" }}>
 
@@ -24,7 +28,7 @@ export default function TrustedBy() {
 
         <div className="mt-10 md:mt-[76px] overflow-hidden">
           <div className="flex animate-marquee-reverse gap-[126px] w-max">
-            {[...["Acme Corp", "Globex", "Initech", "Umbrella", "Hooli"], ...["Acme Corp", "Globex", "Initech", "Umbrella", "Hooli"]].map((name, i) => (
+            {[...dealers, ...dealers, ...dealers, ...dealers].map((name, i) => (
               <span key={i} className="font-sans font-semibold text-lg text-gray-400 flex-shrink-0 tracking-tight">
                 {name}
               </span>
