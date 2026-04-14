@@ -176,17 +176,17 @@ function CallCard({
 
   return (
     <div
-      className="bg-white"
+      className="bg-white flex flex-col"
       style={{
         width: 588,
         borderRadius: 24,
         height: 340,
-        padding: "90px 30px 5px",
+        padding: "36px 30px 36px",
         boxShadow: "0 0 36px #125669",
       }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-1.5">
           <img src="/assets/phone.svg" alt="" className="flex-shrink-0" style={{ width: 22, height: 22 }} />
           <span className="font-sans font-semibold text-[#9ca3af] uppercase" style={{ fontSize: 8, letterSpacing: "0.10em" }}>
@@ -203,14 +203,14 @@ function CallCard({
       </div>
 
       {/* Name */}
-      <div className="font-display mb-3" style={{ fontWeight: 700, fontSize: 15, color: "#111", lineHeight: 1.3 }}>
+      <div className="font-display mb-3" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>
         {name}
       </div>
 
       {/* Waveform — overflow hidden so bars stay within card */}
       <div
-        className="overflow-hidden cursor-pointer select-none mb-3"
-        style={{ height: 42 }}
+        className="overflow-hidden cursor-pointer select-none mb-4 mt-auto"
+        style={{ height: 80 }}
         onClick={handleWaveformClick}
         role="slider"
         aria-label="Audio progress"
@@ -218,7 +218,7 @@ function CallCard({
         aria-valuemin={0}
         aria-valuemax={totalSeconds}
       >
-        <div className="flex items-center" style={{ height: 42, gap: 2 }}>
+        <div className="flex items-center w-full justify-between" style={{ height: 80 }}>
           {waveformBars.map((bar, i) => {
             const isPlayed = i < playedBarCount;
             const isDot = bar.opacity < 0.5;
@@ -226,8 +226,8 @@ function CallCard({
               <div
                 key={i}
                 style={{
-                  width: isDot ? 3 : 3,
-                  height: isDot ? 3 : Math.round(bar.height * 0.39),
+                  width: isDot ? 5 : 6,
+                  height: isDot ? 4 : Math.round(bar.height * 0.75),
                   borderRadius: isDot ? "50%" : 2,
                   backgroundColor: "#5ecfb1",
                   opacity: isPlayed ? 1 : isDot ? bar.opacity + 0.1 : 0.35,
@@ -242,27 +242,27 @@ function CallCard({
 
       {/* Controls */}
       <div className="flex items-center justify-between">
-        <span className="font-sans" style={{ fontSize: 10, color: "#888", fontWeight: 500, minWidth: 30 }}>
+        <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40 }}>
           {formatTime(currentTime)}
         </span>
         <button
           onClick={() => setIsPlaying((p) => !p)}
           className="flex items-center justify-center rounded-full focus:outline-none flex-shrink-0"
-          style={{ width: 30, height: 30, backgroundColor: "#5ecfb1", border: "none", cursor: "pointer", boxShadow: "0 2px 10px rgba(94,207,177,0.45)" }}
+          style={{ width: 48, height: 48, backgroundColor: "#5ecfb1", border: "0.5px solid #004839", cursor: "pointer", boxShadow: "0 2px 10px rgba(94,207,177,0.45)" }}
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="white">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
               <rect x="5" y="4" width="4" height="16" rx="1" fill="white" />
               <rect x="15" y="4" width="4" height="16" rx="1" fill="white" />
             </svg>
           ) : (
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 1 }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
               <path d="M8 5v14l11-7L8 5z" fill="white" />
             </svg>
           )}
         </button>
-        <span className="font-sans" style={{ fontSize: 10, color: "#888", fontWeight: 500, minWidth: 30, textAlign: "right" }}>
+        <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40, textAlign: "right" }}>
           {formatTime(totalSeconds)}
         </span>
       </div>
