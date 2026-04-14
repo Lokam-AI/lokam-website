@@ -38,7 +38,6 @@ const walkoutSteps = [
   },
 ];
 
-// Exact waveform data from Figma reference
 const waveformBars = [
   { height: 18, opacity: 1 },
   { height: 28, opacity: 1 },
@@ -120,45 +119,21 @@ interface BadgeConfig {
 }
 
 const badgeStyles: Record<string, BadgeConfig> = {
-  Positive: {
-    bg: "#d6f5ec",
-    border: "#b2ead8",
-    dot: "#3db88a",
-    text: "Positive",
-    color: "#2a9d6e",
-  },
-  "In Lead": {
-    bg: "#d6ecf5",
-    border: "#b2d8ea",
-    dot: "#3d8ab8",
-    text: "In Lead",
-    color: "#2a6e9d",
-  },
+  Positive: { bg: "#d6f5ec", border: "#b2ead8", dot: "#3db88a", text: "Positive", color: "#2a9d6e" },
+  "In Lead": { bg: "#d6ecf5", border: "#b2d8ea", dot: "#3d8ab8", text: "In Lead", color: "#2a6e9d" },
 };
 
 function CallCard({
-  label,
-  name,
-  badge,
-  totalSeconds,
-  src,
-  onPlay,
-  shouldPause,
+  label, name, badge, totalSeconds, src, onPlay, shouldPause,
 }: {
-  label: string;
-  name: string;
-  badge: string;
-  totalSeconds: number;
-  src: string;
-  onPlay: () => void;
-  shouldPause: boolean;
+  label: string; name: string; badge: string; totalSeconds: number;
+  src: string; onPlay: () => void; shouldPause: boolean;
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(totalSeconds);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Pause this card when the other one starts playing
   useEffect(() => {
     if (shouldPause && isPlaying) {
       audioRef.current?.pause();
@@ -169,14 +144,8 @@ function CallCard({
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-    } else {
-      onPlay(); // notify parent so the other card gets paused
-      audio.play();
-      setIsPlaying(true);
-    }
+    if (isPlaying) { audio.pause(); setIsPlaying(false); }
+    else { onPlay(); audio.play(); setIsPlaying(true); }
   };
 
   const playedBarCount = Math.floor((currentTime / duration) * waveformBars.length);
@@ -185,9 +154,8 @@ function CallCard({
     const audio = audioRef.current;
     if (!audio) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const newTime = ((e.clientX - rect.left) / rect.width) * duration;
-    audio.currentTime = newTime;
-    setCurrentTime(newTime);
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * duration;
+    setCurrentTime(audio.currentTime);
   };
 
   const badgeCfg = badgeStyles[badge] ?? badgeStyles["Positive"];
@@ -195,22 +163,14 @@ function CallCard({
   return (
     <div
       className="bg-white flex flex-col"
-      style={{
-        width: 588,
-        borderRadius: 24,
-        height: 340,
-        padding: "36px 30px 36px",
-        boxShadow: "0 0 36px #125669",
-      }}
+      style={{ borderRadius: 24, minHeight: 340, padding: "36px 30px", boxShadow: "0 0 36px #125669" }}
     >
       <audio
-        ref={audioRef}
-        src={src}
+        ref={audioRef} src={src}
         onTimeUpdate={() => setCurrentTime(audioRef.current?.currentTime ?? 0)}
         onLoadedMetadata={() => setDuration(audioRef.current?.duration ?? totalSeconds)}
         onEnded={() => { setIsPlaying(false); setCurrentTime(0); }}
       />
-      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-1.5">
           <img src="/assets/phone.svg" alt="" className="flex-shrink-0" style={{ width: 22, height: 22 }} />
@@ -227,45 +187,36 @@ function CallCard({
         </div>
       </div>
 
-      {/* Name */}
       <div className="font-sans mb-3" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>
         {name}
       </div>
 
-      {/* Waveform — overflow hidden so bars stay within card */}
       <div
         className="overflow-hidden cursor-pointer select-none mb-4 mt-auto"
         style={{ height: 80 }}
         onClick={handleWaveformClick}
-        role="slider"
-        aria-label="Audio progress"
-        aria-valuenow={Math.round(currentTime)}
-        aria-valuemin={0}
-        aria-valuemax={totalSeconds}
+        role="slider" aria-label="Audio progress"
+        aria-valuenow={Math.round(currentTime)} aria-valuemin={0} aria-valuemax={totalSeconds}
       >
         <div className="flex items-center w-full justify-between" style={{ height: 80 }}>
           {waveformBars.map((bar, i) => {
             const isPlayed = i < playedBarCount;
             const isDot = bar.opacity < 0.5;
             return (
-              <div
-                key={i}
-                style={{
-                  width: isDot ? 5 : 6,
-                  height: isDot ? 4 : Math.round(bar.height * 0.75),
-                  borderRadius: isDot ? "50%" : 2,
-                  backgroundColor: "#5ecfb1",
-                  opacity: isPlayed ? 1 : isDot ? bar.opacity + 0.1 : 0.35,
-                  flexShrink: 0,
-                  transition: "opacity 0.1s",
-                }}
-              />
+              <div key={i} style={{
+                width: isDot ? 5 : 6,
+                height: isDot ? 4 : Math.round(bar.height * 0.75),
+                borderRadius: isDot ? "50%" : 2,
+                backgroundColor: "#5ecfb1",
+                opacity: isPlayed ? 1 : isDot ? bar.opacity + 0.1 : 0.35,
+                flexShrink: 0,
+                transition: "opacity 0.1s",
+              }} />
             );
           })}
         </div>
       </div>
 
-      {/* Controls */}
       <div className="flex items-center justify-between">
         <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40 }}>
           {formatTime(currentTime)}
@@ -277,14 +228,9 @@ function CallCard({
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-              <rect x="5" y="4" width="4" height="16" rx="1" fill="white" />
-              <rect x="15" y="4" width="4" height="16" rx="1" fill="white" />
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16" rx="1" fill="white" /><rect x="15" y="4" width="4" height="16" rx="1" fill="white" /></svg>
           ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: 2 }}>
-              <path d="M8 5v14l11-7L8 5z" fill="white" />
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" style={{ marginLeft: 2 }}><path d="M8 5v14l11-7L8 5z" fill="white" /></svg>
           )}
         </button>
         <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40, textAlign: "right" }}>
@@ -305,14 +251,10 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
           <div className="flex gap-4 items-start">
             <div className="flex flex-col items-center flex-shrink-0">
               <img src={stepIcons[i]} alt={`Step ${i + 1}`} className="w-[47px] h-[47px] flex-shrink-0" />
-              {i < steps.length - 1 && (
-                <div className="w-px flex-1 min-h-[52px] bg-[#085856]/20 my-1" />
-              )}
+              {i < steps.length - 1 && <div className="w-px flex-1 min-h-[52px] bg-[#085856]/20 my-1" />}
             </div>
             <div className="pt-2 pb-6">
-              <h4 className="font-sans font-semibold text-[17px] leading-tight text-[#111827] mb-1">
-                {step.title}
-              </h4>
+              <h4 className="font-sans font-semibold text-[17px] leading-tight text-[#111827] mb-1">{step.title}</h4>
               <p className="font-sans" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: step.maxWidth }}>
                 {step.desc}
               </p>
@@ -329,30 +271,27 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="relative bg-white pt-16 md:pt-24 pb-8 px-4 overflow-hidden">
-      {/* Background gradient — CSI (top, flipped vertically) */}
+      {/* Background gradient — CSI */}
       <svg className="absolute top-0 left-0 w-full h-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style={{ transform: "scaleY(-1)" }}>
         <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_csi)" fillOpacity="0.13"/>
         <defs>
           <radialGradient id="paint0_radial_csi" cx="0" cy="0" r="1" gradientTransform="matrix(196.578 -1037.08 1439.22 423.043 591.514 879.828)" gradientUnits="userSpaceOnUse">
-            <stop stopColor="white"/>
-            <stop offset="0.487941" stopColor="white"/>
-            <stop offset="0.713185" stopColor="#0CB0A2"/>
-            <stop offset="1" stopColor="#C5FDFF"/>
+            <stop stopColor="white"/><stop offset="0.487941" stopColor="white"/>
+            <stop offset="0.713185" stopColor="#0CB0A2"/><stop offset="1" stopColor="#C5FDFF"/>
           </radialGradient>
         </defs>
       </svg>
-      {/* Background gradient — Showroom (bottom, normal) */}
+      {/* Background gradient — Showroom */}
       <svg className="absolute bottom-0 left-0 w-full h-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429 984" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <path d="M1428.5 984H0V0H1428.5V984Z" fill="url(#paint0_radial_lead)" fillOpacity="0.13"/>
         <defs>
           <radialGradient id="paint0_radial_lead" cx="0" cy="0" r="1" gradientTransform="matrix(196.578 -1037.08 1439.22 423.043 591.514 879.828)" gradientUnits="userSpaceOnUse">
-            <stop stopColor="white"/>
-            <stop offset="0.487941" stopColor="white"/>
-            <stop offset="0.713185" stopColor="#0CB0A2"/>
-            <stop offset="1" stopColor="#C5FDFF"/>
+            <stop stopColor="white"/><stop offset="0.487941" stopColor="white"/>
+            <stop offset="0.713185" stopColor="#0CB0A2"/><stop offset="1" stopColor="#C5FDFF"/>
           </radialGradient>
         </defs>
       </svg>
+
       {/* Header */}
       <div className="text-center mb-14 md:mb-20 relative z-10">
         <h2 className="font-sans font-medium mb-4" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}>
@@ -363,11 +302,12 @@ export default function HowItWorks() {
         </p>
       </div>
 
-      <div className="max-w-[1400px] mx-auto space-y-10 md:space-y-14">
+      <div className="max-w-[1200px] mx-auto space-y-10 md:space-y-16">
 
         {/* ── CSI Workflow ── */}
-        <div className="flex justify-center items-center gap-[34px]">
-          <div className="flex-shrink-0 w-[520px] relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center relative z-10">
+          {/* Text */}
+          <div>
             <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
               Automate Your CSI Calls
             </h3>
@@ -376,17 +316,20 @@ export default function HowItWorks() {
             </p>
             <StepList steps={csiSteps} />
           </div>
-          <div className="flex-shrink-0 relative z-10">
+          {/* Card */}
+          <div>
             <CallCard label="Sample Service Call" name="Linda Jenkins" badge="Positive" totalSeconds={84} src="/assets/service.mp4" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
           </div>
         </div>
 
         {/* ── Showroom Workflow ── */}
-        <div className="flex justify-center items-center gap-[34px]">
-          <div className="flex-shrink-0 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+          {/* Card — first on desktop, second on mobile */}
+          <div className="order-2 lg:order-1">
             <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
           </div>
-          <div className="flex-shrink-0 w-[520px] translate-x-[64px] relative z-10">
+          {/* Text — second on desktop, first on mobile */}
+          <div className="order-1 lg:order-2 lg:pl-10">
             <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
               Automate Unsold Showroom<br />Lead Follow-Up
             </h3>
@@ -398,7 +341,6 @@ export default function HowItWorks() {
         </div>
 
       </div>
-
     </section>
   );
 }
