@@ -1,13 +1,12 @@
 "use client";
 
-
 export default function Hero() {
   return (
     <section className="bg-white">
       <div className="relative">
 
-        {/* Car image — crop top white studio space (11.5% scales with viewport) */}
-        <div className="overflow-hidden">
+        {/* Car image — min-height on mobile so content overlay always fits */}
+        <div className="overflow-hidden relative min-h-[460px] md:min-h-0">
           <picture>
             <source srcSet="/assets/car.avif" type="image/avif" />
             <img
@@ -15,8 +14,7 @@ export default function Hero() {
               alt=""
               width={2560}
               height={1911}
-              className="w-full h-auto block"
-              style={{ marginTop: "-11.5%" }}
+              className="block w-full h-full object-cover object-center absolute inset-0 md:static md:h-auto md:-mt-[11.5%]"
               fetchPriority="high"
               decoding="async"
             />
@@ -24,7 +22,7 @@ export default function Hero() {
         </div>
 
         {/* Content overlaid on top of car */}
-        <div className="absolute inset-x-0 top-0 flex flex-col items-center pt-[35px] px-4">
+        <div className="absolute inset-x-0 top-0 flex flex-col items-center pt-[35px] px-4 pb-10">
 
           {/* Badge */}
           <div className="relative inline-flex">
@@ -49,14 +47,14 @@ export default function Hero() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-sans font-medium text-center mt-[25px] w-[min(760px,90vw)] m-0 mt-[25px]" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.06", letterSpacing: "-1px" }}>
+          <h1 className="font-sans font-medium text-center mt-[25px] w-[min(760px,90vw)]" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.06", letterSpacing: "-1px" }}>
             Sell More Cars &amp; Increase
             <br />
             service retention
           </h1>
 
           {/* Subtitle */}
-          <p className="font-sans font-medium text-lg md:text-xl leading-[30px] text-black text-center mt-[18px] w-[min(656px,90vw)] m-0 mt-[18px]">
+          <p className="font-sans font-medium text-base md:text-xl leading-[1.6] text-black text-center mt-[18px] w-[min(656px,90vw)]">
             Lokam calls all your customers after a service or showroom visit
             and flags issues before they cost you the sale or relationship.
           </p>
