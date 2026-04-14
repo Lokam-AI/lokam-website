@@ -158,8 +158,8 @@ function StepList({ steps }: { steps: typeof csiSteps }) {
               {i < steps.length - 1 && <div className="w-px flex-1 min-h-[52px] bg-[#085856]/20 my-1" />}
             </div>
             <div className="pt-2 pb-6">
-              <h4 className="font-display font-semibold text-[17px] leading-tight text-[#111827] mb-1">{step.title}</h4>
-              <p className="font-display" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: step.maxWidth }}>{step.desc}</p>
+              <h4 className="font-sans font-semibold text-[17px] leading-tight text-[#111827] mb-1">{step.title}</h4>
+              <p className="font-sans" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: step.maxWidth }}>{step.desc}</p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function HowItWorksCards() {
       {/* ── CSI Workflow ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center relative z-10">
         <div>
-          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
+          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Your CSI Calls
           </h3>
           <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
@@ -196,7 +196,7 @@ export default function HowItWorksCards() {
           <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
         </div>
         <div className="order-1 lg:order-2 lg:pl-10">
-          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "56px", fontWeight: 500 }}>
+          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Unsold Showroom<br />Lead Follow-Up
           </h3>
           <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
