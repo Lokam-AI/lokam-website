@@ -145,9 +145,13 @@ function CategoryChip({ label }: { label: string }) {
 function StudyCard({ study }: { study: Study }) {
   return (
     <article
-      className="flex flex-col rounded-2xl bg-white p-5 gap-4"
+      className="flex flex-col rounded-2xl bg-white overflow-hidden"
       style={{ border: "1px solid #C8E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.08)" }}
     >
+      {/* Top accent bar */}
+      <div className="h-2 w-full" style={{ background: "linear-gradient(to right, #00988B, #00D3BD)" }} />
+
+      <div className="flex flex-col gap-4 p-5">
       {/* Row 1: chip + icon */}
       <div className="flex items-center justify-between">
         <CategoryChip label={study.category} />
@@ -206,6 +210,7 @@ function StudyCard({ study }: { study: Study }) {
       >
         Read case study <span>›</span>
       </a>
+      </div>
     </article>
   );
 }
