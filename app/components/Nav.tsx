@@ -6,7 +6,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const links = [
   { label: "Home",       href: "/" },
   { label: "Case Study", href: "#case-study", chevron: true },
-  { label: "Blogs",      href: "#blogs" },
+  { label: "Blogs",      href: "/blog" },
   { label: "Contact Us", href: "#contact" },
 ];
 
