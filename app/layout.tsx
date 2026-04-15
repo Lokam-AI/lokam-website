@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Lokam — Voice AI for Automotive Dealerships",
   description:
     "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Live at your store in under 4 hours.",
-alternates: {
+  alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
@@ -55,10 +55,15 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Lokam",
   url: SITE_URL,
+  logo: `${SITE_URL}/assets/image-47.png`,
   description:
     "Voice AI platform for automotive dealerships that automates customer follow-up after service visits, CSI calls, and unsold lead re-engagement.",
   telephone: "+19809446263",
   email: "founder@lokam.ai",
+  sameAs: [
+    SITE_URL,
+    "https://www.linkedin.com/company/lokam-ai/",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "2261 Market Street STE 46073",
@@ -78,26 +83,6 @@ const websiteSchema = {
     "Voice AI platform for automotive dealerships — automates CSI follow-up, lead re-engagement, and service retention calls.",
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Lokam",
-  url: SITE_URL,
-  description:
-    "Voice AI platform for automotive dealerships — automates CSI follow-up, lead re-engagement, and service retention calls.",
-  telephone: "+19809446263",
-  email: "founder@lokam.ai",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "2261 Market Street STE 46073",
-    addressLocality: "San Francisco",
-    addressRegion: "CA",
-    postalCode: "94114",
-    addressCountry: "US",
-  },
-  sameAs: [SITE_URL],
-};
-
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -115,24 +100,18 @@ const softwareSchema = {
     "Multilingual customer outreach",
     "DMS integration — live in under 4 hours",
   ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    description: "Book a free demo — no setup fee, no long-term contract.",
+    url: "https://calendly.com/saleeq-lokam/30-minutes-meeting",
+  },
   provider: {
     "@type": "Organization",
     name: "Lokam",
     url: SITE_URL,
   },
-};
-
-const videoSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  name: "Scott Falcone — World Auto Group Testimonial",
-  description:
-    "Dealer principal Scott Falcone explains how Lokam boosted Google ratings from 4.0 to 4.6 in 5 weeks and helped close 15–20 extra cars per month.",
-  thumbnailUrl: `https://image.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600/thumbnail.jpg`,
-  contentUrl: `https://stream.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600.m3u8`,
-  embedUrl: `https://player.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600`,
-  uploadDate: "2026-01-01",
-  publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
 };
 
 export default function RootLayout({
@@ -147,6 +126,8 @@ export default function RootLayout({
     >
       <head>
         <link rel="preconnect" href="https://stream.mux.com" />
+        <link rel="preconnect" href="https://image.mux.com" />
+        <link rel="preload" as="image" href="/assets/car.avif" type="image/avif" />
       </head>
       <body className="min-h-full flex flex-col">
         <script
@@ -160,14 +141,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
         />
         {children}
       </body>

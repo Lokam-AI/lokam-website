@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
@@ -37,11 +38,20 @@ export async function generateMetadata({
       url,
       type: "article",
       siteName: "Lokam",
+      images: [
+        {
+          url: `${SITE_URL}/assets/car.jpg`,
+          width: 2560,
+          height: 1911,
+          alt: cs.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: cs.title,
       description,
+      images: [`${SITE_URL}/assets/car.jpg`],
     },
   };
 }
@@ -69,6 +79,7 @@ export default async function CaseStudyPage({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: cs.title,
+    image: `${SITE_URL}/assets/car.jpg`,
     url: studyUrl,
     datePublished: deployedDate,
     dateModified: "2026-04-14",
@@ -252,13 +263,13 @@ export default async function CaseStudyPage({
                     </span>
                     <p className="font-sans font-bold text-[#0A2E2B]" style={{ fontSize: 15 }}>{r.dealership}</p>
                     <p className="font-sans font-semibold text-sm" style={{ color: "#007970" }}>{r.metric}</p>
-                    <a
+                    <Link
                       href={r.href}
                       className="inline-flex items-center gap-1 font-sans font-semibold text-sm"
                       style={{ color: "#0CB4A7" }}
                     >
                       Read case study <span>›</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               );
@@ -295,15 +306,15 @@ export default async function CaseStudyPage({
         {/* ── Back to case studies ── */}
         <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-14">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="/case-studies" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
+            <Link href="/case-studies" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
               ← Back to all case studies
-            </a>
-            <a href="/blog" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            </Link>
+            <Link href="/blog" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               Read our blog →
-            </a>
-            <a href="/#roi" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            </Link>
+            <Link href="/#roi" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               Calculate your ROI →
-            </a>
+            </Link>
           </div>
         </div>
 

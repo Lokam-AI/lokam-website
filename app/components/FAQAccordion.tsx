@@ -66,13 +66,11 @@ export default function FAQAccordion() {
               </svg>
             </span>
           </button>
-          {open === i && (
-            <div className="px-6 pb-5">
-              <p className="font-sans text-sm leading-7" style={{ color: "#4A6B68" }}>
-                {faq.a}
-              </p>
-            </div>
-          )}
+          <div className={`px-6 pb-5 overflow-hidden transition-all duration-200 ${open === i ? "block" : "hidden"}`}>
+            <p className="font-sans text-sm leading-7" style={{ color: "#4A6B68" }}>
+              {faq.a}
+            </p>
+          </div>
         </div>
       ))}
     </div>

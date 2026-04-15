@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import CaseStudiesFilter from "../components/CaseStudiesFilter";
@@ -141,13 +142,13 @@ export default function CaseStudiesPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <a
+                  <Link
                     href={featuredStudy.href}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-sans font-semibold text-sm whitespace-nowrap"
                     style={{ background: "#fff", color: "#0A3530" }}
                   >
                     Read Case Study →
-                  </a>
+                  </Link>
                   <span className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
                     {featuredStudy.date} · {featuredStudy.readTime}
                   </span>

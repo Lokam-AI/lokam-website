@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -7,15 +8,18 @@ export default function Hero() {
 
         {/* Car image — min-height on mobile so content overlay always fits */}
         <div className="overflow-hidden relative min-h-[460px] md:min-h-0">
-          <Image
-            src="/assets/car.jpg"
-            alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
-            width={2560}
-            height={1911}
-            priority
-            sizes="100vw"
-            className="block w-full h-full object-cover object-[center_80%] absolute inset-0 scale-150 md:scale-100 md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
-          />
+          <picture>
+            <source type="image/avif" srcSet="/assets/car.avif" sizes="100vw" />
+            <Image
+              src="/assets/car.jpg"
+              alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
+              width={2560}
+              height={1911}
+              priority
+              sizes="100vw"
+              className="block w-full h-full object-cover object-[center_80%] absolute inset-0 scale-150 md:scale-100 md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
+            />
+          </picture>
         </div>
 
         {/* Content overlaid on top of car */}
@@ -66,12 +70,12 @@ export default function Hero() {
             >
               Book a demo
             </a>
-            <a
+            <Link
               href="#roi"
               className="flex items-center justify-center px-6 h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
             >
               Calculate your ROI
-            </a>
+            </Link>
           </div>
         </div>
 

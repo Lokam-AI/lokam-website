@@ -1,4 +1,14 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+
+function scrollToContact(e: React.MouseEvent) {
+  const el = document.getElementById("contact");
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export default function Footer() {
   return (
@@ -74,20 +84,15 @@ export default function Footer() {
             © 2026 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            {[
-              { label: "Privacy Policy", href: "/privacy-policy" },
-              { label: "Terms of Service", href: "/terms-of-service" },
-              { label: "Contact", href: "/#contact" },
-            ].map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="font-sans text-xs hover:text-white transition-colors"
-                style={{ color: "rgba(255,255,255,0.4)" }}
-              >
-                {l.label}
-              </a>
-            ))}
+            <Link href="/privacy-policy" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Terms of Service
+            </Link>
+            <Link href="/#contact" onClick={scrollToContact} className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Contact
+            </Link>
           </div>
         </div>
       </div>

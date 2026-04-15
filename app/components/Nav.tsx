@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -50,9 +51,9 @@ function DropdownMenu({
         className="flex items-center gap-1 text-white text-[14.1px] leading-[17.5px] font-sans font-normal bg-transparent border-0 cursor-pointer p-0"
         onClick={() => setOpen((v) => !v)}
       >
-        <a href={href} className="text-white no-underline" onClick={(e) => e.stopPropagation()}>
+        <Link href={href} className="text-white no-underline" onClick={(e) => e.stopPropagation()}>
           {label}
-        </a>
+        </Link>
         <ChevronDown
           size={11}
           className="transition-transform duration-200"
@@ -70,16 +71,16 @@ function DropdownMenu({
             width: label === "Blogs" ? 280 : 200,
           }}
         >
-          <a
+          <Link
             href={href}
             className="flex items-center gap-2 px-4 py-2.5 font-sans text-sm font-semibold no-underline border-b border-[#E8F5F2]"
             style={{ color: "#0CB4A7" }}
             onClick={() => setOpen(false)}
           >
             View all {label} →
-          </a>
+          </Link>
           {items.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="flex items-center px-4 py-2.5 font-sans text-sm no-underline transition-colors hover:bg-[#F4FBF9] truncate"
@@ -88,7 +89,7 @@ function DropdownMenu({
               title={item.label}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
@@ -125,28 +126,37 @@ function MobileAccordion({
 
       {open && (
         <div className="pb-3 flex flex-col gap-0.5">
-          <a
+          <Link
             href={href}
             onClick={onNavigate}
             className="font-sans text-xs font-semibold no-underline py-2 px-3 rounded-lg"
             style={{ color: "#5ecfb1" }}
           >
             View all {label} →
-          </a>
+          </Link>
           {items.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               onClick={onNavigate}
               className="font-sans text-sm no-underline py-2 px-3 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
     </div>
   );
+}
+
+function scrollToContact(e: React.MouseEvent, onDone?: () => void) {
+  const el = document.getElementById("contact");
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  onDone?.();
 }
 
 export default function Nav() {
@@ -172,7 +182,7 @@ export default function Nav() {
       {/* Navbar */}
       <header className="h-[67px] bg-brand-nav relative z-50">
         <div className="max-w-[1330px] mx-auto px-6 md:px-[50px] h-full flex items-center justify-between">
-          <a href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0">
             <Image
               src="/assets/image-47.png"
               alt="Lokam"
@@ -180,18 +190,18 @@ export default function Nav() {
               height={34}
               className="object-contain block"
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
-            <a href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+            <Link href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               About
-            </a>
+            </Link>
             <DropdownMenu label="Case Study" href="/case-studies" items={caseStudyLinks} />
             <DropdownMenu label="Blogs" href="/blog" items={blogLinks} />
-            <a href="/#contact" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+            <Link href="/#contact" onClick={(e) => scrollToContact(e)} className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               Contact Us
-            </a>
+            </Link>
             <a
               href="https://app.lokam.ai"
               target="_blank"
@@ -228,18 +238,18 @@ export default function Nav() {
 
               {/* Main links */}
               <div className="border-b border-white/10">
-                <a href="/about" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
+                <Link href="/about" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
                   About
-                </a>
+                </Link>
               </div>
 
               <MobileAccordion label="Case Studies" href="/case-studies" items={caseStudyLinks} onNavigate={close} />
               <MobileAccordion label="Blogs" href="/blog" items={blogLinks} onNavigate={close} />
 
               <div className="border-b border-white/10">
-                <a href="/#contact" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
+                <Link href="/#contact" onClick={(e) => scrollToContact(e, close)} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
                   Contact Us
-                </a>
+                </Link>
               </div>
 
               {/* CTAs */}

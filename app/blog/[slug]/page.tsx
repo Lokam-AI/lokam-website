@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { blogPosts, getPostBySlug, CHIP_STYLES } from "../../../lib/blog-posts";
@@ -34,11 +35,20 @@ export async function generateMetadata({
       url,
       type: "article",
       siteName: "Lokam",
+      images: [
+        {
+          url: `${SITE_URL}/assets/car.jpg`,
+          width: 2560,
+          height: 1911,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
+      images: [`${SITE_URL}/assets/car.jpg`],
     },
   };
 }
@@ -75,6 +85,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    image: `${SITE_URL}/assets/car.jpg`,
     url: postUrl,
     datePublished: isoDate,
     dateModified: isoDate,
@@ -94,6 +105,11 @@ export default async function BlogPostPage({
       "@type": "WebPage",
       "@id": postUrl,
     },
+    articleBody: [
+      post.intro,
+      ...post.sections.flatMap((s) => s.paragraphs),
+      post.conclusion,
+    ].join(" "),
     articleSection: post.category,
     keywords: ["automotive dealership", "voice AI", "CSI calls", "BDC", post.category.toLowerCase()],
   };
@@ -149,7 +165,7 @@ export default async function BlogPostPage({
             </div>
             <div className="flex items-center gap-1.5 font-sans text-xs text-[#4A6B68]">
               <span>By</span>
-              <a href="/about" className="font-semibold" style={{ color: "#0CB4A7" }}>Saleeq</a>
+              <Link href="/about" className="font-semibold" style={{ color: "#0CB4A7" }}>Saleeq</Link>
               <span>·</span>
               <span>Co-founder &amp; CEO, Lokam</span>
               <span>·</span>
@@ -272,7 +288,7 @@ export default async function BlogPostPage({
                 <span className="font-normal" style={{ color: "#39B39B" }}>Co-founder &amp; CEO, Lokam</span>
               </p>
               <p className="font-sans text-xs leading-6 text-[#4A6B68] mt-1">
-                Previously built enterprise automation products. Focused on helping automotive dealerships recover revenue through AI-powered customer follow-up. <a href="/about" style={{ color: "#0CB4A7" }}>Meet the full team →</a>
+                Previously built enterprise automation products. Focused on helping automotive dealerships recover revenue through AI-powered customer follow-up. <Link href="/about" style={{ color: "#0CB4A7" }}>Meet the full team →</Link>
               </p>
             </div>
           </div>
@@ -316,15 +332,15 @@ export default async function BlogPostPage({
         {/* ── Internal links ── */}
         <div className="max-w-[780px] mx-auto px-4 md:px-8 pb-6">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
+            <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-medium" style={{ color: "#0CB4A7" }}>
               ← Back to all articles
-            </a>
-            <a href="/case-studies" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            </Link>
+            <Link href="/case-studies" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               See dealer case studies →
-            </a>
-            <a href="/#how-it-works" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            </Link>
+            <Link href="/#how-it-works" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               How Lokam works →
-            </a>
+            </Link>
           </div>
         </div>
       </main>

@@ -14,28 +14,29 @@ function parsePostDate(str: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: new Date("2026-04-14"),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/about`,
-      lastModified: new Date("2026-04-14"),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: new Date("2026-04-14"),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/case-studies`,
-      lastModified: new Date("2026-04-14"),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -60,12 +61,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
-    url: `${BASE_URL}/case-studies/${cs.slug}`,
-    lastModified: new Date("2026-04-14"),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((cs) => {
+    const deployedMeta = cs.meta.find((m) => m.label === "Deployed");
+    const lastMod = deployedMeta
+      ? new Date(`01 ${deployedMeta.value}`)
+      : now;
+    return {
+      url: `${BASE_URL}/case-studies/${cs.slug}`,
+      lastModified: lastMod,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    };
+  });
 
   return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes];
 }
