@@ -26,7 +26,7 @@ export default function TrustedBy() {
 
       <div className="relative z-10 max-w-[1166px] mx-auto pt-4 md:pt-[35px] pb-12 md:pb-[60px] px-4">
 
-        <h2 className="font-sans font-medium text-2xl md:text-4xl leading-[52px] text-[#00483a] text-center m-0">
+        <h2 className="font-sans font-medium text-2xl md:text-4xl leading-8 md:leading-[52px] text-[#00483a] text-center m-0">
           Trusted By
         </h2>
 
