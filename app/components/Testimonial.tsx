@@ -91,6 +91,8 @@ export default function Testimonial() {
                 playbackId={PLAYBACK_ID}
                 loop
                 defaultHiddenCaptions
+                disableCookies
+                disableTracking
                 style={{
                   width: "100%",
                   height: "100%",
@@ -166,7 +168,7 @@ export default function Testimonial() {
               Close
             </button>
             <iframe
-              src={`https://player.mux.com/${PLAYBACK_ID}?autoplay=true&default-hidden-captions=true`}
+              src={`https://player.mux.com/${PLAYBACK_ID}?autoplay=true&default-hidden-captions=true&disable-cookies=true&disable-tracking=true`}
               className="w-full rounded-xl"
               style={{ border: "none", aspectRatio: "16/9" }}
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"

@@ -8,7 +8,7 @@ const csiSteps = [
 ];
 
 const walkoutSteps = [
-  { title: "Objection Discovery", desc: "Identifies the primary objections (price, trade-in, spouse) holding them back.", maxWidth: 360 },
+  { title: "Objection Discovery", desc: "Identifies the primary objections (price, trade-in, cosigner) holding them back.", maxWidth: 360 },
   { title: "Hot Lead Handoff", desc: "Instantly escalates hot leads to the sales team with full context.", maxWidth: 370 },
   { title: "Deal Closing Insights", desc: "Gives you every insight to close more deals before they buy a competitor's vehicle.", maxWidth: 400 },
 ];
