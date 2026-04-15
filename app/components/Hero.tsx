@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="relative">
 
         {/* Car image — min-height on mobile so content overlay always fits */}
-        <div className="overflow-hidden relative min-h-[460px] md:min-h-0">
+        <div className="overflow-hidden relative min-h-[530px] md:min-h-0">
           <picture>
             <source type="image/avif" srcSet="/assets/car.avif" sizes="100vw" />
             <Image
@@ -17,7 +17,7 @@ export default function Hero() {
               height={1911}
               priority
               sizes="100vw"
-              className="block w-full h-full object-cover object-[center_80%] absolute inset-0 scale-150 md:scale-100 md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
+              className="block w-full h-full object-contain object-[center_85%] scale-[1.15] md:scale-100 absolute inset-0 md:object-cover md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
             />
           </picture>
         </div>
