@@ -161,20 +161,7 @@ function scrollToContact(e: React.MouseEvent, onDone?: () => void) {
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    function onScroll() {
-      setScrolled(window.scrollY > 0);
-    }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -184,12 +171,9 @@ export default function Nav() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="relative z-50">
       {/* Announcement bar */}
-      <div
-        className="flex items-center justify-center bg-white px-4 overflow-hidden transition-all duration-300"
-        style={{ height: mounted && scrolled ? 0 : 44, opacity: mounted && scrolled ? 0 : 1 }}
-      >
+      <div className="flex items-center justify-center bg-white px-4 h-9">
         <p className="font-sans font-medium text-[11px] sm:text-[13.5px] leading-5 text-[#202020] text-center m-0">
           Backed by World Auto Group, IL – our customer turned investor.
         </p>
@@ -240,22 +224,16 @@ export default function Nav() {
       </header>
       </div>
 
-      {/* Spacer so content isn't hidden under the fixed nav */}
-      <div
-        className="transition-all duration-300"
-        style={{ height: mounted && scrolled ? 60 : 104 }}
-      />
-
       {/* Mobile menu — full-screen overlay */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-40 flex flex-col" style={{ top: mounted && scrolled ? 60 : 104 }}>
+        <div className="md:hidden fixed inset-0 z-40 flex flex-col" style={{ top: 104 }}>
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/40" onClick={close} />
 
           {/* Panel */}
           <div
             className="relative flex flex-col h-full overflow-y-auto"
-            style={{ maxHeight: `calc(100dvh - ${mounted && scrolled ? 60 : 104}px)`, backgroundColor: "#2c697b" }}
+            style={{ maxHeight: `calc(100dvh - 104px)`, backgroundColor: "#2c697b" }}
           >
             <div className="px-6 pt-2 pb-8 flex flex-col flex-1">
 
