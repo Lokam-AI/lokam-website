@@ -22,6 +22,18 @@
   --color-text-light:   #cfcdd6;
 }
 
+/* shadcn/ui CSS variables */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --muted: #f4f4f5;
+  --muted-foreground: #6b7280;
+  --border: #e4e4e7;
+  --radius: 0.5rem;
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
