@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import ROICalculatorModal from "./ROICalculatorModal";
 
 function ROICard({
   title,
@@ -10,6 +11,8 @@ function ROICard({
   inputPlaceholder,
   buttonText,
   note,
+  onCalculate,
+  onValueChange,
 }: {
   title: string;
   image: string;
@@ -18,6 +21,8 @@ function ROICard({
   inputPlaceholder: string;
   buttonText: string;
   note: string;
+  onCalculate?: () => void;
+  onValueChange?: (v: number) => void;
 }) {
   const [value, setValue] = useState("");
 
@@ -50,11 +55,12 @@ function ROICard({
               type="number"
               placeholder={inputPlaceholder}
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e) => { setValue(e.target.value); onValueChange?.(parseInt(e.target.value) || 0); }}
               className="flex-1 border rounded-lg px-3 py-2 text-sm outline-none font-sans"
               style={{ borderColor: "#d1d5db", color: "#111" }}
             />
             <button
+              onClick={onCalculate}
               className="flex items-center justify-center gap-1.5 text-white text-sm font-medium whitespace-nowrap font-sans px-4 h-[51px] w-full sm:w-[189px]"
               style={{ backgroundColor: "#307D93", borderRadius: 8.08 }}
             >
@@ -73,6 +79,9 @@ function ROICard({
 }
 
 export default function ROI() {
+  const [calcOpen, setCalcOpen] = useState(false);
+  const [salesUps, setSalesUps] = useState(0);
+
   return (
     <section id="roi" className="bg-white pt-12 pb-20">
       <div className="max-w-[1200px] mx-auto px-4 md:px-8">
@@ -96,11 +105,12 @@ export default function ROI() {
             title="ROI Calculator - Sales"
             image="/assets/sales.png"
             imageAlt="ROI Calculator Sales"
-
             inputLabel="Unsold desktops per month"
             inputPlaceholder="e.g. 120"
             buttonText="Calculate Sales ROI"
             note="Based on conservative 15% close rate on follow-up and $2,800 average front/back gross."
+            onValueChange={(v) => setSalesUps(v)}
+            onCalculate={() => setCalcOpen(true)}
           />
           <ROICard
             title="ROI Calculator - Service"
@@ -114,6 +124,7 @@ export default function ROI() {
           />
         </div>
       </div>
+      <ROICalculatorModal open={calcOpen} onClose={() => setCalcOpen(false)} initialUps={salesUps} />
     </section>
   );
 }

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokam AI — Desklog Recovery ROI Calculator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --cream: #eff6e0;
+    --teal: #05aa96;
+    --teal-dark: #049383;
+    --teal-light: #e8f7f5;
+    --navy: #114559;
+    --dark: #01161e;
+    --white: #ffffff;
+    --gray-50: #f8faf9;
+    --gray-100: #f0f4f3;
+    --gray-200: #e2e8e6;
+    --gray-300: #c8d5d0;
+    --gray-500: #7a8f89;
+    --red: #dc4545;
+    --red-bg: #fef2f2;
+    --red-border: #fecaca;
+    --orange: #e8960c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--dark);
+    height: 100%; width: 100%;
+    background: rgba(1,22,30,0.85);
+    overflow: hidden;
+  }
+
+  /* ===== FULLSCREEN POPUP OVERLAY ===== */
+  .overlay {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+  }
+
+  .calculator {
+    background: var(--white);
+    width: 92%; max-width: 1280px;
+    max-height: 94vh;
+    border-radius: 18px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    overflow: hidden;
+    animation: popIn 0.3s ease-out;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, var(--dark) 0%, #0a2e3d 50%, var(--navy) 100%);
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .logo-box {
+    width: 34px; height: 34px; background: var(--dark);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .logo-box svg { width: 22px; height: 22px; }
+  .header-title { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
+  .header-sub { font-size: 10px; color: var(--teal); font-weight: 500; margin-top: 1px; }
+
+  .header-actions { display: flex; align-items: center; gap: 10px; }
+
+  .btn-demo {
+    background: transparent; color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px;
+    padding: 8px 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s; font-family: inherit;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-demo:hover { border-color: var(--teal); color: var(--teal); }
+
+  .btn-pdf {
+    background: var(--teal); color: var(--white);
+    border: none; border-radius: 8px; padding: 8px 16px;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+    transition: background 0.2s; font-family: inherit;
+  }
+  .btn-pdf:hover { background: var(--teal-dark); }
+  .btn-pdf svg, .btn-demo svg { width: 14px; height: 14px; }
+
+  /* ===== MAIN BODY ===== */
+  .body {
+    flex: 1; padding: 24px 32px 18px;
+    overflow-y: auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  /* ===== LEFT PANEL ===== */
+  .panel-left { display: flex; flex-direction: column; gap: 16px; }
+
+  .section-tag {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.4px; color: var(--teal);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .section-tag::after {
+    content: ''; flex: 1; height: 1px; background: var(--gray-200);
+  }
+
+  /* Input fields */
+  .input-group { display: flex; flex-direction: column; gap: 5px; }
+  .input-group label {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+  }
+  .input-wrap { position: relative; }
+  .input-wrap .dollar-prefix {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 15px; font-weight: 700; color: var(--gray-500); pointer-events: none;
+  }
+  .input-wrap input[type="number"] {
+    width: 100%; padding: 10px 14px; border: 1.5px solid var(--gray-300);
+    border-radius: 10px; font-size: 15px; font-weight: 700;
+    color: var(--dark); outline: none; transition: all 0.2s;
+    font-family: 'Inter', sans-serif; background: var(--white);
+  }
+  .input-wrap input.has-prefix { padding-left: 28px; }
+  .input-wrap input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(5,170,150,0.1); }
+
+  /* Slider styles */
+  .slider-group { display: flex; flex-direction: column; gap: 4px; }
+  .slider-label {
+    font-size: 12px; font-weight: 600; color: var(--navy);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 8px;
+  }
+  .slider-label .val {
+    font-size: 14px; font-weight: 800; color: var(--teal);
+    background: var(--teal-light); padding: 2px 10px; border-radius: 6px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* Range slider with teal fill */
+  input[type="range"] {
+    -webkit-appearance: none; width: 100%; height: 6px;
+    border-radius: 3px; outline: none; margin: 4px 0;
+    background: linear-gradient(to right, var(--teal) 0%, var(--teal) 15%, var(--gray-200) 15%, var(--gray-200) 100%);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 22px; height: 22px;
+    border-radius: 50%; background: var(--teal); cursor: pointer;
+    border: 3px solid var(--white); box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    position: relative; z-index: 2;
+  }
+  input[type="range"]::-moz-range-track {
+    height: 6px; border-radius: 3px; background: var(--gray-200);
+  }
+  input[type="range"]::-moz-range-progress {
+    height: 6px; border-radius: 3px; background: var(--teal);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--teal); cursor: pointer;
+    border: 3px solid var(--white); box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+
+  .slider-hint {
+    font-size: 10px; color: var(--gray-500); display: flex;
+    justify-content: space-between;
+  }
+  .slider-note {
+    font-size: 10px; color: var(--orange); font-weight: 600;
+    margin-top: 1px;
+  }
+
+  /* Info icon tooltip */
+  .info-icon {
+    position: relative; display: inline-flex; cursor: help; flex-shrink: 0;
+  }
+  .info-icon svg { width: 15px; height: 15px; color: var(--gray-500); }
+  .info-icon .tooltip {
+    display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+    transform: translateX(-50%); background: var(--dark); color: var(--white);
+    font-size: 11px; font-weight: 400; padding: 8px 12px; border-radius: 8px;
+    width: 240px; line-height: 1.4; z-index: 10;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+  .info-icon .tooltip::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%); border: 5px solid transparent;
+    border-top-color: var(--dark);
+  }
+  .info-icon:hover .tooltip { display: block; }
+
+  /* ===== CURRENT SNAPSHOT ===== */
+  .snapshot-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+  }
+  .snap-card {
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    border-radius: 10px; padding: 12px 8px; text-align: center;
+  }
+  .snap-card.danger {
+    background: var(--red-bg); border-color: var(--red-border);
+  }
+  .snap-card .s-num {
+    font-size: 20px; font-weight: 800; color: var(--dark);
+  }
+  .snap-card.danger .s-num { color: var(--red); }
+  .snap-card .s-lbl {
+    font-size: 9px; color: var(--gray-500); font-weight: 500; margin-top: 3px;
+    line-height: 1.3;
+  }
+
+  /* ===== RIGHT PANEL ===== */
+  .panel-right {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1.5px solid var(--gray-200); border-radius: 14px; overflow: hidden;
+  }
+
+  .right-header {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 100%);
+    padding: 14px 20px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .right-header .section-tag { color: var(--teal); margin: 0; }
+  .right-header .section-tag::after { background: rgba(255,255,255,0.1); }
+  .lokam-badge {
+    font-size: 9px; font-weight: 700; color: var(--teal);
+    background: rgba(5,170,150,0.12); padding: 4px 10px; border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .right-body {
+    background: var(--white); padding: 18px 20px; flex: 1;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  /* Funnel */
+  .funnel {
+    display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 0;
+    align-items: center;
+  }
+  .funnel-step {
+    text-align: center; background: var(--teal-light);
+    border-radius: 10px; padding: 10px 4px;
+    border: 1px solid rgba(5,170,150,0.15);
+  }
+  .funnel-step .f-num {
+    font-size: 20px; font-weight: 800; color: var(--teal);
+  }
+  .funnel-step .f-lbl {
+    font-size: 8.5px; color: var(--gray-500); margin-top: 2px; line-height: 1.25;
+    font-weight: 500;
+  }
+  .funnel-step .f-lbl strong { color: var(--navy); }
+  .funnel-arrow {
+    text-align: center; color: var(--gray-300); font-size: 18px;
+    padding: 0 3px; font-weight: 300;
+  }
+
+  /* Big result */
+  .result-hero {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    border-radius: 12px; padding: 18px; text-align: center;
+  }
+  .result-hero .hero-num {
+    font-size: 34px; font-weight: 900; color: var(--white); letter-spacing: -1px;
+  }
+  .result-hero .hero-label {
+    font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 3px; font-weight: 500;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+  }
+  .stat-card {
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    border-radius: 10px; padding: 12px 6px; text-align: center;
+  }
+  .stat-card .st-num {
+    font-size: 17px; font-weight: 800; color: var(--navy);
+  }
+  .stat-card .st-lbl {
+    font-size: 9px; color: var(--gray-500); margin-top: 2px; font-weight: 500;
+  }
+
+  /* Lokam cost row */
+  .cost-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; background: var(--gray-50);
+    border-radius: 10px; border: 1px solid var(--gray-200);
+    margin-top: auto;
+  }
+  .cost-row label {
+    font-size: 12px; color: var(--navy); font-weight: 600;
+  }
+  .cost-row .cost-val {
+    font-size: 17px; font-weight: 800; color: var(--teal);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 10px 32px; background: var(--gray-50);
+    border-top: 1px solid var(--gray-200);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; color: var(--gray-500); flex-shrink: 0;
+  }
+  .footer a { color: var(--teal); text-decoration: none; font-weight: 600; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    html, body { background: white; overflow: visible; }
+    .overlay { position: static; padding: 0; }
+    .calculator { max-height: none; box-shadow: none; border-radius: 0; max-width: 100%; }
+    .header-actions { display: none !important; }
+    @page { margin: 0.3in; size: landscape; }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 800px) {
+    .overlay { padding: 8px; }
+    .grid { grid-template-columns: 1fr; }
+    .header { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+    .body { padding: 16px; }
+    .calculator { max-height: none; overflow-y: auto; }
+    .funnel { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .funnel-arrow { display: none; }
+    .snapshot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay">
+<div class="calculator">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-box">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 55 C20 55 28 35 36 45 C44 55 40 65 48 50 C56 35 52 55 60 45 C68 35 64 55 72 45 C80 35 80 55 80 55" stroke="white" stroke-width="7" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <div class="header-title">Desklog Recovery ROI Calculator</div>
+        <div class="header-sub">Powered by Lokam AI</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="https://lokam.ai" target="_blank" class="btn-demo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Demo
+      </a>
+      <button class="btn-pdf" onclick="downloadPDF()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="body">
+    <div class="grid">
+
+      <!-- ========== LEFT: YOUR NUMBERS ========== -->
+      <div class="panel-left">
+
+        <div class="section-tag">Your Dealership Numbers</div>
+
+        <div class="input-group">
+          <label>Your Unsold Showroom Traffic (Monthly)</label>
+          <div class="input-wrap">
+            <input type="number" id="monthlyUps" placeholder="e.g. 500" oninput="calculate()">
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            What % of unsold customers get a follow-up call within 24 hours?
+            <span class="val" id="followUpVal">15%</span>
+          </div>
+          <input type="range" id="followUpPercent" min="0" max="100" value="15" oninput="updateSliderFill(this); calculate()">
+          <div class="slider-hint"><span>0%</span><span>100%</span></div>
+          <div class="slider-note">Industry average is less than 15%.</div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            Your Current Closing Rate
+            <span class="val" id="closeRateVal">45%</span>
+          </div>
+          <input type="range" id="closeRate" min="0" max="100" value="45" oninput="updateSliderFill(this); calculate()">
+          <div class="slider-hint"><span>0%</span><span>100%</span></div>
+        </div>
+
+        <div class="input-group">
+          <label style="display: flex; align-items: center; gap: 6px;">
+            Gross Profit per Deal (Front + Back)
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span class="tooltip">Combined front-end and F&amp;I gross profit per unit sold.</span>
+            </span>
+          </label>
+          <div class="input-wrap">
+            <span class="dollar-prefix">$</span>
+            <input type="number" id="grossProfit" class="has-prefix" value="3000" oninput="calculate()">
+          </div>
+        </div>
+
+        <div class="section-tag" style="margin-top: 2px;">Current Snapshot</div>
+
+        <div class="snapshot-grid">
+          <div class="snap-card">
+            <div class="s-num" id="s_unsold">0</div>
+            <div class="s-lbl">Unsold Volume</div>
+          </div>
+          <div class="snap-card danger">
+            <div class="s-num" id="s_noCall">0</div>
+            <div class="s-lbl">Never Get a Call</div>
+          </div>
+          <div class="snap-card danger">
+            <div class="s-num" id="s_lostGross">$0</div>
+            <div class="s-lbl">Lost Gross / Mo<br>(from those never called)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========== RIGHT: WITH LOKAM ========== -->
+      <div class="panel-right">
+
+        <div class="right-header">
+          <div class="section-tag">With Lokam</div>
+          <div class="lokam-badge">AI RECOVERY</div>
+        </div>
+
+        <div class="right-body">
+
+          <div class="funnel">
+            <div class="funnel-step">
+              <div class="f-num" id="f_reached">0</div>
+              <div class="f-lbl">AI Reached<br><strong>75%</strong> contact</div>
+            </div>
+            <div class="funnel-arrow">&rsaquo;</div>
+            <div class="funnel-step">
+              <div class="f-num" id="f_filtered">0</div>
+              <div class="f-lbl">Qualified<br><strong>25%</strong> ready to buy</div>
+            </div>
+            <div class="funnel-arrow">&rsaquo;</div>
+            <div class="funnel-step">
+              <div class="f-num" id="f_showed">0</div>
+              <div class="f-lbl">Showed Up<br><strong>40%</strong> show rate</div>
+            </div>
+            <div class="funnel-arrow">&rsaquo;</div>
+            <div class="funnel-step">
+              <div class="f-num" id="f_sold">0</div>
+              <div class="f-lbl">Closed<br><strong id="f_closeLabel">45%</strong> your rate</div>
+            </div>
+          </div>
+
+          <div class="result-hero">
+            <div class="hero-num" id="r_monthly">$0</div>
+            <div class="hero-label">Recovered Gross Profit / Month</div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="st-num" id="r_net">$0</div>
+              <div class="st-lbl">Net Profit / Mo</div>
+            </div>
+            <div class="stat-card">
+              <div class="st-num" id="r_roi">0x</div>
+              <div class="st-lbl">ROI</div>
+            </div>
+            <div class="stat-card">
+              <div class="st-num" id="r_annual">$0</div>
+              <div class="st-lbl">Annual Impact</div>
+            </div>
+          </div>
+
+          <div class="cost-row">
+            <label>Lokam Monthly Cost</label>
+            <div class="cost-val" id="toolCostDisplay">$1,250/mo</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <span>&copy; 2026 Lokam AI &middot; <a href="https://lokam.ai" target="_blank">lokam.ai</a> &middot; founder@lokam.ai &middot; (913) 513-2729</span>
+    <span>Results based on your inputs &amp; industry benchmarks</span>
+  </div>
+
+</div>
+</div>
+
+<script>
+  // === SLIDER FILL: teal up to thumb position ===
+  function updateSliderFill(el) {
+    const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+    el.style.background = `linear-gradient(to right, var(--teal) 0%, var(--teal) ${pct}%, var(--gray-200) ${pct}%, var(--gray-200) 100%)`;
+  }
+
+  // Init all sliders on load
+  function initSliders() {
+    document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
+  }
+
+  function calculate() {
+    // Read inputs
+    const monthlyUps = parseInt(document.getElementById('monthlyUps').value) || 0;
+    const closeRate = parseInt(document.getElementById('closeRate').value) || 0;
+    const followUpPercent = parseInt(document.getElementById('followUpPercent').value) || 0;
+    const grossProfit = parseInt(document.getElementById('grossProfit').value) || 0;
+
+    // Auto tool cost: $1,250 for <= 400 UPs, $1,500 for > 400
+    const toolCost = monthlyUps > 400 ? 1500 : 1250;
+
+    // Update slider labels
+    document.getElementById('closeRateVal').textContent = closeRate + '%';
+    document.getElementById('followUpVal').textContent = followUpPercent + '%';
+
+    // Display tool cost
+    document.getElementById('toolCostDisplay').textContent = '$' + toolCost.toLocaleString() + '/mo';
+
+    // === CURRENT SNAPSHOT ===
+    // Unsold Volume = always the raw input
+    const unsoldVolume = monthlyUps;
+
+    // Who never gets a call
+    const followUpCalls = Math.round(unsoldVolume * (followUpPercent / 100));
+    const neverCalled = unsoldVolume - followUpCalls;
+
+    // Lost Gross per month = people NOT called * close rate * gross profit
+    const lostGross = Math.round(neverCalled * (closeRate / 100)) * grossProfit;
+
+    // === WITH LOKAM FUNNEL ===
+    // AI Reached = 75% of the raw unsold traffic input
+    const aiReached = Math.round(unsoldVolume * 0.75);
+    // 20% qualified ready to buy
+    const qualified = Math.round(aiReached * 0.20);
+    // 40% show up
+    const showed = Math.round(qualified * 0.40);
+    // Close rate = user's inputted closing rate
+    const closed = Math.round(showed * (closeRate / 100));
+
+    // Update funnel close label to show user's rate
+    document.getElementById('f_closeLabel').textContent = closeRate + '%';
+
+    // Financials
+    const additionalGrossProfit = closed * grossProfit;
+    const netMonthlyProfit = additionalGrossProfit - toolCost;
+    const roi = toolCost > 0 ? (additionalGrossProfit / toolCost) : 0;
+    const annualImpact = netMonthlyProfit * 12;
+
+    // === UPDATE DOM ===
+    // Left snapshot
+    document.getElementById('s_unsold').textContent = unsoldVolume.toLocaleString();
+    document.getElementById('s_noCall').textContent = neverCalled.toLocaleString();
+    document.getElementById('s_lostGross').textContent = '$' + lostGross.toLocaleString();
+
+    // Right funnel
+    document.getElementById('f_reached').textContent = aiReached.toLocaleString();
+    document.getElementById('f_filtered').textContent = qualified.toLocaleString();
+    document.getElementById('f_showed').textContent = showed.toLocaleString();
+    document.getElementById('f_sold').textContent = closed.toLocaleString();
+
+    // Results
+    document.getElementById('r_monthly').textContent = '$' + additionalGrossProfit.toLocaleString();
+    document.getElementById('r_net').textContent = '$' + netMonthlyProfit.toLocaleString();
+    document.getElementById('r_roi').textContent = roi.toFixed(1) + 'x';
+    document.getElementById('r_annual').textContent = '$' + annualImpact.toLocaleString();
+  }
+
+  function downloadPDF() {
+    window.print();
+  }
+
+  // Pre-fill unsold traffic from URL param (?traffic=500)
+  (function init() {
+    const params = new URLSearchParams(window.location.search);
+    const traffic = params.get('traffic') || params.get('ups');
+    if (traffic) {
+      document.getElementById('monthlyUps').value = traffic;
+    }
+    initSliders();
+    calculate();
+  })();
+</script>
+
+</body>
+</html>
