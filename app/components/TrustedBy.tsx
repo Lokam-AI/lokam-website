@@ -1,9 +1,10 @@
+const dealers = [
+  { src: "/assets/familyhyundai.svg", alt: "Family Hyundai" },
+  { src: "/assets/wkjoliet.svg",      alt: "World Kia Joliet" },
+  { src: "/assets/whmatteson.svg",    alt: "World Hyundai Matteson" },
+];
+
 export default function TrustedBy() {
-  const dealers = [
-    "Family Hyundai",
-    "World Kia Joliet",
-    "World Hyundai Matteson",
-  ];
 
   return (
     <section className="relative overflow-hidden bg-white" style={{ marginTop: "clamp(-165px, -11.5vw, -70px)" }}>
@@ -35,11 +36,14 @@ export default function TrustedBy() {
         </p>
 
         <div className="mt-10 md:mt-[76px] overflow-hidden">
-          <div className="flex animate-marquee-reverse gap-[126px] w-max">
-            {[...dealers, ...dealers, ...dealers, ...dealers].map((name, i) => (
-              <span key={i} className="font-sans font-semibold text-lg text-gray-400 flex-shrink-0 tracking-tight">
-                {name}
-              </span>
+          <div className="flex animate-marquee-reverse gap-[126px] w-max items-center">
+            {[...dealers, ...dealers, ...dealers, ...dealers].map((dealer, i) => (
+              <img
+                key={i}
+                src={dealer.src}
+                alt={dealer.alt}
+                className="flex-shrink-0 h-10 w-auto"
+              />
             ))}
           </div>
         </div>

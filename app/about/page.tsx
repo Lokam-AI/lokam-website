@@ -254,7 +254,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Team ── */}
-        <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-20">
+        {/* <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-20">
           <h2
             className="font-sans font-bold text-[#0A2E2B] mb-2"
             style={{ fontSize: "clamp(20px, 2.5vw, 28px)", letterSpacing: "-0.5px" }}
@@ -291,7 +291,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ── FAQ ── */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-20">

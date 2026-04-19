@@ -161,6 +161,18 @@ function scrollToContact(e: React.MouseEvent, onDone?: () => void) {
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    function onScroll() {
+      setScrolled(window.scrollY > 0);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -172,15 +184,19 @@ export default function Nav() {
 
   return (
     <>
+      <div className="fixed top-0 left-0 right-0 z-50">
       {/* Announcement bar */}
-      <div className="h-11 flex items-center justify-center bg-white px-4">
-        <p className="font-sans font-medium text-[13.5px] leading-5 text-[#202020] text-center m-0">
+      <div
+        className="flex items-center justify-center bg-white px-4 overflow-hidden transition-all duration-300"
+        style={{ height: mounted && scrolled ? 0 : 44, opacity: mounted && scrolled ? 0 : 1 }}
+      >
+        <p className="font-sans font-medium text-[11px] sm:text-[13.5px] leading-5 text-[#202020] text-center m-0">
           Backed by World Auto Group, IL – our customer turned investor.
         </p>
       </div>
 
       {/* Navbar */}
-      <header className="h-[67px] bg-brand-nav relative z-50">
+      <header className="h-[60px] bg-brand-nav">
         <div className="max-w-[1330px] mx-auto px-6 md:px-[50px] h-full flex items-center justify-between">
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -222,17 +238,24 @@ export default function Nav() {
           </button>
         </div>
       </header>
+      </div>
+
+      {/* Spacer so content isn't hidden under the fixed nav */}
+      <div
+        className="transition-all duration-300"
+        style={{ height: mounted && scrolled ? 60 : 104 }}
+      />
 
       {/* Mobile menu — full-screen overlay */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-40 flex flex-col" style={{ top: 111 /* announcement 44px + nav 67px */ }}>
+        <div className="md:hidden fixed inset-0 z-40 flex flex-col" style={{ top: mounted && scrolled ? 60 : 104 }}>
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/40" onClick={close} />
 
           {/* Panel */}
           <div
-            className="relative flex flex-col h-full max-h-[calc(100dvh-111px)] overflow-y-auto"
-            style={{ backgroundColor: "#2c697b" }}
+            className="relative flex flex-col h-full overflow-y-auto"
+            style={{ maxHeight: `calc(100dvh - ${mounted && scrolled ? 60 : 104}px)`, backgroundColor: "#2c697b" }}
           >
             <div className="px-6 pt-2 pb-8 flex flex-col flex-1">
 
