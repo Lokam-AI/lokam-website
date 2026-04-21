@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ROICalculatorModal from "./ROICalculatorModal";
+import ServiceROICalculatorModal from "./ServiceROICalculatorModal";
 
 function ROICard({
   title,
@@ -81,6 +82,8 @@ function ROICard({
 export default function ROI() {
   const [calcOpen, setCalcOpen] = useState(false);
   const [salesUps, setSalesUps] = useState(0);
+  const [serviceCalcOpen, setServiceCalcOpen] = useState(false);
+  const [serviceROs, setServiceROs] = useState(0);
 
   return (
     <section id="roi" className="bg-white pt-12 pb-20">
@@ -116,15 +119,17 @@ export default function ROI() {
             title="ROI Calculator - Service"
             image="/assets/service.png"
             imageAlt="ROI Calculator Service"
-
             inputLabel="Repair Orders (ROs) per month"
             inputPlaceholder="e.g. 120"
             buttonText="Calculate Service ROI"
-            note="Based on industry average 8% at-risk rate and $450 average RO."
+            note="Based on industry average 8% at-risk rate and $2,500 average customer LTV."
+            onValueChange={(v) => setServiceROs(v)}
+            onCalculate={() => setServiceCalcOpen(true)}
           />
         </div>
       </div>
       <ROICalculatorModal open={calcOpen} onClose={() => setCalcOpen(false)} initialUps={salesUps} />
+      <ServiceROICalculatorModal open={serviceCalcOpen} onClose={() => setServiceCalcOpen(false)} initialROs={serviceROs} />
     </section>
   );
 }
