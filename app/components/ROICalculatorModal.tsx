@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import { X, Download, Calendar } from "lucide-react";
 
 interface CalcState {
@@ -28,6 +29,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
   });
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (open) setInputs(prev => ({ ...prev, monthlyUps: initialUps }));
   }, [open, initialUps]);
 
@@ -46,12 +48,9 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
     setInputs(prev => ({ ...prev, [key]: val }));
   }, []);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
-
   function handlePrint() { window.print(); }
 
-  if (!open || !mounted) return null;
+  if (!open || typeof window === "undefined") return null;
 
   const { monthlyUps, followUpPercent, closeRate, grossProfit } = inputs;
   const toolCost    = monthlyUps > 400 ? 1500 : 1250;
@@ -109,7 +108,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
               style={{ background: "#01161e", border: "1px solid rgba(255,255,255,0.1)" }}>
-              <img src="/LOKAM_SECONDARY_LOGO_WHITE.svg" alt="Lokam" width={28} height={28} className="w-full h-full object-contain" />
+              <Image src="/LOKAM_SECONDARY_LOGO_WHITE.svg" alt="Lokam" width={28} height={28} className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="text-white font-bold text-[15px] tracking-tight">Desklog Recovery ROI Calculator</div>
@@ -137,11 +136,11 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
         </div>
 
         {/* ── Body ───────────────────────────────────────────────── */}
-        <div className="flex-1 overflow-hidden" style={{ padding: "20px 28px 16px" }}>
-          <div id="roi-body-grid" className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+        <div className="flex-1 overflow-y-auto" style={{ padding: "20px 28px 16px" }}>
+          <div id="roi-body-grid" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:h-full">
 
             {/* LEFT — Inputs */}
-            <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col justify-between md:h-full">
               <Label tag>Your Dealership Numbers</Label>
 
               {/* Monthly UPs */}
@@ -184,7 +183,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
                   <span className="px-3 text-[15px] font-black flex-shrink-0" style={{ color: "#7a8f89" }}>$</span>
                   <input
                     type="number"
-                    value={inputs.grossProfit}
+                    value={inputs.grossProfit || ""}
                     onChange={e => set("grossProfit", parseInt(e.target.value) || 0)}
                     className="roi-input flex-1 text-[15px] font-black outline-none"
                     style={{ padding: "8px 14px 8px 0", border: "none", color: "#01161e", fontFamily: "inherit", background: "transparent" }}
@@ -203,7 +202,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
             </div>
 
             {/* RIGHT — Results */}
-            <div className="flex flex-col rounded-2xl overflow-hidden h-full" style={{ border: "1.5px solid #e2e8e6" }}>
+            <div className="flex flex-col rounded-2xl overflow-hidden md:h-full" style={{ border: "1.5px solid #e2e8e6" }}>
               {/* Right header */}
               <div className="flex items-center justify-between px-6 py-4"
                 style={{ background: "linear-gradient(135deg, #01161e 0%, #114559 100%)" }}>
@@ -357,7 +356,7 @@ function SnapCard({ label, children, danger }: {
       background: danger ? "#fef2f2" : "#f8faf9",
       border: `1px solid ${danger ? "#fecaca" : "#e2e8e6"}`,
     }}>
-      <div className="text-[22px] font-display font-bold leading-none" style={{ color: danger ? "#dc4545" : "#01161e" }}>
+      <div className="text-[22px] font-display font-bold leading-none break-all" style={{ color: danger ? "#dc4545" : "#01161e" }}>
         {children}
       </div>
       <div className="text-[9px] mt-1.5 font-medium leading-tight" style={{ color: "#7a8f89" }}>{label}</div>
