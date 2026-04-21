@@ -183,7 +183,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
                   <span className="px-3 text-[15px] font-black flex-shrink-0" style={{ color: "#7a8f89" }}>$</span>
                   <input
                     type="number"
-                    value={inputs.grossProfit}
+                    value={inputs.grossProfit || ""}
                     onChange={e => set("grossProfit", parseInt(e.target.value) || 0)}
                     className="roi-input flex-1 text-[15px] font-black outline-none"
                     style={{ padding: "8px 14px 8px 0", border: "none", color: "#01161e", fontFamily: "inherit", background: "transparent" }}
@@ -356,7 +356,7 @@ function SnapCard({ label, children, danger }: {
       background: danger ? "#fef2f2" : "#f8faf9",
       border: `1px solid ${danger ? "#fecaca" : "#e2e8e6"}`,
     }}>
-      <div className="text-[22px] font-display font-bold leading-none" style={{ color: danger ? "#dc4545" : "#01161e" }}>
+      <div className="text-[22px] font-display font-bold leading-none break-all" style={{ color: danger ? "#dc4545" : "#01161e" }}>
         {children}
       </div>
       <div className="text-[9px] mt-1.5 font-medium leading-tight" style={{ color: "#7a8f89" }}>{label}</div>

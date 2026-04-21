@@ -254,7 +254,7 @@ export default function ServiceROICalculatorModal({
                   </span>
                   <input
                     type="number"
-                    value={inputs.ltv}
+                    value={inputs.ltv || ""}
                     onChange={(e) =>
                       set("ltv", parseInt(e.target.value) || 0)
                     }
@@ -570,7 +570,7 @@ function SvcSnapCard({
       }}
     >
       <div
-        className="text-[22px] font-display font-bold leading-none"
+        className="text-[22px] font-display font-bold leading-none break-all"
         style={{ color: danger ? "#dc4545" : "#01161e" }}
       >
         {children}
