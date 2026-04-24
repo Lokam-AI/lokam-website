@@ -41,7 +41,7 @@ export default function Footer() {
               Lokam
             </span>
             <p className="mt-3 font-sans text-sm leading-6" style={{ color: "rgba(255,255,255,0.55)", maxWidth: 220 }}>
-              Voice AI for automotive dealerships. Built to recover revenue, not just report on it.
+              Voice AI follow-up for automotive dealerships. Built to recover revenue, not just report on it.
             </p>
           </div>
 

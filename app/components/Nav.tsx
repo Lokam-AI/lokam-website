@@ -194,13 +194,13 @@ export default function Nav() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
-            <Link href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
-              About
-            </Link>
             <DropdownMenu label="Case Study" href="/case-studies" items={caseStudyLinks} />
             <DropdownMenu label="Blogs" href="/blog" items={blogLinks} />
             <Link href="/#contact" onClick={(e) => scrollToContact(e)} className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               Contact Us
+            </Link>
+            <Link href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+              About
             </Link>
             <a
               href="https://app.lokam.ai"

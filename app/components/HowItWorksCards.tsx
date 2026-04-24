@@ -178,7 +178,7 @@ export default function HowItWorksCards() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center relative z-10">
         <div>
           <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
-            Automate Your CSI Calls
+            Automate Your Post Service<br />Follow Up
           </h3>
           <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
             Stop relying on manual calls that never happen. Lokam&apos;s AI reaches every customer, every time.
@@ -197,7 +197,7 @@ export default function HowItWorksCards() {
         </div>
         <div className="order-1 lg:order-2 lg:pl-10">
           <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
-            Automate Unsold Showroom<br />Lead Follow-Up
+            Automate Unsold Showroom<br />Traffic Follow-Up
           </h3>
           <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
             Don&apos;t let walk-outs leave the deal. Engage them and bring them back with our AI follow-up system.

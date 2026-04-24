@@ -101,10 +101,10 @@ export default function CTA() {
           >
             <div>
               <h3 className="font-sans font-semibold text-[20px] leading-snug text-[#111827] mb-3 text-center">
-                Ready To Transform Your<br />Service Center With AI?
+                Ready To Transform Your<br />Dealerships With AI?
               </h3>
               <p className="font-sans text-sm text-[#6b7280] text-center mb-6">
-                Join dealerships recovering $84K+ monthly with zero IT setup.
+                Join dealerships recovering 150k+ monthly with active follow up
               </p>
             </div>
             <div>
@@ -118,9 +118,6 @@ export default function CTA() {
                 Book a Demo
                 <ArrowRight size={15} />
               </a>
-              <p className="font-sans text-xs text-[#9ca3af] text-center">
-                Live in under 4 hours · No commitment
-              </p>
             </div>
           </div>
 

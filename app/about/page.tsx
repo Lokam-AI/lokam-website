@@ -198,7 +198,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 600 }}>
-            Lokam is Voice AI built specifically for automotive dealerships. We automate the follow-up calls that your team never has enough time to make — and turn missed opportunities into closed deals.
+            Lokam is Voice AI follow up platform built specifically for automotive dealerships. We automate the follow-up calls so that your sales team spends time on the ones ready to close and service advisors catch defectors before they churn.
           </p>
         </section>
 

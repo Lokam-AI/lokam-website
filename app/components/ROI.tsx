@@ -108,10 +108,10 @@ export default function ROI() {
             title="ROI Calculator - Sales"
             image="/assets/sales.png"
             imageAlt="ROI Calculator Sales"
-            inputLabel="Unsold desktops per month"
+            inputLabel="Unsold desklogs per month"
             inputPlaceholder="e.g. 120"
             buttonText="Calculate Sales ROI"
-            note="Based on conservative 15% close rate on follow-up and $2,800 average front/back gross."
+            note="Based on the industry average of 15% contact rate on follow ups and $2,800 average front/back gross"
             onValueChange={(v) => setSalesUps(v)}
             onCalculate={() => setCalcOpen(true)}
           />
