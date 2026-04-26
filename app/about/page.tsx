@@ -194,7 +194,7 @@ export default function AboutPage() {
           >
             Built for Dealers.{" "}
             <span style={{ backgroundImage: "linear-gradient(to right, #00988B, #00D3BD)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", color: "transparent" }}>
-              Obsessed with Revenue.
+              By Automobile Engineers and AI Researchers.
             </span>
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 600 }}>
@@ -218,7 +218,7 @@ export default function AboutPage() {
               className="font-sans font-medium leading-9"
               style={{ color: "#fff", fontSize: "clamp(18px, 2.5vw, 26px)", maxWidth: 740 }}
             >
-              &ldquo;Every customer who visits a dealership deserves a follow-up. Every dealer deserves to know what happened on that call — with zero manual effort.&rdquo;
+              &ldquo;Help dealers sell more cars and increase retention.&rdquo;
             </p>
           </div>
         </section>

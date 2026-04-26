@@ -186,14 +186,14 @@ export default function HowItWorksCards() {
           <StepList steps={csiSteps} />
         </div>
         <div>
-          <CallCard label="Sample Service Call" name="Linda Jenkins" badge="Positive" totalSeconds={84} src="/assets/service.mp4" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
+          <CallCard label="Sample Service Call" name="Jane Smith" badge="Positive" totalSeconds={84} src="/assets/service.flac" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
         </div>
       </div>
 
       {/* ── Showroom Workflow ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         <div className="order-2 lg:order-1">
-          <CallCard label="Sample Sales Call" name="Gerald Johnson" badge="In Lead" totalSeconds={228} src="/assets/sales.mp4" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
+          <CallCard label="Sample Sales Call" name="John Doe" badge="In Lead" totalSeconds={228} src="/assets/sales.flac" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
         </div>
         <div className="order-1 lg:order-2 lg:pl-10">
           <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
