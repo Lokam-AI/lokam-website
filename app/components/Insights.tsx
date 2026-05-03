@@ -24,7 +24,7 @@ export default function Insights() {
   };
 
   const cardClass =
-    "group h-full overflow-hidden border border-zinc-200/80 bg-white shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] hover:border-zinc-300";
+    "group h-full overflow-hidden border border-zinc-200/80 bg-white shadow-sm transition-[box-shadow,border-color] duration-300 ease-out hover:shadow-md hover:border-zinc-300";
 
   const titleClass =
     "text-2xl font-semibold leading-snug tracking-tight text-[#095857] md:text-[30px] md:leading-[1.15]";
