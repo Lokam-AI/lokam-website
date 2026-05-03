@@ -1,102 +1,156 @@
-import Image from "next/image";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Phone, Globe } from "lucide-react";
+"use client";
 
+import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import { Phone, Globe } from "lucide-react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import AutoPlayVideo from "./AutoPlayVideo";
 
 export default function Insights() {
+  const reduce = useReducedMotion();
+
+  const container: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: reduce ? 0 : 0.12 } },
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: reduce ? 0 : 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: reduce ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
+  const cardClass =
+    "group h-full overflow-hidden border border-zinc-200/80 bg-white shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] hover:border-zinc-300";
+
+  const titleClass =
+    "text-2xl font-semibold leading-snug tracking-tight text-[#095857] md:text-[30px] md:leading-[1.15]";
+  const bodyClass = "mt-4 max-w-lg text-base leading-relaxed text-zinc-600";
+
   return (
-    <section className="bg-zinc-50 py-20 md:py-40">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="bg-zinc-50 py-20 md:py-32">
+      <div className="mx-auto max-w-[1440px] px-6">
         <h2
-          className="font-sans font-medium text-center mb-12 md:mb-16"
-          style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.12", letterSpacing: "-1px" }}
+          className="font-sans font-medium text-center mb-14 md:mb-20"
+          style={{ color: "#095857", fontSize: "clamp(28px, 4.5vw, 56px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
           Insight To Win Back Customers<br />and Close More Deals
         </h2>
 
-        <div className="mx-auto grid gap-2 sm:grid-cols-5 rounded-xl overflow-hidden">
-
-          {/* Top-left — dashboard screenshot */}
-          <Card className="group overflow-hidden border-0 sm:col-span-3 sm:rounded-none sm:rounded-tl-xl" style={{ border: "0.2px solid #d1d5db" }}>
-            <CardHeader>
-              <div className="md:p-6">
-                <p className="font-medium text-[#095857]">Real-time win-back intelligence</p>
-                <p className="text-muted-foreground mt-3 max-w-sm text-sm">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mx-auto grid gap-5 sm:grid-cols-5 sm:grid-rows-[600px_460px]"
+        >
+          {/* Top-left — dashboard video */}
+          <motion.div variants={item} className="sm:col-span-3 sm:row-start-1">
+            <Card className={`${cardClass} flex flex-col rounded-2xl`}>
+              <div className="flex-shrink-0 px-8 pt-8 pb-6 md:px-10 md:pt-10">
+                <p className={titleClass}>Real-time win-back intelligence</p>
+                <p className={bodyClass}>
                   Lokam surfaces high-intent signals the moment a customer goes cold — so your BDC calls at exactly the right time, every time.
                 </p>
               </div>
-            </CardHeader>
-            <div className="relative h-fit pl-6 md:pl-12">
-              <div className="absolute -inset-6 [background:radial-gradient(75%_95%_at_50%_0%,transparent,hsl(var(--background))_100%)]" />
-              <div className="bg-background overflow-hidden rounded-tl-lg pl-2 pt-2">
-                <Image
-                  src="/assets/dashboard.png"
-                  alt="Lokam dashboard showing customer insights"
-                  width={1051}
-                  height={600}
-                  className="w-full h-auto"
-                  style={{ border: "0.5px solid #d1d5db" }}
+              <div className="relative mx-8 mb-8 mt-auto h-60 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 sm:h-auto sm:flex-1 sm:min-h-0 md:mx-10 md:mb-10">
+                <AutoPlayVideo
+                  src="/assets/bento/dashboard.mp4"
+                  poster="/assets/bento/dashboard-poster.jpg"
+                  width={2560}
+                  height={1692}
+                  ariaLabel="Lokam dashboard with real-time customer insights"
+                  className="absolute inset-0 h-full w-full object-contain object-center sm:object-cover sm:object-top"
                 />
               </div>
-            </div>
-          </Card>
+            </Card>
+          </motion.div>
 
-          {/* Top-right — insights image */}
-          <Card className="group overflow-hidden border-0 sm:col-span-2 sm:rounded-none sm:rounded-tr-xl" style={{ border: "0.2px solid #d1d5db" }}>
-            <p className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl" style={{ color: "#095857" }}>
-              Convert missed service calls into loyal customers.
-            </p>
-            <CardContent className="mt-auto h-fit">
-              <div className="relative mb-6 sm:mb-0">
-                <div className="absolute -inset-6 [background:radial-gradient(50%_75%_at_75%_50%,transparent,hsl(var(--background))_100%)]" />
-                <div className="overflow-hidden rounded-r-lg">
+          {/* Top-right — feedback insights scrolling scorecard */}
+          <motion.div variants={item} className="sm:col-span-2 sm:row-start-1">
+            <Card className={`${cardClass} flex flex-col rounded-2xl`}>
+              <div className="flex-shrink-0 px-8 pt-8 pb-6 md:px-10 md:pt-10">
+                <p className={titleClass}>
+                  Convert missed service calls into loyal customers.
+                </p>
+              </div>
+              <div className="relative mx-6 mb-6 h-72 overflow-hidden rounded-xl border border-zinc-200 bg-white sm:h-auto sm:flex-1 sm:min-h-0 md:mx-8 md:mb-8 [mask-image:linear-gradient(to_bottom,transparent_0%,black_8%,black_92%,transparent_100%)]">
+                <div className="absolute inset-x-0 top-0 flex flex-col animate-vscroll [animation-delay:1s] group-hover:[animation-play-state:paused]">
                   <Image
-                    src="/assets/insights.png"
-                    alt="Customer insights"
-                    width={760}
-                    height={1100}
-                    className="w-full h-auto object-cover object-top"
+                    src="/assets/bento/feedback-insights.png"
+                    alt="Customer feedback scorecard"
+                    width={916}
+                    height={2192}
+                    className="block w-full h-auto"
+                  />
+                  <Image
+                    src="/assets/bento/feedback-insights.png"
+                    alt=""
+                    aria-hidden
+                    width={916}
+                    height={2192}
+                    className="block w-full h-auto"
                   />
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
-          {/* Bottom-left — multilingual / availability */}
-          <Card className="group p-6 border-0 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12" style={{ border: "0.2px solid #d1d5db" }}>
-            <p className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl" style={{ color: "#095857" }}>
-              Multilingual support, available 24/7 for every customer.
-            </p>
-            <div className="flex justify-center gap-6">
-              <div className="bg-muted/35 relative flex aspect-square size-16 items-center rounded-[7px] p-3 shadow-lg">
-                <Globe className="mt-auto size-4 text-[#095857]" />
+          {/* Bottom-left — multilingual / availability with bobbing icons */}
+          <motion.div variants={item} className="sm:col-span-2 sm:row-start-2">
+            <Card className={`${cardClass} flex flex-col items-center justify-center rounded-2xl px-10 py-12`}>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 ring-1 ring-emerald-200">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+                </span>
+                24/7 Live
               </div>
-              <div className="bg-muted/35 flex aspect-square size-16 items-center justify-center rounded-[7px] p-3 shadow-lg">
-                <Phone className="size-4 text-[#095857]" />
-              </div>
-            </div>
-          </Card>
-
-          {/* Bottom-right — KPI screenshot */}
-          <Card className="group relative border-0 sm:col-span-3 sm:rounded-none sm:rounded-br-xl" style={{ border: "0.2px solid #d1d5db" }}>
-            <CardHeader className="p-6 md:p-12">
-              <p className="font-medium text-[#095857]">Track all your detractors and opportunities in one tab</p>
-              <p className="text-muted-foreground mt-2 max-w-sm text-sm">
-                Every open issue, missed follow-up, and at-risk customer — prioritized by revenue impact so your BDC always knows where to focus first.
+              <p className={`${titleClass} mb-9 max-w-[320px] text-balance text-center`}>
+                Multilingual support, available 24/7 for every customer.
               </p>
-            </CardHeader>
-            <CardContent className="px-6 pb-6 md:px-12 md:pb-12">
-              <Image
-                src="/assets/issues-kpi.png"
-                alt="Issues KPI breakdown"
-                width={760}
-                height={200}
-                className="w-full h-auto rounded-lg"
-              />
-            </CardContent>
-          </Card>
+              <div className="flex justify-center gap-6">
+                <div className="flex aspect-square size-16 items-center justify-center rounded-2xl bg-white shadow-md ring-1 ring-zinc-200 animate-bob">
+                  <Globe className="size-6 text-[#095857]" strokeWidth={1.75} />
+                </div>
+                <div
+                  className="flex aspect-square size-16 items-center justify-center rounded-2xl bg-white shadow-md ring-1 ring-zinc-200 animate-bob"
+                  style={{ animationDelay: "-1.5s" }}
+                >
+                  <Phone className="size-6 text-[#095857]" strokeWidth={1.75} />
+                </div>
+              </div>
+            </Card>
+          </motion.div>
 
-        </div>
+          {/* Bottom-right — issues KPI video */}
+          <motion.div variants={item} className="sm:col-span-3 sm:row-start-2">
+            <Card className={`${cardClass} flex flex-col rounded-2xl`}>
+              <div className="flex-shrink-0 px-7 pt-7 pb-4 md:px-8 md:pt-8">
+                <p className={titleClass}>
+                  Track every detractor and opportunity in one tab
+                </p>
+                <p className={bodyClass}>
+                  Open issues and at-risk customers — prioritized by revenue impact so your BDC always knows where to focus.
+                </p>
+              </div>
+              <div className="relative mx-8 mb-8 mt-auto h-40 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 sm:h-auto sm:flex-1 sm:min-h-0 md:mx-10 md:mb-10">
+                <AutoPlayVideo
+                  src="/assets/bento/issues-kpi.mp4"
+                  poster="/assets/bento/issues-kpi-poster.jpg"
+                  width={2560}
+                  height={984}
+                  ariaLabel="Issues and opportunities KPI breakdown"
+                  className="absolute inset-0 h-full w-full object-contain object-center"
+                />
+              </div>
+            </Card>
+          </motion.div>
+
+        </motion.div>
       </div>
     </section>
   );
