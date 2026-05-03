@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 260">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#outer-glow-2);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #64a9a3;
+        filter: url(#outer-glow-1);
+      }
+    </style>
+    <filter id="outer-glow-1" x="0" y="0" width="256" height="260" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="18"/>
+      <feFlood flood-color="#6cd3c7" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-2" x="37" y="33" width="176" height="193" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="18"/>
+      <feFlood flood-color="#a2e0c7" flood-opacity=".57"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <ellipse class="cls-3" cx="128" cy="129.95" rx="73.88" ry="75.58"/>
+      <g class="cls-1">
+        <path class="cls-2" d="M91.39,157.02v-13.59l35.14-55.5h11.67v18.95h-6.94l-22.5,35.59v.68h49.86v13.87h-67.23ZM131.6,171.97v-19.06l.34-6.09v-58.88h16.19v84.04h-16.53Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

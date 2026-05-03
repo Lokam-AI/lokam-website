@@ -2,15 +2,17 @@
 import { useEffect, useRef, useState } from "react";
 
 const csiSteps = [
-  { title: "Immediate Outreach", desc: "Lokam's AI calls every customer within 24 hours post-service.", maxWidth: 360 },
-  { title: "Instant Escalation", desc: "Instantly escalates detractors with full context and transcripts to your service manager.", maxWidth: 400 },
-  { title: "Review Generation", desc: "Automatically sends Google review links to promoters via SMS.", maxWidth: 400 },
+  { title: "Immediate Outreach", desc: "Lokam's AI calls every customer within 24 hours post-service", maxWidth: 360 },
+  { title: "Instant Escalation", desc: "Instantly escalates detractors with full context to your service manager", maxWidth: 400 },
+  { title: "Review Generation", desc: "Automatically sends Google review links to promoters", maxWidth: 400 },
+  { title: "Actionable Insights", desc: "Real time CSI trends, advisor performance and upsell opportunities.", maxWidth: 400 },
 ];
 
 const walkoutSteps = [
-  { title: "Objection Discovery", desc: "Identifies the primary objections (price, trade-in, cosigner) holding them back.", maxWidth: 360 },
-  { title: "Hot Lead Handoff", desc: "Instantly escalates hot leads to the sales team with full context.", maxWidth: 370 },
-  { title: "Deal Closing Insights", desc: "Gives you every insight to close more deals before they buy a competitor's vehicle.", maxWidth: 400 },
+  { title: "Immediate Outreach", desc: "Lokam's AI follows up with every showroom visitor within 24 hours", maxWidth: 360 },
+  { title: "Objection Discovery", desc: "Identifies the primary objections holding them back", maxWidth: 360 },
+  { title: "Hot Lead Handoff", desc: "Instantly escalates hot leads to the sales team with full context", maxWidth: 370 },
+  { title: "Deal Closing Insights", desc: "Gives you every insight to close more deals", maxWidth: 400 },
 ];
 
 const waveformBars = [
@@ -145,7 +147,7 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
   );
 }
 
-const stepIcons = ["/assets/num1.svg", "/assets/num2.svg", "/assets/num3.svg"];
+const stepIcons = ["/assets/num1.svg", "/assets/num2.svg", "/assets/num3.svg", "/assets/num4.svg"];
 
 function StepList({ steps }: { steps: typeof csiSteps }) {
   return (
@@ -180,9 +182,6 @@ export default function HowItWorksCards() {
           <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Your Post Service<br />Follow Up
           </h3>
-          <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
-            Stop relying on manual calls that never happen. Lokam&apos;s AI reaches every customer, every time.
-          </p>
           <StepList steps={csiSteps} />
         </div>
         <div>
@@ -199,9 +198,6 @@ export default function HowItWorksCards() {
           <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Unsold Showroom<br />Traffic Follow-Up
           </h3>
-          <p className="font-sans mb-8" style={{ color: "#3B3B3B", fontSize: 19, lineHeight: "24px", fontWeight: 400, maxWidth: 360 }}>
-            Don&apos;t let walk-outs leave the deal. Engage them and bring them back with our AI follow-up system.
-          </p>
           <StepList steps={walkoutSteps} />
         </div>
       </div>
