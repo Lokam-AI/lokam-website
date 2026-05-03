@@ -111,6 +111,7 @@ export default function Footer() {
             />
           </div>
 
+
         </div>
 
         {/* Bottom bar */}
@@ -131,6 +132,15 @@ export default function Footer() {
             <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
               Contact
             </SmoothAnchor>
+            <a
+              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs hover:text-white transition-colors"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Book a Demo
+            </a>
           </div>
         </div>
       </div>
