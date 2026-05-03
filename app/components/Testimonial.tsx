@@ -132,7 +132,7 @@ export default function Testimonial() {
 
       {/* Slider */}
       <div
-        className="max-w-[1125px] mx-auto px-4 md:px-8"
+        className="max-w-[1360px] mx-auto px-4 md:px-8"
         role="region"
         aria-label="Customer testimonials"
         onTouchStart={handleTouchStart}
@@ -166,9 +166,9 @@ export default function Testimonial() {
                   style={{ borderRadius: 20, boxShadow: "0 0 36px #307D93" }}
                 >
                   {/* Quote side — 2 of 5 columns */}
-                  <div className="lg:col-span-2 flex flex-col justify-center px-8 py-10 lg:px-10 lg:py-12">
+                  <div className="lg:col-span-2 flex flex-col justify-center px-10 py-12 lg:px-14 lg:py-16">
                     <p
-                      className="font-sans font-light text-sm lg:text-base leading-6 lg:leading-7 text-black"
+                      className="font-sans font-light text-base lg:text-lg leading-7 lg:leading-8 text-black"
                       style={{ maxWidth: "min(380px, 100%)" }}
                     >
                       {t.renderQuote ? t.renderQuote() : <>&ldquo;{t.quote}&rdquo;</>}
