@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import SmoothAnchor from "./SmoothAnchor";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const caseStudyLinks = [
@@ -150,14 +151,6 @@ function MobileAccordion({
   );
 }
 
-function scrollToContact(e: React.MouseEvent, onDone?: () => void) {
-  const el = document.getElementById("contact");
-  if (el) {
-    e.preventDefault();
-    el.scrollIntoView({ behavior: "smooth" });
-  }
-  onDone?.();
-}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -196,9 +189,9 @@ export default function Nav() {
           <nav className="hidden md:flex items-center gap-10">
             <DropdownMenu label="Case Study" href="/case-studies" items={caseStudyLinks} />
             <DropdownMenu label="Blogs" href="/blog" items={blogLinks} />
-            <Link href="/#contact" onClick={(e) => scrollToContact(e)} className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+            <SmoothAnchor href="/#contact" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               Contact Us
-            </Link>
+            </SmoothAnchor>
             <Link href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               About
             </Link>
@@ -248,9 +241,9 @@ export default function Nav() {
               <MobileAccordion label="Blogs" href="/blog" items={blogLinks} onNavigate={close} />
 
               <div className="border-b border-white/10">
-                <Link href="/#contact" onClick={(e) => scrollToContact(e, close)} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
+                <SmoothAnchor href="/#contact" className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline" onClick={close}>
                   Contact Us
-                </Link>
+                </SmoothAnchor>
               </div>
 
               {/* CTAs */}

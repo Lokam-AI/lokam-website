@@ -1,4 +1,6 @@
+"use client";
 import { Check, X } from "lucide-react";
+import SmoothAnchor from "./SmoothAnchor";
 
 const rows = [
   {
@@ -113,13 +115,13 @@ export default function ComparisonTable() {
             <p className="text-sm text-[--color-mist]">
               Ready to see the difference for your dealership?
             </p>
-            <a
+            <SmoothAnchor
               href="#contact"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[--color-teal] text-[--color-ink] font-semibold text-sm hover:bg-[--color-teal-dim] transition-colors whitespace-nowrap"
               style={{ boxShadow: "0 0 20px rgba(0,200,180,0.30)" }}
             >
               Book a Free Demo
-            </a>
+            </SmoothAnchor>
           </div>
         </div>
         </div>

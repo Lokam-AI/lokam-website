@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import ScrollHandler from "./components/ScrollHandler";
 import TrustedBy from "./components/TrustedBy";
 import IntegratesWith from "./components/IntegratesWith";
 import HowItWorks from "./components/HowItWorks";
@@ -33,6 +35,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
+      <Suspense fallback={null}><ScrollHandler /></Suspense>
       <Nav />
       <main>
         <Hero />

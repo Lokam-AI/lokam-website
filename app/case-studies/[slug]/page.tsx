@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import SmoothAnchor from "../../components/SmoothAnchor";
 import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
 
 const SITE_URL = "https://lokam-website.vercel.app";
@@ -312,9 +313,9 @@ export default async function CaseStudyPage({
             <Link href="/blog" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               Read our blog →
             </Link>
-            <Link href="/#roi" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            <SmoothAnchor href="/#roi" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               Calculate your ROI →
-            </Link>
+            </SmoothAnchor>
           </div>
         </div>
 

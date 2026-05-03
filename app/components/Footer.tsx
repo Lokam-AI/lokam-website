@@ -1,14 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-function scrollToContact(e: React.MouseEvent) {
-  const el = document.getElementById("contact");
-  if (el) {
-    e.preventDefault();
-    el.scrollIntoView({ behavior: "smooth" });
-  }
-}
+import SmoothAnchor from "./SmoothAnchor";
 
 export default function Footer() {
   return (
@@ -37,12 +30,48 @@ export default function Footer() {
 
           {/* Col 1 — Brand */}
           <div>
-            <span className="font-sans font-semibold text-white text-xl tracking-tight">
-              Lokam
-            </span>
+            <a href="/" className="no-underline">
+              <Image
+                src="/LOKAM_PRIMARY_WHITE_FULL_LOGO.svg"
+                alt="Lokam"
+                width={160}
+                height={51}
+                className="h-9 w-auto"
+              />
+            </a>
             <p className="mt-3 font-sans text-sm leading-6" style={{ color: "rgba(255,255,255,0.55)", maxWidth: 220 }}>
               Voice AI follow-up for automotive dealerships. Built to recover revenue, not just report on it.
             </p>
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/lokam-ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lokam on LinkedIn"
+                className="flex items-center justify-center w-8 h-8 rounded-lg transition-opacity opacity-60 hover:opacity-100"
+                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/lokam_ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lokam on Instagram"
+                className="flex items-center justify-center w-8 h-8 rounded-lg transition-opacity opacity-60 hover:opacity-100"
+                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Col 2 — Lokam Inc. */}
@@ -56,6 +85,15 @@ export default function Footer() {
               <p className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
                 2261 Market Street STE 46073<br />San Francisco, CA 94114
               </p>
+            </div>
+            <div className="flex items-center gap-2 mt-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <a href="mailto:founder@lokam.ai" className="font-sans text-sm transition-colors hover:text-white" style={{ color: "rgba(255,255,255,0.45)" }}>
+                founder@lokam.ai
+              </a>
             </div>
           </div>
 
@@ -90,9 +128,9 @@ export default function Footer() {
             <Link href="/terms-of-service" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
               Terms of Service
             </Link>
-            <Link href="/#contact" onClick={scrollToContact} className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
               Contact
-            </Link>
+            </SmoothAnchor>
           </div>
         </div>
       </div>

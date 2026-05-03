@@ -80,14 +80,14 @@ export default function Insights() {
               <div className="relative mx-6 mb-6 h-72 overflow-hidden rounded-xl border border-zinc-200 bg-white sm:h-auto sm:flex-1 sm:min-h-0 md:mx-8 md:mb-8 [mask-image:linear-gradient(to_bottom,transparent_0%,black_8%,black_92%,transparent_100%)]">
                 <div className="absolute inset-x-0 top-0 flex flex-col animate-vscroll [animation-delay:1s] group-hover:[animation-play-state:paused]">
                   <Image
-                    src="/assets/bento/feedback-insights.png"
+                    src="/assets/bento/feedback-insights.webp"
                     alt="Customer feedback scorecard"
                     width={916}
                     height={2192}
                     className="block w-full h-auto"
                   />
                   <Image
-                    src="/assets/bento/feedback-insights.png"
+                    src="/assets/bento/feedback-insights.webp"
                     alt=""
                     aria-hidden
                     width={916}

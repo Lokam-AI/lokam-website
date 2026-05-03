@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import SmoothAnchor from "../../components/SmoothAnchor";
 import { blogPosts, getPostBySlug, CHIP_STYLES } from "../../../lib/blog-posts";
 
 const SITE_URL = "https://lokam-website.vercel.app";
@@ -338,9 +339,9 @@ export default async function BlogPostPage({
             <Link href="/case-studies" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               See dealer case studies →
             </Link>
-            <Link href="/#how-it-works" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
+            <SmoothAnchor href="/#how-it-works" className="inline-flex items-center gap-1 font-sans text-sm font-medium" style={{ color: "#4A6B68" }}>
               How Lokam works →
-            </Link>
+            </SmoothAnchor>
           </div>
         </div>
       </main>

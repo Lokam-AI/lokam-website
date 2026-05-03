@@ -127,7 +127,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://stream.mux.com" />
         <link rel="preconnect" href="https://image.mux.com" />
-        <link rel="preload" as="image" href="/assets/car.avif" type="image/avif" />
       </head>
       <body className="min-h-full flex flex-col">
         <script
