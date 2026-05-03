@@ -101,7 +101,7 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
           <span className="font-sans" style={{ color: badgeCfg.color, fontWeight: 600, fontSize: 10 }}>{badgeCfg.text}</span>
         </div>
       </div>
-      <div className="font-sans mb-3" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>{name}</div>
+      <div className="font-sans mb-8" style={{ fontWeight: 700, fontSize: 26, color: "#111", lineHeight: 1.3 }}>{name}</div>
       <div
         className="overflow-hidden cursor-pointer select-none mb-4 mt-auto"
         style={{ height: 80 }}
@@ -179,7 +179,7 @@ export default function HowItWorksCards() {
       {/* ── CSI Workflow ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center relative z-10">
         <div>
-          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
+          <h3 className="font-sans mb-8" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Your Post Service<br />Follow Up
           </h3>
           <StepList steps={csiSteps} />
@@ -195,7 +195,7 @@ export default function HowItWorksCards() {
           <CallCard label="Sample Sales Call" name="John Doe" badge="In Lead" totalSeconds={228} src="/assets/sales.flac" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
         </div>
         <div className="order-1 lg:order-2 lg:pl-10">
-          <h3 className="font-sans mb-3" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
+          <h3 className="font-sans mb-8" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>
             Automate Unsold Showroom<br />Traffic Follow-Up
           </h3>
           <StepList steps={walkoutSteps} />
