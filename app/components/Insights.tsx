@@ -32,7 +32,7 @@ export default function Insights() {
 
   return (
     <section className="bg-zinc-50 py-20 md:py-32">
-      <div className="mx-auto max-w-[1440px] px-6">
+      <div className="mx-auto max-w-[1380px] px-6 lg:px-12">
         <h2
           className="font-sans font-medium text-center mb-14 md:mb-20"
           style={{ color: "#095857", fontSize: "clamp(28px, 4.5vw, 56px)", lineHeight: "1.12", letterSpacing: "-1px" }}
@@ -45,7 +45,7 @@ export default function Insights() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mx-auto grid gap-5 sm:grid-cols-5 sm:grid-rows-[600px_460px]"
+          className="mx-auto grid gap-5 sm:grid-cols-5 sm:grid-rows-[540px_420px]"
         >
           {/* Top-left — dashboard video */}
           <motion.div variants={item} className="sm:col-span-3 sm:row-start-1">
