@@ -20,6 +20,20 @@
   --color-text-body:    #3b3b3b;
   --color-text-muted:   #6b7280;
   --color-text-light:   #cfcdd6;
+
+  /* Animations */
+  --animate-vscroll: vscroll 32s linear infinite;
+  --animate-bob:     bob 3s ease-in-out infinite;
+}
+
+@keyframes vscroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 
 /* shadcn/ui CSS variables */
@@ -63,4 +77,14 @@ mux-player {
 @keyframes marquee-reverse {
   0%   { transform: translateX(calc(-50%)); }
   to   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-vscroll,
+  .animate-bob,
+  .animate-ping,
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none !important;
+  }
 }
