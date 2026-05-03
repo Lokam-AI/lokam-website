@@ -166,7 +166,7 @@ export default function Testimonial() {
                   style={{ borderRadius: 20, boxShadow: "0 0 36px #307D93" }}
                 >
                   {/* Quote side — 2 of 5 columns */}
-                  <div className="lg:col-span-2 flex flex-col justify-center px-10 py-12 lg:px-14 lg:py-16">
+                  <div className="order-2 lg:order-1 lg:col-span-2 flex flex-col justify-center px-10 py-12 lg:px-14 lg:py-16">
                     <p
                       className="font-sans font-light text-base lg:text-lg leading-7 lg:leading-8 text-black"
                       style={{ maxWidth: "min(380px, 100%)" }}
@@ -182,7 +182,7 @@ export default function Testimonial() {
                   </div>
 
                   {/* Video side — 3 of 5 columns */}
-                  <div className="lg:col-span-3 flex items-center justify-center w-full lg:pt-4 lg:pb-4 lg:pl-1 lg:pr-5">
+                  <div className="order-1 lg:order-2 lg:col-span-3 flex items-center justify-center w-full lg:pt-4 lg:pb-4 lg:pl-1 lg:pr-5">
                     <div
                       className="relative w-full overflow-hidden"
                       style={{ aspectRatio: "16/9", borderRadius: 14 }}
