@@ -15,7 +15,7 @@ const posts: Post[] = [
     category: "SERVICES & CSI",
     title: "Why Your BDC Is Losing Customers Before the Workday Even Starts",
     excerpt:
-      "Late response times are silently costing dealerships leads, deals, and reputation — and most stores don't know it's happening.",
+      "Late response times are silently costing dealerships leads, deals, and reputation — and most dealerships don't know it's happening.",
     date: "Jan 2026",
     readTime: "4 min read",
     href: "/blog/why-your-bdc-is-losing-customers-before-the-workday-even-starts",

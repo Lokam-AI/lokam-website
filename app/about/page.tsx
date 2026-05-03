@@ -107,7 +107,7 @@ const values = [
       </svg>
     ),
     title: "Zero-friction deployment",
-    desc: "Our target is 4 hours from signed contract to live calls. No IT tickets, no month-long onboarding, no excuses.",
+    desc: "We move fast and work with your team to get you live as quickly as possible — no month-long onboarding, no excuses.",
   },
   {
     icon: (
@@ -130,7 +130,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How quickly can Lokam go live at my dealership?",
-      acceptedAnswer: { "@type": "Answer", text: "Most dealerships are live within 4 hours. There's no IT setup, no CRM integration required to start, and no hardware to install. We connect to your DMS and configure your AI caller on a call with you." },
+      acceptedAnswer: { "@type": "Answer", text: "We work with your team to get you live as quickly as possible. Some IT setup is required for DMS integration. Book a demo and we'll walk you through the onboarding process." },
     },
     {
       "@type": "Question",
@@ -165,7 +165,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What's the pricing model?",
-      acceptedAnswer: { "@type": "Answer", text: "Lokam is priced per rooftop with no setup fee and no long-term contract. Volume discounts apply for multi-store groups. Book a demo and we'll build a custom ROI model for your store before you commit to anything." },
+      acceptedAnswer: { "@type": "Answer", text: "We offer different plans tailored to each use case. Book a demo or contact us — we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything." },
     },
   ],
 };
@@ -320,7 +320,7 @@ export default function AboutPage() {
                 Ready to see Lokam at your dealership?
               </p>
               <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Live in under 4 hours · No IT required · No setup fee.
+                Plans tailored to your dealership · Book a demo to get started.
               </p>
             </div>
             <a

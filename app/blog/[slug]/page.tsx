@@ -311,7 +311,7 @@ export default async function BlogPostPage({
                 className="font-sans text-xs mt-1"
                 style={{ color: "rgba(255,255,255,0.5)" }}
               >
-                Live in under 4 hours · No IT required.
+                Plans tailored to your dealership · Book a demo to get started.
               </p>
             </div>
             <a

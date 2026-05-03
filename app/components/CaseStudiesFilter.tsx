@@ -59,10 +59,10 @@ const studies: Study[] = [
     dealership: "Capital Auto Group",
     location: "Atlanta, GA",
     miniStats: [
-      { value: "3×", label: "Stores rolled out" },
+      { value: "3×", label: "Dealerships rolled out" },
       { value: "0", label: "BDC headcount added" },
     ],
-    excerpt: "A multi-rooftop rollout across 3 stores delivered measurable, compounding ROI within the first quarter, with zero additional BDC headcount added at any store.",
+    excerpt: "A multi-rooftop rollout across 3 dealerships delivered measurable, compounding ROI within the first quarter, with zero additional BDC headcount added at any dealership.",
     href: "/case-studies/capital-auto-group",
   },
   {
@@ -73,9 +73,9 @@ const studies: Study[] = [
     location: "Portland, OR",
     miniStats: [
       { value: "54→66", label: "NPS score" },
-      { value: "#1", label: "In 12-store group" },
+      { value: "#1", label: "In 12-dealership group" },
     ],
-    excerpt: "Structured post-service follow-up with branded caller ID drove Pacific Subaru's NPS from 54 to 66, the highest across their entire 12-store group.",
+    excerpt: "Structured post-service follow-up with branded caller ID drove Pacific Subaru's NPS from 54 to 66, the highest across their entire 12-dealership group.",
     href: "/case-studies/pacific-subaru",
   },
   {

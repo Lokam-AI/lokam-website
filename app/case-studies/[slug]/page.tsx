@@ -288,7 +288,7 @@ export default async function CaseStudyPage({
                 Want results like these?
               </p>
               <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Live at your dealership in under 4 hours · No IT required.
+                Plans tailored to your dealership · Book a demo to get started.
               </p>
             </div>
             <a

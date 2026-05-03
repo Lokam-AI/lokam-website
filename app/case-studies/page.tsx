@@ -85,7 +85,7 @@ export default function CaseStudiesPage() {
           </h1>
 
           <p className="font-sans text-base md:text-lg text-[#4A6B68] mt-4 mx-auto" style={{ maxWidth: 520 }}>
-            Measurable results from dealerships that replaced manual follow-up with Lokam's AI — across service, sales, and multi-store groups.
+            Measurable results from dealerships that replaced manual follow-up with Lokam's AI — across service, sales, and dealer groups.
           </p>
 
           {/* Hero stats */}
@@ -226,7 +226,7 @@ export default function CaseStudiesPage() {
                 Join 200+ dealerships already using Lokam to recover revenue, protect CSI, and close more deals — with zero added headcount.
               </p>
               <div className="flex flex-wrap items-center gap-4 mt-1">
-                {["No setup fee", "Live in under a week", "Cancel anytime"].map((item) => (
+                {["Plans for every use case", "Built for dealerships", "Book a demo"].map((item) => (
                   <span key={item} className="inline-flex items-center gap-1.5 font-sans text-xs text-[#0C8074]">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0CB4A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />

@@ -21,14 +21,14 @@ const SITE_URL = "https://lokam-website.vercel.app";
 export const metadata: Metadata = {
   title: "Lokam — Voice AI for Automotive Dealerships",
   description:
-    "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Live at your store in under 4 hours.",
+    "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Lokam — Voice AI for Automotive Dealerships",
     description:
-      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Live at your store in under 4 hours.",
+      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
     url: SITE_URL,
     siteName: "Lokam",
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lokam — Voice AI for Automotive Dealerships",
     description:
-      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Live at your store in under 4 hours.",
+      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
     images: [`${SITE_URL}/assets/car.jpg`],
   },
 };
@@ -98,13 +98,13 @@ const softwareSchema = {
     "Lead re-engagement for unsold desklog customers",
     "Branded caller ID for improved contact rates",
     "Multilingual customer outreach",
-    "DMS integration — live in under 4 hours",
+    "DMS and CRM integration",
   ],
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Book a free demo — no setup fee, no long-term contract.",
+    description: "Book a demo — plans tailored to your dealership and use case.",
     url: "https://calendly.com/saleeq-lokam/30-minutes-meeting",
   },
   provider: {

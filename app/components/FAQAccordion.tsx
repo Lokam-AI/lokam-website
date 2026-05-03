@@ -3,10 +3,6 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "How quickly can Lokam go live at my dealership?",
-    a: "Most dealerships are live within 4 hours. There's no IT setup, no CRM integration required to start, and no hardware to install. We connect to your DMS and configure your AI caller on a call with you.",
-  },
-  {
     q: "What DMS and CRM systems does Lokam integrate with?",
     a: "Lokam works with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. If you use a different system, contact us — we add new integrations regularly.",
   },
@@ -32,7 +28,7 @@ const faqs = [
   },
   {
     q: "What's the pricing model?",
-    a: "Lokam is priced per rooftop with no setup fee and no long-term contract. Volume discounts apply for multi-store groups. Book a demo and we'll build a custom ROI model for your store before you commit to anything.",
+    a: "We offer different plans tailored to each use case. Book a demo or contact us — we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything.",
   },
 ];
 
