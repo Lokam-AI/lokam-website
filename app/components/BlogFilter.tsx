@@ -132,6 +132,26 @@ export default function BlogFilter() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [email, setEmail] = useState("");
   const [query, setQuery] = useState("");
+  const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [trap, setTrap] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || subStatus === "loading") return;
+    setSubStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, trap }),
+      });
+      const json = await res.json();
+      setSubStatus(json.success ? "success" : "error");
+      if (json.success) setEmail("");
+    } catch {
+      setSubStatus("error");
+    }
+  };
 
   const filteredPosts = posts.filter((p) => {
     const q = query.trim().toLowerCase();
@@ -217,31 +237,53 @@ export default function BlogFilter() {
           <p className="font-sans text-sm md:text-base text-[#4A6B68] mb-8">
             Get the latest dealer insights, AI news, and Lokam case studies delivered to your inbox every two weeks. No spam.
           </p>
-          <form
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mx-auto w-full"
-            style={{ maxWidth: 420 }}
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div
-              className="flex items-center gap-2 rounded-xl px-3 py-2 bg-white flex-1"
-              style={{ border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.1)" }}
+          {subStatus === "success" ? (
+            <p className="font-sans text-sm font-semibold text-[#0CB4A7] mt-2">
+              You&apos;re subscribed — talk soon.
+            </p>
+          ) : (
+            <form
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mx-auto w-full"
+              style={{ maxWidth: 420 }}
+              onSubmit={handleSubscribe}
             >
+              {/* Honeypot — hidden from humans, bots fill it in */}
               <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-transparent text-sm font-sans text-[#0A2E2B] placeholder-[#8AADA8] outline-none px-2 py-1.5"
+                type="text"
+                name="website"
+                value={trap}
+                onChange={(e) => setTrap(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
               />
-            </div>
-            <button
-              type="submit"
-              className="flex-shrink-0 px-5 py-3 sm:py-2 rounded-xl sm:rounded-lg font-sans font-semibold text-sm text-white"
-              style={{ background: "#0CB4A7" }}
-            >
-              Subscribe →
-            </button>
-          </form>
+              <div
+                className="flex items-center gap-2 rounded-xl px-3 py-2 bg-white flex-1"
+                style={{ border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.1)" }}
+              >
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-transparent text-sm font-sans text-[#0A2E2B] placeholder-[#8AADA8] outline-none px-2 py-1.5"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={subStatus === "loading"}
+                className="flex-shrink-0 px-5 py-3 sm:py-2 rounded-xl sm:rounded-lg font-sans font-semibold text-sm text-white disabled:opacity-60"
+                style={{ background: "#0CB4A7" }}
+              >
+                {subStatus === "loading" ? "..." : "Subscribe →"}
+              </button>
+            </form>
+          )}
+          {subStatus === "error" && (
+            <p className="font-sans text-xs text-red-500 mt-2">Something went wrong — please try again.</p>
+          )}
           <p className="font-sans text-xs text-[#8AADA8] mt-3">
             Join 1,200+ dealer principals and GMs already subscribed.
           </p>
