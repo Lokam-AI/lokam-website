@@ -30,11 +30,10 @@ const TESTIMONIALS: Testimonial[] = [
     renderQuote: scottQuote,
   },
   {
-    quote: "Lokam boosted our Google ratings from 4.0 to 4.6 in 5 weeks by catching service detractors in real time. On sales, it uncovered hidden objections from unsold desklog traffic, helping us close 15–20 extra cars monthly",
-    name: "Scott Falcone",
-    title: "Dealer principal,\nWorld Auto Group.",
-    playbackId: "ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600",
-    renderQuote: scottQuote,
+    quote: "In just a few weeks, Lokam helped us uncover hidden customer issues, recover missed revenue, and gain clear visibility into service and sales, driving follow-ups on active deals and an extra 15 to 20 cars sold per month.",
+    name: "Teri Bisbikis",
+    title: "General Manager,\nWorld Hyundai Matteson.",
+    playbackId: "iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M",
   },
 ];
 
