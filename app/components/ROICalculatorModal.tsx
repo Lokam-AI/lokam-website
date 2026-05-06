@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, Download, Calendar } from "lucide-react";
+import CalendlyButton from "./CalendlyButton";
 
 interface CalcState {
   monthlyUps: number;
@@ -117,11 +118,12 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
           </div>
 
           <div className="flex items-center gap-2">
-            <a href="https://calendly.com/saleeq-lokam/30-minutes-meeting" target="_blank" rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-lg no-underline transition-colors hover:border-[#05aa96]"
-              style={{ border: "1.5px solid rgba(255,255,255,0.22)" }}>
+            <CalendlyButton
+              className="hidden sm:inline-flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors hover:border-[#05aa96]"
+              style={{ border: "1.5px solid rgba(255,255,255,0.22)" }}
+            >
               <Calendar size={13} /> Book a Demo
-            </a>
+            </CalendlyButton>
             <button onClick={handlePrint}
               className="hidden sm:inline-flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-lg"
               style={{ background: "#05aa96", border: "none", cursor: "pointer" }}>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import CalendlyButton from "./CalendlyButton";
 
 type Study = {
   metric: string;
@@ -172,9 +173,9 @@ export default function CaseStudiesFilter() {
           </p>
           <p className="font-sans text-sm text-[#8AADA8]">
             Check back or{" "}
-            <a href="https://calendly.com/saleeq-lokam/30-minutes-meeting" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "#0CB4A7" }}>
+            <CalendlyButton className="underline" style={{ color: "#0CB4A7" }}>
               book a demo
-            </a>{" "}
+            </CalendlyButton>{" "}
             to see Lokam in action.
           </p>
         </div>

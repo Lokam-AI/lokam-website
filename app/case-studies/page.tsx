@@ -3,6 +3,7 @@ import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import CaseStudiesFilter from "../components/CaseStudiesFilter";
+import CalendlyButton from "../components/CalendlyButton";
 
 export const metadata: Metadata = {
   title: "Dealer Case Studies | Lokam Voice AI Results",
@@ -75,7 +76,7 @@ export default function CaseStudiesPage() {
               lineHeight: "1.08",
               letterSpacing: "-1.5px",
               color: "#0D1B2A",
-              maxWidth: 680,
+              whiteSpace: "nowrap",
             }}
           >
             Real Dealers.{" "}
@@ -175,39 +176,31 @@ export default function CaseStudiesPage() {
           {/* ── Filter + Grid (client) ── */}
           <CaseStudiesFilter />
 
+
           {/* ── Pagination ── */}
-          <div className="overflow-x-auto mt-10 mb-16">
-            <div className="flex flex-nowrap items-center justify-center gap-2">
-              <button
-                className="flex items-center justify-center rounded-lg w-9 h-9 transition-colors"
-                style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m15 18-6-6 6-6" />
-                </svg>
-              </button>
-              {[1, 2, 3, 4].map((page) => (
-                <button
-                  key={page}
-                  className="flex items-center justify-center rounded-lg w-9 h-9 font-sans font-medium text-sm transition-colors"
-                  style={
-                    page === 1
-                      ? { background: "#009589", color: "#fff", border: "1px solid #009589" }
-                      : { background: "#fff", color: "#4A6B68", border: "1px solid #C8E8E0" }
-                  }
-                >
-                  {page}
-                </button>
-              ))}
-              <button
-                className="flex items-center justify-center rounded-lg w-9 h-9 transition-colors"
-                style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
-              </button>
-            </div>
+          <div className="mt-10 mb-16 flex items-center justify-center gap-2">
+            <button
+              className="flex items-center justify-center rounded-lg w-9 h-9"
+              style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              className="flex items-center justify-center rounded-lg w-9 h-9 font-sans font-medium text-sm"
+              style={{ background: "#009589", color: "#fff", border: "1px solid #009589" }}
+            >
+              1
+            </button>
+            <button
+              className="flex items-center justify-center rounded-lg w-9 h-9"
+              style={{ border: "1px solid #C8E8E0", background: "#fff", color: "#4A6B68" }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
           </div>
 
           {/* ── Bottom CTA ── */}
@@ -237,15 +230,12 @@ export default function CaseStudiesPage() {
                 ))}
               </div>
             </div>
-            <a
-              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyButton
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-sans font-semibold text-sm text-white whitespace-nowrap transition-all duration-200 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98]"
-              style={{ background: "#009589", color: "#fff", boxShadow: "0 8px 24px #D1FBF4" }}
+              style={{ background: "#009589", boxShadow: "0 8px 24px #D1FBF4" }}
             >
               Deploy Lokam Today →
-            </a>
+            </CalendlyButton>
           </div>
 
         </div>

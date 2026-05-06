@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SmoothAnchor from "./SmoothAnchor";
+import CalendlyButton from "./CalendlyButton";
 
 export default function Footer() {
   return (
@@ -132,15 +133,12 @@ export default function Footer() {
             <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
               Contact
             </SmoothAnchor>
-            <a
-              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyButton
               className="font-sans text-xs hover:text-white transition-colors"
               style={{ color: "rgba(255,255,255,0.4)" }}
             >
               Book a Demo
-            </a>
+            </CalendlyButton>
           </div>
         </div>
       </div>

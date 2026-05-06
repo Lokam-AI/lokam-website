@@ -1,5 +1,6 @@
 "use client";
 import { ArrowRight } from "lucide-react";
+import CalendlyButton from "./CalendlyButton";
 
 export default function CTA() {
   return (
@@ -108,16 +109,13 @@ export default function CTA() {
               </p>
             </div>
             <div>
-              <a
-                href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+              <CalendlyButton
                 className="flex items-center justify-center gap-2 w-full rounded-xl text-white text-[15px] font-medium font-sans py-4 transition-opacity hover:opacity-90 mb-3"
                 style={{ background: "linear-gradient(to right, #4DA28C, #418E7A)", boxShadow: "0 0 16px rgba(77,162,140,0.4)" }}
               >
                 Book a Demo
                 <ArrowRight size={15} />
-              </a>
+              </CalendlyButton>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SmoothAnchor from "./SmoothAnchor";
+import CalendlyButton from "./CalendlyButton";
 
 export default function Hero() {
   return (
@@ -60,14 +61,9 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="mt-[30px] flex flex-wrap gap-4 items-center justify-center">
-            <a
-              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white no-underline"
-            >
+            <CalendlyButton className="flex items-center justify-center px-6 h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white">
               Book a demo
-            </a>
+            </CalendlyButton>
             <SmoothAnchor
               href="#roi"
               className="flex items-center justify-center px-6 h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"

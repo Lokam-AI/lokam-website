@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import SmoothAnchor from "./SmoothAnchor";
 import { Menu, X, ChevronDown } from "lucide-react";
+import CalendlyButton from "./CalendlyButton";
 
 const caseStudyLinks = [
   { label: "Metro Toyota",       href: "/case-studies/metro-toyota" },
@@ -256,16 +257,13 @@ export default function Nav() {
                 >
                   Log in
                 </a>
-                <a
-                  href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CalendlyButton
                   onClick={close}
-                  className="flex items-center justify-center h-11 rounded-xl text-white text-sm font-sans font-medium no-underline"
+                  className="flex items-center justify-center h-11 rounded-xl text-white text-sm font-sans font-medium"
                   style={{ backgroundColor: "#307D93" }}
                 >
                   Book a demo
-                </a>
+                </CalendlyButton>
               </div>
             </div>
           </div>

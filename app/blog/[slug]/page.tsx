@@ -4,6 +4,7 @@ import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import SmoothAnchor from "../../components/SmoothAnchor";
+import CalendlyButton from "../../components/CalendlyButton";
 import { blogPosts, getPostBySlug, CHIP_STYLES } from "../../../lib/blog-posts";
 
 const SITE_URL = "https://lokam-website.vercel.app";
@@ -315,18 +316,12 @@ export default async function BlogPostPage({
                 Plans tailored to your dealership · Book a demo to get started.
               </p>
             </div>
-            <a
-              href="https://calendly.com/saleeq-lokam/30-minutes-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyButton
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-sans font-semibold text-sm text-white whitespace-nowrap transition-all duration-200 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98]"
-              style={{
-                background: "#009589",
-                boxShadow: "0 0 20px 6px rgba(0,149,137,0.45)",
-              }}
+              style={{ background: "#009589", boxShadow: "0 0 20px 6px rgba(0,149,137,0.45)" }}
             >
               Book a Demo →
-            </a>
+            </CalendlyButton>
           </div>
         </section>
 
