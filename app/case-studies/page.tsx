@@ -32,17 +32,17 @@ const heroStats = [
 ];
 
 const featuredStudy = {
-  title: "How Metro Toyota Added $84,000/Month Using Lokam's AI CSI Follow-Up",
+  title: "How World Hyundai Raised Their Google Reviews from 4.0 to 4.8 in 8 Weeks and Recovered $410K in Customer Lifetime Revenue",
   excerpt:
-    "Within 90 days of deployment, Metro Toyota recovered more than $84k in monthly revenue from improved CSI outcomes, Google review lifts, and repeat service visits.",
-  date: "Jan 2026",
-  readTime: "5 min read",
-  href: "/case-studies/metro-toyota",
+    "With 8 advisors handling 1,100 repair orders per month, follow-up calls were rarely made. Lokam's AI caught 180 at-risk customers, pushed Google reviews from 4.0 to 4.8, and recovered $410K in lifetime value — in just 8 weeks.",
+  date: "May 2026",
+  readTime: "4 min read",
+  href: "/case-studies/world-hyundai",
   stats: [
-    { value: "91%",   label: "Contact Rate",           sub: "vs 28% industry avg" },
-    { value: "$84k",  label: "Revenue/Month",           sub: "recovered" },
-    { value: "38",    label: "Customers Saved (Mo. 1)", sub: "at-risk" },
     { value: "4.8★",  label: "Google Rating",           sub: "up from 4.0" },
+    { value: "$410K", label: "Lifetime Revenue",         sub: "recovered" },
+    { value: "180",   label: "At-Risk Customers",        sub: "caught in 8 weeks" },
+    { value: "+20 pts", label: "CSI Score",              sub: "increase" },
   ],
 };
 
