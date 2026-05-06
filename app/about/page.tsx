@@ -28,56 +28,50 @@ const team = [
   {
     name: "Saleeq",
     role: "Co-founder & CEO",
-    bio: "Previously built enterprise automation products. Obsessed with the gap between what dealerships promise customers and what actually happens after the visit.",
+    bio: "Built enterprise automation products. Obsessed with the gap between what dealerships promise and what happens.",
     initial: "S",
   },
   {
     name: "Nevin",
     role: "Co-founder & CTO",
-    bio: "Leads the technical architecture behind Lokam's real-time voice infrastructure and platform reliability.",
+    bio: "Leads the technical architecture behind Lokam's real-time voice infrastructure.",
     initial: "N",
   },
   {
-    name: "Sinan",
-    role: "AI/ML Engineer",
-    bio: "Builds and optimizes the machine learning models powering Lokam's conversation intelligence and sentiment detection.",
-    initial: "S",
-  },
-  {
     name: "Christin",
-    role: "Cloud Engineer",
-    bio: "Designs and maintains the cloud infrastructure that keeps Lokam's AI calls fast, reliable, and scalable across hundreds of dealerships.",
+    role: "Software Engineer",
+    bio: "Builds and maintains the infrastructure keeping Lokam's AI calls fast, reliable, and scalable.",
     initial: "C",
-  },
-  {
-    name: "Vaibhav",
-    role: "AI/ML Engineer",
-    bio: "Works on model fine-tuning, voice pipeline improvements, and the data systems that make Lokam smarter over time.",
-    initial: "V",
   },
   {
     name: "Ramees",
     role: "QA Engineer",
-    bio: "Owns quality across every release — from call flow testing to regression coverage — so dealers never experience a bad interaction.",
+    bio: "Owns quality across every release — from call flow testing to full regression coverage.",
     initial: "R",
+  },
+  {
+    name: "Sinan",
+    role: "AI/ML Engineer",
+    bio: "Builds and optimizes models powering Lokam's conversation intelligence and sentiment detection.",
+    initial: "S",
+  },
+  {
+    name: "Vaibhav",
+    role: "AI/ML Engineer",
+    bio: "Works on model fine-tuning, voice pipeline improvements, and the data systems behind them.",
+    initial: "V",
   },
   {
     name: "Gautham",
     role: "SDE Intern",
-    bio: "Contributing to full-stack features and tooling across Lokam's product and internal systems.",
+    bio: "Contributing to full-stack features and internal tooling across Lokam's core product.",
     initial: "G",
   },
   {
     name: "Ishita",
-    role: "Graphic Designer",
-    bio: "Shapes Lokam's visual identity across product, marketing, and brand — making complex AI feel approachable and polished.",
+    role: "AI Graphic Designer",
+    bio: "Shapes Lokam's visual identity across product and brand — making complex AI feel approachable.",
     initial: "I",
-  },
-  {
-    name: "Seenia",
-    role: "HR",
-    bio: "Keeps the team running smoothly — from hiring and onboarding to culture and operations.",
-    initial: "S",
   },
 ];
 
@@ -255,7 +249,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Team ── */}
-        {/* <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-20">
+        <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-20">
           <h2
             className="font-sans font-bold text-[#0A2E2B] mb-2"
             style={{ fontSize: "clamp(20px, 2.5vw, 28px)", letterSpacing: "-0.5px" }}
@@ -292,7 +286,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </section> */}
+        </section>
 
         {/* ── FAQ ── */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-20">
