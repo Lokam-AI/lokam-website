@@ -1,3 +1,7 @@
+"use client";
+
+import { GlowingEffect } from "@/components/ui/glowing-effect-card";
+
 const features = [
   {
     icon: (
@@ -60,12 +64,18 @@ export default function BDC() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-white rounded-2xl p-4 sm:p-6 flex gap-4"
-              style={{
-                border: "1px solid #e5e7eb",
-                boxShadow: "0 12px 60px rgba(8,88,86,0.55), 0 4px 16px rgba(8,88,86,0.35)",
-              }}
+              className="relative bg-white rounded-2xl p-2"
+              style={{ border: "1px solid #e5e7eb" }}
             >
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+                borderWidth={2}
+              />
+              <div className="relative bg-white rounded-xl p-4 sm:p-6 flex gap-4">
               {/* Icon */}
               <div
                 className="flex-shrink-0 flex items-center justify-center rounded-xl"
@@ -81,6 +91,7 @@ export default function BDC() {
                 <p className="font-sans text-sm leading-6 text-[#6b7280]">
                   {f.desc}
                 </p>
+              </div>
               </div>
             </div>
           ))}
