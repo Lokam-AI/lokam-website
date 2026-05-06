@@ -31,7 +31,7 @@ const features = [
         <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
       </svg>
     ),
-    title: "Auto-Scheduled Retries Optimized for High Pick-Up Time Blocks",
+    title: "Retries Scheduled for Peak Pick-Up Windows",
     desc: "Lokam learns your customers' answer patterns and automatically retries during peak pick-up windows — maximizing contact without burning goodwill.",
   },
   {
