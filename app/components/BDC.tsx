@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { GlowingEffect } from "@/components/ui/glowing-effect-card";
 
 const features = [
@@ -47,6 +48,11 @@ const features = [
 ];
 
 export default function BDC() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(hover: none)").matches);
+  }, []);
+
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
@@ -70,7 +76,7 @@ export default function BDC() {
               <GlowingEffect
                 spread={40}
                 glow={true}
-                disabled={false}
+                disabled={isMobile}
                 proximity={64}
                 inactiveZone={0.01}
                 borderWidth={2}

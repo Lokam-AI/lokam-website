@@ -3,7 +3,9 @@ export type CaseStudy = {
   badge: string;
   title: string;
   meta: { label: string; value: string }[];
-  heroStats: { value: string; label: string }[];
+  category?: string;
+  excerpt?: string;
+  heroStats: { value: string; label: string; sub?: string }[];
   challengeSolution?: {
     challenge: { intro: string; points: string[] };
     solution: { intro: string; points: string[] };
@@ -29,7 +31,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "world-hyundai",
     badge: "Case Study",
+    category: "Service CSI Automation",
     title: "How World Hyundai Service Raised Its Google Reviews from 4.0 to 4.8 in 8 Weeks",
+    excerpt: "With 8 advisors handling 1,100 ROs/month and less than 30% of follow-up calls ever made, World Hyundai was losing 60–70 at-risk customers every month. Lokam changed that in 8 weeks.",
     meta: [
       { label: "Dealership", value: "World Hyundai" },
       { label: "Location", value: "Matteson, IL" },
@@ -37,10 +41,10 @@ export const caseStudies: CaseStudy[] = [
       { label: "Time to Results", value: "8 weeks" },
     ],
     heroStats: [
-      { value: "4.8★", label: "Google Rating (from 4.0)" },
-      { value: "$410K", label: "Lifetime Revenue Recovered" },
-      { value: "180", label: "At-Risk Customers Caught" },
-      { value: "+20 pts", label: "CSI Score Increase" },
+      { value: "4.8★", label: "Google Rating", sub: "Up from 4.0" },
+      { value: "$410K", label: "Lifetime Revenue Recovered", sub: "in 8 weeks" },
+      { value: "180", label: "At-Risk Customers Caught", sub: "across 2,200 ROs" },
+      { value: "+20 pts", label: "CSI Score Increase", sub: "" },
     ],
     challengeSolution: {
       challenge: {
@@ -94,7 +98,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "world-hyundai-sales",
     badge: "Case Study",
+    category: "Sales Follow-Up Automation",
     title: "How World Hyundai Sold 38 Additional Cars from Unsold Visitors in 8 Weeks",
+    excerpt: "World Hyundai had 650 unsold showroom visitors every month with no real follow-up system. Lokam's AI reached every unsold customer within 24 hours — and closed 38 additional cars in 8 weeks.",
     meta: [
       { label: "Dealership", value: "World Hyundai" },
       { label: "Location", value: "Matteson, IL" },
@@ -102,10 +108,10 @@ export const caseStudies: CaseStudy[] = [
       { label: "Time to Results", value: "8 weeks" },
     ],
     heroStats: [
-      { value: "38", label: "Additional Cars Sold" },
-      { value: "~$90K", label: "Gross Profit Added" },
-      { value: "67%", label: "Contact Rate" },
-      { value: "335", label: "Opportunities Escalated" },
+      { value: "38", label: "Additional Cars Sold", sub: "in 8 weeks" },
+      { value: "~$90K", label: "Gross Profit Added", sub: "" },
+      { value: "67%", label: "Contact Rate", sub: "" },
+      { value: "335", label: "Opportunities Escalated", sub: "" },
     ],
     challengeSolution: {
       challenge: {
@@ -157,7 +163,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "world-kia",
     badge: "Case Study",
-    title: "How World Kia Raised Their Google Reviews from 4.1 to 4.8 in 8 Weeks and Recovered $320K in Customer Lifetime Value",
+    category: "Service CSI Automation",
+    title: "How World Kia Raised Its Google Reviews from 4.1 to 4.8 in 8 Weeks and Recovered $320K in Customer Lifetime Value",
+    excerpt: "With 1,200 ROs/month and no way to intercept unhappy customers before OEM surveys, World Kia was losing detractors silently. Lokam caught 160 at-risk customers in 8 weeks and recovered $320K.",
     meta: [
       { label: "Dealership", value: "World Kia" },
       { label: "Location", value: "Joliet, IL" },
@@ -165,10 +173,10 @@ export const caseStudies: CaseStudy[] = [
       { label: "Time to Results", value: "8 weeks" },
     ],
     heroStats: [
-      { value: "4.8★", label: "Google Rating (from 4.1)" },
-      { value: "$320K", label: "Lifetime Revenue Recovered" },
-      { value: "160", label: "At-Risk Customers Caught" },
-      { value: "+20 pts", label: "CSI Score Increase" },
+      { value: "4.8★", label: "Google Rating", sub: "Up from 4.1" },
+      { value: "$320K", label: "Lifetime Revenue Recovered", sub: "in 8 weeks" },
+      { value: "160", label: "At-Risk Customers Caught", sub: "across 2,400 ROs" },
+      { value: "+20 pts", label: "CSI Score Increase", sub: "" },
     ],
     challengeSolution: {
       challenge: {
@@ -221,7 +229,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "world-kia-sales",
     badge: "Case Study",
+    category: "Sales Follow-Up Automation",
     title: "How World Kia Sold 34 Additional Cars from Unsold Visitors in 8 Weeks",
+    excerpt: "World Kia had ~700 unsold showroom visitors every month with no bilingual follow-up system. Lokam's AI reached every customer within 24 hours in English and Spanish — closing 34 additional cars in 8 weeks.",
     meta: [
       { label: "Dealership", value: "World Kia" },
       { label: "Location", value: "Joliet, IL" },
@@ -229,10 +239,10 @@ export const caseStudies: CaseStudy[] = [
       { label: "Time to Results", value: "8 weeks" },
     ],
     heroStats: [
-      { value: "34", label: "Additional Cars Sold" },
-      { value: "~$80K", label: "Gross Profit Added" },
-      { value: "65%", label: "Contact Rate" },
-      { value: "285", label: "Opportunities Escalated" },
+      { value: "34", label: "Additional Cars Sold", sub: "in 8 weeks" },
+      { value: "~$80K", label: "Gross Profit Added", sub: "" },
+      { value: "65%", label: "Contact Rate", sub: "" },
+      { value: "285", label: "Opportunities Escalated", sub: "" },
     ],
     challengeSolution: {
       challenge: {

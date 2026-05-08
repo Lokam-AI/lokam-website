@@ -112,71 +112,81 @@ export default async function CaseStudyPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Nav />
-      <main style={{ background: "linear-gradient(to bottom right, rgba(25, 171, 141, 0.1) 20%, #ffffff 80%)" }}>
+      <main style={{ background: "#ffffff" }}>
 
-        {/* ── Hero ── */}
-        <section className="max-w-[1100px] mx-auto px-4 md:px-8 pt-12 pb-2">
+        {/* ── Hero Banner ── */}
+        <section style={{ background: "linear-gradient(135deg, #00796B 0%, #00BFA5 100%)" }}>
+          <div className="max-w-[1100px] mx-auto px-4 md:px-8 pt-10 pb-12">
 
-          {/* Top row: badge + logo */}
-          <div className="flex items-center justify-between mb-6">
-            <span
-              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 font-sans text-[10px] font-semibold tracking-widest uppercase"
-              style={{ border: "1px solid #0CB4A7", color: "#0CB4A7" }}
-            >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-              </svg>
-              {cs.badge}
-            </span>
-            <span className="font-display font-bold text-sm" style={{ color: "#0A2E2B" }}>
-              lokam <span style={{ color: "#0CB4A7" }}>ai</span>
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1
-            className="font-display font-bold text-[#0D1B2A] mb-4"
-            style={{ fontSize: "clamp(26px, 4vw, 46px)", lineHeight: "1.1", letterSpacing: "-1.5px", maxWidth: 860 }}
-          >
-            {cs.title}
-          </h1>
-
-          {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 mb-8">
-            {cs.meta.map((m, i) => (
-              <span key={m.label} className="font-sans text-sm text-[#4A6B68] flex items-center gap-1">
-                <span className="font-medium text-[#0A2E2B]">{m.label}:</span>
-                <span className="font-medium" style={{ color: "#0CB4A7" }}>{m.value}</span>
-                {i < cs.meta.length - 1 && <span className="ml-1 text-[#C8E8E0]">|</span>}
-              </span>
-            ))}
-          </div>
-
-          {/* Hero stats */}
-          <div
-            className="flex flex-col sm:flex-row rounded-2xl overflow-hidden mb-10"
-            style={{ border: "1px solid #C8E8E0", background: "#F5FDFB" }}
-          >
-            {cs.heroStats.map((s, i) => (
-              <div
-                key={s.label}
-                className={`flex-1 flex flex-col items-center justify-center py-4 px-4 gap-1.5${i > 0 ? " border-t sm:border-t-0 sm:border-l border-[#C8E8E0]" : ""}`}
+            {/* Badge + category */}
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="inline-flex items-center justify-center rounded-md px-3 py-1 font-sans text-[10px] font-bold tracking-widest uppercase"
+                style={{ background: "rgba(0,0,0,0.35)", color: "#fff" }}
               >
-                <span
-                  className="font-display font-bold leading-none"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 42px)", color: "#0A3530", fontWeight: 900 }}
-                >
-                  {s.value}
+                {cs.badge}
+              </span>
+              {cs.category && (
+                <span className="font-sans text-sm font-medium" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  {cs.category}
                 </span>
-                <span
-                  className="font-sans font-semibold uppercase tracking-widest text-center"
-                  style={{ fontSize: 11, color: "#39B39B", fontWeight: 700 }}
+              )}
+            </div>
+
+            {/* Title */}
+            <h1
+              className="font-display font-bold text-white mb-4"
+              style={{ fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.08", letterSpacing: "-1.5px", maxWidth: 820 }}
+            >
+              {cs.title}
+            </h1>
+
+            {/* Excerpt */}
+            {cs.excerpt && (
+              <p className="font-sans text-sm md:text-base leading-7 mb-8" style={{ color: "rgba(255,255,255,0.78)", maxWidth: 640 }}>
+                {cs.excerpt}
+              </p>
+            )}
+
+            {/* Meta columns */}
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
+              {cs.meta.map((m) => (
+                <div key={m.label} className="flex flex-col gap-0.5">
+                  <span className="font-sans text-[10px] font-bold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    {m.label}
+                  </span>
+                  <span className="font-sans font-semibold text-white text-sm">{m.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Hero Stat Cards ── */}
+        <section style={{ background: "linear-gradient(to bottom, #E8F7F4 0%, #ffffff 100%)" }}>
+          <div className="max-w-[1100px] mx-auto px-4 md:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {cs.heroStats.map((s) => (
+                <div
+                  key={s.label}
+                  className="bg-white rounded-2xl px-5 py-5 flex flex-col gap-1"
+                  style={{ border: "1px solid #C8E8E0", boxShadow: "0 1px 8px rgba(12,176,162,0.06)" }}
                 >
-                  {s.label}
-                </span>
-              </div>
-            ))}
+                  <span
+                    className="font-display font-bold leading-none"
+                    style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#00796B" }}
+                  >
+                    {s.value}
+                  </span>
+                  <span className="font-sans font-semibold text-[#0A2E2B]" style={{ fontSize: 13 }}>
+                    {s.label}
+                  </span>
+                  {s.sub && (
+                    <span className="font-sans text-xs text-[#8AADA8]">{s.sub}</span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -327,7 +337,7 @@ export default async function CaseStudyPage({
         <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-12">
           <div
             className="relative rounded-2xl px-8 sm:px-12 py-10 text-center overflow-hidden"
-            style={{ background: "linear-gradient(135deg, #00988B 0%, #00D3BD 100%)" }}
+            style={{ background: "linear-gradient(135deg, #00988B 0%, #00D3BD 100%)", border: "2px solid rgba(255,255,255,0.25)" }}
           >
             {/* Decorative quote mark */}
             <svg
