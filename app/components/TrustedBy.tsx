@@ -7,7 +7,7 @@ const dealers = [
 export default function TrustedBy() {
 
   return (
-    <section className="relative overflow-hidden bg-white" style={{ marginTop: "clamp(-165px, -11.5vw, -70px)" }}>
+    <section className="relative overflow-hidden bg-white">
 
       {/* Background SVG — fills the section at every viewport width */}
       <img

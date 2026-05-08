@@ -4,25 +4,24 @@ import CalendlyButton from "./CalendlyButton";
 
 export default function Hero() {
   return (
-    <section className="bg-[#F4F3F9] md:bg-white">
-      <div className="relative">
+    <section className="bg-[#f4f4f6]">
+      <div className="relative overflow-hidden h-[480px] sm:h-[560px] md:h-[680px] lg:h-[820px] xl:h-[920px]">
 
-        {/* Car image — min-height on mobile so content overlay always fits */}
-        <div className="overflow-hidden relative min-h-[530px] md:min-h-0">
-          <Image
-            src="/assets/car.jpg"
-            alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
-            width={2560}
-            height={1911}
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="block w-full h-full object-contain object-[center_85%] scale-[1.15] md:scale-100 absolute inset-0 md:object-cover md:static md:object-center md:w-full md:h-auto md:-mt-[11.5%]"
-          />
-        </div>
+        {/* Car image — natural size at viewport width, anchored at bottom.
+            Top extends above the section and is cropped by overflow-hidden. */}
+        <Image
+          src="/assets/car.jpg"
+          alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
+          width={2560}
+          height={3391}
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="block w-full h-auto absolute bottom-0 inset-x-0"
+        />
 
         {/* Content overlaid on top of car */}
-        <div className="absolute inset-x-0 top-0 flex flex-col items-center pt-[35px] px-4 pb-10">
+        <div className="absolute inset-x-0 top-0 z-10 flex flex-col items-center pt-[35px] px-4 pb-10">
 
           {/* Badge */}
           <div className="relative inline-flex">
