@@ -21,7 +21,7 @@ const studies: Study[] = [
     dealership: "World Hyundai",
     location: "Matteson, IL",
     miniStats: [
-      { value: "4.0→4.8★", label: "Google rating" },
+      { value: "4.0 → 4.8★", label: "Google rating" },
       { value: "180", label: "At-risk customers caught" },
     ],
     excerpt: "With 8 advisors handling 1,100 ROs/month, World Hyundai's follow-up calls were rarely made. Lokam's AI caught 180 at-risk customers in 8 weeks and pushed Google reviews from 4.0 to 4.8.",
@@ -47,7 +47,7 @@ const studies: Study[] = [
     dealership: "World Kia",
     location: "Joliet, IL",
     miniStats: [
-      { value: "4.1→4.8★", label: "Google rating" },
+      { value: "4.1 → 4.8★", label: "Google rating" },
       { value: "160", label: "At-risk customers caught" },
     ],
     excerpt: "With ~1,200 ROs/month and no systematic follow-up, World Kia was losing detractors before they could respond. Lokam caught 160 at-risk customers in 8 weeks — recovering $320K in lifetime value and saving $3K in BDC costs.",

@@ -77,6 +77,9 @@ export default function ServiceROICalculatorModal({
   const roi = toolCost > 0 ? grossProfit / toolCost : 0;
   const annualSaved = ltvSaved * 12;
 
+  const bdcHoursSaved = Math.round(monthlyROs * 5 / 60);
+  const bdcSavings = bdcHoursSaved * 30;
+
   return createPortal(
     <div
       id="service-roi-print-target"
@@ -191,7 +194,7 @@ export default function ServiceROICalculatorModal({
             className="grid grid-cols-1 md:grid-cols-2 gap-6 md:h-full"
           >
             {/* LEFT — Inputs */}
-            <div className="flex flex-col justify-between md:h-full">
+            <div className="flex flex-col gap-4">
               <SvcLabel tag>Your Service Department</SvcLabel>
 
               {/* ROs per month */}
@@ -269,7 +272,7 @@ export default function ServiceROICalculatorModal({
               </div>
 
               {/* Silent Bleed */}
-              <SvcLabel tag>The Silent Bleed</SvcLabel>
+              <div className="mt-auto"><SvcLabel tag>The Silent Bleed</SvcLabel></div>
 
               <div className="grid grid-cols-2 gap-2">
                 <SvcSnapCard label="Customers Defecting / Mo" danger>
@@ -422,6 +425,24 @@ export default function ServiceROICalculatorModal({
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* BDC Savings bonus row */}
+                <div
+                  className="flex items-center justify-between px-5 py-3 rounded-xl"
+                  style={{ background: "#e8f7f5", border: "1px solid rgba(5,170,150,0.3)" }}
+                >
+                  <div className="flex flex-col">
+                    <span className="text-[13px] font-bold" style={{ color: "#114559" }}>
+                      BDC Cost Savings / Mo
+                    </span>
+                    <span className="text-[10px] font-medium" style={{ color: "#7a8f89" }}>
+                      {bdcHoursSaved} hrs of follow-up calls automated
+                    </span>
+                  </div>
+                  <span className="text-[18px] font-display font-bold" style={{ color: "#05aa96" }}>
+                    {fmt(bdcSavings)}
+                  </span>
                 </div>
 
                 {/* Cost row */}

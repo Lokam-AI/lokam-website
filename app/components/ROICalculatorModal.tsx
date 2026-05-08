@@ -142,7 +142,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
           <div id="roi-body-grid" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:h-full">
 
             {/* LEFT — Inputs */}
-            <div className="flex flex-col justify-between md:h-full">
+            <div className="flex flex-col gap-4">
               <Label tag>Your Dealership Numbers</Label>
 
               {/* Monthly UPs */}
@@ -194,7 +194,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
               </div>
 
               {/* Snapshot */}
-              <Label tag>Current Snapshot</Label>
+              <div className="mt-auto"><Label tag>Current Snapshot</Label></div>
 
               <div className="grid grid-cols-3 gap-2">
                 <SnapCard label="Unsold Volume">{monthlyUps.toLocaleString()}</SnapCard>

@@ -33,9 +33,9 @@ const heroStats = [
 ];
 
 const featuredStudy = {
-  title: "How World Hyundai Raised Their Google Reviews from 4.0 to 4.8 in 8 Weeks and Recovered $410K in Customer Lifetime Revenue",
+  title: "How World Hyundai Service Raised Its Google Reviews from 4.0 to 4.8 in 8 Weeks",
   excerpt:
-    "With 8 advisors handling 1,100 repair orders per month, follow-up calls were rarely made. Lokam's AI caught 180 at-risk customers, pushed Google reviews from 4.0 to 4.8, and recovered $410K in lifetime value — in just 8 weeks.",
+    "With 8 advisors handling 1,100 repair orders per month, less than 30% of follow-up calls were ever made. Lokam's AI caught 180 at-risk customers across 2,200 ROs, pushed Google reviews from 4.0 to 4.8, and recovered $410K in lifetime value — in just 8 weeks.",
   date: "May 2026",
   readTime: "4 min read",
   href: "/case-studies/world-hyundai",

@@ -275,6 +275,17 @@ export default function Testimonial() {
         </div>
       </div>
 
+      {/* Case studies link */}
+      <div className="text-center mt-6">
+        <a
+          href="/case-studies"
+          className="inline-flex items-center gap-2 font-sans font-semibold text-sm"
+          style={{ color: "#307D93" }}
+        >
+          View all case studies →
+        </a>
+      </div>
+
       {/* Navigation: prev arrow + dots + next arrow */}
       <div className="flex items-center justify-center gap-5 mt-8" role="group" aria-label="Testimonial navigation">
         {/* Prev */}

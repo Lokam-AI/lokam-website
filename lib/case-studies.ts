@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "world-hyundai",
     badge: "Case Study",
-    title: "How World Hyundai Service Raised Their Google Reviews from 4.0 to 4.8 in 8 Weeks and Recovered $410K in Customer Lifetime Revenue",
+    title: "How World Hyundai Service Raised Its Google Reviews from 4.0 to 4.8 in 8 Weeks",
     meta: [
       { label: "Dealership", value: "World Hyundai" },
       { label: "Location", value: "Matteson, IL" },
