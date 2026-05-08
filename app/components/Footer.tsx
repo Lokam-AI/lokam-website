@@ -118,24 +118,24 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.25)" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.45)" }}
         >
-          <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+          <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
             © 2026 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy-policy" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <Link href="/privacy-policy" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <Link href="/terms-of-service" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
               Terms of Service
             </Link>
-            <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
               Contact
             </SmoothAnchor>
             <CalendlyButton
               className="font-sans text-xs hover:text-white transition-colors"
-              style={{ color: "rgba(255,255,255,0.4)" }}
+              style={{ color: "rgba(255,255,255,0.7)" }}
             >
               Book a Demo
             </CalendlyButton>
