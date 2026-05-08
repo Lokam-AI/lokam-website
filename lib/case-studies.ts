@@ -201,6 +201,99 @@ export const caseStudies: CaseStudy[] = [
     related: [
       { category: "SERVICE CSI", dealership: "World Hyundai", metric: "$410K lifetime revenue recovered", href: "/case-studies/world-hyundai" },
       { category: "SALES FOLLOW-UP", dealership: "World Hyundai", metric: "38 additional cars sold", href: "/case-studies/world-hyundai-sales" },
+      { category: "SALES FOLLOW-UP", dealership: "World Kia", metric: "34 additional cars sold", href: "/case-studies/world-kia-sales" },
+    ],
+  },
+
+  {
+    slug: "world-kia-sales",
+    badge: "Case Study",
+    title: "How World Kia Sold 34 Additional Cars from Unsold Visitors in 8 Weeks",
+    meta: [
+      { label: "Dealership", value: "World Kia" },
+      { label: "Location", value: "Joliet, IL" },
+      { label: "Monthly Unsold Traffic", value: "~700" },
+      { label: "Time to Results", value: "8 weeks" },
+    ],
+    heroStats: [
+      { value: "34", label: "Additional Cars Sold" },
+      { value: "~$80K", label: "Gross Profit Added" },
+      { value: "65%", label: "Contact Rate" },
+      { value: "285", label: "Opportunities Escalated" },
+    ],
+    challengeSolution: {
+      challenge: {
+        intro: "World Kia had an average of 700 unsold showroom visitors per month — with no systematic follow-up to bring them back.",
+        points: [
+          "Before Lokam, follow-up was only happening with customers who were already likely to return — the easy ones.",
+          "With a mix of English and Spanish-speaking customers, the lack of qualified bilingual managers to make calls was the friction point.",
+          "General Sales Manager Camille Wright estimated they were allowing ~20 deals a month to go to competitors with no outreach.",
+        ],
+      },
+      solution: {
+        intro: "World Kia deployed Lokam's Voice AI follow-up platform for unsold visitors, integrated directly with their CRM.",
+        points: [
+          "Empathetic AI calls every unsold visitor within 24 hours of their showroom visit.",
+          "Has an honest conversation and identifies the primary objections holding them back.",
+          "Filters high-intent prospects and instantly alerts the sales team for recovery.",
+          "Bilingual (English & Spanish) — matching each customer's language preference automatically.",
+        ],
+      },
+    },
+    timeline: {
+      heading: "From Day 1 to 34 Cars Sold in 56 Days",
+      events: [
+        {
+          day: "Day 1",
+          title: "Onboarding & Integration",
+          description: "Lokam connected to World Kia's CRM in under 4 hours. No code changes required from the dealer's IT team.",
+        },
+        {
+          day: "Day 3",
+          title: "First AI Calls Go Live",
+          description: "Lokam began calling every unsold visitor within 24 hours of their showroom visit — using World Kia's branded caller ID in both English and Spanish.",
+        },
+        {
+          day: "Day 14",
+          title: "First Escalation Closed",
+          description: "A high-intent prospect who visited but left undecided was escalated to the sales team with a full conversation transcript. They returned the next day and bought.",
+        },
+        {
+          day: "Day 30",
+          title: "First Month Results In",
+          description: "17 additional cars sold. 142 opportunities escalated. 65% contact rate. ~$40K gross profit added. Sales team now working a filtered, high-intent list daily.",
+        },
+        {
+          day: "Day 56",
+          title: "34 Additional Cars Sold",
+          description: "285 opportunities escalated from 1,350 unsold visitors. $80K gross profit added. $8K in BDC cost savings across 8 weeks. Camille's team now sells 18 more cars every month.",
+        },
+      ],
+    },
+    quote: {
+      text: "\"Prior to having Lokam, follow-up on unsold traffic was not being executed at the rate it should have been. The alerts pushed us toward working on it as it should have. So we are now selling 18 more cars a month.\"",
+      author: "Camille Wright, General Sales Manager, World Kia",
+      location: "Joliet, IL",
+    },
+    before: [
+      { metric: "Follow-Up Focus", value: "Customers likely to return anyway" },
+      { metric: "Deals Lost Monthly", value: "~20 to competitors" },
+      { metric: "Bilingual Coverage", value: "No qualified managers available" },
+      { metric: "Unsold Desklog Coverage", value: "Inconsistent" },
+      { metric: "Contact Rate", value: "Low / ad hoc" },
+      { metric: "BDC Cost / Month", value: "~$4,000" },
+    ],
+    after: [
+      { metric: "Follow-Up Focus", value: "100% of unsold visitors within 24 hrs" },
+      { metric: "Additional Cars Sold", value: "34 in 8 weeks" },
+      { metric: "Opportunities Escalated", value: "285 high-intent leads" },
+      { metric: "Unsold Desklog Coverage", value: "Fully automated + smart escalation" },
+      { metric: "Contact Rate", value: "65%" },
+      { metric: "BDC Cost Savings", value: "$8,000 ($4,000/mo)" },
+    ],
+    related: [
+      { category: "SERVICE CSI", dealership: "World Kia", metric: "$320K lifetime revenue recovered", href: "/case-studies/world-kia" },
+      { category: "SALES FOLLOW-UP", dealership: "World Hyundai", metric: "38 additional cars sold", href: "/case-studies/world-hyundai-sales" },
     ],
   },
 ];

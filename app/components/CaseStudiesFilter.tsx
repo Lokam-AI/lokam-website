@@ -53,6 +53,19 @@ const studies: Study[] = [
     excerpt: "With ~1,200 ROs/month and no systematic follow-up, World Kia was losing detractors before they could respond. Lokam caught 160 at-risk customers in 8 weeks — recovering $320K in lifetime value and saving $3K in BDC costs.",
     href: "/case-studies/world-kia",
   },
+  {
+    metric: "34 cars",
+    metricLabel: "Additional units sold",
+    category: "SALES FOLLOW-UP",
+    dealership: "World Kia",
+    location: "Joliet, IL",
+    miniStats: [
+      { value: "65%", label: "Contact rate" },
+      { value: "~$80K", label: "Gross profit added" },
+    ],
+    excerpt: "World Kia was losing ~20 deals a month with no follow-up on unsold visitors. Lokam's bilingual AI escalated 285 high-intent leads in 8 weeks — closing 34 additional cars.",
+    href: "/case-studies/world-kia-sales",
+  },
 ];
 
 const CATEGORIES = ["All", "Service & CSI", "Sales & BDC"];
