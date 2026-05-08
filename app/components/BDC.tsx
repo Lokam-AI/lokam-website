@@ -50,7 +50,11 @@ const features = [
 export default function BDC() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    setIsMobile(window.matchMedia("(hover: none)").matches);
+    const mq = window.matchMedia("(hover: none), (max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   return (
@@ -71,16 +75,18 @@ export default function BDC() {
             <div
               key={f.title}
               className="relative bg-white rounded-2xl p-2"
-              style={{ border: `1px solid ${isMobile ? "#ffffff" : "#e5e7eb"}` }}
+              style={{ border: "1px solid #e5e7eb" }}
             >
-              <GlowingEffect
-                spread={40}
-                glow={true}
-                disabled={isMobile}
-                proximity={64}
-                inactiveZone={0.01}
-                borderWidth={2}
-              />
+              {!isMobile && (
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={2}
+                />
+              )}
               <div className="relative bg-white rounded-xl p-4 sm:p-6 flex gap-4">
               {/* Icon */}
               <div
