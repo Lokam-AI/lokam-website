@@ -4,6 +4,14 @@ export type CaseStudy = {
   title: string;
   meta: { label: string; value: string }[];
   heroStats: { value: string; label: string }[];
+  challengeSolution?: {
+    challenge: { intro: string; points: string[] };
+    solution: { intro: string; points: string[] };
+  };
+  timeline?: {
+    heading: string;
+    events: { day: string; title: string; description: string }[];
+  };
   quote: { text: string; author: string; location: string };
   before: { metric: string; value: string }[];
   after: { metric: string; value: string }[];
@@ -99,6 +107,100 @@ export const caseStudies: CaseStudy[] = [
     ],
     related: [
       { category: "SERVICE CSI", dealership: "World Hyundai", metric: "$410K lifetime revenue recovered", href: "/case-studies/world-hyundai" },
+      { category: "SERVICE CSI", dealership: "World Kia", metric: "$320K lifetime revenue recovered", href: "/case-studies/world-kia" },
+    ],
+  },
+
+  {
+    slug: "world-kia",
+    badge: "Case Study",
+    title: "How World Kia Raised Their Google Reviews from 4.1 to 4.8 in 8 Weeks and Recovered $320K in Customer Lifetime Value",
+    meta: [
+      { label: "Dealership", value: "World Kia" },
+      { label: "Location", value: "Joliet, IL" },
+      { label: "Monthly RO's", value: "~1,200" },
+      { label: "Time to Results", value: "8 weeks" },
+    ],
+    heroStats: [
+      { value: "4.8★", label: "Google Rating (from 4.1)" },
+      { value: "$320K", label: "Lifetime Revenue Recovered" },
+      { value: "160", label: "At-Risk Customers Caught" },
+      { value: "+20 pts", label: "CSI Score Increase" },
+    ],
+    challengeSolution: {
+      challenge: {
+        intro: "World Kia's service department was handling over 1,200 repair orders per month — with no reliable way to catch unhappy customers before they churned.",
+        points: [
+          "Manual CSI follow-up surveys were sent to customers, which had a less than 15% response rate.",
+          "When customers had bad experiences, the dealership often found out weeks later through a 1-star Google review or an OEM survey.",
+          "Customer Service Manager Erica Rocco estimated they were losing 70–80 at-risk customers per month to competitors, compounding into ~$150K in lost lifetime value.",
+        ],
+      },
+      solution: {
+        intro: "World Kia deployed Lokam's Voice AI follow-up platform for service, integrated directly with their DMS.",
+        points: [
+          "AI calls every customer within 24 hours post-service and captures their honest feedback.",
+          "Detractors instantly escalated to the service manager with full transcripts — before the OEM survey hits their inbox.",
+          "Promoters automatically sent Google review links via SMS.",
+          "70% contact rate: Branded caller ID with World Kia's name, SMS follow-up for missed calls, and 3-layer spam filtration.",
+          "Bilingual (English & Spanish) matching to customer preferences.",
+        ],
+      },
+    },
+    timeline: {
+      heading: "From Day 1 to $320K Recovered in 56 Days",
+      events: [
+        {
+          day: "Day 1",
+          title: "Onboarding & Integration",
+          description: "Lokam connected to World Kia's DMS in under 4 hours. No code changes required from the dealer's IT team.",
+        },
+        {
+          day: "Day 3",
+          title: "First AI Calls Go Live",
+          description: "Lokam began calling every service customer within 24 hours of RO close — using World Kia's branded caller ID and bilingual (English & Spanish) voice persona.",
+        },
+        {
+          day: "Day 14",
+          title: "First Detractor Intercepted",
+          description: "An at-risk customer who had already drafted a negative review was escalated to Erica Rocco with a full transcript — resolved before the Kia OEM survey was sent.",
+        },
+        {
+          day: "Day 30",
+          title: "First Month Results In",
+          description: "80 at-risk customers caught. Google rating moved from 4.1 to 4.5. CSI score up 10 points. $3,000 in BDC hours saved from automated follow-up.",
+        },
+        {
+          day: "Day 56",
+          title: "$320K Lifetime Value Recovered",
+          description: "160 at-risk customers intercepted across 2,400 ROs. Google rating reached 4.8. CSI score up 20 points. Erica's team now addresses detractors before the survey hits their inbox.",
+        },
+      ],
+    },
+    quote: {
+      text: "\"The number of detractors helps me deflect the negative feedback that may happen on a Kia survey by allowing me to address it before the survey is in the email.\"",
+      author: "Erica Rocco, Customer Service Manager, World Kia Joliet",
+      location: "Joliet, IL",
+    },
+    before: [
+      { metric: "CSI Follow-Up Rate", value: "< 30% within 48 hrs" },
+      { metric: "At-Risk Detection", value: "Weeks later via 1-star review" },
+      { metric: "Detractor Interception", value: "None — surveys sent before issues resolved" },
+      { metric: "Estimated Monthly LTV Loss", value: "~$200K" },
+      { metric: "Google Rating", value: "4.1 ★" },
+      { metric: "BDC Follow-Up Hours", value: "~100 hrs/month manual calls" },
+    ],
+    after: [
+      { metric: "CSI Follow-Up Rate", value: "100% within 24 hrs" },
+      { metric: "At-Risk Detection", value: "Same day — before Kia survey is sent" },
+      { metric: "At-Risk Customers Caught", value: "160 in 8 weeks (2,400 ROs)" },
+      { metric: "Lifetime Revenue Recovered", value: "$320,000 ($2,000/detractor)" },
+      { metric: "Google Rating", value: "4.8 ★" },
+      { metric: "BDC Cost Savings", value: "$3,000 (100 hrs saved)" },
+    ],
+    related: [
+      { category: "SERVICE CSI", dealership: "World Hyundai", metric: "$410K lifetime revenue recovered", href: "/case-studies/world-hyundai" },
+      { category: "SALES FOLLOW-UP", dealership: "World Hyundai", metric: "38 additional cars sold", href: "/case-studies/world-hyundai-sales" },
     ],
   },
 ];

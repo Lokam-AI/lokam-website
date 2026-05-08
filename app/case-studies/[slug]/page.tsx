@@ -180,19 +180,187 @@ export default async function CaseStudyPage({
           </div>
         </section>
 
+        {/* ── Challenge & Solution ── */}
+        {cs.challengeSolution && (
+          <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              {/* Challenge */}
+              <div
+                className="rounded-2xl p-6 flex flex-col gap-5"
+                style={{ background: "#fff", border: "1px solid #F5C6C0", boxShadow: "0 2px 16px rgba(249,112,102,0.06)" }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <div
+                    className="flex items-center justify-center rounded-xl flex-shrink-0"
+                    style={{ width: 36, height: 36, background: "#FFF4F3", border: "1px solid #F5C6C0" }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97066" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                  </div>
+                  <h2 className="font-sans font-bold text-[#0A2E2B]" style={{ fontSize: 17, letterSpacing: "-0.3px" }}>
+                    The Challenge
+                  </h2>
+                </div>
+                <p className="font-sans text-sm leading-6 text-[#4A6B68]">
+                  {cs.challengeSolution.challenge.intro}
+                </p>
+                <ul className="flex flex-col gap-3.5">
+                  {cs.challengeSolution.challenge.points.map((pt, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span
+                        className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full"
+                        style={{ background: "#F97066" }}
+                      />
+                      <span className="font-sans text-sm leading-6 text-[#4A6B68]">{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Solution */}
+              <div
+                className="rounded-2xl p-6 flex flex-col gap-5"
+                style={{ background: "#fff", border: "1px solid #B2E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.07)" }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <div
+                    className="flex items-center justify-center rounded-xl flex-shrink-0"
+                    style={{ width: 36, height: 36, background: "#F0FBF9", border: "1px solid #C8E8E0" }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0CB4A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <h2 className="font-sans font-bold text-[#0A2E2B]" style={{ fontSize: 17, letterSpacing: "-0.3px" }}>
+                    The Solution
+                  </h2>
+                </div>
+                <p className="font-sans text-sm leading-6 text-[#4A6B68]">
+                  {cs.challengeSolution.solution.intro}
+                </p>
+                <ul className="flex flex-col gap-3.5">
+                  {cs.challengeSolution.solution.points.map((pt, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span
+                        className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full"
+                        style={{ background: "#0CB4A7" }}
+                      />
+                      <span className="font-sans text-sm leading-6 text-[#4A6B68]">{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
+          </section>
+        )}
+
+        {/* ── Timeline ── */}
+        {cs.timeline && (
+          <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-10">
+            <div className="text-center mb-6">
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-sans text-[10px] font-semibold tracking-widest uppercase mb-3"
+                style={{ background: "#E0F7F4", color: "#0C8074", border: "1px solid #B2E8E0" }}
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                </svg>
+                Timeline
+              </span>
+              <h2
+                className="font-display font-bold text-[#0A2E2B]"
+                style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.6px", lineHeight: 1.15 }}
+              >
+                {cs.timeline.heading}
+              </h2>
+            </div>
+
+            <div className="relative">
+              <div
+                className="absolute top-0 bottom-0 hidden sm:block"
+                style={{ left: 108, width: 1.5, background: "linear-gradient(to bottom, #00D3BD, #00988B)" }}
+              />
+              <div className="flex flex-col gap-3">
+                {cs.timeline.events.map((event, i) => (
+                  <div key={i} className="flex items-start gap-0 sm:gap-4">
+                    <div className="hidden sm:flex flex-shrink-0 items-center justify-end" style={{ width: 96 }}>
+                      <span
+                        className="inline-flex items-center justify-center rounded-full font-sans font-bold text-white px-2.5 py-0.5"
+                        style={{ background: "#0A3530", fontSize: 11, minWidth: 50 }}
+                      >
+                        {event.day}
+                      </span>
+                    </div>
+                    <div className="hidden sm:flex flex-shrink-0 items-center justify-center" style={{ width: 28, paddingTop: 3 }}>
+                      <span
+                        className="rounded-full block"
+                        style={{ width: 11, height: 11, background: "#fff", border: "2.5px solid #0CB4A7", boxShadow: "0 0 0 2.5px rgba(12,180,167,0.15)" }}
+                      />
+                    </div>
+                    <div
+                      className="flex-1 rounded-xl px-4 py-3"
+                      style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 1px 8px rgba(12,176,162,0.05)" }}
+                    >
+                      <span
+                        className="inline-flex sm:hidden items-center justify-center rounded-full font-sans font-bold text-white px-2.5 py-0.5 mb-1.5"
+                        style={{ background: "#0A3530", fontSize: 11 }}
+                      >
+                        {event.day}
+                      </span>
+                      <p className="font-sans font-semibold text-[#0A2E2B]" style={{ fontSize: 13 }}>{event.title}</p>
+                      <p className="font-sans text-xs leading-5 text-[#4A6B68] mt-0.5">{event.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── Quote ── */}
         <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-12">
           <div
-            className="rounded-2xl p-5 sm:p-7 md:p-10"
-            style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 2px 16px rgba(12,176,162,0.07)" }}
+            className="relative rounded-2xl px-8 sm:px-12 py-10 text-center overflow-hidden"
+            style={{ background: "linear-gradient(135deg, #00988B 0%, #00D3BD 100%)" }}
           >
-            <p className="font-sans text-base md:text-lg leading-8 text-[#1A2E2B] mb-6">
+            {/* Decorative quote mark */}
+            <svg
+              className="absolute top-6 left-7 opacity-20"
+              width="48" height="48" viewBox="0 0 24 24" fill="white"
+            >
+              <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.956.76-3.022.66-1.065 1.515-1.867 2.558-2.403L9.373 5c-.8.396-1.56.898-2.26 1.505-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69-.346 2.04-.217 3.1c.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.94.09-1.95.75-3.02.66-1.06 1.514-1.86 2.557-2.4L18.496 5c-.8.396-1.56.898-2.26 1.505-.708.607-1.34 1.305-1.894 2.094-.556.79-.97 1.68-1.24 2.69-.273 1.01-.345 2.04-.217 3.1.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003z" />
+            </svg>
+
+            <p
+              className="font-sans italic leading-8 text-white relative z-10 mx-auto"
+              style={{ fontSize: "clamp(15px, 1.8vw, 18px)", maxWidth: 680 }}
+            >
               {cs.quote.text}
             </p>
-            <p className="font-display font-bold text-base" style={{ color: "#197976" }}>
-              {cs.quote.author}
-            </p>
-            <p className="font-sans text-sm text-[#8AADA8] mt-0.5">{cs.quote.location}</p>
+
+            <div className="mt-6">
+              <p className="font-sans font-bold text-white" style={{ fontSize: 15 }}>
+                {cs.quote.author}
+              </p>
+              <p className="font-sans text-sm mt-0.5" style={{ color: "rgba(255,255,255,0.65)" }}>
+                {cs.quote.location}
+              </p>
+            </div>
+
+            {/* Stars */}
+            <div className="flex items-center justify-center gap-1 mt-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#F6C94E">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -251,7 +419,7 @@ export default async function CaseStudyPage({
               const chip = CHIP[r.category] ?? { bg: "#E8F5F2", color: "#0C8074" };
               return (
                 <div
-                  key={r.dealership}
+                  key={r.href}
                   className="rounded-2xl bg-white overflow-hidden"
                   style={{ border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.06)" }}
                 >
