@@ -115,12 +115,13 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
             const isDot = bar.opacity < 0.5;
             return (
               <div key={i} style={{
-                width: isDot ? 5 : 6,
+                flex: "1 1 0",
+                minWidth: 0,
+                maxWidth: isDot ? 5 : 6,
                 height: isDot ? 4 : Math.round(bar.height * 0.75),
                 borderRadius: isDot ? "50%" : 2,
                 backgroundColor: "#5ecfb1",
                 opacity: isPlayed ? 1 : isDot ? bar.opacity + 0.1 : 0.35,
-                flexShrink: 0,
                 transition: "opacity 0.1s",
               }} />
             );
