@@ -50,10 +50,10 @@ export const caseStudies: CaseStudy[] = [
       challenge: {
         intro: "World Hyundai's service department was handling over 1,100 repair orders per month with a team of 8 advisors.",
         points: [
-          "Manual CSI follow-up calls were supposed to happen within 48 hours — in practice, less than 30% were ever made.",
-          "When customers had bad experiences, the dealership often found out weeks later through a 1-star Google review or an OEM survey they could no longer influence.",
-          "GM Sheri Sevik estimated they were losing 60–70 at-risk customers per month to competitors, compounding into ~$250K in lost lifetime value.",
-          "Service advisors were manually dialing during peak write-up hours — the worst possible time to make quality follow-up calls.",
+          "Manual CSI follow-up calls were supposed to happen within 48 hours in practice; less than 30% were ever made.",
+          "When customers had bad experiences, the dealership often found out weeks later through a 1-star Google review or an OEM survey.",
+          "The GM, Sheri Sevik, estimated they were losing 60–70 at-risk customers per month to competitors, compounding into ~$250K lost lifetime value.",
+          "Service advisors manually dial during peak write-up hours.",
         ],
       },
       solution: {
@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
           "AI calls every customer within 24 hours post-service and captures their honest feedback.",
           "Detractors instantly escalated to the service manager with full transcripts.",
           "Promoters automatically sent Google review links via SMS.",
-          "70% contact rate: Branded caller ID with World Hyundai's name, text follow-up for customers who missed the call, and 3-layer spam filtration.",
+          "70% contact rate: Branded caller ID — World Hyundai's name, text follow-up for customers who missed the call and 3-layer spam filtration.",
           "Bilingual (English & Spanish) matching to customer preferences.",
         ],
       },
@@ -117,18 +117,18 @@ export const caseStudies: CaseStudy[] = [
       challenge: {
         intro: "World Hyundai had an average of 650 unsold showroom visitors per month.",
         points: [
-          "Before Lokam, follow-up was occurring with customers that were highly likely to return anyway — the real lost opportunities were going untouched.",
-          "The team knew the unsold desklog was an incredible opportunity, but the lack of one or two full-time qualified managers to make the calls was the friction.",
-          "General Sales Manager Teri Bisbikis estimated they were allowing 25 deals a month to buy elsewhere.",
+          "Before Lokam, the follow-up was occurring with customers that we knew were highly likely to return anyway.",
+          "The team knew the unsold desklog was an incredible opportunity, but the lack of a full-time or 2 full time qualified managers to make the calls was the friction.",
+          "The General Sales Manager, Teri Bisbikis, estimated they were allowing 25 deals a month to buy elsewhere.",
         ],
       },
       solution: {
         intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for calling unsold visitors, integrated directly with their CRM.",
         points: [
           "Empathetic AI calls every customer within 24 hours of a showroom visit.",
-          "Has an honest conversation and identifies the primary objections holding them back.",
-          "Filters high-intent prospects and alerts the sales team for recovery.",
-          "Instead of battling with shoppers, the sales team filters high-intent leads and closes deals.",
+          "Have an honest conversation and identify the primary objections holding them back.",
+          "Filters high-intent prospects and alerts them to the sales team for recovery.",
+          "Instead of battling with shoppers, your sales team filters high-intent leads and closes deals.",
         ],
       },
     },
@@ -164,7 +164,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "world-kia",
     badge: "Case Study",
     category: "Service CSI Automation",
-    title: "How World Kia Raised Its Google Reviews from 4.1 to 4.8 in 8 Weeks and Recovered $320K in Customer Lifetime Value",
+    title: "How World Kia increased their CSI and recovered $320K in customer lifetime value before churn.",
     excerpt: "With 1,200 ROs/month and no way to intercept unhappy customers before OEM surveys, World Kia was losing detractors silently. Lokam caught 160 at-risk customers in 8 weeks and recovered $320K.",
     meta: [
       { label: "Dealership", value: "World Kia" },
@@ -180,7 +180,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     challengeSolution: {
       challenge: {
-        intro: "World Kia's service department was handling over 1,200 repair orders per month — with no reliable way to catch unhappy customers before they churned.",
+        intro: "World Kia's service department was handling over 1,200 repair orders per month.",
         points: [
           "Manual CSI follow-up surveys were sent to customers, which had a less than 15% response rate.",
           "When customers had bad experiences, the dealership often found out weeks later through a 1-star Google review or an OEM survey.",
@@ -191,9 +191,9 @@ export const caseStudies: CaseStudy[] = [
         intro: "World Kia deployed Lokam's Voice AI follow-up platform for service, integrated directly with their DMS.",
         points: [
           "AI calls every customer within 24 hours post-service and captures their honest feedback.",
-          "Detractors instantly escalated to the service manager with full transcripts — before the OEM survey hits their inbox.",
+          "Detractors instantly escalated to the service manager with full transcripts.",
           "Promoters automatically sent Google review links via SMS.",
-          "70% contact rate: Branded caller ID with World Kia's name, SMS follow-up for missed calls, and 3-layer spam filtration.",
+          "70% contact rate: Branded caller ID — World Kia name, text follow-up for customers who missed the call and 3-layer spam filtration.",
           "Bilingual (English & Spanish) matching to customer preferences.",
         ],
       },
@@ -246,20 +246,20 @@ export const caseStudies: CaseStudy[] = [
     ],
     challengeSolution: {
       challenge: {
-        intro: "World Kia had an average of 700 unsold showroom visitors per month — with no systematic follow-up to bring them back.",
+        intro: "World Kia had an average of 700 unsold showroom visitors per month.",
         points: [
-          "Before Lokam, follow-up was only happening with customers who were already likely to return — the easy ones.",
-          "With a mix of English and Spanish-speaking customers, the lack of qualified bilingual managers to make calls was the friction point.",
-          "General Sales Manager Camille Wright estimated they were allowing ~20 deals a month to go to competitors with no outreach.",
+          "Before Lokam, the follow-up was occurring with customers that we knew were highly likely to return anyway.",
+          "As they had a mix of English and Spanish-speaking customers, the lack of a full-time or 2 full time qualified managers to make the calls was the friction.",
+          "The General Sales Manager, Camille, estimated they were allowing 20 deals a month to buy elsewhere.",
         ],
       },
       solution: {
-        intro: "World Kia deployed Lokam's Voice AI follow-up platform for unsold visitors, integrated directly with their CRM.",
+        intro: "World Kia deployed Lokam's Voice AI follow-up platform for calling unsold visitors, integrated directly with their CRM.",
         points: [
-          "Empathetic AI calls every unsold visitor within 24 hours of their showroom visit.",
-          "Has an honest conversation and identifies the primary objections holding them back.",
-          "Filters high-intent prospects and instantly alerts the sales team for recovery.",
-          "Bilingual (English & Spanish) — matching each customer's language preference automatically.",
+          "Empathetic AI calls every customer within 24 hours of a showroom visit.",
+          "Have an honest conversation and identify the primary objections holding them back.",
+          "Filters high-intent prospects and alerts them to the sales team for recovery.",
+          "Instead of battling with shoppers, your sales team filters high-intent leads and closes deals.",
         ],
       },
     },

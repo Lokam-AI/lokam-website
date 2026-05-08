@@ -71,7 +71,7 @@ export default function BDC() {
             <div
               key={f.title}
               className="relative bg-white rounded-2xl p-2"
-              style={{ border: "1px solid #e5e7eb" }}
+              style={{ border: `1px solid ${isMobile ? "#ffffff" : "#e5e7eb"}` }}
             >
               <GlowingEffect
                 spread={40}

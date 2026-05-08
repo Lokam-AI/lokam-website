@@ -116,27 +116,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.45)" }}
-        >
-          <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-[#0a1628]/20 sm:border-white/45">
+          <p className="font-sans text-xs text-[#0a1628] sm:text-white/70">
             © 2026 Lokam Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy-policy" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Link href="/privacy-policy" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Link href="/terms-of-service" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
               Terms of Service
             </Link>
-            <SmoothAnchor href="/#contact" className="font-sans text-xs hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <SmoothAnchor href="/#contact" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
               Contact
             </SmoothAnchor>
-            <CalendlyButton
-              className="font-sans text-xs hover:text-white transition-colors"
-              style={{ color: "rgba(255,255,255,0.7)" }}
-            >
+            <CalendlyButton className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
               Book a Demo
             </CalendlyButton>
           </div>

@@ -34,7 +34,7 @@ const team = [
   {
     name: "Nevin",
     role: "Co-founder & CTO",
-    bio: "Leads the technical architecture behind Lokam's real-time voice infrastructure.",
+    bio: "Leads the technical architecture behind Lokam's real-time voice infrastructure and platform reliability.",
     initial: "N",
   },
   {
@@ -62,16 +62,16 @@ const team = [
     initial: "V",
   },
   {
-    name: "Gautham",
-    role: "SDE Intern",
-    bio: "Contributing to full-stack features and internal tooling across Lokam's core product.",
-    initial: "G",
-  },
-  {
     name: "Ishita",
     role: "AI Graphic Designer",
     bio: "Shapes Lokam's visual identity across product and brand — making complex AI feel approachable.",
     initial: "I",
+  },
+  {
+    name: "Gautham",
+    role: "SDE Intern",
+    bio: "Contributing to full-stack features and internal tooling across Lokam's core product.",
+    initial: "G",
   },
 ];
 
