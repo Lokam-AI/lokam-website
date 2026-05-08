@@ -12,7 +12,7 @@ interface CalcState {
 }
 
 function fmt(n: number) {
-  return "$" + Math.round(n).toLocaleString();
+  return "$" + Math.round(n).toLocaleString("en-US");
 }
 
 function sliderBg(value: number, min: number, max: number) {

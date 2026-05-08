@@ -44,27 +44,28 @@ export const caseStudies: CaseStudy[] = [
     ],
     challengeSolution: {
       challenge: {
-        intro: "World Hyundai's service department was handling over 1,100 repair orders per month across 8 advisors — with no reliable way to follow up with every customer.",
+        intro: "World Hyundai's service department was handling over 1,100 repair orders per month with a team of 8 advisors.",
         points: [
-          "Follow-up calls were rarely made during peak write-up hours. Advisors were too busy to reach back out consistently, leaving most customers uncontacted.",
-          "When customers had bad experiences, the dealership found out weeks later through a 1-star Google review or an OEM survey they could no longer influence.",
-          "Service Manager Shvone Hicks estimated they were losing 60–70 at-risk customers per month to competitors, compounding into ~$250K in lost lifetime value every month.",
+          "Manual CSI follow-up calls were supposed to happen within 48 hours — in practice, less than 30% were ever made.",
+          "When customers had bad experiences, the dealership often found out weeks later through a 1-star Google review or an OEM survey they could no longer influence.",
+          "GM Sheri Sevik estimated they were losing 60–70 at-risk customers per month to competitors, compounding into ~$250K in lost lifetime value.",
+          "Service advisors were manually dialing during peak write-up hours — the worst possible time to make quality follow-up calls.",
         ],
       },
       solution: {
         intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for service, integrated directly with their DMS.",
         points: [
-          "AI calls every customer within 24 hours post-service and captures their honest feedback — no advisor time required.",
-          "Detractors instantly escalated to the service manager with full transcripts, before the OEM survey reaches their inbox.",
-          "Promoters automatically sent Google review links via SMS to build rating momentum.",
-          "100% follow-up rate — no calls missed during peak write-up hours, every RO covered.",
-          "Branded caller ID with World Hyundai's name and 3-layer spam filtration to maximize contact rate.",
+          "AI calls every customer within 24 hours post-service and captures their honest feedback.",
+          "Detractors instantly escalated to the service manager with full transcripts.",
+          "Promoters automatically sent Google review links via SMS.",
+          "70% contact rate: Branded caller ID with World Hyundai's name, text follow-up for customers who missed the call, and 3-layer spam filtration.",
+          "Bilingual (English & Spanish) matching to customer preferences.",
         ],
       },
     },
     quote: {
       text: "\"The immediate awareness of how many mildly unsatisfied customers and truly unsatisfied customers we had in our service lane was eye-opening. And our Google review score went from 4.0 to 4.8 in a matter of weeks. Lokam helped us get in front of the issues before the customer completes the CSI survey. This also helps us with retention as well!\"",
-      author: "Shvone Hicks,Service Manager, World Hyundai",
+      author: "Shvone Hicks, Service Manager, World Hyundai",
       location: "Matteson, IL",
     },
     before: [
@@ -108,27 +109,26 @@ export const caseStudies: CaseStudy[] = [
     ],
     challengeSolution: {
       challenge: {
-        intro: "World Hyundai had an average of 650 unsold showroom visitors per month with no dedicated follow-up process to bring them back.",
+        intro: "World Hyundai had an average of 650 unsold showroom visitors per month.",
         points: [
-          "Follow-up was only happening with customers who were already likely to return — the easy wins. Real lost opportunities were going untouched.",
-          "With no dedicated BDC follow-up managers, unsold desklog coverage was inconsistent and entirely dependent on advisor availability.",
-          "General Sales Manager Terri Bisbikis estimated they were losing ~25 deals a month to competitors with zero outreach — revenue that was simply walking out the door.",
+          "Before Lokam, follow-up was occurring with customers that were highly likely to return anyway — the real lost opportunities were going untouched.",
+          "The team knew the unsold desklog was an incredible opportunity, but the lack of one or two full-time qualified managers to make the calls was the friction.",
+          "General Sales Manager Teri Bisbikis estimated they were allowing 25 deals a month to buy elsewhere.",
         ],
       },
       solution: {
-        intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for unsold visitors, integrated directly with their CRM.",
+        intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for calling unsold visitors, integrated directly with their CRM.",
         points: [
-          "Empathetic AI calls every unsold visitor within 24 hours of their showroom visit.",
-          "Has an honest conversation to uncover the primary objections holding each customer back from buying.",
-          "Filters high-intent prospects and instantly alerts the sales team with full conversation transcripts.",
-          "Instead of battling with shoppers, the sales team works a curated, high-intent list and focuses on closing.",
-          "Fully automated coverage — every unsold lead contacted, no BDC manager required.",
+          "Empathetic AI calls every customer within 24 hours of a showroom visit.",
+          "Has an honest conversation and identifies the primary objections holding them back.",
+          "Filters high-intent prospects and alerts the sales team for recovery.",
+          "Instead of battling with shoppers, the sales team filters high-intent leads and closes deals.",
         ],
       },
     },
     quote: {
-      text: "\"We knew that we should see an increase in deals if the time was spent on the info we received from the agent, and we were not disappointed. I believe without the discipline Lokam's alerts created around dialing, we would never have sold 38 cars in 2 months.\"",
-      author: "Terri Bisbikis,General Sales Manager, World Hyundai",
+      text: "\"We knew that we should see an increase in deals if the time was spent on the info we received from the agent, and we were not disappointed. I believe without the discipline Lokam's alerts created around dialling, we would never have sold 38 cars in 2 months.\"",
+      author: "Terri Bisbikis, General Sales Manager, World Hyundai",
       location: "Matteson, IL",
     },
     before: [
