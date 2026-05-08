@@ -42,6 +42,26 @@ export const caseStudies: CaseStudy[] = [
       { value: "180", label: "At-Risk Customers Caught" },
       { value: "+20 pts", label: "CSI Score Increase" },
     ],
+    challengeSolution: {
+      challenge: {
+        intro: "World Hyundai's service department was handling over 1,100 repair orders per month across 8 advisors — with no reliable way to follow up with every customer.",
+        points: [
+          "Follow-up calls were rarely made during peak write-up hours. Advisors were too busy to reach back out consistently, leaving most customers uncontacted.",
+          "When customers had bad experiences, the dealership found out weeks later through a 1-star Google review or an OEM survey they could no longer influence.",
+          "Service Manager Shvone Hicks estimated they were losing 60–70 at-risk customers per month to competitors, compounding into ~$250K in lost lifetime value every month.",
+        ],
+      },
+      solution: {
+        intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for service, integrated directly with their DMS.",
+        points: [
+          "AI calls every customer within 24 hours post-service and captures their honest feedback — no advisor time required.",
+          "Detractors instantly escalated to the service manager with full transcripts, before the OEM survey reaches their inbox.",
+          "Promoters automatically sent Google review links via SMS to build rating momentum.",
+          "100% follow-up rate — no calls missed during peak write-up hours, every RO covered.",
+          "Branded caller ID with World Hyundai's name and 3-layer spam filtration to maximize contact rate.",
+        ],
+      },
+    },
     quote: {
       text: "\"The immediate awareness of how many mildly unsatisfied customers and truly unsatisfied customers we had in our service lane was eye-opening. And our Google review score went from 4.0 to 4.8 in a matter of weeks. Lokam helped us get in front of the issues before the customer completes the CSI survey. This also helps us with retention as well!\"",
       author: "Shvone Hicks,Service Manager, World Hyundai",
@@ -65,6 +85,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     related: [
       { category: "SALES FOLLOW-UP", dealership: "World Hyundai", metric: "38 additional cars sold", href: "/case-studies/world-hyundai-sales" },
+      { category: "SERVICE CSI", dealership: "World Kia", metric: "$320K lifetime revenue recovered", href: "/case-studies/world-kia" },
+      { category: "SALES FOLLOW-UP", dealership: "World Kia", metric: "34 additional cars sold", href: "/case-studies/world-kia-sales" },
     ],
   },
 
@@ -84,6 +106,26 @@ export const caseStudies: CaseStudy[] = [
       { value: "67%", label: "Contact Rate" },
       { value: "335", label: "Opportunities Escalated" },
     ],
+    challengeSolution: {
+      challenge: {
+        intro: "World Hyundai had an average of 650 unsold showroom visitors per month with no dedicated follow-up process to bring them back.",
+        points: [
+          "Follow-up was only happening with customers who were already likely to return — the easy wins. Real lost opportunities were going untouched.",
+          "With no dedicated BDC follow-up managers, unsold desklog coverage was inconsistent and entirely dependent on advisor availability.",
+          "General Sales Manager Terri Bisbikis estimated they were losing ~25 deals a month to competitors with zero outreach — revenue that was simply walking out the door.",
+        ],
+      },
+      solution: {
+        intro: "World Hyundai deployed Lokam's Voice AI follow-up platform for unsold visitors, integrated directly with their CRM.",
+        points: [
+          "Empathetic AI calls every unsold visitor within 24 hours of their showroom visit.",
+          "Has an honest conversation to uncover the primary objections holding each customer back from buying.",
+          "Filters high-intent prospects and instantly alerts the sales team with full conversation transcripts.",
+          "Instead of battling with shoppers, the sales team works a curated, high-intent list and focuses on closing.",
+          "Fully automated coverage — every unsold lead contacted, no BDC manager required.",
+        ],
+      },
+    },
     quote: {
       text: "\"We knew that we should see an increase in deals if the time was spent on the info we received from the agent, and we were not disappointed. I believe without the discipline Lokam's alerts created around dialing, we would never have sold 38 cars in 2 months.\"",
       author: "Terri Bisbikis,General Sales Manager, World Hyundai",
@@ -108,6 +150,7 @@ export const caseStudies: CaseStudy[] = [
     related: [
       { category: "SERVICE CSI", dealership: "World Hyundai", metric: "$410K lifetime revenue recovered", href: "/case-studies/world-hyundai" },
       { category: "SERVICE CSI", dealership: "World Kia", metric: "$320K lifetime revenue recovered", href: "/case-studies/world-kia" },
+      { category: "SALES FOLLOW-UP", dealership: "World Kia", metric: "34 additional cars sold", href: "/case-studies/world-kia-sales" },
     ],
   },
 
@@ -146,36 +189,6 @@ export const caseStudies: CaseStudy[] = [
           "Bilingual (English & Spanish) matching to customer preferences.",
         ],
       },
-    },
-    timeline: {
-      heading: "From Day 1 to $320K Recovered in 56 Days",
-      events: [
-        {
-          day: "Day 1",
-          title: "Onboarding & Integration",
-          description: "Lokam connected to World Kia's DMS in under 4 hours. No code changes required from the dealer's IT team.",
-        },
-        {
-          day: "Day 3",
-          title: "First AI Calls Go Live",
-          description: "Lokam began calling every service customer within 24 hours of RO close — using World Kia's branded caller ID and bilingual (English & Spanish) voice persona.",
-        },
-        {
-          day: "Day 14",
-          title: "First Detractor Intercepted",
-          description: "An at-risk customer who had already drafted a negative review was escalated to Erica Rocco with a full transcript — resolved before the Kia OEM survey was sent.",
-        },
-        {
-          day: "Day 30",
-          title: "First Month Results In",
-          description: "80 at-risk customers caught. Google rating moved from 4.1 to 4.5. CSI score up 10 points. $3,000 in BDC hours saved from automated follow-up.",
-        },
-        {
-          day: "Day 56",
-          title: "$320K Lifetime Value Recovered",
-          description: "160 at-risk customers intercepted across 2,400 ROs. Google rating reached 4.8. CSI score up 20 points. Erica's team now addresses detractors before the survey hits their inbox.",
-        },
-      ],
     },
     quote: {
       text: "\"The number of detractors helps me deflect the negative feedback that may happen on a Kia survey by allowing me to address it before the survey is in the email.\"",
@@ -240,36 +253,6 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     },
-    timeline: {
-      heading: "From Day 1 to 34 Cars Sold in 56 Days",
-      events: [
-        {
-          day: "Day 1",
-          title: "Onboarding & Integration",
-          description: "Lokam connected to World Kia's CRM in under 4 hours. No code changes required from the dealer's IT team.",
-        },
-        {
-          day: "Day 3",
-          title: "First AI Calls Go Live",
-          description: "Lokam began calling every unsold visitor within 24 hours of their showroom visit — using World Kia's branded caller ID in both English and Spanish.",
-        },
-        {
-          day: "Day 14",
-          title: "First Escalation Closed",
-          description: "A high-intent prospect who visited but left undecided was escalated to the sales team with a full conversation transcript. They returned the next day and bought.",
-        },
-        {
-          day: "Day 30",
-          title: "First Month Results In",
-          description: "17 additional cars sold. 142 opportunities escalated. 65% contact rate. ~$40K gross profit added. Sales team now working a filtered, high-intent list daily.",
-        },
-        {
-          day: "Day 56",
-          title: "34 Additional Cars Sold",
-          description: "285 opportunities escalated from 1,350 unsold visitors. $80K gross profit added. $8K in BDC cost savings across 8 weeks. Camille's team now sells 18 more cars every month.",
-        },
-      ],
-    },
     quote: {
       text: "\"Prior to having Lokam, follow-up on unsold traffic was not being executed at the rate it should have been. The alerts pushed us toward working on it as it should have. So we are now selling 18 more cars a month.\"",
       author: "Camille Wright, General Sales Manager, World Kia",
@@ -294,6 +277,7 @@ export const caseStudies: CaseStudy[] = [
     related: [
       { category: "SERVICE CSI", dealership: "World Kia", metric: "$320K lifetime revenue recovered", href: "/case-studies/world-kia" },
       { category: "SALES FOLLOW-UP", dealership: "World Hyundai", metric: "38 additional cars sold", href: "/case-studies/world-hyundai-sales" },
+      { category: "SERVICE CSI", dealership: "World Hyundai", metric: "$410K lifetime revenue recovered", href: "/case-studies/world-hyundai" },
     ],
   },
 ];
