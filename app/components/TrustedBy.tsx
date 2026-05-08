@@ -17,15 +17,7 @@ export default function TrustedBy() {
         className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
       />
 
-      {/* Gradient blend — white top (matches Hero) fading to reveal SVG bg */}
-      <div
-        className="absolute inset-x-0 top-0 h-40 md:h-52 pointer-events-none z-[1]"
-        style={{
-          background: "linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0.5) 50%, transparent 100%)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-[1166px] mx-auto pt-4 md:pt-[35px] pb-12 md:pb-[60px] px-4">
+      <div className="relative z-10 max-w-[1166px] mx-auto pt-12 md:pt-[60px] pb-12 md:pb-[60px] px-4">
 
         <h2 className="font-sans font-medium text-2xl md:text-4xl leading-8 md:leading-[52px] text-[#00483a] text-center m-0">
           Trusted By

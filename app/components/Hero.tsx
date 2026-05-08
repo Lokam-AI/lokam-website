@@ -5,7 +5,7 @@ import CalendlyButton from "./CalendlyButton";
 export default function Hero() {
   return (
     <section className="bg-[#f4f4f6]">
-      <div className="relative overflow-hidden h-[480px] sm:h-[560px] md:h-[680px] lg:h-[820px] xl:h-[920px]">
+      <div className="relative overflow-hidden h-[540px] sm:h-[600px] md:h-[660px] lg:h-[700px] xl:h-[760px]">
 
         {/* Car image — natural size at viewport width, anchored at bottom.
             Top extends above the section and is cropped by overflow-hidden. */}
@@ -17,7 +17,7 @@ export default function Hero() {
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="block w-full h-auto absolute bottom-0 inset-x-0"
+          className="block w-full h-auto absolute inset-x-0 bottom-[-10vw]"
         />
 
         {/* Content overlaid on top of car */}
