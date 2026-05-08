@@ -190,12 +190,12 @@ export default function Nav() {
           <nav className="hidden md:flex items-center gap-10">
             <DropdownMenu label="Case Study" href="/case-studies" items={caseStudyLinks} />
             <DropdownMenu label="Blogs" href="/blog" items={blogLinks} />
-            <SmoothAnchor href="/#contact" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
-              Contact Us
-            </SmoothAnchor>
             <Link href="/about" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
               About
             </Link>
+            <SmoothAnchor href="/#contact" className="text-white text-[14.1px] leading-[17.5px] no-underline font-sans font-normal">
+              Contact Us
+            </SmoothAnchor>
             <a
               href="https://app.lokam.ai"
               target="_blank"
@@ -232,14 +232,14 @@ export default function Nav() {
             <div className="px-6 pt-2 pb-8 flex flex-col flex-1">
 
               {/* Main links */}
+              <MobileAccordion label="Case Studies" href="/case-studies" items={caseStudyLinks} onNavigate={close} />
+              <MobileAccordion label="Blogs" href="/blog" items={blogLinks} onNavigate={close} />
+
               <div className="border-b border-white/10">
                 <Link href="/about" onClick={close} className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline">
                   About
                 </Link>
               </div>
-
-              <MobileAccordion label="Case Studies" href="/case-studies" items={caseStudyLinks} onNavigate={close} />
-              <MobileAccordion label="Blogs" href="/blog" items={blogLinks} onNavigate={close} />
 
               <div className="border-b border-white/10">
                 <SmoothAnchor href="/#contact" className="flex items-center py-4 font-sans text-sm font-medium text-white no-underline" onClick={close}>
