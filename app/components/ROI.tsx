@@ -62,7 +62,7 @@ function ROICard({
             />
             <button
               onClick={onCalculate}
-              className="flex items-center justify-center gap-1.5 text-white text-sm font-medium whitespace-nowrap font-sans px-4 h-[51px] w-full sm:w-[189px]"
+              className="flex items-center justify-center gap-1.5 text-white text-sm font-medium whitespace-nowrap font-sans px-4 h-[51px] w-full sm:w-[189px] cursor-pointer"
               style={{ backgroundColor: "#307D93", borderRadius: 8.08 }}
             >
               {buttonText}

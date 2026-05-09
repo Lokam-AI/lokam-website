@@ -145,7 +145,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Will customers know they're talking to an AI?",
-      acceptedAnswer: { "@type": "Answer", text: "Lokam calls with your dealership's branded caller ID and is transparent when asked. Our contact rates average 89%+ because the calls feel relevant and timely, not robotic." },
+      acceptedAnswer: { "@type": "Answer", text: "Lokam calls with your dealership's branded caller ID and is transparent when asked. Our contact rates average 70% because the calls feel relevant and timely, not robotic." },
     },
     {
       "@type": "Question",

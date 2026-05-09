@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Will customers know they're talking to an AI?",
-    a: "Lokam calls with your dealership's branded caller ID and is transparent when asked. Most customers simply experience it as a fast, attentive follow-up call. Our contact rates average 89%+ because the calls feel relevant and timely, not robotic.",
+    a: "Lokam calls with your dealership's branded caller ID and is transparent when asked. Most customers simply experience it as a fast, attentive follow-up call. Our contact rates average 70% because the calls feel relevant and timely, not robotic.",
   },
   {
     q: "How does Lokam improve CSI scores?",

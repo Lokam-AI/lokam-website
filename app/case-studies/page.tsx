@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const heroStats = [
   { value: "200+",   label: "Dealers served" },
   { value: "$2.4M+", label: "Revenue recovered" },
-  { value: "89%+",   label: "Avg. contact rate" },
+  { value: "70%",    label: "Avg. contact rate" },
 ];
 
 const featuredStudy = {

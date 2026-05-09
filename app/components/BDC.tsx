@@ -116,7 +116,7 @@ export default function BDC() {
         >
           <p className="font-sans text-base md:text-lg font-medium text-white leading-relaxed">
             As a result, we have a{" "}
-            <span className="font-bold text-white bg-white/20 rounded-md px-2 py-0.5 mx-1">85%</span>
+            <span className="font-bold text-white bg-white/20 rounded-md px-2 py-0.5 mx-1">70%</span>
             {" "}contact rate compared to an industry average of 45-50%
           </p>
         </div>
