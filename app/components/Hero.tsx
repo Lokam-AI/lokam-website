@@ -65,7 +65,7 @@ export default function Hero() {
             </CalendlyButton>
             <SmoothAnchor
               href="#roi"
-              className="flex items-center justify-center px-6 h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
+              className="flex items-center justify-center px-6 h-[50px] bg-white border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
             >
               Calculate your ROI
             </SmoothAnchor>
