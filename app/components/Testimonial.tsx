@@ -21,6 +21,14 @@ const scottQuote = () => (
   </>
 );
 
+const teriQuote = () => (
+  <>
+    &ldquo;In just a few weeks, Lokam helped us uncover{" "}
+    <strong className="font-semibold">hidden customer issues</strong>, recover missed revenue, and gain clear visibility into service and sales, driving follow-ups on active deals and an{" "}
+    <strong className="font-semibold">extra 15 to 20 cars sold per month</strong>.&rdquo;
+  </>
+);
+
 const TESTIMONIALS: Testimonial[] = [
   {
     quote: "Lokam boosted our Google ratings from 4.0 to 4.6 in 5 weeks by catching service detractors in real time. On sales, it uncovered hidden objections from unsold desklog traffic, helping us close 15–20 extra cars monthly",
@@ -34,6 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Teri Bisbikis",
     title: "General Manager,\nWorld Hyundai Matteson.",
     playbackId: "iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M",
+    renderQuote: teriQuote,
   },
 ];
 
