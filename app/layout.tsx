@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/assets/car.jpg`,
-        width: 2560,
-        height: 1911,
+        url: `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
         alt: "Lokam Voice AI for Automotive Dealerships",
       },
     ],
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Lokam — Voice AI for Automotive Dealerships",
     description:
       "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
-    images: [`${SITE_URL}/assets/car.jpg`],
+    images: [`${SITE_URL}/opengraph-image`],
   },
 };
 
