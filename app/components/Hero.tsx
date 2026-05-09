@@ -5,7 +5,7 @@ import CalendlyButton from "./CalendlyButton";
 export default function Hero() {
   return (
     <section className="bg-[#f4f4f6]">
-      <div className="relative overflow-hidden h-[470px] sm:h-[520px] md:h-[660px] lg:h-[700px] xl:h-[760px]">
+      <div className="relative overflow-hidden h-[470px] sm:h-[520px] md:h-[calc(100dvh-96px)] md:min-h-[580px]">
 
         {/* Car image — natural size at viewport width, anchored at bottom.
             Top extends above the section and is cropped by overflow-hidden. */}
@@ -65,7 +65,7 @@ export default function Hero() {
             </CalendlyButton>
             <SmoothAnchor
               href="#roi"
-              className="flex items-center justify-center px-6 h-[50px] bg-white border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
+              className="flex items-center justify-center px-6 h-[50px] border-2 border-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-brand-mid no-underline"
             >
               Calculate your ROI
             </SmoothAnchor>
