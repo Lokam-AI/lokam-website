@@ -17,7 +17,7 @@ export default function Hero() {
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="block w-full h-auto absolute inset-x-0 bottom-[-10vw] scale-[1.2] md:scale-100 origin-bottom"
+          className="block w-full h-auto absolute inset-x-0 bottom-[-10vw] origin-bottom"
         />
 
         {/* Content overlaid on top of car */}
