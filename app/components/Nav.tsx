@@ -7,13 +7,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import CalendlyButton from "./CalendlyButton";
 
 const caseStudyLinks = [
-  { label: "Metro Toyota",       href: "/case-studies/metro-toyota" },
-  { label: "Riverside Honda",    href: "/case-studies/riverside-honda" },
-  { label: "Valley Ford",        href: "/case-studies/valley-ford" },
-  { label: "Sunrise Ford",       href: "/case-studies/sunrise-ford" },
-  { label: "Capital Auto Group", href: "/case-studies/capital-auto-group" },
-  { label: "Pacific Subaru",     href: "/case-studies/pacific-subaru" },
-  { label: "World Auto Group",   href: "/case-studies/world-auto-group" },
+  { label: "World Hyundai – Service CSI",   href: "/case-studies/world-hyundai" },
+  { label: "World Hyundai – Sales",         href: "/case-studies/world-hyundai-sales" },
+  { label: "World Kia – Service CSI",       href: "/case-studies/world-kia" },
+  { label: "World Kia – Sales",             href: "/case-studies/world-kia-sales" },
 ];
 
 const blogLinks = [
