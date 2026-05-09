@@ -7,10 +7,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import CalendlyButton from "./CalendlyButton";
 
 const caseStudyLinks = [
-  { label: "World Hyundai – Service CSI",   href: "/case-studies/world-hyundai" },
-  { label: "World Hyundai – Sales",         href: "/case-studies/world-hyundai-sales" },
-  { label: "World Kia – Service CSI",       href: "/case-studies/world-kia" },
-  { label: "World Kia – Sales",             href: "/case-studies/world-kia-sales" },
+  { label: "World Hyundai – Service",  href: "/case-studies/world-hyundai" },
+  { label: "World Hyundai – Sales",    href: "/case-studies/world-hyundai-sales" },
+  { label: "World Kia – Service",      href: "/case-studies/world-kia" },
+  { label: "World Kia – Sales",        href: "/case-studies/world-kia-sales" },
 ];
 
 const blogLinks = [
