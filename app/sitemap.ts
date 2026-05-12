@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { blogPosts } from "../lib/blog-posts";
 import { caseStudies } from "../lib/case-studies";
 
-const BASE_URL = "https://lokam-website.vercel.app";
+const BASE_URL = "https://lokam.ai";
 
 function parsePostDate(str: string): Date {
   const months: Record<string, number> = {
