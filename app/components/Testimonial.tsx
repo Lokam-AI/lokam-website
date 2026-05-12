@@ -10,6 +10,7 @@ interface Testimonial {
   name: string;
   title: string;
   playbackId: string;
+  thumbnailTime?: number;
   renderQuote?: () => React.ReactNode;
 }
 
@@ -33,6 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Scott Falcone",
     title: "Dealer principal,\nWorld Auto Group.",
     playbackId: "ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600",
+    thumbnailTime: 4,
     renderQuote: scottQuote,
   },
   {
@@ -40,6 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Teri Bisbikis",
     title: "General Manager,\nWorld Hyundai Matteson.",
     playbackId: "iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M",
+    thumbnailTime: 1,
     renderQuote: teriQuote,
   },
 ];
@@ -198,6 +201,7 @@ export default function Testimonial() {
                       <MuxPlayer
                         ref={(el) => { playerRefs.current[i] = el; }}
                         playbackId={t.playbackId}
+                        thumbnailTime={t.thumbnailTime ?? 3}
                         loop
                         defaultHiddenCaptions
                         disableCookies
@@ -380,6 +384,7 @@ export default function Testimonial() {
             </button>
             <MuxPlayer
               playbackId={TESTIMONIALS[currentIndex].playbackId}
+              thumbnailTime={TESTIMONIALS[currentIndex].thumbnailTime ?? 3}
               streamType="on-demand"
               autoPlay
               defaultHiddenCaptions
