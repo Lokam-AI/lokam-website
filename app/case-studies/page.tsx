@@ -8,12 +8,12 @@ import CalendlyButton from "../components/CalendlyButton";
 export const metadata: Metadata = {
   title: "Dealer Case Studies | Lokam Voice AI Results",
   description:
-    "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
+    "Real dealerships, real revenue. See how dealerships use Lokam to recover revenue, protect CSI scores, and close more deals.",
   alternates: { canonical: "https://www.lokam.ai/case-studies" },
   openGraph: {
     title: "Dealer Case Studies | Lokam Voice AI Results",
     description:
-      "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
+      "Real dealerships, real revenue. See how dealerships use Lokam to recover revenue, protect CSI scores, and close more deals.",
     url: "https://www.lokam.ai/case-studies",
     type: "website",
     siteName: "Lokam",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dealer Case Studies | Lokam Voice AI Results",
     description:
-      "Real dealerships, real revenue. See how 200+ dealers use Lokam.",
+      "Real dealerships, real revenue. See how dealers use Lokam.",
   },
 };
 
@@ -59,7 +59,7 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Dealer Case Studies | Lokam Voice AI Results",
-  description: "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
+  description: "Real dealerships, real revenue. See how dealerships use Lokam to recover revenue, protect CSI scores, and close more deals.",
   url: "https://www.lokam.ai/case-studies",
   publisher: { "@type": "Organization", name: "Lokam", url: "https://www.lokam.ai" },
 };
@@ -244,7 +244,7 @@ export default function CaseStudiesPage() {
                 Ready to write your own case study?
               </h2>
               <p className="font-sans text-sm text-[#4A6B68]" style={{ maxWidth: 440 }}>
-                Join 200+ dealerships already using Lokam to recover revenue, protect CSI, and close more deals - with zero added headcount.
+                Join dealerships already using Lokam to recover revenue, protect CSI, and close more deals - with zero added headcount.
               </p>
               <div className="flex flex-wrap items-center gap-4 mt-1">
                 {["Plans for every use case", "Built for dealerships", "Book a demo"].map((item) => (

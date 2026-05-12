@@ -2,7 +2,7 @@
 
 > Lokam is a Voice AI platform for automotive dealerships that automates post-service and post-visit customer follow-up through AI-powered phone calls.
 
-Lokam serves 200+ dealerships across North America, achieving a 70% average contact rate. The platform integrates with major dealer management systems and supports English and Spanish outreach.
+Lokam serves dealerships across North America, achieving a 70% average contact rate. The platform integrates with major dealer management systems and supports English and Spanish outreach.
 
 When a service visit ends or a showroom prospect leaves without buying, Lokam places an AI voice call to that customer within 12-24 hours. The call identifies dissatisfied customers and escalates them to the service manager or sales team with a full transcript - before a negative survey or bad Google review is submitted. Satisfied customers receive an SMS with the dealership's Google review link.
 
@@ -17,7 +17,6 @@ When a service visit ends or a showroom prospect leaves without buying, Lokam pl
 - 70% average contact rate across the dealer network (vs 15% manual BDC average)
 - First call placed within 12-24 hours of customer departure
 - $2.4M+ total revenue recovered across the customer base
-- 200+ dealerships served
 - +20 CSI score points average across active dealers within 90 days
 - 4.0 to 4.8 Google rating at World Hyundai Matteson within 8 weeks
 

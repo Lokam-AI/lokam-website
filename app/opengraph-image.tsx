@@ -49,7 +49,7 @@ export default function OgImage() {
             gap: 32,
           }}
         >
-          {["200+ Dealers", "70% Contact Rate", "$2.4M+ Recovered"].map((stat) => (
+          {["Proven Results", "70% Contact Rate", "$2.4M+ Recovered"].map((stat) => (
             <div
               key={stat}
               style={{

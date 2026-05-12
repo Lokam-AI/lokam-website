@@ -392,7 +392,7 @@ export default function AIVoiceAgentDealershipPage() {
             </table>
           </div>
           <p className="font-sans text-xs text-[#8AADA8] mt-3">
-            Contact rate data measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. Manual BDC benchmarks from Lokam&apos;s analysis of dealer accounts at onboarding. Rates vary by market, DMS configuration, and dealer volume.
+            Contact rate data measured across Lokam&apos;s active dealer network as of Q1 2026. Manual BDC benchmarks from Lokam&apos;s analysis of dealer accounts at onboarding. Rates vary by market, DMS configuration, and dealer volume.
           </p>
         </section>
 

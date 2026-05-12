@@ -302,7 +302,7 @@ export default function CSIFollowUpAutomationPage() {
         {/* Methodology note */}
         <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-4">
           <p className="font-sans text-xs text-[#8AADA8]">
-            Contact rate data measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. CSI score improvements represent average across dealers with 90+ days of active use. Results vary by RO volume, market, and DMS configuration. World Hyundai Matteson outcomes are from verified case study data.
+            Contact rate data measured across Lokam&apos;s active dealer network as of Q1 2026. CSI score improvements represent average across dealers with 90+ days of active use. Results vary by RO volume, market, and DMS configuration. World Hyundai Matteson outcomes are from verified case study data.
           </p>
         </div>
 

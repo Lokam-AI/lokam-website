@@ -301,7 +301,7 @@ export default function UnsoldLeadRecoverySoftwarePage() {
         {/* Methodology note */}
         <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-4">
           <p className="font-sans text-xs text-[#8AADA8]">
-            Contact rate benchmarks measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. Manual BDC baselines from dealer account data at onboarding. The 78% first-to-follow-up figure is from NADA&apos;s 2025 car buyer research. Revenue estimates use observed re-engagement and appointment rates; individual results vary by market and inventory.
+            Contact rate benchmarks measured across Lokam&apos;s active dealer network as of Q1 2026. Manual BDC baselines from dealer account data at onboarding. The 78% first-to-follow-up figure is from NADA&apos;s 2025 car buyer research. Revenue estimates use observed re-engagement and appointment rates; individual results vary by market and inventory.
           </p>
         </div>
 

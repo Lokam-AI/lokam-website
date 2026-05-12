@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -13,6 +14,29 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 const SITE_URL = "https://www.lokam.ai";
+
+export const metadata: Metadata = {
+  title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
+  description:
+    "Lokam's AI voice agents call every service customer and unsold showroom lead automatically - recovering missed revenue, protecting CSI scores, and closing more deals without adding headcount.",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
+    description:
+      "Lokam's AI voice agents call every service customer and unsold showroom lead automatically - recovering missed revenue, protecting CSI scores, and closing more deals without adding headcount.",
+    url: SITE_URL,
+    siteName: "Lokam",
+    type: "website",
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: "Lokam Voice AI for Automotive Dealerships" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
+    description:
+      "Lokam's AI voice agents call every service customer and unsold showroom lead automatically - recovering missed revenue, protecting CSI scores, and closing more deals without adding headcount.",
+    images: [`${SITE_URL}/opengraph-image`],
+  },
+};
 
 const videoSchema = {
   "@context": "https://schema.org",
