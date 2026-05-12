@@ -23,7 +23,7 @@ const videoSchema = {
   thumbnailUrl: `https://image.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600/thumbnail.jpg`,
   contentUrl: `https://stream.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600.m3u8`,
   embedUrl: `https://player.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600`,
-  uploadDate: "2026-01-01",
+  uploadDate: "2026-01-01T00:00:00+00:00",
   duration: "PT1M31S",
   publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
 };
@@ -37,7 +37,7 @@ const videoSchema2 = {
   thumbnailUrl: `https://image.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M/thumbnail.jpg`,
   contentUrl: `https://stream.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M.m3u8`,
   embedUrl: `https://player.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M`,
-  uploadDate: "2026-01-01",
+  uploadDate: "2026-01-01T00:00:00+00:00",
   duration: "PT2M25S",
   publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
 };

@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Terms of Service — Lokam",
+  robots: { index: false, follow: false },
 };
 
 export default function TermsOfServicePage() {
