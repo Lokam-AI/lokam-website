@@ -7,7 +7,7 @@ import SmoothAnchor from "../../components/SmoothAnchor";
 import CalendlyButton from "../../components/CalendlyButton";
 import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
 
-const SITE_URL = "https://lokam-website.vercel.app";
+const SITE_URL = "https://lokam.ai";
 
 // ─── Static params ────────────────────────────────────────────────────────────
 

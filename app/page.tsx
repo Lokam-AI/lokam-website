@@ -12,7 +12,7 @@ import Testimonial from "./components/Testimonial";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
-const SITE_URL = "https://lokam-website.vercel.app";
+const SITE_URL = "https://lokam.ai";
 
 const videoSchema = {
   "@context": "https://schema.org",

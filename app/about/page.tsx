@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "About Lokam | Voice AI for Automotive Dealerships",
   description:
     "Meet the team building Lokam — Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
-  alternates: { canonical: "https://lokam-website.vercel.app/about" },
+  alternates: { canonical: "https://lokam.ai/about" },
   openGraph: {
     title: "About Lokam | Voice AI for Automotive Dealerships",
     description:
       "Meet the team building Lokam — Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
-    url: "https://lokam-website.vercel.app/about",
+    url: "https://lokam.ai/about",
     type: "website",
     siteName: "Lokam",
   },

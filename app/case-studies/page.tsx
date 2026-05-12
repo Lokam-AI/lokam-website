@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Dealer Case Studies | Lokam Voice AI Results",
   description:
     "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
-  alternates: { canonical: "https://lokam-website.vercel.app/case-studies" },
+  alternates: { canonical: "https://lokam.ai/case-studies" },
   openGraph: {
     title: "Dealer Case Studies | Lokam Voice AI Results",
     description:
       "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
-    url: "https://lokam-website.vercel.app/case-studies",
+    url: "https://lokam.ai/case-studies",
     type: "website",
     siteName: "Lokam",
   },

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Dealer Insights & Automotive AI Blog | Lokam",
   description:
     "Strategies, data, and real-world case studies to help your dealership recover more revenue from service retention and sales follow-up.",
-  alternates: { canonical: "https://lokam-website.vercel.app/blog" },
+  alternates: { canonical: "https://lokam.ai/blog" },
   openGraph: {
     title: "Dealer Insights & Automotive AI Blog | Lokam",
     description:
       "Strategies, data, and real-world case studies to help your dealership recover more revenue from service retention and sales follow-up.",
-    url: "https://lokam-website.vercel.app/blog",
+    url: "https://lokam.ai/blog",
     type: "website",
     siteName: "Lokam",
   },

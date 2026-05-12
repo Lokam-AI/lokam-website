@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,7 +17,7 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://lokam-website.vercel.app";
+const SITE_URL = "https://lokam.ai";
 
 export const metadata: Metadata = {
   title: "Lokam — Voice AI for Automotive Dealerships",
@@ -142,6 +143,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
         />
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W8V1LMBJLP"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W8V1LMBJLP');
+          `}
+        </Script>
       </body>
     </html>
   );
