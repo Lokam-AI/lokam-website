@@ -56,8 +56,9 @@ const serviceSchema = {
     "70% average contact rate vs 15% manual BDC average",
     "Hot lead escalation to BDC team with full call transcript",
     "Branded caller ID for improved answer rates",
-    "DMS integration - reads desklogs from CDK, Dealertrack, VinSolutions",
+    "DMS-native - reads desklogs from CDK, Dealertrack, VinSolutions",
     "Multilingual outreach - English and Spanish",
+    "Optimized retry cadence for voicemail drops",
   ],
 };
 
@@ -70,7 +71,7 @@ const faqSchema = {
       name: "What is unsold lead recovery software?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Unsold lead recovery software automatically follows up with customers who visited a dealership showroom but did not purchase. Instead of relying on BDC staff to manually call every desklog, AI-powered systems like Lokam contact every unsold customer within 24 hours of their visit - at scale, with consistent messaging, and at a contact rate manual teams cannot match.",
+        text: "Unsold lead recovery software automatically follows up with customers who visited a dealership showroom but did not purchase. Instead of relying on BDC staff to manually call every desklog, AI-powered systems like Lokam contact every unsold customer within 24 hours - at scale, with consistent messaging, and at a contact rate manual teams cannot match.",
       },
     },
     {
@@ -78,7 +79,7 @@ const faqSchema = {
       name: "How does Lokam recover unsold showroom traffic?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Lokam reads your unsold desklog directly from your DMS (CDK, Dealertrack, VinSolutions) within minutes of the customer leaving. An AI voice agent calls each customer within 24 hours using your branded caller ID. When Lokam detects a ready buyer - an objection overcome, new incentive interest, or trade-in readiness - it escalates to your BDC team instantly with the full conversation transcript.",
+        text: "Lokam reads your unsold desklog directly from your DMS within minutes of the customer leaving. An AI voice agent calls each customer within 24 hours using your branded caller ID. When Lokam detects a ready buyer - an objection overcome, new incentive interest, or trade-in readiness - it escalates to your BDC team instantly with the full conversation transcript.",
       },
     },
     {
@@ -94,7 +95,7 @@ const faqSchema = {
       name: "How many times does Lokam follow up with unsold leads?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Lokam follows an optimized retry cadence - initial call within 24 hours, plus scheduled retries during peak pick-up windows if the first attempt goes to voicemail. Retries are not random; they're scheduled based on when customers in your market are most likely to answer. Your team only gets involved when Lokam identifies a warm buyer.",
+        text: "Lokam follows an optimized retry cadence - initial call within 24 hours, plus scheduled retries during peak pick-up windows if the first attempt goes to voicemail. Retries are scheduled based on when customers in your market are most likely to answer, not at random. Your team only gets involved when Lokam identifies a warm buyer.",
       },
     },
     {
@@ -102,7 +103,31 @@ const faqSchema = {
       name: "Does Lokam replace BDC staff?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Lokam handles high-volume repetitive outreach so your BDC team focuses entirely on warm, escalated buyers. Most dealers see BDC productivity increase significantly - your team spends their time on hot leads instead of cold calling 500 desklogs and reaching 75 people.",
+        text: "No. Lokam handles high-volume first-contact outreach so your BDC team focuses entirely on warm, escalated buyers. Most dealers see BDC productivity increase significantly - your team spends their time on ready buyers instead of cold-calling hundreds of desklogs and reaching a fraction of them.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens if the customer already bought from another dealer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lokam handles this gracefully. When a customer indicates they've already purchased, the AI acknowledges it, wishes them well, and closes the record. The interaction is short, professional, and non-pushy. These calls are a small minority of the total volume - and the cost of making them is trivial compared to the revenue recovered from customers who are still in the market.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between a desklog follow-up and an internet lead follow-up?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A desklog represents a customer who physically visited the showroom and had a deal discussion - the highest-intent unsold prospect you have. An internet lead is an online inquiry, which has lower average intent. Lokam is optimized for desklog follow-up because the buying signals are stronger and the 24-hour window is most critical. Internet lead follow-up is a separate workflow also supported by Lokam's BDC automation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which DMS systems does Lokam integrate with for desklog follow-up?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lokam integrates natively with CDK Global, Dealertrack, VinSolutions, DealerSocket, TEKION, Authenticom, and DealerVault. Lokam's team handles the integration configuration - your IT department does not need to be involved for the standard setup.",
       },
     },
   ],
@@ -110,35 +135,69 @@ const faqSchema = {
 
 const stats = [
   { value: "85%", label: "Unsold leads ignored", sub: "never hear from the dealer again" },
-  { value: "78%", label: "Buyers choose the first dealer", sub: "to follow up (NADA, 2025)" },
+  { value: "78%", label: "Buyers choose first dealer", sub: "to follow up (NADA, 2025)" },
   { value: "24h", label: "Follow-up window", sub: "before leads go cold" },
-  { value: "45%", label: "Close rate", sub: "on re-engaged leads" },
+  { value: "70%", label: "Contact rate", sub: "vs 15% manual BDC average" },
 ];
 
-const features = [
+const steps = [
   {
-    title: "Calls every desklog automatically",
-    desc: "Your BDC team can't manually reach 500 unsold customers a month. Lokam can - automatically, within 24 hours of the showroom visit, before the customer signs with a competitor.",
+    n: "1",
+    title: "Customer visits showroom, desklog created",
+    desc: "When a customer has a pricing or deal discussion in your showroom - whether or not they purchase - a desklog record is created in your DMS. These are your highest-intent unsold prospects: people who came in, engaged with a consultant, and left without buying.",
   },
   {
-    title: "Branded caller ID",
-    desc: "Calls go out under your dealership's name and number - not an unknown 800 number. Answer rates jump because customers recognize who's calling.",
+    n: "2",
+    title: "Lokam reads the desklog automatically",
+    desc: "Within minutes of the record being created in CDK, Dealertrack, or VinSolutions, Lokam pulls the customer's contact details and visit context. No manual export, no BDC task creation, no spreadsheet. The follow-up queue builds itself.",
   },
   {
-    title: "Hot lead escalation",
-    desc: "When Lokam detects a ready buyer - an objection overcome, new incentive interest, or trade-in readiness - it alerts your BDC team in real time with the full call transcript.",
+    n: "3",
+    title: "AI outbound call placed within 24 hours",
+    desc: "The call goes out under your dealership's name and number. Lokam references the specific visit, opens the conversation, and listens. It detects buying signals - objections reconsidered, new incentive interest, trade-in readiness - and handles the full conversation naturally.",
   },
   {
-    title: "Multilingual outreach",
-    desc: "Reaches customers in English and Spanish automatically based on their preferred language. No manual routing required.",
+    n: "4",
+    title: "Ready buyers escalated, cold leads retried",
+    desc: "When Lokam detects a warm buyer, your BDC team gets an immediate hot lead notification with the customer's name, their current interest level, and the full call transcript. Leads that don't answer get retried on an optimized schedule during peak pick-up windows.",
+  },
+];
+
+const outcomes = [
+  {
+    title: "Contact rate: 15% to 70% on the same desklog volume",
+    desc: "The average dealership BDC manually contacts 15% of unsold desklogs via live conversation. Lokam averages 70% on the same population. At 400 desklogs per month, that's the difference between 60 conversations and 280 - with the same team, same inventory, same market.",
   },
   {
-    title: "Optimized retry windows",
-    desc: "Retries are scheduled for peak pick-up windows - not randomly. Lokam knows when your market's customers answer their phones.",
+    title: "First-to-follow-up advantage on every desklog",
+    desc: "NADA's 2025 data shows 78% of buyers choose the first dealership to follow up - not the one they originally preferred. A customer who visited you on Monday and doesn't hear back until Thursday has already been contacted by your competition. Lokam calls within 24 hours, every time, with no exceptions for staffing or volume.",
   },
   {
-    title: "DMS-native integration",
-    desc: "Pulls directly from CDK Global, Dealertrack, and VinSolutions. No manual exports, no new logins - your unsold desklog feeds Lokam automatically.",
+    title: "BDC team works exclusively warm leads",
+    desc: "When Lokam handles first-contact outreach on all desklog volume, your BDC team's entire workload shifts to pre-qualified buyers. Close rate on BDC-handled leads improves because every call they take is a warm handoff. Reps stay engaged longer because the calls worth taking actually land.",
+  },
+  {
+    title: "Revenue math from recovered volume",
+    desc: "A dealership with 400 desklogs per month moving from 15% to 70% contact rate has 220 additional conversations per month. At a 15-20% re-engagement rate and 30% close rate on those appointments, that's 10-13 additional units per month from leads already in your DMS.",
+  },
+];
+
+const objections = [
+  {
+    q: "\"Our BDC already follows up on desklogs.\"",
+    a: "The question is what percentage they're actually reaching via live conversation - not voicemail, not texts with no reply, not CRM notes that say 'called, no answer.' Industry data shows manual BDC teams average 15% live contact rate on desklog volume. If your team is near that number, 85% of your highest-intent unsold prospects are going cold with no touchpoint. Lokam covers the volume gap - your team handles the warm buyers it surfaces.",
+  },
+  {
+    q: "\"What if the customer already signed somewhere else?\"",
+    a: "Lokam handles this gracefully - when a customer says they've purchased elsewhere, the AI acknowledges it, wraps up the call professionally, and closes the record. These calls are a small percentage of total volume. The cost of making them is negligible. The revenue recovered from the customers who are still in market is not.",
+  },
+  {
+    q: "\"Will the AI pressure customers who aren't ready?\"",
+    a: "No. Lokam is designed to re-open a conversation, not close a deal on the phone. The first call asks where the customer is in their decision - not when they're coming back in. Customers who aren't ready aren't pushed; they're scheduled for a follow-up retry or handed off to a nurture cadence. Pressure tactics don't work on the phone and Lokam doesn't use them.",
+  },
+  {
+    q: "\"We lose track of who's been called and who hasn't.\"",
+    a: "That's exactly the problem Lokam solves. Every desklog record is tracked from the moment it's created in your DMS. Lokam logs every call attempt, outcome, and escalation against the original record. Your BDC manager has a clear view of what's been contacted, what's in retry, what's been escalated, and what closed - without a single manual spreadsheet.",
   },
 ];
 
@@ -151,7 +210,7 @@ export default function UnsoldLeadRecoverySoftwarePage() {
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>
 
-        {/* ── Hero ── */}
+        {/* Hero */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pt-16 pb-12 text-center">
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 font-sans text-xs font-semibold tracking-widest uppercase"
@@ -182,12 +241,9 @@ export default function UnsoldLeadRecoverySoftwarePage() {
           </div>
         </section>
 
-        {/* ── Quick Answer (GEO) ── */}
+        {/* Quick Answer (GEO) */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-10">
-          <div
-            className="rounded-2xl p-6"
-            style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}
-          >
+          <div className="rounded-2xl p-6" style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}>
             <p className="font-sans font-semibold text-[#0C8074] mb-2 text-xs uppercase tracking-widest">Quick Answer</p>
             <p className="font-sans font-semibold text-[#0A2E2B] mb-1" style={{ fontSize: 15 }}>What is unsold lead recovery software?</p>
             <p className="font-sans text-sm leading-6 text-[#4A6B68]">
@@ -196,7 +252,7 @@ export default function UnsoldLeadRecoverySoftwarePage() {
           </div>
         </section>
 
-        {/* ── Stats ── */}
+        {/* Stats */}
         <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
@@ -215,93 +271,109 @@ export default function UnsoldLeadRecoverySoftwarePage() {
           </div>
         </section>
 
-        {/* ── Problem / Solution ── */}
+        {/* Problem / Fix */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
-          <div
-            className="rounded-2xl p-8 mb-6"
-            style={{ background: "#FFF5F5", border: "1px solid #FECACA" }}
-          >
-            <p className="font-sans font-semibold text-[#991B1B] mb-2 text-sm uppercase tracking-widest">The Problem</p>
-            <p className="font-sans text-[#1F2937] leading-7">
-              The average dealership manually follows up with fewer than 15% of unsold showroom customers. The other 85% - people who walked in, sat with a consultant, didn't buy - never hear from you again. Meanwhile, 78% of buyers choose the first dealership to follow up (NADA, 2025). Your BDC isn't losing because of price or inventory. It's losing because it doesn't have enough hours to call everyone.
+          <div className="rounded-2xl p-7 mb-5" style={{ background: "#FFF5F5", border: "1px solid #FECACA" }}>
+            <p className="font-sans font-semibold text-[#991B1B] mb-2 text-xs uppercase tracking-widest">The Problem</p>
+            <p className="font-sans text-sm leading-7 text-[#1F2937]">
+              The average dealership manually follows up with fewer than 15% of unsold showroom customers. The other 85% - people who walked in, sat with a consultant, and didn&apos;t buy - never hear from you again. Meanwhile, 78% of buyers choose the first dealership to follow up (NADA, 2025). Your BDC isn&apos;t losing because of price or inventory. It&apos;s losing because there aren&apos;t enough hours to call everyone.
             </p>
           </div>
-          <div
-            className="rounded-2xl p-8"
-            style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}
-          >
-            <p className="font-sans font-semibold text-[#0C8074] mb-2 text-sm uppercase tracking-widest">The Lokam Fix</p>
-            <p className="font-sans text-[#1F2937] leading-7">
-              Lokam's AI voice agent reads your desklog directly from your DMS and calls every unsold customer within 24 hours - automatically, from your branded caller ID, in their preferred language. When it detects a ready buyer, it escalates to your BDC team instantly with the full conversation transcript. Your team gets warm leads. Lokam handles the volume.
+          <div className="rounded-2xl p-7" style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}>
+            <p className="font-sans font-semibold text-[#0C8074] mb-2 text-xs uppercase tracking-widest">How Lokam Fixes It</p>
+            <p className="font-sans text-sm leading-7 text-[#1F2937]">
+              Lokam reads your desklog directly from your DMS and calls every unsold customer within 24 hours - automatically, from your branded caller ID, in their preferred language. When it detects a ready buyer, it escalates to your BDC team instantly with the full conversation transcript. Your team gets warm leads. Lokam handles the volume.
             </p>
           </div>
         </section>
 
-        {/* ── Features ── */}
-        <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-20">
-          <h2
-            className="font-sans font-bold text-[#0A2E2B] mb-8 text-center"
-            style={{ fontSize: "clamp(18px, 2.2vw, 28px)", letterSpacing: "-0.4px" }}
-          >
+        {/* How It Works */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-6" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.4px" }}>
             How Lokam Unsold Lead Recovery Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl p-6"
-                style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.06)" }}
-              >
-                <p className="font-sans font-semibold text-[#0A2E2B] mb-2" style={{ fontSize: 15 }}>{f.title}</p>
-                <p className="font-sans text-sm leading-6 text-[#4A6B68]">{f.desc}</p>
+          <div className="flex flex-col gap-4">
+            {steps.map((s) => (
+              <div key={s.n} className="flex gap-5 rounded-2xl p-6" style={{ background: "#fff", border: "1px solid #C8E8E0" }}>
+                <div
+                  className="flex-shrink-0 flex items-center justify-center rounded-full font-display font-bold text-white"
+                  style={{ width: 36, height: 36, background: "linear-gradient(135deg, #00988B, #00D3BD)", fontSize: 14 }}
+                >
+                  {s.n}
+                </div>
+                <div>
+                  <p className="font-sans font-semibold text-[#0A2E2B] mb-1" style={{ fontSize: 15 }}>{s.title}</p>
+                  <p className="font-sans text-sm leading-6 text-[#4A6B68]">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <CalendlyButton className="flex items-center justify-center px-6 h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white">
+              Book a Demo
+            </CalendlyButton>
+          </div>
+        </section>
+
+        {/* Outcomes */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-6" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.4px" }}>
+            What Changes When You Cover 100% of Your Desklog
+          </h2>
+          <div className="flex flex-col gap-4">
+            {outcomes.map((o) => (
+              <div key={o.title} className="rounded-2xl p-6" style={{ background: "#fff", border: "1px solid #C8E8E0" }}>
+                <p className="font-sans font-semibold text-[#0A2E2B] mb-2" style={{ fontSize: 15 }}>{o.title}</p>
+                <p className="font-sans text-sm leading-6 text-[#4A6B68]">{o.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ── Related use cases ── */}
+        {/* Objections */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
-          <h2
-            className="font-sans font-bold text-[#0A2E2B] mb-6"
-            style={{ fontSize: "clamp(16px, 2vw, 22px)", letterSpacing: "-0.4px" }}
-          >
-            Also automate with Lokam
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-6" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.4px" }}>
+            Common Concerns
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Link
-              href="/csi-follow-up-automation"
-              className="rounded-2xl p-5 no-underline group"
-              style={{ background: "#fff", border: "1px solid #C8E8E0" }}
-            >
-              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>CSI Follow-Up Automation →</p>
-              <p className="font-sans text-xs leading-5 text-[#4A6B68]">Automate post-service follow-up for every repair order. Catch detractors before bad reviews.</p>
+          <div className="flex flex-col gap-4">
+            {objections.map((o) => (
+              <div key={o.q} className="rounded-2xl p-6" style={{ background: "#fff", border: "1px solid #C8E8E0" }}>
+                <p className="font-sans font-semibold text-[#0A2E2B] mb-2" style={{ fontSize: 15 }}>{o.q}</p>
+                <p className="font-sans text-sm leading-6 text-[#4A6B68]">{o.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Related */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-6" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.4px" }}>
+            Related
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link href="/ai-voice-agent-dealership" className="rounded-2xl p-5 no-underline group" style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}>
+              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>AI Voice Agent →</p>
+              <p className="font-sans text-xs leading-5 text-[#4A6B68]">How the underlying voice technology works across CSI, BDC, and sales follow-up.</p>
             </Link>
-            <Link
-              href="/dealership-bdc-software"
-              className="rounded-2xl p-5 no-underline group"
-              style={{ background: "#fff", border: "1px solid #C8E8E0" }}
-            >
-              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>Automotive BDC Software →</p>
-              <p className="font-sans text-xs leading-5 text-[#4A6B68]">AI-powered BDC automation that reaches 100% of desklogs at 70% contact rate.</p>
+            <Link href="/csi-follow-up-automation" className="rounded-2xl p-5 no-underline group" style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}>
+              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>CSI Follow-Up Automation →</p>
+              <p className="font-sans text-xs leading-5 text-[#4A6B68]">Same AI applied to service customers - catch detractors before the OEM survey.</p>
+            </Link>
+            <Link href="/integrations" className="rounded-2xl p-5 no-underline group" style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}>
+              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>DMS Integrations →</p>
+              <p className="font-sans text-xs leading-5 text-[#4A6B68]">CDK, Dealertrack, VinSolutions - how the desklog data connection works.</p>
             </Link>
           </div>
         </section>
 
-        {/* ── FAQ ── */}
+        {/* FAQ */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-20">
-          <h2
-            className="font-sans font-bold text-[#0A2E2B] mb-8"
-            style={{ fontSize: "clamp(18px, 2.2vw, 24px)", letterSpacing: "-0.4px" }}
-          >
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-8" style={{ fontSize: "clamp(18px, 2.2vw, 24px)", letterSpacing: "-0.4px" }}>
             Common questions
           </h2>
           <div className="flex flex-col gap-4">
             {faqSchema.mainEntity.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-2xl p-6"
-                style={{ background: "#fff", border: "1px solid #C8E8E0" }}
-              >
+              <div key={item.name} className="rounded-2xl p-6" style={{ background: "#fff", border: "1px solid #C8E8E0" }}>
                 <p className="font-sans font-semibold text-[#0A2E2B] mb-2" style={{ fontSize: 15 }}>{item.name}</p>
                 <p className="font-sans text-sm leading-6 text-[#4A6B68]">{item.acceptedAnswer.text}</p>
               </div>
@@ -309,7 +381,7 @@ export default function UnsoldLeadRecoverySoftwarePage() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
+        {/* CTA */}
         <section className="px-4 md:px-8 pb-16">
           <div
             className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl px-5 sm:px-8 py-6"
@@ -317,10 +389,10 @@ export default function UnsoldLeadRecoverySoftwarePage() {
           >
             <div>
               <p className="font-sans font-bold text-white" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>
-                See how many leads you're leaving on the table
+                See how many leads you&apos;re leaving on the table
               </p>
               <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Book a demo - we'll model your ROI based on your monthly desklog volume.
+                Book a demo - we&apos;ll model your ROI based on your monthly desklog volume.
               </p>
             </div>
             <CalendlyButton
