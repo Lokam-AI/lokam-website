@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Terms of Service — Lokam",
+  title: "Terms of Service - Lokam",
   robots: { index: false, follow: false },
 };
 

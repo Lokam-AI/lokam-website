@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Privacy Policy — Lokam",
+  title: "Privacy Policy - Lokam",
   robots: { index: false, follow: false },
 };
 
