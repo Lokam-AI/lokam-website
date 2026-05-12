@@ -10,7 +10,7 @@ export default function Hero() {
         {/* Car image — natural size at viewport width, anchored at bottom.
             Top extends above the section and is cropped by overflow-hidden. */}
         <Image
-          src="/assets/car.jpg"
+          src="/assets/car.avif"
           alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
           width={2560}
           height={3391}

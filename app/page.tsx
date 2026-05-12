@@ -12,7 +12,7 @@ import Testimonial from "./components/Testimonial";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
-const SITE_URL = "https://lokam.ai";
+const SITE_URL = "https://www.lokam.ai";
 
 const videoSchema = {
   "@context": "https://schema.org",
@@ -28,12 +28,29 @@ const videoSchema = {
   publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
 };
 
+const videoSchema2 = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Teri Bisbikis — World Hyundai Matteson Testimonial",
+  description:
+    "General Manager Teri Bisbikis explains how Lokam uncovered hidden customer issues, recovered missed revenue, and drove 15–20 additional cars sold per month.",
+  thumbnailUrl: `https://image.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M/thumbnail.jpg`,
+  contentUrl: `https://stream.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M.m3u8`,
+  embedUrl: `https://player.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M`,
+  uploadDate: "2026-01-01",
+  publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+};
+
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema2) }}
       />
       <Suspense fallback={null}><ScrollHandler /></Suspense>
       <Nav />

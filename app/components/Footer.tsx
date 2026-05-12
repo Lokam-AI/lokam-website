@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import SmoothAnchor from "./SmoothAnchor";
@@ -31,15 +30,15 @@ export default function Footer() {
 
           {/* Col 1 — Brand */}
           <div>
-            <a href="/" className="no-underline">
+            <Link href="/" className="no-underline">
               <Image
                 src="/LOKAM_PRIMARY_WHITE_FULL_LOGO.svg"
-                alt="Lokam"
+                alt="Lokam Voice AI for Automotive Dealerships"
                 width={160}
                 height={51}
                 className="h-9 w-auto"
               />
-            </a>
+            </Link>
             <p className="mt-3 font-sans text-sm leading-6" style={{ color: "rgba(255,255,255,0.55)", maxWidth: 220 }}>
               Voice AI follow-up for automotive dealerships. Built to recover revenue, not just report on it.
             </p>

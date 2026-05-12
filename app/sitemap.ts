@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { blogPosts } from "../lib/blog-posts";
 import { caseStudies } from "../lib/case-studies";
 
-const BASE_URL = "https://lokam.ai";
+const BASE_URL = "https://www.lokam.ai";
 
 function parsePostDate(str: string): Date {
   const months: Record<string, number> = {
@@ -39,6 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/integrations`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/roi-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/privacy-policy`,

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const dealers = [
   { src: "/assets/familyhyundai.svg", alt: "Family Hyundai" },
   { src: "/assets/wkjoliet.svg",      alt: "World Kia Joliet" },
@@ -10,11 +12,13 @@ export default function TrustedBy() {
     <section className="relative overflow-hidden bg-white">
 
       {/* Background SVG — fills the section at every viewport width */}
-      <img
+      <Image
         src="/assets/trusted-by-bg.svg"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
+        fill
+        sizes="100vw"
+        className="object-cover object-top pointer-events-none"
       />
 
       <div className="relative z-10 max-w-[1166px] mx-auto pt-12 md:pt-[60px] pb-12 md:pb-[60px] px-4">
@@ -30,11 +34,14 @@ export default function TrustedBy() {
         <div className="mt-10 md:mt-[76px] overflow-hidden">
           <div className="flex animate-marquee-reverse gap-[126px] w-max items-center">
             {[...dealers, ...dealers, ...dealers, ...dealers].map((dealer, i) => (
-              <img
+              <Image
                 key={i}
                 src={dealer.src}
                 alt={dealer.alt}
+                width={160}
+                height={40}
                 className="flex-shrink-0 h-10 w-auto"
+                loading={i < dealers.length ? "eager" : "lazy"}
               />
             ))}
           </div>

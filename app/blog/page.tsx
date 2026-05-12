@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Dealer Insights & Automotive AI Blog | Lokam",
   description:
     "Strategies, data, and real-world case studies to help your dealership recover more revenue from service retention and sales follow-up.",
-  alternates: { canonical: "https://lokam.ai/blog" },
+  alternates: { canonical: "https://www.lokam.ai/blog" },
   openGraph: {
     title: "Dealer Insights & Automotive AI Blog | Lokam",
     description:
       "Strategies, data, and real-world case studies to help your dealership recover more revenue from service retention and sales follow-up.",
-    url: "https://lokam.ai/blog",
+    url: "https://www.lokam.ai/blog",
     type: "website",
     siteName: "Lokam",
   },
@@ -24,9 +24,29 @@ export const metadata: Metadata = {
   },
 };
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Dealer Insights & Automotive AI Blog | Lokam",
+  description: "Strategies, data, and real-world case studies to help your dealership recover more revenue from service retention and sales follow-up.",
+  url: "https://www.lokam.ai/blog",
+  publisher: { "@type": "Organization", name: "Lokam", url: "https://www.lokam.ai" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lokam.ai" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.lokam.ai/blog" },
+  ],
+};
+
 export default function BlogPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <main className="bg-white">
 

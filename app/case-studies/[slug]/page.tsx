@@ -7,7 +7,7 @@ import SmoothAnchor from "../../components/SmoothAnchor";
 import CalendlyButton from "../../components/CalendlyButton";
 import { caseStudies, getStudyBySlug, CHIP } from "../../../lib/case-studies";
 
-const SITE_URL = "https://lokam.ai";
+const SITE_URL = "https://www.lokam.ai";
 
 // ─── Static params ────────────────────────────────────────────────────────────
 
@@ -35,7 +35,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: cs.title,
+      title: `${cs.title} | Lokam`,
       description,
       url,
       type: "article",
@@ -51,7 +51,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: cs.title,
+      title: `${cs.title} | Lokam`,
       description,
       images: [`${SITE_URL}/assets/car.jpg`],
     },
@@ -84,9 +84,19 @@ export default async function CaseStudyPage({
     image: `${SITE_URL}/assets/car.jpg`,
     url: studyUrl,
     datePublished: deployedDate,
-    dateModified: "2026-04-14",
+    dateModified: deployedDate,
     author: { "@type": "Organization", name: "Lokam", url: SITE_URL },
-    publisher: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: "Lokam",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/assets/image-47.png`,
+        width: 512,
+        height: 512,
+      },
+    },
     description: `Case study: ${dealership} achieved ${cs.heroStats[0].value} ${cs.heroStats[0].label} using Lokam Voice AI.`,
     mainEntityOfPage: { "@type": "WebPage", "@id": studyUrl },
   };

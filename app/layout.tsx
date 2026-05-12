@@ -17,9 +17,10 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://lokam.ai";
+const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Lokam — Voice AI for Automotive Dealerships",
   description:
     "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
@@ -62,7 +63,6 @@ const organizationSchema = {
   telephone: "+19809446263",
   email: "founder@lokam.ai",
   sameAs: [
-    SITE_URL,
     "https://www.linkedin.com/company/lokam-ai/",
   ],
   address: {
@@ -103,8 +103,6 @@ const softwareSchema = {
   ],
   offers: {
     "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
     description: "Book a demo — plans tailored to your dealership and use case.",
     url: "https://calendly.com/saleeq-lokam/30-minutes-meeting",
   },
@@ -128,6 +126,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://stream.mux.com" />
         <link rel="preconnect" href="https://image.mux.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col">
         <script

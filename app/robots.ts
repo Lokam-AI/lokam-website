@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://lokam.ai/sitemap.xml",
+    sitemap: "https://www.lokam.ai/sitemap.xml",
   };
 }

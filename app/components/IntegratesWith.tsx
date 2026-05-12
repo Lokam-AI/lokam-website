@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const logos = [
   { src: "/assets/dealertrack.svg",  alt: "Dealertrack" },
   { src: "/assets/cdk.svg",          alt: "CDK Global" },
@@ -17,11 +19,14 @@ export default function IntegratesWith() {
         <div className="overflow-hidden">
           <div className="flex animate-marquee gap-[123px] w-max items-center">
             {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
-              <img
+              <Image
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
+                width={120}
+                height={40}
                 className="flex-shrink-0 h-10 w-auto opacity-40 brightness-0 invert"
+                loading={i < logos.length ? "eager" : "lazy"}
               />
             ))}
           </div>

@@ -291,7 +291,7 @@ export default function ROICalculatorModal({ open, onClose, initialUps = 0 }: { 
           style={{ background: "#f8faf9", borderTop: "1px solid #e2e8e6", color: "#7a8f89" }}>
           <span>
             © 2026 Lokam AI ·{" "}
-            <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.lokam.ai" target="_blank" rel="noopener noreferrer"
               className="no-underline font-bold" style={{ color: "#05aa96" }}>
               lokam.ai
             </a>

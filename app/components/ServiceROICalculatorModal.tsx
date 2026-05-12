@@ -480,7 +480,7 @@ export default function ServiceROICalculatorModal({
           <span>
             © 2026 Lokam AI ·{" "}
             <a
-              href="https://lokam.ai"
+              href="https://www.lokam.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="no-underline font-bold"

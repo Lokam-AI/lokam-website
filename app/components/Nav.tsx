@@ -60,9 +60,8 @@ function DropdownMenu({
         />
       </button>
 
-      {open && (
-        <div
-          className={`absolute top-full mt-2 rounded-xl overflow-hidden z-50 py-1.5 ${label === "Blogs" ? "right-0" : "left-0"}`}
+      <div
+          className={`absolute top-full mt-2 rounded-xl overflow-hidden z-50 py-1.5 ${label === "Blogs" ? "right-0" : "left-0"} ${open ? "" : "invisible pointer-events-none opacity-0"}`}
           style={{
             background: "#fff",
             border: "1px solid #C8E8E0",
@@ -91,7 +90,6 @@ function DropdownMenu({
             </Link>
           ))}
         </div>
-      )}
     </div>
   );
 }
@@ -123,8 +121,7 @@ function MobileAccordion({
         />
       </button>
 
-      {open && (
-        <div className="pb-3 flex flex-col gap-0.5">
+      <div className={`pb-3 flex flex-col gap-0.5 ${open ? "" : "hidden"}`}>
           <Link
             href={href}
             onClick={onNavigate}
@@ -144,7 +141,6 @@ function MobileAccordion({
             </Link>
           ))}
         </div>
-      )}
     </div>
   );
 }
@@ -154,8 +150,23 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, -parseInt(top, 10));
+    }
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
   }, [open]);
 
   const close = () => setOpen(false);
@@ -176,7 +187,7 @@ export default function Nav() {
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/assets/image-47.png"
-              alt="Lokam"
+              alt="Lokam — Voice AI for Automotive Dealerships"
               width={108}
               height={34}
               className="object-contain block"

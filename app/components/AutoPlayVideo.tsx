@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useReducedMotion } from "framer-motion";
 
 interface Props {
   src: string;
@@ -21,7 +20,9 @@ export default function AutoPlayVideo({
   ariaLabel,
 }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = typeof window !== "undefined"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
 
   useEffect(() => {
     const el = ref.current;

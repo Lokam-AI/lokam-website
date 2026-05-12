@@ -7,7 +7,7 @@ import SmoothAnchor from "../../components/SmoothAnchor";
 import CalendlyButton from "../../components/CalendlyButton";
 import { blogPosts, getPostBySlug, CHIP_STYLES } from "../../../lib/blog-posts";
 
-const SITE_URL = "https://lokam.ai";
+const SITE_URL = "https://www.lokam.ai";
 
 // ─── Static params ────────────────────────────────────────────────────────────
 
@@ -32,7 +32,7 @@ export async function generateMetadata({
     description: post.excerpt,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Lokam`,
       description: post.excerpt,
       url,
       type: "article",
@@ -48,7 +48,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: `${post.title} | Lokam`,
       description: post.excerpt,
       images: [`${SITE_URL}/assets/car.jpg`],
     },
@@ -102,6 +102,12 @@ export default async function BlogPostPage({
       "@type": "Organization",
       name: "Lokam",
       url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/assets/image-47.png`,
+        width: 512,
+        height: 512,
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",

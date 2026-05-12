@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Dealer Case Studies | Lokam Voice AI Results",
   description:
     "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
-  alternates: { canonical: "https://lokam.ai/case-studies" },
+  alternates: { canonical: "https://www.lokam.ai/case-studies" },
   openGraph: {
     title: "Dealer Case Studies | Lokam Voice AI Results",
     description:
       "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
-    url: "https://lokam.ai/case-studies",
+    url: "https://www.lokam.ai/case-studies",
     type: "website",
     siteName: "Lokam",
   },
@@ -47,9 +47,29 @@ const featuredStudy = {
   ],
 };
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Dealer Case Studies | Lokam Voice AI Results",
+  description: "Real dealerships, real revenue. See how 200+ dealers use Lokam to recover revenue, protect CSI scores, and close more deals.",
+  url: "https://www.lokam.ai/case-studies",
+  publisher: { "@type": "Organization", name: "Lokam", url: "https://www.lokam.ai" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lokam.ai" },
+    { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.lokam.ai/case-studies" },
+  ],
+};
+
 export default function CaseStudiesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom right, #ffffff 80%, rgba(0, 211, 189, 0.3) 100%)" }}>
 
