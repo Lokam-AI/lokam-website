@@ -132,6 +132,29 @@ const faqSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Automotive BDC Software - AI-Powered Follow-Up",
+  url: `${SITE_URL}/dealership-bdc-software`,
+  datePublished: "2026-04-01",
+  dateModified: "2026-05-12",
+  author: {
+    "@type": "Person",
+    name: "Muhammed Saleeq",
+    jobTitle: "Co-founder & CEO",
+    url: `${SITE_URL}/about`,
+    sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+    worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Lokam",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/image-47.png` },
+  },
+};
+
 const stats = [
   { value: "70%", label: "Average contact rate", sub: "vs 15% manual BDC average" },
   { value: "100%", label: "Desklog coverage", sub: "every unsold lead called within 24 hrs" },
@@ -224,6 +247,7 @@ export default function DealershipBDCSoftwarePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>
 
@@ -256,6 +280,9 @@ export default function DealershipBDCSoftwarePage() {
               Calculate your ROI →
             </Link>
           </div>
+          <p className="font-sans text-xs text-[#8AADA8] mt-6">
+            By <Link href="/about" className="underline underline-offset-2">Muhammed Saleeq</Link>, Co-founder &amp; CEO, Lokam
+          </p>
         </section>
 
         {/* GEO Quick Answer */}

@@ -64,7 +64,15 @@ const organizationSchema = {
   email: "founder@lokam.ai",
   sameAs: [
     "https://www.linkedin.com/company/lokam-ai/",
+    "https://www.crunchbase.com/organization/lokam-ai",
   ],
+  founder: {
+    "@type": "Person",
+    name: "Muhammed Saleeq",
+    jobTitle: "Co-founder & CEO",
+    url: "https://www.lokam.ai/about",
+    sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "2261 Market Street STE 46073",

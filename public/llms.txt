@@ -4,56 +4,81 @@
 
 Lokam serves 200+ dealerships across North America, achieving a 70% average contact rate. The platform integrates with major dealer management systems and supports English and Spanish outreach.
 
-When a service visit ends or a showroom prospect leaves without buying, Lokam places an AI voice call to that customer within 12–24 hours. The call identifies dissatisfied customers and escalates them to the service manager or sales team with a full transcript — before a negative survey or bad Google review is submitted. Satisfied customers receive an SMS with the dealership's Google review link.
+When a service visit ends or a showroom prospect leaves without buying, Lokam places an AI voice call to that customer within 12-24 hours. The call identifies dissatisfied customers and escalates them to the service manager or sales team with a full transcript - before a negative survey or bad Google review is submitted. Satisfied customers receive an SMS with the dealership's Google review link.
 
 ## Products
 
-- **Post-Service Follow-Up**: AI voice calls placed within 12–24 hours of service completion. Identifies detractors, escalates to management with full call transcripts, and sends review request SMS to satisfied customers. Automates CSI survey completion.
+- **Post-Service CSI Follow-Up**: AI voice calls placed within 12-24 hours of repair order completion. Identifies detractors, escalates to management with full call transcripts, and sends review request SMS to satisfied customers. Automates CSI survey completion.
 - **Unsold Showroom Follow-Up**: Automated outreach to showroom visitors who did not purchase. References the specific vehicles and objections discussed. Recovers unsold leads without additional BDC headcount.
+- **BDC Automation**: Full outbound BDC workflow automation - 100% desklog coverage, 70% contact rate, hot lead escalation to your team in real time.
 
 ## Key Performance Benchmarks
 
-- 70% average contact rate across the dealer network
-- First call placed within 12–24 hours of customer departure
-- Live at a dealership in under 4 hours
+- 70% average contact rate across the dealer network (vs 15% manual BDC average)
+- First call placed within 12-24 hours of customer departure
 - $2.4M+ total revenue recovered across the customer base
 - 200+ dealerships served
+- +20 CSI score points average across active dealers within 90 days
+- 4.0 to 4.8 Google rating at World Hyundai Matteson within 8 weeks
+
+## Service Pages
+
+- [AI Voice Agent for Dealerships](https://www.lokam.ai/ai-voice-agent-dealership): How Lokam's AI voice agent works - DMS integration, sentiment detection, escalation logic, and call outcomes.
+- [CSI Follow-Up Automation](https://www.lokam.ai/csi-follow-up-automation): Automated post-service follow-up for every repair order. Catch detractors before the OEM survey.
+- [Unsold Lead Recovery Software](https://www.lokam.ai/unsold-lead-recovery-software): Recover the 85% of unsold showroom customers your BDC never calls.
+- [Automotive BDC Software](https://www.lokam.ai/dealership-bdc-software): AI-powered BDC automation - 100% desklog coverage, 70% contact rate.
 
 ## Integrations
 
 Lokam connects to dealer management systems and data providers via Authenticom and DealerVault secure data exchange:
 
-- CDK Global
-- Dealertrack
-- Reynolds & Reynolds
-- DealerSocket
-- VinSolutions
-- TEKION
-- Authenticom (data syndication layer)
-- DealerVault (secure data exchange)
+- [CDK Global Integration](https://www.lokam.ai/integrations/cdk-global): Reads RO and desklog data directly from CDK Global via Authenticom.
+- [Dealertrack Integration](https://www.lokam.ai/integrations/dealertrack): Connects to Dealertrack DMS for RO and desklog data.
+- [VinSolutions Integration](https://www.lokam.ai/integrations/vinsolutions): Reads CRM and desklog data from VinSolutions.
+- [All Integrations](https://www.lokam.ai/integrations): Full list of supported DMS and data providers.
+- Reynolds & Reynolds, DealerSocket, TEKION, Authenticom, DealerVault also supported.
+
+## Comparisons
+
+- [Lokam vs Conversica](https://www.lokam.ai/lokam-vs-conversica): Voice AI vs text/email automation for dealership follow-up.
+- [Lokam vs Numa](https://www.lokam.ai/lokam-vs-numa): Comparison with Numa's dealership communication platform.
+- [Lokam vs Stella](https://www.lokam.ai/lokam-vs-stella): Comparison with Stella AI for automotive dealerships.
 
 ## Case Studies
 
-- [World Hyundai Service — 4.0 to 4.8 Google Rating in 8 Weeks](https://www.lokam.ai/case-studies/world-hyundai): 180 at-risk customers caught across 2,200 ROs, $410K lifetime value recovered, +20 CSI points
-- [World Hyundai Sales](https://www.lokam.ai/case-studies/world-hyundai-sales): 15–20 additional cars sold per month from unsold showroom traffic re-engagement
-- [World Kia Service](https://www.lokam.ai/case-studies/world-kia): 91% contact rate achieved on post-service follow-up
-- [World Kia Sales](https://www.lokam.ai/case-studies/world-kia-sales): Automated unsold lead re-engagement across the Kia rooftop
+- [World Hyundai Service - 4.0 to 4.8 Google Rating in 8 Weeks](https://www.lokam.ai/case-studies/world-hyundai): 180 at-risk customers caught across 2,200 ROs, $410K lifetime value recovered, +20 CSI points.
+- [World Hyundai Sales](https://www.lokam.ai/case-studies/world-hyundai-sales): 15-20 additional cars sold per month from unsold showroom traffic re-engagement.
+- [World Kia Service](https://www.lokam.ai/case-studies/world-kia): 91% contact rate achieved on post-service follow-up.
+- [World Kia Sales](https://www.lokam.ai/case-studies/world-kia-sales): Automated unsold lead re-engagement across the Kia rooftop.
+
+## Blog
+
+- [What Is a Good CSI Score for a Dealership?](https://www.lokam.ai/blog/what-is-a-good-csi-score-for-a-dealership): OEM-by-OEM CSI benchmarks and the financial impact of score drops.
+- [Automotive BDC Contact Rate Benchmarks](https://www.lokam.ai/blog/automotive-bdc-contact-rate-benchmarks): Industry benchmarks for BDC contact rates and what drives the gap.
+- [How to Improve CSI Scores at a Dealership](https://www.lokam.ai/blog/how-to-improve-csi-scores-dealership): Practical levers for sustainable CSI improvement.
+- [Unsold Showroom Follow-Up Guide](https://www.lokam.ai/blog/unsold-showroom-follow-up-guide): Timing, scripts, and contact rate data for unsold lead follow-up.
+- [AI BDC vs Human BDC](https://www.lokam.ai/blog/ai-bdc-vs-human-bdc): What AI and human BDC each do better and how to structure both.
+- [Why Your BDC Is Losing Customers Before the Workday Starts](https://www.lokam.ai/blog/why-your-bdc-is-losing-customers-before-the-workday-even-starts)
+- [The Hidden Cost of a Single Missed CSI Call](https://www.lokam.ai/blog/the-hidden-cost-of-a-single-missed-csi-call)
+- [What Unsold Customers Actually Want to Hear](https://www.lokam.ai/blog/what-unsold-customers-actually-want-to-hear-and-when)
+- [NADA 2026 Themes for Fixed Ops and BDC Leaders](https://www.lokam.ai/blog/nada-2026-the-5-biggest-themes-for-fixed-ops-and-bdc-leaders)
+- [Multilingual Customers, Monolingual Dealerships](https://www.lokam.ai/blog/multilingual-customers-monolingual-dealerships-the-nada-gap)
+- [Branded Caller ID: The Single Biggest Lever for Contact Rate](https://www.lokam.ai/blog/branded-caller-id-the-single-biggest-lever-for-contact-rate)
+- [Blog Index](https://www.lokam.ai/blog): All articles on automotive AI, CSI automation, and BDC best practices.
 
 ## Pages
 
-- [Homepage — product overview, how it works, ROI calculator, testimonials](https://www.lokam.ai)
-- [Blog — automotive AI, CSI automation, BDC best practices](https://www.lokam.ai/blog)
-- [Case Studies — customer results with measurable outcomes](https://www.lokam.ai/case-studies)
-- [Integrations — DMS and CRM connectivity details](https://www.lokam.ai/integrations)
-- [ROI Calculator — estimate recovered revenue for your dealership](https://www.lokam.ai/roi-calculator)
-- [About — team and company background](https://www.lokam.ai/about)
+- [Homepage - product overview, how it works, ROI calculator, testimonials](https://www.lokam.ai)
+- [Case Studies - customer results with measurable outcomes](https://www.lokam.ai/case-studies)
+- [ROI Calculator - estimate recovered revenue for your dealership](https://www.lokam.ai/roi-calculator)
+- [About - team and company background](https://www.lokam.ai/about)
 
 ## Company
 
 - Founded in San Francisco, CA
 - Backed by: NVIDIA Inception Program
 - Investor-customer: World Auto Group (Illinois)
-- Co-founders: Saleeq (CEO), Nevin (CTO)
+- Co-founders: Muhammed Saleeq (CEO), Nevin (CTO)
 - Contact: founder@lokam.ai | +1 980 944 6263
 - Address: 2261 Market Street STE 46073, San Francisco, CA 94114
 - Demo: https://calendly.com/saleeq-lokam/30-minutes-meeting

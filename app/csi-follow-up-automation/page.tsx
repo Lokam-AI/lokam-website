@@ -134,6 +134,29 @@ const faqSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "CSI Follow-Up Automation for Dealerships",
+  url: `${SITE_URL}/csi-follow-up-automation`,
+  datePublished: "2026-04-01",
+  dateModified: "2026-05-12",
+  author: {
+    "@type": "Person",
+    name: "Muhammed Saleeq",
+    jobTitle: "Co-founder & CEO",
+    url: `${SITE_URL}/about`,
+    sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+    worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Lokam",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/image-47.png` },
+  },
+};
+
 const stats = [
   { value: "70%", label: "Contact rate", sub: "vs 30% manual BDC average" },
   { value: "24h", label: "First call window", sub: "after every repair order" },
@@ -208,6 +231,7 @@ export default function CSIFollowUpAutomationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>
 
@@ -240,6 +264,9 @@ export default function CSIFollowUpAutomationPage() {
               See case study →
             </Link>
           </div>
+          <p className="font-sans text-xs text-[#8AADA8] mt-6">
+            By <Link href="/about" className="underline underline-offset-2">Muhammed Saleeq</Link>, Co-founder &amp; CEO, Lokam
+          </p>
         </section>
 
         {/* Quick Answer (GEO) */}
@@ -271,6 +298,13 @@ export default function CSIFollowUpAutomationPage() {
             ))}
           </div>
         </section>
+
+        {/* Methodology note */}
+        <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-4">
+          <p className="font-sans text-xs text-[#8AADA8]">
+            Contact rate data measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. CSI score improvements represent average across dealers with 90+ days of active use. Results vary by RO volume, market, and DMS configuration. World Hyundai Matteson outcomes are from verified case study data.
+          </p>
+        </div>
 
         {/* Problem / Fix */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">

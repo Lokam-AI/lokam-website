@@ -133,6 +133,29 @@ const faqSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Unsold Lead Recovery Software for Dealerships",
+  url: `${SITE_URL}/unsold-lead-recovery-software`,
+  datePublished: "2026-04-01",
+  dateModified: "2026-05-12",
+  author: {
+    "@type": "Person",
+    name: "Muhammed Saleeq",
+    jobTitle: "Co-founder & CEO",
+    url: `${SITE_URL}/about`,
+    sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+    worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Lokam",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/image-47.png` },
+  },
+};
+
 const stats = [
   { value: "85%", label: "Unsold leads ignored", sub: "never hear from the dealer again" },
   { value: "78%", label: "Buyers choose first dealer", sub: "to follow up (NADA, 2025)" },
@@ -207,6 +230,7 @@ export default function UnsoldLeadRecoverySoftwarePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>
 
@@ -239,6 +263,9 @@ export default function UnsoldLeadRecoverySoftwarePage() {
               Calculate your ROI →
             </Link>
           </div>
+          <p className="font-sans text-xs text-[#8AADA8] mt-6">
+            By <Link href="/about" className="underline underline-offset-2">Muhammed Saleeq</Link>, Co-founder &amp; CEO, Lokam
+          </p>
         </section>
 
         {/* Quick Answer (GEO) */}
@@ -270,6 +297,13 @@ export default function UnsoldLeadRecoverySoftwarePage() {
             ))}
           </div>
         </section>
+
+        {/* Methodology note */}
+        <div className="max-w-[1100px] mx-auto px-4 md:px-8 pb-4">
+          <p className="font-sans text-xs text-[#8AADA8]">
+            Contact rate benchmarks measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. Manual BDC baselines from dealer account data at onboarding. The 78% first-to-follow-up figure is from NADA&apos;s 2025 car buyer research. Revenue estimates use observed re-engagement and appointment rates; individual results vary by market and inventory.
+          </p>
+        </div>
 
         {/* Problem / Fix */}
         <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">

@@ -84,10 +84,14 @@ export default async function BlogPostPage({
     dateModified: isoDate,
     author: {
       "@type": "Person",
-      name: "Saleeq",
+      name: "Muhammed Saleeq",
       jobTitle: "Co-founder & CEO",
-      worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
       url: `${SITE_URL}/about`,
+      sameAs: [
+        "https://www.linkedin.com/in/muhammed-saleeq/",
+        `${SITE_URL}/about`,
+      ],
+      worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
     },
     publisher: {
       "@type": "Organization",
@@ -164,7 +168,7 @@ export default async function BlogPostPage({
             </div>
             <div className="flex items-center gap-1.5 font-sans text-xs text-[#4A6B68]">
               <span>By</span>
-              <Link href="/about" className="font-semibold" style={{ color: "#0CB4A7" }}>Saleeq</Link>
+              <Link href="/about" className="font-semibold" style={{ color: "#0CB4A7" }}>Muhammed Saleeq</Link>
               <span>·</span>
               <span>Co-founder &amp; CEO, Lokam</span>
               <span>·</span>
@@ -283,7 +287,7 @@ export default async function BlogPostPage({
             </div>
             <div>
               <p className="font-sans font-semibold text-sm text-[#0A2E2B]">
-                Saleeq -{" "}
+                Muhammed Saleeq -{" "}
                 <span className="font-normal" style={{ color: "#39B39B" }}>Co-founder &amp; CEO, Lokam</span>
               </p>
               <p className="font-sans text-xs leading-6 text-[#4A6B68] mt-1">

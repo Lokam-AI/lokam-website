@@ -134,6 +134,39 @@ const faqSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "AI Voice Agent for Automotive Dealerships",
+  url: `${SITE_URL}/ai-voice-agent-dealership`,
+  datePublished: "2026-04-01",
+  dateModified: "2026-05-12",
+  author: {
+    "@type": "Person",
+    name: "Muhammed Saleeq",
+    jobTitle: "Co-founder & CEO",
+    url: `${SITE_URL}/about`,
+    sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+    worksFor: { "@type": "Organization", name: "Lokam", url: SITE_URL },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Lokam",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/image-47.png` },
+  },
+};
+
+const comparisonRows = [
+  { metric: "Contact rate",        lokam: "70% average",           manual: "15-20%",          emailOnly: "20-35% open rate" },
+  { metric: "Lead coverage",       lokam: "100% of desklogs/ROs",  manual: "Top priority only", emailOnly: "All (low conversion)" },
+  { metric: "First contact timing",lokam: "Within 24 hours",       manual: "3-5 days average", emailOnly: "Immediate" },
+  { metric: "Sentiment detection", lokam: "Real-time, every call", manual: "Manual notes",     emailOnly: "Not available" },
+  { metric: "Escalation",          lokam: "Instant with transcript",manual: "Manual CRM entry", emailOnly: "Not applicable" },
+  { metric: "DMS integration",     lokam: "Native, automatic",     manual: "Manual exports",   emailOnly: "Manual exports" },
+  { metric: "Hours",               lokam: "24/7",                  manual: "Business hours",   emailOnly: "24/7" },
+];
+
 const stats = [
   { value: "70%", label: "Contact rate", sub: "vs 15-30% manual average" },
   { value: "24h", label: "First call window", sub: "after every RO or showroom visit" },
@@ -237,6 +270,7 @@ export default function AIVoiceAgentDealershipPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>
 
@@ -269,6 +303,9 @@ export default function AIVoiceAgentDealershipPage() {
               See case study →
             </Link>
           </div>
+          <p className="font-sans text-xs text-[#8AADA8] mt-6">
+            By <Link href="/about" className="underline underline-offset-2">Muhammed Saleeq</Link>, Co-founder &amp; CEO, Lokam
+          </p>
         </section>
 
         {/* Quick Answer (GEO) */}
@@ -325,6 +362,38 @@ export default function AIVoiceAgentDealershipPage() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Comparison table */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
+          <h2 className="font-sans font-bold text-[#0A2E2B] mb-6" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", letterSpacing: "-0.4px" }}>
+            How Lokam Compares to Manual BDC and Email-Only Follow-Up
+          </h2>
+          <div className="overflow-x-auto rounded-2xl" style={{ border: "1px solid #C8E8E0" }}>
+            <table className="w-full text-sm font-sans border-collapse">
+              <thead>
+                <tr style={{ background: "#F0FBF9" }}>
+                  <th className="text-left px-4 py-3 font-semibold text-[#0A2E2B]" style={{ borderBottom: "1px solid #C8E8E0" }}>Metric</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[#0C8074]" style={{ borderBottom: "1px solid #C8E8E0" }}>Lokam AI</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[#4A6B68]" style={{ borderBottom: "1px solid #C8E8E0" }}>Manual BDC</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[#4A6B68]" style={{ borderBottom: "1px solid #C8E8E0" }}>Email / Text Only</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row, i) => (
+                  <tr key={row.metric} style={{ background: i % 2 === 0 ? "#fff" : "#F8FFFE" }}>
+                    <td className="px-4 py-3 font-medium text-[#0A2E2B]" style={{ borderBottom: "1px solid #E2F0EE" }}>{row.metric}</td>
+                    <td className="px-4 py-3 text-[#0C8074] font-medium" style={{ borderBottom: "1px solid #E2F0EE" }}>{row.lokam}</td>
+                    <td className="px-4 py-3 text-[#4A6B68]" style={{ borderBottom: "1px solid #E2F0EE" }}>{row.manual}</td>
+                    <td className="px-4 py-3 text-[#4A6B68]" style={{ borderBottom: "1px solid #E2F0EE" }}>{row.emailOnly}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="font-sans text-xs text-[#8AADA8] mt-3">
+            Contact rate data measured across Lokam&apos;s active dealer network (200+ rooftops) as of Q1 2026. Manual BDC benchmarks from Lokam&apos;s analysis of dealer accounts at onboarding. Rates vary by market, DMS configuration, and dealer volume.
+          </p>
         </section>
 
         {/* How It Works */}
