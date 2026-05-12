@@ -39,11 +39,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              `script-src 'self' 'unsafe-inline' https://www.gstatic.com https://assets.calendly.com${isDev ? " 'unsafe-eval'" : ""}`,
+              `script-src 'self' 'unsafe-inline' https://www.gstatic.com https://assets.calendly.com https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""}`,
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "img-src 'self' data: https: blob:",
               "media-src 'self' blob: https://stream.mux.com https://*.mux.com",
-              "connect-src 'self' https://stream.mux.com https://*.mux.com https://events.mux.com https://inferred.litix.io",
+              "connect-src 'self' https://stream.mux.com https://*.mux.com https://events.mux.com https://inferred.litix.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
               "frame-src https://player.mux.com https://calendly.com",
               "font-src 'self' https://fonts.gstatic.com",
               "worker-src 'self' blob:",
