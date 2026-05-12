@@ -85,7 +85,7 @@ const comparison = [
   { feature: "Contact rate (outbound)", lokam: "70% average on phone", conversica: "Email open rates ~20-35%" },
   { feature: "Detractor escalation", lokam: "Real-time during call with full transcript", conversica: "Not available" },
   { feature: "Google review generation", lokam: "Automatic SMS after positive call", conversica: "Not included" },
-  { feature: "Setup time", lokam: "Under 4 hours", conversica: "Weeks (CRM integration required)" },
+  { feature: "Setup time", lokam: "Fast to set up", conversica: "Weeks (CRM integration required)" },
   { feature: "Pricing model", lokam: "Dealership-focused packages", conversica: "Enterprise (typically $30k+/year)" },
 ];
 

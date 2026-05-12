@@ -85,7 +85,7 @@ const comparison = [
   { feature: "Detractor escalation", lokam: "Real-time - name, concern, full transcript", numa: "Available via CSI workflows" },
   { feature: "Google review generation", lokam: "Automatic SMS after positive call", numa: "Available via review management" },
   { feature: "DMS integration", lokam: "CDK, Dealertrack, VinSolutions, Authenticom", numa: "CDK, Reynolds, major DMS platforms" },
-  { feature: "Setup time", lokam: "Under 4 hours", numa: "Varies by feature scope" },
+  { feature: "Setup time", lokam: "Fast to set up", numa: "Varies by feature scope" },
   { feature: "Multilingual", lokam: "English + Spanish", numa: "Yes" },
   { feature: "Dealerships using it", lokam: "Growing", numa: "1,200+" },
 ];

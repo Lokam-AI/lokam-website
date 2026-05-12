@@ -9,7 +9,7 @@ const SITE_URL = "https://www.lokam.ai";
 export const metadata: Metadata = {
   title: "Dealertrack Integration for AI Follow-Up | Lokam",
   description:
-    "Lokam integrates with Dealertrack to automate CSI follow-up and unsold lead recovery. Reads RO and customer data directly from your Dealertrack DMS - live in under 4 hours.",
+    "Lokam integrates with Dealertrack to automate CSI follow-up and unsold lead recovery. Reads RO and customer data directly from your Dealertrack DMS - Lokam's team handles the setup end to end.",
   alternates: { canonical: `${SITE_URL}/integrations/dealertrack` },
   openGraph: {
     title: "Dealertrack Integration | Lokam Voice AI",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dealertrack Integration | Lokam Voice AI",
-    description: "Automate CSI follow-up and unsold lead recovery from Dealertrack. Live in under 4 hours.",
+    description: "Automate CSI follow-up and unsold lead recovery from Dealertrack. No manual exports required.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };
@@ -62,7 +62,7 @@ const faqSchema = {
       name: "How long does Dealertrack integration take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most Dealertrack dealerships are live with Lokam in under 4 hours. Lokam's team manages the integration setup - your IT team does not need to be involved for the standard configuration.",
+        text: "Lokam's team handles the integration configuration. Lokam's team manages the integration setup - your IT team does not need to be involved for the standard configuration.",
       },
     },
   ],
@@ -182,7 +182,7 @@ export default function DealertrackIntegrationPage() {
           <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl px-5 sm:px-8 py-6" style={{ background: "#0A3530" }}>
             <div>
               <p className="font-sans font-bold text-white" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>Ready to automate follow-up from your Dealertrack data?</p>
-              <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>Book a demo - most Dealertrack dealerships are live in under 4 hours.</p>
+              <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>Book a demo - most Dealertrack dealerships are Lokam's team handles the setup end to end.</p>
             </div>
             <CalendlyButton className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-sans font-semibold text-sm text-white whitespace-nowrap transition-all duration-200 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98]" style={{ background: "#009589", boxShadow: "0 0 20px 6px rgba(0,149,137,0.45)" }}>
               Book a Demo →

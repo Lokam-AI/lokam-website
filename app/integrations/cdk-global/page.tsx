@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/integrations/cdk-global` },
   openGraph: {
     title: "CDK Global Integration | Lokam Voice AI",
-    description: "Lokam reads CDK repair orders and desklogs to automate CSI follow-up and unsold lead recovery. Live in under 4 hours.",
+    description: "Lokam reads CDK repair orders and desklogs to automate CSI follow-up and unsold lead recovery. No manual exports required.",
     url: `${SITE_URL}/integrations/cdk-global`,
     type: "website",
     siteName: "Lokam",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CDK Global Integration | Lokam Voice AI",
-    description: "Automate CSI follow-up and unsold lead recovery from CDK Global. No manual exports, live in under 4 hours.",
+    description: "Automate CSI follow-up and unsold lead recovery from CDK Global. No manual exports required.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };
@@ -62,7 +62,7 @@ const faqSchema = {
       name: "How long does the CDK Global integration take to set up?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most CDK dealerships are live with Lokam in under 4 hours. Lokam's team handles the integration configuration - your IT team does not need to be involved for the standard CDK setup.",
+        text: "Lokam's team handles the integration configuration. Lokam's team handles the integration configuration - your IT team does not need to be involved for the standard CDK setup.",
       },
     },
     {
@@ -212,7 +212,7 @@ export default function CDKGlobalIntegrationPage() {
           >
             <div>
               <p className="font-sans font-bold text-white" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>Ready to automate follow-up from your CDK data?</p>
-              <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>Book a demo - most CDK dealerships are live in under 4 hours.</p>
+              <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>Book a demo - most CDK dealerships are Lokam's team handles the setup end to end.</p>
             </div>
             <CalendlyButton
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-sans font-semibold text-sm text-white whitespace-nowrap transition-all duration-200 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98]"

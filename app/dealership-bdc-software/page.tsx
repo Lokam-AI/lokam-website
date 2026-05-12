@@ -94,7 +94,7 @@ const faqSchema = {
       name: "Which DMS systems does Lokam integrate with?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Lokam integrates with CDK Global, Dealertrack, VinSolutions, DealerSocket, TEKION, Authenticom, and DealerVault. Most dealerships are live in under 4 hours.",
+        text: "Lokam integrates with CDK Global, Dealertrack, VinSolutions, DealerSocket, TEKION, Authenticom, and DealerVault. Most dealerships are Lokam's team handles the setup end to end.",
       },
     },
   ],

@@ -7,12 +7,12 @@ import CalendlyButton from "../components/CalendlyButton";
 export const metadata: Metadata = {
   title: "DMS & CRM Integrations for Voice AI Follow-Up | Lokam",
   description:
-    "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. Go live in under 4 hours with your existing DMS.",
+    "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. Works with your existing DMS with no manual exports.",
   alternates: { canonical: "https://www.lokam.ai/integrations" },
   openGraph: {
     title: "DMS & CRM Integrations | Lokam Voice AI",
     description:
-      "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION, Authenticom, and DealerVault. Go live in under 4 hours.",
+      "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION, Authenticom, and DealerVault. Go Lokam's team handles the setup end to end.",
     url: "https://www.lokam.ai/integrations",
     type: "website",
     siteName: "Lokam",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How long does integration take?",
-      acceptedAnswer: { "@type": "Answer", text: "Most dealerships are live in under 4 hours. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations." },
+      acceptedAnswer: { "@type": "Answer", text: "Most dealerships are Lokam's team handles the setup end to end. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations." },
     },
     {
       "@type": "Question",
@@ -159,7 +159,7 @@ const dataFlow = [
 const faqItems = [
   {
     q: "How long does integration take?",
-    a: "Most dealerships are live in under 4 hours. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations.",
+    a: "Most dealerships are Lokam's team handles the setup end to end. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations.",
   },
   {
     q: "What data does Lokam access from my DMS?",
@@ -205,7 +205,7 @@ export default function IntegrationsPage() {
             className="font-display font-bold text-[#0D1B2A] mb-5"
             style={{ fontSize: "clamp(28px, 4.5vw, 52px)", lineHeight: "1.08", letterSpacing: "-1.5px" }}
           >
-            Works with your DMS. Live in under 4 hours.
+            Works with your DMS. Lokam's team handles the setup.
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 600 }}>
             Lokam connects directly to your dealer management system and data providers. No manual exports, no new logins for your team - it reads your ROs and customer records automatically.
