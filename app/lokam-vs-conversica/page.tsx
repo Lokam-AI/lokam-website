@@ -27,6 +27,19 @@ export const metadata: Metadata = {
   },
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/lokam-vs-conversica#webpage`,
+  name: "Lokam vs Conversica for Dealers: Voice vs Email AI",
+  url: `${SITE_URL}/lokam-vs-conversica`,
+  about: [
+    { "@type": "SoftwareApplication", "@id": `${SITE_URL}/#software`, name: "Lokam" },
+    { "@type": "SoftwareApplication", name: "Conversica", url: "https://www.conversica.com" },
+  ],
+  publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -92,6 +105,7 @@ const comparison = [
 export default function LokamVsConversicaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Nav />

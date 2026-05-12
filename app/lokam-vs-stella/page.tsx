@@ -27,6 +27,19 @@ export const metadata: Metadata = {
   },
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/lokam-vs-stella#webpage`,
+  name: "Lokam vs STELLA Automotive AI: Outbound vs Inbound",
+  url: `${SITE_URL}/lokam-vs-stella`,
+  about: [
+    { "@type": "SoftwareApplication", "@id": `${SITE_URL}/#software`, name: "Lokam" },
+    { "@type": "SoftwareApplication", name: "STELLA Automotive AI", url: "https://stellaautomotive.com" },
+  ],
+  publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -92,6 +105,7 @@ const comparison = [
 export default function LokamVsStellaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Nav />

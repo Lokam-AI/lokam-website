@@ -55,13 +55,29 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Lokam",
   url: SITE_URL,
-  logo: `${SITE_URL}/assets/image-47.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/assets/image-47.png`,
+    width: 200,
+    height: 200,
+  },
   description:
     "Voice AI platform for automotive dealerships that automates customer follow-up after service visits, CSI calls, and unsold lead re-engagement.",
   telephone: "+19809446263",
   email: "founder@lokam.ai",
+  areaServed: "North America",
+  knowsAbout: [
+    "AI voice agents for automotive dealerships",
+    "CSI follow-up automation",
+    "Unsold lead recovery for car dealerships",
+    "Dealership BDC software automation",
+    "Dealer Management System integration",
+    "Customer satisfaction improvement for auto dealers",
+    "Post-service customer follow-up calls",
+  ],
   sameAs: [
     "https://www.linkedin.com/company/lokam-ai/",
     "https://www.crunchbase.com/organization/lokam-ai",
@@ -70,8 +86,9 @@ const organizationSchema = {
     "@type": "Person",
     name: "Muhammed Saleeq",
     jobTitle: "Co-founder & CEO",
-    url: "https://www.lokam.ai/about",
+    url: `${SITE_URL}/about`,
     sameAs: ["https://www.linkedin.com/in/muhammed-saleeq/"],
+    worksFor: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
   },
   address: {
     "@type": "PostalAddress",
@@ -86,19 +103,26 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Lokam",
   url: SITE_URL,
+  inLanguage: "en-US",
   description:
     "Voice AI platform for automotive dealerships - automates CSI follow-up, lead re-engagement, and service retention calls.",
+  publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
 };
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/#software`,
   name: "Lokam Voice AI",
   url: SITE_URL,
   applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Automotive Dealership Software",
   operatingSystem: "Web",
+  inLanguage: ["en", "es"],
+  areaServed: "North America",
   description:
     "AI-powered voice platform that automatically calls automotive dealership customers after service visits and showroom appointments - recovering at-risk relationships, automating CSI surveys, and re-engaging unsold leads.",
   featureList: [
@@ -106,8 +130,8 @@ const softwareSchema = {
     "CSI score automation and survey completion",
     "Lead re-engagement for unsold desklog customers",
     "Branded caller ID for improved contact rates",
-    "Multilingual customer outreach",
-    "DMS and CRM integration",
+    "Multilingual customer outreach - English and Spanish",
+    "DMS and CRM integration - CDK, Dealertrack, VinSolutions",
   ],
   offers: {
     "@type": "Offer",
@@ -116,6 +140,7 @@ const softwareSchema = {
   },
   provider: {
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: "Lokam",
     url: SITE_URL,
   },

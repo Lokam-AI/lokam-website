@@ -34,6 +34,31 @@ export const metadata: Metadata = {
   },
 };
 
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://www.lokam.ai/roi-calculator#app",
+  name: "Dealership AI ROI Calculator",
+  url: "https://www.lokam.ai/roi-calculator",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Calculator",
+  operatingSystem: "Web",
+  description:
+    "Calculate the revenue your dealership can recover with AI-powered follow-up. Enter your monthly repair orders or unsold desklogs to see your ROI estimate.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    description: "Free to use",
+  },
+  provider: {
+    "@type": "Organization",
+    "@id": "https://www.lokam.ai/#organization",
+    name: "Lokam",
+    url: "https://www.lokam.ai",
+  },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -67,6 +92,7 @@ const methodology = [
 export default function ROICalculatorPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

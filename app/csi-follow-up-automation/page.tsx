@@ -40,9 +40,12 @@ const breadcrumbSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/csi-follow-up-automation#service`,
   name: "Lokam CSI Follow-Up Automation",
   applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Automotive Dealership Software",
   operatingSystem: "Web",
+  areaServed: "North America",
   url: `${SITE_URL}/csi-follow-up-automation`,
   description:
     "AI-powered CSI follow-up automation for automotive dealerships. Calls every repair order customer within 24 hours, detects dissatisfaction in real time, escalates detractors to service managers before the OEM survey arrives, and generates Google reviews from satisfied customers.",
@@ -61,6 +64,12 @@ const serviceSchema = {
     "Multilingual - English and Spanish",
     "OEM survey score protection",
   ],
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Lokam",
+    url: SITE_URL,
+  },
 };
 
 const faqSchema = {

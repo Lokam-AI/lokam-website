@@ -40,9 +40,12 @@ const breadcrumbSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/unsold-lead-recovery-software#service`,
   name: "Lokam Unsold Lead Recovery",
   applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Automotive Dealership Software",
   operatingSystem: "Web",
+  areaServed: "North America",
   url: `${SITE_URL}/unsold-lead-recovery-software`,
   description:
     "AI-powered unsold lead recovery software for automotive dealerships. Calls every unsold showroom customer within 24 hours of their visit, detects ready buyers, escalates hot leads to BDC in real time, and integrates natively with CDK, Dealertrack, and VinSolutions.",
@@ -60,6 +63,12 @@ const serviceSchema = {
     "Multilingual outreach - English and Spanish",
     "Optimized retry cadence for voicemail drops",
   ],
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Lokam",
+    url: SITE_URL,
+  },
 };
 
 const faqSchema = {

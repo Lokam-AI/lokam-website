@@ -28,6 +28,19 @@ export const metadata: Metadata = {
   },
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/lokam-vs-numa#webpage`,
+  name: "Lokam vs Numa for Dealerships: Which AI is Right?",
+  url: `${SITE_URL}/lokam-vs-numa`,
+  about: [
+    { "@type": "SoftwareApplication", "@id": `${SITE_URL}/#software`, name: "Lokam" },
+    { "@type": "SoftwareApplication", name: "Numa", url: "https://www.numa.com" },
+  ],
+  publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -93,6 +106,7 @@ const comparison = [
 export default function LokamVsNumaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Nav />

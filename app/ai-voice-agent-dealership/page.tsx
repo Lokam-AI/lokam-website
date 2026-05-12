@@ -40,9 +40,12 @@ const breadcrumbSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/ai-voice-agent-dealership#service`,
   name: "Lokam AI Voice Agent",
   applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Automotive Dealership Software",
   operatingSystem: "Web",
+  areaServed: "North America",
   url: `${SITE_URL}/ai-voice-agent-dealership`,
   description:
     "AI-powered outbound voice agent for automotive dealerships. Handles post-service CSI follow-up and unsold lead recovery at 70% contact rate. Detects customer sentiment in real time, escalates issues to managers instantly, and generates Google reviews from satisfied customers.",
@@ -61,6 +64,12 @@ const serviceSchema = {
     "Multilingual - English and Spanish",
     "100% repair order and desklog coverage",
   ],
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Lokam",
+    url: SITE_URL,
+  },
 };
 
 const faqSchema = {

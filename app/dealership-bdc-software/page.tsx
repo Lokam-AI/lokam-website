@@ -40,9 +40,12 @@ const breadcrumbSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/dealership-bdc-software#service`,
   name: "Lokam BDC Automation",
   applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Automotive Dealership Software",
   operatingSystem: "Web",
+  areaServed: "North America",
   url: `${SITE_URL}/dealership-bdc-software`,
   description:
     "AI-powered BDC automation software for automotive dealerships. Automates unsold showroom follow-up calls, improves contact rate to 70%, and re-engages desklogs within 24 hours.",
@@ -59,6 +62,12 @@ const serviceSchema = {
     "DMS integration with CDK Global, Dealertrack, VinSolutions",
     "Multilingual AI outreach",
   ],
+  provider: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Lokam",
+    url: SITE_URL,
+  },
 };
 
 const faqSchema = {
