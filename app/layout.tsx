@@ -110,6 +110,11 @@ const websiteSchema = {
   description:
     "Voice AI platform for automotive dealerships - automates CSI follow-up, lead re-engagement, and service retention calls.",
   publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/blog?q={search_term_string}` },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const softwareSchema = {
