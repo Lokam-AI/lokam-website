@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DMS & CRM Integrations | Lokam Voice AI",
     description:
-      "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION, Authenticom, and DealerVault. Go Lokam's team handles the setup end to end.",
+      "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION, Authenticom, and DealerVault. Lokam's team handles the setup end to end.",
     url: "https://www.lokam.ai/integrations",
     type: "website",
     siteName: "Lokam",

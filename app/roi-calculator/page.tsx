@@ -5,12 +5,12 @@ import ROI from "../components/ROI";
 import CalendlyButton from "../components/CalendlyButton";
 
 export const metadata: Metadata = {
-  title: "Dealership AI ROI Calculator | Lokam",
+  title: "Dealership AI ROI Calculator - See Your Revenue Estimate",
   description:
     "Calculate how much revenue your dealership can recover with AI-powered follow-up. Enter your monthly repair orders or unsold desklogs to see your ROI estimate.",
   alternates: { canonical: "https://www.lokam.ai/roi-calculator" },
   openGraph: {
-    title: "Dealership AI ROI Calculator | Lokam",
+    title: "Dealership AI ROI Calculator - See Your Revenue Estimate",
     description:
       "Calculate how much revenue your dealership can recover with AI-powered follow-up. Enter your monthly repair orders or unsold desklogs to see your ROI estimate.",
     url: "https://www.lokam.ai/roi-calculator",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dealership AI ROI Calculator | Lokam",
+    title: "Dealership AI ROI Calculator - See Your Revenue Estimate",
     description:
-      "Calculate how much revenue your dealership can recover with AI-powered follow-up.",
+      "Calculate the revenue your dealership can recover with AI follow-up. Enter your monthly repair orders or unsold desklogs and see your estimate.",
     images: ["https://www.lokam.ai/opengraph-image"],
   },
 };

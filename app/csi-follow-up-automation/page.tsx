@@ -7,14 +7,14 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "CSI Follow-Up Automation for Dealerships | Lokam",
+  title: "Boost Dealer CSI Scores with AI Follow-Up | Lokam",
   description:
-    "Lokam automates post-service CSI follow-up for every repair order - catching detractors before bad reviews, protecting OEM survey scores, and generating Google reviews at scale.",
+    "Lokam calls every repair order customer within 24 hours - catching detractors before OEM surveys, protecting CSI scores, and generating Google reviews.",
   alternates: { canonical: `${SITE_URL}/csi-follow-up-automation` },
   openGraph: {
-    title: "CSI Follow-Up Automation | Lokam",
+    title: "Boost Dealer CSI Scores with AI Follow-Up | Lokam",
     description:
-      "Automate CSI follow-up calls for every repair order. Catch detractors before the OEM survey. Improve your Google rating automatically.",
+      "Lokam calls every repair order customer within 24 hours - catching detractors before OEM surveys, protecting CSI scores, and generating Google reviews.",
     url: `${SITE_URL}/csi-follow-up-automation`,
     type: "website",
     siteName: "Lokam",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSI Follow-Up Automation | Lokam",
-    description: "Automate CSI follow-up for every repair order. Catch detractors before bad reviews.",
+    title: "Boost Dealer CSI Scores with AI Follow-Up | Lokam",
+    description: "Lokam calls every repair order customer within 24 hours - catch detractors before OEM surveys, protect CSI, generate Google reviews.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

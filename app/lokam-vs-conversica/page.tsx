@@ -7,13 +7,13 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Lokam vs Conversica - Dealership AI Follow-Up Compared | Lokam",
+  title: "Lokam vs Conversica for Dealers: Voice vs Email AI",
   description:
-    "Comparing Lokam and Conversica for automotive dealership AI. Lokam is an outbound voice specialist for CSI and unsold lead follow-up. Conversica focuses on email and SMS nurturing.",
+    "Lokam makes AI voice calls for CSI and unsold leads. Conversica sends AI email/SMS for lead nurturing. Compare fit for automotive dealerships.",
   alternates: { canonical: `${SITE_URL}/lokam-vs-conversica` },
   openGraph: {
-    title: "Lokam vs Conversica | Dealership AI Compared",
-    description: "Lokam: outbound voice AI for CSI and unsold leads. Conversica: email/SMS AI for lead nurturing. See which fits your dealership.",
+    title: "Lokam vs Conversica for Dealers: Voice vs Email AI",
+    description: "Lokam makes AI voice calls for CSI and unsold leads. Conversica sends AI email/SMS for lead nurturing. Compare fit for automotive dealerships.",
     url: `${SITE_URL}/lokam-vs-conversica`,
     type: "website",
     siteName: "Lokam",
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lokam vs Conversica | Dealership AI Compared",
-    description: "Lokam: outbound voice AI for post-visit follow-up. Conversica: email/SMS AI for lead nurturing.",
+    title: "Lokam vs Conversica for Dealers: Voice vs Email AI",
+    description: "Lokam: AI voice calls for CSI and unsold leads. Conversica: email/SMS for lead nurturing. See which fits your dealership.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

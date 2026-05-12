@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
   description:
-    "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
+    "78% of car buyers choose the first dealer to follow up. Lokam automates that call for every service visit and showroom appointment. 70% contact rate, DMS-native.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
+      "78% of car buyers choose the first dealer to follow up. Lokam automates that call for every service visit and showroom appointment. 70% contact rate, DMS-native.",
     url: SITE_URL,
     siteName: "Lokam",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
+      "78% of car buyers choose the first dealer to follow up. Lokam automates that call for every service visit and showroom appointment. 70% contact rate, DMS-native.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

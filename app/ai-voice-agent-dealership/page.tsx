@@ -9,7 +9,7 @@ const SITE_URL = "https://www.lokam.ai";
 export const metadata: Metadata = {
   title: "AI Voice Agent for Automotive Dealerships | Lokam",
   description:
-    "Lokam's AI voice agent calls every service customer and unsold lead within 24 hours - 70% contact rate, branded caller ID, DMS-native. No manual exports required.",
+    "Lokam's AI makes outbound voice calls to every customer within 24 hours - 70% contact rate, sentiment detection, hot lead escalation. DMS-native, no exports.",
   alternates: { canonical: `${SITE_URL}/ai-voice-agent-dealership` },
   openGraph: {
     title: "AI Voice Agent for Dealerships | Lokam",

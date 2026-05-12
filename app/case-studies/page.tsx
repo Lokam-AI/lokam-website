@@ -6,14 +6,14 @@ import CaseStudiesFilter from "../components/CaseStudiesFilter";
 import CalendlyButton from "../components/CalendlyButton";
 
 export const metadata: Metadata = {
-  title: "Dealer Case Studies | Lokam Voice AI Results",
+  title: "Lokam Dealer Case Studies - $2.5M Revenue Recovered",
   description:
-    "Real dealerships, real revenue. See how dealerships use Lokam to recover revenue, protect CSI scores, and close more deals.",
+    "World Hyundai raised Google ratings from 4.0 to 4.8 in 8 weeks with Lokam. See real dealer results - CSI scores, recovered revenue, and closed deals.",
   alternates: { canonical: "https://www.lokam.ai/case-studies" },
   openGraph: {
-    title: "Dealer Case Studies | Lokam Voice AI Results",
+    title: "Lokam Dealer Case Studies - $2.5M Revenue Recovered",
     description:
-      "Real dealerships, real revenue. See how dealerships use Lokam to recover revenue, protect CSI scores, and close more deals.",
+      "World Hyundai raised Google ratings from 4.0 to 4.8 in 8 weeks with Lokam. See real dealer results - CSI scores, recovered revenue, and closed deals.",
     url: "https://www.lokam.ai/case-studies",
     type: "website",
     siteName: "Lokam",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dealer Case Studies | Lokam Voice AI Results",
+    title: "Lokam Dealer Case Studies - $2.5M Revenue Recovered",
     description:
-      "Real dealerships, real revenue. See how dealers use Lokam.",
+      "World Hyundai: 4.0 to 4.8 Google rating in 8 weeks. $2.5M revenue recovered. See real dealer results with Lokam AI voice.",
   },
 };
 

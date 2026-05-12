@@ -7,13 +7,13 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Lokam vs STELLA Automotive AI - Dealership Voice AI Compared | Lokam",
+  title: "Lokam vs STELLA Automotive AI: Outbound vs Inbound",
   description:
-    "Comparing Lokam and STELLA for automotive dealership AI voice. Lokam specializes in outbound CSI and unsold lead follow-up. STELLA focuses on inbound call handling and routing.",
+    "Lokam handles outbound: AI calls after service visits and unsold appointments. STELLA handles inbound: answering, routing, and booking. See which fits.",
   alternates: { canonical: `${SITE_URL}/lokam-vs-stella` },
   openGraph: {
-    title: "Lokam vs STELLA | Dealership Voice AI Compared",
-    description: "Lokam: outbound voice AI for post-visit follow-up. STELLA: inbound AI call handling for dealerships. See which fits your needs.",
+    title: "Lokam vs STELLA Automotive AI: Outbound vs Inbound",
+    description: "Lokam handles outbound: AI calls after service visits and unsold appointments. STELLA handles inbound: answering, routing, and booking. See which fits.",
     url: `${SITE_URL}/lokam-vs-stella`,
     type: "website",
     siteName: "Lokam",
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lokam vs STELLA | Dealership Voice AI Compared",
-    description: "Lokam: outbound voice for post-visit follow-up. STELLA: inbound voice for call answering.",
+    title: "Lokam vs STELLA Automotive AI: Outbound vs Inbound",
+    description: "Lokam: outbound AI calls after service visits. STELLA: inbound AI call answering and routing. See which fits your dealership.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

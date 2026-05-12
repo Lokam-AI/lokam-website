@@ -7,14 +7,14 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Automotive BDC Software | AI-Powered Follow-Up | Lokam",
+  title: "Automotive BDC Software Built for Dealerships | Lokam",
   description:
-    "Lokam automates unsold showroom follow-up for automotive BDCs - reaching 100% of desklogs within 24 hours at a 70% contact rate. Works with CDK, Dealertrack, and VinSolutions.",
+    "Replace manual BDC follow-up with AI. Lokam calls every desklog within 24 hours - 70% contact rate, hot lead escalation, CDK and VinSolutions native.",
   alternates: { canonical: `${SITE_URL}/dealership-bdc-software` },
   openGraph: {
-    title: "Automotive BDC Software | Lokam",
+    title: "Automotive BDC Software Built for Dealerships | Lokam",
     description:
-      "Lokam automates unsold showroom follow-up for automotive BDCs - 100% desklog coverage, 70% contact rate, hot lead escalation to your team.",
+      "Replace manual BDC follow-up with AI. Lokam calls every desklog within 24 hours - 70% contact rate, hot lead escalation, CDK and VinSolutions native.",
     url: `${SITE_URL}/dealership-bdc-software`,
     type: "website",
     siteName: "Lokam",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Automotive BDC Software | Lokam",
-    description: "Lokam automates unsold showroom follow-up - 100% desklog coverage, 70% contact rate.",
+    title: "Automotive BDC Software Built for Dealerships | Lokam",
+    description: "Replace manual BDC follow-up with AI. Lokam calls every desklog within 24 hours - 70% contact rate, CDK and VinSolutions native.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

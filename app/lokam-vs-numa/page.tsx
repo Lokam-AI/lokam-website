@@ -7,14 +7,14 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Lokam vs Numa - Dealership AI Follow-Up Compared | Lokam",
+  title: "Lokam vs Numa for Dealerships: Which AI is Right?",
   description:
-    "Comparing Lokam and Numa for automotive dealership AI follow-up. Lokam specializes in outbound CSI and unsold lead recovery. Numa focuses on broad communication management.",
+    "Lokam specializes in outbound voice: AI calls for CSI and unsold leads. Numa manages inbound texts and calls. See which fits your dealership.",
   alternates: { canonical: `${SITE_URL}/lokam-vs-numa` },
   openGraph: {
-    title: "Lokam vs Numa | Dealership AI Compared",
+    title: "Lokam vs Numa for Dealerships: Which AI is Right?",
     description:
-      "Lokam vs Numa: outbound CSI follow-up specialist vs broad dealership communication platform. See which fits your use case.",
+      "Lokam specializes in outbound voice: AI calls for CSI and unsold leads. Numa manages inbound texts and calls. See which fits your dealership.",
     url: `${SITE_URL}/lokam-vs-numa`,
     type: "website",
     siteName: "Lokam",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lokam vs Numa | Dealership AI Compared",
-    description: "Lokam specializes in outbound CSI + unsold lead follow-up. Numa handles broad dealership communication.",
+    title: "Lokam vs Numa for Dealerships: Which AI is Right?",
+    description: "Lokam: outbound voice AI for CSI and unsold leads. Numa: inbound texts and calls. See which fits your dealership.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

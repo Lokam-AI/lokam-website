@@ -7,14 +7,14 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Unsold Lead Recovery Software for Dealerships | Lokam",
+  title: "Recover Unsold Showroom Leads Automatically | Lokam",
   description:
-    "Lokam recovers unsold showroom traffic for automotive dealerships - calling every desklog within 24 hours at 70% contact rate before leads go cold and sign with a competitor.",
+    "78% of buyers choose the first dealer to follow up. Lokam automates that call for every showroom visitor - within 24 hours, 70% contact rate.",
   alternates: { canonical: `${SITE_URL}/unsold-lead-recovery-software` },
   openGraph: {
-    title: "Unsold Lead Recovery Software | Lokam",
+    title: "Recover Unsold Showroom Leads Automatically | Lokam",
     description:
-      "Recover unsold showroom traffic automatically. Lokam calls every desklog within 24 hours - 70% contact rate, hot lead escalation, DMS-native.",
+      "78% of buyers choose the first dealer to follow up. Lokam automates that call for every showroom visitor - within 24 hours, 70% contact rate.",
     url: `${SITE_URL}/unsold-lead-recovery-software`,
     type: "website",
     siteName: "Lokam",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Unsold Lead Recovery Software | Lokam",
-    description: "Recover unsold showroom traffic before leads go cold. 70% contact rate, 24-hour follow-up window.",
+    title: "Recover Unsold Showroom Leads Automatically | Lokam",
+    description: "78% of buyers choose the first dealer to follow up. Lokam automates that call for every showroom visitor - 24 hours, 70% contact rate.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };
