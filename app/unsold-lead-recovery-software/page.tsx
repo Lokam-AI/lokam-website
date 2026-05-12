@@ -7,23 +7,23 @@ import CalendlyButton from "../components/CalendlyButton";
 const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
-  title: "Automotive BDC Software | AI-Powered Follow-Up | Lokam",
+  title: "Unsold Lead Recovery Software for Dealerships | Lokam",
   description:
-    "Lokam automates unsold showroom follow-up for automotive BDCs — reaching 100% of desklogs within 24 hours, at 70% contact rate. Works with CDK, Dealertrack, and more.",
-  alternates: { canonical: `${SITE_URL}/dealership-bdc-software` },
+    "Lokam recovers unsold showroom traffic for automotive dealerships - calling every desklog within 24 hours at 70% contact rate before leads go cold and sign with a competitor.",
+  alternates: { canonical: `${SITE_URL}/unsold-lead-recovery-software` },
   openGraph: {
-    title: "Automotive BDC Software | Lokam",
+    title: "Unsold Lead Recovery Software | Lokam",
     description:
-      "Lokam automates unsold showroom follow-up for automotive BDCs — reaching 100% of desklogs within 24 hours, at 70% contact rate.",
-    url: `${SITE_URL}/dealership-bdc-software`,
+      "Recover unsold showroom traffic automatically. Lokam calls every desklog within 24 hours - 70% contact rate, hot lead escalation, DMS-native.",
+    url: `${SITE_URL}/unsold-lead-recovery-software`,
     type: "website",
     siteName: "Lokam",
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: "Automotive BDC Software | Lokam" }],
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: "Unsold Lead Recovery Software | Lokam" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Automotive BDC Software | Lokam",
-    description: "Lokam automates unsold showroom follow-up for automotive BDCs — 100% desklog coverage, 70% contact rate.",
+    title: "Unsold Lead Recovery Software | Lokam",
+    description: "Recover unsold showroom traffic before leads go cold. 70% contact rate, 24-hour follow-up window.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };
@@ -33,31 +33,31 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Automotive BDC Software", item: `${SITE_URL}/dealership-bdc-software` },
+    { "@type": "ListItem", position: 2, name: "Unsold Lead Recovery Software", item: `${SITE_URL}/unsold-lead-recovery-software` },
   ],
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Lokam BDC Automation",
+  name: "Lokam Unsold Lead Recovery",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
-  url: `${SITE_URL}/dealership-bdc-software`,
+  url: `${SITE_URL}/unsold-lead-recovery-software`,
   description:
-    "AI-powered BDC automation software for automotive dealerships. Automates unsold showroom follow-up calls, improves contact rate to 70%, and re-engages desklogs within 24 hours.",
+    "AI-powered unsold lead recovery software for automotive dealerships. Calls every unsold showroom customer within 24 hours of their visit, detects ready buyers, escalates hot leads to BDC in real time, and integrates natively with CDK, Dealertrack, and VinSolutions.",
   offers: {
     "@type": "Offer",
-    description: "Book a demo — plans tailored to your BDC volume and DMS.",
+    description: "Book a demo - we'll model your ROI based on your monthly desklog volume.",
     url: "https://calendly.com/saleeq-lokam/30-minutes-meeting",
   },
   featureList: [
-    "100% desklog follow-up coverage within 24 hours",
-    "70% average contact rate vs 15% industry manual average",
+    "100% unsold desklog coverage within 24 hours",
+    "70% average contact rate vs 15% manual BDC average",
+    "Hot lead escalation to BDC team with full call transcript",
     "Branded caller ID for improved answer rates",
-    "Hot lead escalation to BDC team in real time",
-    "DMS integration with CDK Global, Dealertrack, VinSolutions",
-    "Multilingual AI outreach",
+    "DMS integration - reads desklogs from CDK, Dealertrack, VinSolutions",
+    "Multilingual outreach - English and Spanish",
   ],
 };
 
@@ -67,18 +67,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is automotive BDC software?",
+      name: "What is unsold lead recovery software?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Automotive BDC (Business Development Center) software helps dealerships manage and automate customer follow-up for unsold showroom traffic, internet leads, and service customers. AI-powered BDC software like Lokam replaces manual outreach with automated voice calls that reach every lead within 24 hours.",
+        text: "Unsold lead recovery software automatically follows up with customers who visited a dealership showroom but did not purchase. Instead of relying on BDC staff to manually call every desklog, AI-powered systems like Lokam contact every unsold customer within 24 hours of their visit - at scale, with consistent messaging, and at a contact rate manual teams cannot match.",
       },
     },
     {
       "@type": "Question",
-      name: "How does Lokam improve BDC contact rate?",
+      name: "How does Lokam recover unsold showroom traffic?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Lokam uses AI voice calls with branded caller ID, optimized retry scheduling during peak pick-up windows, and immediate outreach — typically within 12–24 hours of the showroom visit. This produces a 70% contact rate vs the industry manual average of 15%.",
+        text: "Lokam reads your unsold desklog directly from your DMS (CDK, Dealertrack, VinSolutions) within minutes of the customer leaving. An AI voice agent calls each customer within 24 hours using your branded caller ID. When Lokam detects a ready buyer - an objection overcome, new incentive interest, or trade-in readiness - it escalates to your BDC team instantly with the full conversation transcript.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a desklog in automotive sales?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A desklog is the record created in a dealership's DMS when a customer visits the showroom and has a pricing or deal discussion with a sales consultant - whether or not they purchase. Desklogs represent your highest-intent unsold prospects: people who came in, sat down, and didn't buy. Most dealerships follow up with fewer than 15% of desklogs manually.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many times does Lokam follow up with unsold leads?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lokam follows an optimized retry cadence - initial call within 24 hours, plus scheduled retries during peak pick-up windows if the first attempt goes to voicemail. Retries are not random; they're scheduled based on when customers in your market are most likely to answer. Your team only gets involved when Lokam identifies a warm buyer.",
       },
     },
     {
@@ -86,55 +102,47 @@ const faqSchema = {
       name: "Does Lokam replace BDC staff?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Lokam handles high-volume repetitive outreach so your BDC team focuses on warm escalations and inbound opportunities. Most dealers see BDC productivity increase, not headcount decrease.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which DMS systems does Lokam integrate with?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lokam integrates with CDK Global, Dealertrack, VinSolutions, DealerSocket, TEKION, Authenticom, and DealerVault. Most dealerships are live in under 4 hours.",
+        text: "No. Lokam handles high-volume repetitive outreach so your BDC team focuses entirely on warm, escalated buyers. Most dealers see BDC productivity increase significantly - your team spends their time on hot leads instead of cold calling 500 desklogs and reaching 75 people.",
       },
     },
   ],
 };
 
 const stats = [
-  { value: "70%", label: "Average contact rate", sub: "vs 15% manual BDC average" },
-  { value: "100%", label: "Desklog coverage", sub: "every unsold lead called within 24 hrs" },
-  { value: "12–24h", label: "First call window", sub: "before leads go cold" },
+  { value: "85%", label: "Unsold leads ignored", sub: "never hear from the dealer again" },
+  { value: "78%", label: "Buyers choose the first dealer", sub: "to follow up (NADA, 2025)" },
+  { value: "24h", label: "Follow-up window", sub: "before leads go cold" },
   { value: "45%", label: "Close rate", sub: "on re-engaged leads" },
 ];
 
 const features = [
   {
-    title: "Reaches every unsold lead",
-    desc: "Your BDC team can't call 500 desklogs a month. Lokam can — automatically, within 24 hours of the showroom visit, before the customer signs elsewhere.",
+    title: "Calls every desklog automatically",
+    desc: "Your BDC team can't manually reach 500 unsold customers a month. Lokam can - automatically, within 24 hours of the showroom visit, before the customer signs with a competitor.",
   },
   {
     title: "Branded caller ID",
-    desc: "Calls go out under your dealership's name and number — not an unknown 800 number. Answer rates jump because customers recognize who's calling.",
+    desc: "Calls go out under your dealership's name and number - not an unknown 800 number. Answer rates jump because customers recognize who's calling.",
   },
   {
     title: "Hot lead escalation",
-    desc: "When Lokam detects a ready buyer — specific objection overcome, new incentive interest, trade-in ready — it alerts your BDC team in real time with the full call transcript.",
+    desc: "When Lokam detects a ready buyer - an objection overcome, new incentive interest, or trade-in readiness - it alerts your BDC team in real time with the full call transcript.",
   },
   {
     title: "Multilingual outreach",
-    desc: "Reaches customers in English and Spanish automatically, based on their preferred language. No manual routing required.",
+    desc: "Reaches customers in English and Spanish automatically based on their preferred language. No manual routing required.",
   },
   {
     title: "Optimized retry windows",
-    desc: "Retries are scheduled for peak pick-up windows — not randomly. Lokam knows when your market's customers answer their phones.",
+    desc: "Retries are scheduled for peak pick-up windows - not randomly. Lokam knows when your market's customers answer their phones.",
   },
   {
     title: "DMS-native integration",
-    desc: "Pulls directly from CDK Global, Dealertrack, VinSolutions, and others. No manual exports, no new logins — your unsold log feeds Lokam automatically.",
+    desc: "Pulls directly from CDK Global, Dealertrack, and VinSolutions. No manual exports, no new logins - your unsold desklog feeds Lokam automatically.",
   },
 ];
 
-export default function DealershipBDCSoftwarePage() {
+export default function UnsoldLeadRecoverySoftwarePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -149,16 +157,16 @@ export default function DealershipBDCSoftwarePage() {
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 font-sans text-xs font-semibold tracking-widest uppercase"
             style={{ background: "#E0F7F4", color: "#0C8074" }}
           >
-            BDC Automation
+            Unsold Lead Recovery
           </div>
           <h1
             className="font-display font-bold text-[#0D1B2A] mb-5"
             style={{ fontSize: "clamp(28px, 4.5vw, 52px)", lineHeight: "1.08", letterSpacing: "-1.5px" }}
           >
-            Automotive BDC Software That Follows Up With Every Unsold Lead
+            Recover the 85% of Unsold Showroom Customers Your BDC Never Calls
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 620 }}>
-            Your BDC team misses 85% of unsold showroom traffic. Lokam's AI calls every desklog within 24 hours — at a 70% contact rate — so your team only works warm, ready buyers.
+            78% of car buyers choose the first dealer to follow up. Lokam calls every unsold desklog within 24 hours - at 70% contact rate - so your team works warm buyers, not cold lists.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 items-center justify-center">
             <CalendlyButton className="flex items-center justify-center px-6 h-[50px] bg-brand-mid rounded-lg font-sans font-medium text-[15.6px] text-white">
@@ -181,9 +189,9 @@ export default function DealershipBDCSoftwarePage() {
             style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}
           >
             <p className="font-sans font-semibold text-[#0C8074] mb-2 text-xs uppercase tracking-widest">Quick Answer</p>
-            <p className="font-sans font-semibold text-[#0A2E2B] mb-1" style={{ fontSize: 15 }}>What is automotive BDC software?</p>
+            <p className="font-sans font-semibold text-[#0A2E2B] mb-1" style={{ fontSize: 15 }}>What is unsold lead recovery software?</p>
             <p className="font-sans text-sm leading-6 text-[#4A6B68]">
-              Automotive BDC (Business Development Center) software helps dealerships manage and automate customer follow-up for unsold showroom traffic, internet leads, and service customers. AI-powered BDC software like Lokam replaces manual outreach with automated voice calls that reach every lead within 24 hours — at a 70% contact rate versus the 15% industry manual average.
+              Unsold lead recovery software automatically follows up with customers who visited a dealership showroom but did not purchase. Instead of relying on BDC staff to manually call every desklog, AI systems like Lokam contact every unsold customer within 24 hours - at scale, with consistent messaging, and at a contact rate manual teams cannot match.
             </p>
           </div>
         </section>
@@ -197,7 +205,7 @@ export default function DealershipBDCSoftwarePage() {
                 className="rounded-2xl p-6 text-center"
                 style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.06)" }}
               >
-                <p className="font-display font-extrabold leading-none mb-1" style={{ fontSize: "clamp(28px, 3.5vw, 40px)", color: "#00968B" }}>
+                <p className="font-display font-extrabold leading-none mb-1" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#00968B" }}>
                   {s.value}
                 </p>
                 <p className="font-sans font-semibold text-[#0A2E2B] text-sm mb-1">{s.label}</p>
@@ -215,7 +223,7 @@ export default function DealershipBDCSoftwarePage() {
           >
             <p className="font-sans font-semibold text-[#991B1B] mb-2 text-sm uppercase tracking-widest">The Problem</p>
             <p className="font-sans text-[#1F2937] leading-7">
-              The average dealership BDC manually follows up with fewer than 15% of unsold showroom customers. The rest — 85% of people who walked in, sat with a sales consultant, and didn't buy — never hear from you again. Meanwhile, 78% of customers buy from the first dealership to follow up (NADA, 2025).
+              The average dealership manually follows up with fewer than 15% of unsold showroom customers. The other 85% - people who walked in, sat with a consultant, didn't buy - never hear from you again. Meanwhile, 78% of buyers choose the first dealership to follow up (NADA, 2025). Your BDC isn't losing because of price or inventory. It's losing because it doesn't have enough hours to call everyone.
             </p>
           </div>
           <div
@@ -224,7 +232,7 @@ export default function DealershipBDCSoftwarePage() {
           >
             <p className="font-sans font-semibold text-[#0C8074] mb-2 text-sm uppercase tracking-widest">The Lokam Fix</p>
             <p className="font-sans text-[#1F2937] leading-7">
-              Lokam's AI voice agent calls every unsold customer within 24 hours of their showroom visit — automatically, from your branded caller ID, in their preferred language. When it detects a ready buyer, it escalates to your BDC team instantly with the full conversation context.
+              Lokam's AI voice agent reads your desklog directly from your DMS and calls every unsold customer within 24 hours - automatically, from your branded caller ID, in their preferred language. When it detects a ready buyer, it escalates to your BDC team instantly with the full conversation transcript. Your team gets warm leads. Lokam handles the volume.
             </p>
           </div>
         </section>
@@ -235,7 +243,7 @@ export default function DealershipBDCSoftwarePage() {
             className="font-sans font-bold text-[#0A2E2B] mb-8 text-center"
             style={{ fontSize: "clamp(18px, 2.2vw, 28px)", letterSpacing: "-0.4px" }}
           >
-            What Lokam BDC Automation Does
+            How Lokam Unsold Lead Recovery Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {features.map((f) => (
@@ -248,6 +256,34 @@ export default function DealershipBDCSoftwarePage() {
                 <p className="font-sans text-sm leading-6 text-[#4A6B68]">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Related use cases ── */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-16">
+          <h2
+            className="font-sans font-bold text-[#0A2E2B] mb-6"
+            style={{ fontSize: "clamp(16px, 2vw, 22px)", letterSpacing: "-0.4px" }}
+          >
+            Also automate with Lokam
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link
+              href="/csi-follow-up-automation"
+              className="rounded-2xl p-5 no-underline group"
+              style={{ background: "#fff", border: "1px solid #C8E8E0" }}
+            >
+              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>CSI Follow-Up Automation →</p>
+              <p className="font-sans text-xs leading-5 text-[#4A6B68]">Automate post-service follow-up for every repair order. Catch detractors before bad reviews.</p>
+            </Link>
+            <Link
+              href="/dealership-bdc-software"
+              className="rounded-2xl p-5 no-underline group"
+              style={{ background: "#fff", border: "1px solid #C8E8E0" }}
+            >
+              <p className="font-sans font-semibold text-[#0A2E2B] mb-1 group-hover:text-[#0C8074] transition-colors" style={{ fontSize: 14 }}>Automotive BDC Software →</p>
+              <p className="font-sans text-xs leading-5 text-[#4A6B68]">AI-powered BDC automation that reaches 100% of desklogs at 70% contact rate.</p>
+            </Link>
           </div>
         </section>
 
@@ -281,10 +317,10 @@ export default function DealershipBDCSoftwarePage() {
           >
             <div>
               <p className="font-sans font-bold text-white" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>
-                See Lokam working on your desklog numbers
+                See how many leads you're leaving on the table
               </p>
               <p className="font-sans text-xs mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Book a 30-minute demo — we'll model your ROI before you commit to anything.
+                Book a demo - we'll model your ROI based on your monthly desklog volume.
               </p>
             </div>
             <CalendlyButton

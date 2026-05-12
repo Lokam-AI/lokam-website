@@ -182,6 +182,20 @@ export default function CSIFollowUpAutomationPage() {
           </div>
         </section>
 
+        {/* ── Quick Answer (GEO) ── */}
+        <section className="max-w-[860px] mx-auto px-4 md:px-8 pb-10">
+          <div
+            className="rounded-2xl p-6"
+            style={{ background: "#F0FBF9", border: "1px solid #C8E8E0" }}
+          >
+            <p className="font-sans font-semibold text-[#0C8074] mb-2 text-xs uppercase tracking-widest">Quick Answer</p>
+            <p className="font-sans font-semibold text-[#0A2E2B] mb-1" style={{ fontSize: 15 }}>What is CSI follow-up automation?</p>
+            <p className="font-sans text-sm leading-6 text-[#4A6B68]">
+              CSI follow-up automation replaces manual post-service phone calls with an AI voice system that contacts every service customer after their repair order. It captures satisfaction feedback, detects unhappy customers in real time, and escalates issues to your service manager before the customer files a negative survey or leaves a bad review.
+            </p>
+          </div>
+        </section>
+
         {/* ── Stats ── */}
         <section className="max-w-[1100px] mx-auto px-4 md:px-8 pb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

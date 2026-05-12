@@ -78,24 +78,28 @@ const faqSchema = {
 const liveIntegrations = [
   {
     name: "CDK Global",
+    anchor: "cdk-global",
     logo: "/assets/cdk.svg",
     type: "DMS",
     syncs: ["Customer contact data", "Repair order status", "Appointment records", "Service history"],
   },
   {
     name: "Dealertrack",
+    anchor: "dealertrack",
     logo: "/assets/dealertrack.svg",
     type: "DMS",
     syncs: ["Customer records", "Deal and RO data", "Contact preferences", "Vehicle history"],
   },
   {
     name: "Authenticom",
+    anchor: "authenticom",
     logo: "/assets/authenticom.svg",
     type: "Data Exchange",
     syncs: ["Secure DMS data syndication", "Real-time RO feeds", "Customer opt-out compliance", "Multi-rooftop aggregation"],
   },
   {
     name: "DealerVault",
+    anchor: "dealervault",
     logo: "/assets/dealvervault.svg",
     type: "Data Exchange",
     syncs: ["Encrypted data transfer", "Permissioned DMS access", "Audit trail logging", "SOC 2-aligned data handling"],
@@ -105,21 +109,25 @@ const liveIntegrations = [
 const comingSoonIntegrations = [
   {
     name: "Reynolds & Reynolds",
+    anchor: "reynolds-reynolds",
     type: "DMS",
     syncs: ["RO and customer data", "Service appointment records", "Contact information"],
   },
   {
     name: "DealerSocket",
+    anchor: "dealersocket",
     type: "DMS / CRM",
     syncs: ["Lead and customer profiles", "Deal records", "Service history"],
   },
   {
     name: "VinSolutions",
+    anchor: "vinsolutions",
     type: "CRM",
     syncs: ["Lead management data", "Customer profiles", "Activity history"],
   },
   {
     name: "TEKION",
+    anchor: "tekion",
     type: "Cloud DMS",
     syncs: ["RO data", "Customer contact records", "Service workflow status"],
   },
@@ -225,6 +233,7 @@ export default function IntegrationsPage() {
             {liveIntegrations.map((int) => (
               <div
                 key={int.name}
+                id={int.anchor}
                 className="rounded-2xl p-6 flex flex-col gap-4"
                 style={{ background: "#fff", border: "1px solid #C8E8E0", boxShadow: "0 2px 12px rgba(12,176,162,0.06)" }}
               >
@@ -281,6 +290,7 @@ export default function IntegrationsPage() {
             {comingSoonIntegrations.map((int) => (
               <div
                 key={int.name}
+                id={int.anchor}
                 className="rounded-2xl p-6 flex flex-col gap-4"
                 style={{ background: "#FAFAFA", border: "1px solid #E5E7EB", boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}
               >

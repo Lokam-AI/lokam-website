@@ -376,6 +376,125 @@ export const blogPosts: BlogPost[] = [
     conclusion:
       "Your contact rate problem may not be a BDC performance problem or a timing problem. It may simply be that half your customers are declining your calls because they don't know who's calling. Branded caller ID is a 14-day fix for a problem that's been quietly costing you survey responses, customer retention, and OEM bonus dollars every month. It's worth doing first,because until your calls are actually getting answered, none of your other follow-up improvements matter.",
   },
+
+  {
+    slug: "what-is-a-good-csi-score-for-a-dealership",
+    category: "SERVICES & CSI",
+    title: "What Is a Good CSI Score for a Dealership?",
+    excerpt:
+      "CSI scores vary by OEM, but the benchmarks that actually protect your bonus payments and Google rating are consistent across brands. Here's what good looks like.",
+    date: "Apr 2026",
+    readTime: "3 min read",
+    intro:
+      "If you've ever asked 'what is a good CSI score?' and gotten a vague answer, it's because the honest answer depends on your OEM and what you're optimizing for. But the underlying benchmarks - the numbers that separate dealers losing bonus money from those earning it - are more consistent than most people realize.",
+    keyTakeaways: [
+      "Most OEMs define 'top performer' as the 75th–90th percentile, not a fixed number",
+      "Toyota and Honda typically require 90%+ survey response rates for full bonus eligibility",
+      "A 1-point CSI drop can cost $15,000–$40,000 in annual OEM bonus payments",
+      "Google rating above 4.7 strongly correlates with CSI scores above the 80th percentile",
+    ],
+    sections: [
+      {
+        heading: "What Does a CSI Score Actually Measure?",
+        paragraphs: [
+          "CSI stands for Customer Satisfaction Index. OEMs use it to measure how satisfied customers are with their sales or service experience at a specific dealership. Scores are typically compiled from post-visit surveys - sent by the OEM, not the dealership - and they directly affect dealer bonus payments, incentive eligibility, and in some cases, vehicle allocation.",
+          "The scoring scale varies by manufacturer. Ford uses a 0–10 scale. GM uses a percentage satisfaction format. Toyota and Lexus use a 'completely satisfied' measure as a binary outcome. Honda and Acura track 'top box' scores - the percentage of customers who give the highest possible rating. Comparing raw scores across brands without knowing the methodology will give you the wrong picture.",
+        ],
+      },
+      {
+        heading: "What Is a Good CSI Score by OEM?",
+        paragraphs: [
+          "Rather than fixed numbers, OEMs benchmark dealers against their regional or national average. Here's what 'good' looks like across the major brands: For Toyota and Lexus, a 'completely satisfied' rate above 92% typically places you in the top performance tier. For Ford, a score of 8.5/10 or above on service satisfaction is generally competitive. For GM, a 'satisfied or completely satisfied' rate of 90%+ is the target for bonus eligibility. For Honda and Acura, top-box scores above 85% are competitive in most regions.",
+          "The key insight: OEMs don't reward you for being average. Bonus structures are typically tiered - the top 25% of dealers get the full incentive, and scores below the regional median can trigger performance improvement requirements. 'Good' means above the 75th percentile in your region, whatever number that corresponds to in a given quarter.",
+        ],
+        pullQuote: "OEMs don't reward you for being average - bonus structures are tiered by regional percentile.",
+      },
+      {
+        heading: "What Is the Relationship Between CSI Score and Google Rating?",
+        paragraphs: [
+          "Your OEM CSI score and your Google rating measure related but different things. OEM CSI surveys reach customers who completed a transaction - a service visit or vehicle purchase. Google reviews capture anyone who had an experience, positive or negative, including customers who felt strongly enough about a bad experience to post publicly without being asked.",
+          "In practice, dealerships with CSI scores in the top quartile tend to have Google ratings above 4.6. Dealerships with CSI scores in the bottom quartile tend to cluster around 4.0–4.3. The correlation exists because the underlying driver is the same: whether customers leave feeling resolved or unresolved. Dealers who catch and address dissatisfied customers before the survey - through proactive follow-up - see improvement in both metrics simultaneously.",
+        ],
+      },
+      {
+        heading: "What Is the Financial Impact of a CSI Score Drop?",
+        paragraphs: [
+          "The most concrete number: a 1-point drop in your OEM CSI ranking - moving from the 75th percentile to the 50th, for example - can cost $15,000–$40,000 in annual OEM bonus payments, depending on your brand and volume. For high-volume dealers running 1,000+ repair orders per month, the impact can be higher.",
+          "There's also a compounding effect. A lower CSI score reduces eligibility for floor plan incentives, vehicle allocation priority, and co-op advertising support at some OEMs. It also makes recruitment harder - high-performing employees prefer stores with good ratings, and your Google score is often the first thing a candidate checks.",
+        ],
+      },
+      {
+        heading: "How Do You Improve CSI Score Consistently?",
+        paragraphs: [
+          "The single most reliable lever for CSI improvement is contact rate - the percentage of service customers you actually reach for feedback before the OEM survey arrives. A customer who felt their wait was too long, their invoice was confusing, or their advisor was dismissive will file a negative survey if nobody calls. The same customer, reached within 24 hours by someone who acknowledges their concern and offers resolution, frequently gives a higher rating or withdraws the negative response entirely.",
+          "Manual BDC follow-up rarely achieves above 30% contact rate at any sustainable volume. Dealers using automated post-service follow-up - calling every repair order customer within 24 hours - consistently achieve 65–75% contact rates, and see CSI score improvements of 15–20 points within 90 days. World Hyundai Matteson went from a 4.0 to a 4.8 Google rating in 8 weeks using this approach.",
+        ],
+      },
+    ],
+    conclusion:
+      "A good CSI score is one that keeps you in the top quartile of your OEM's regional ranking - which typically means a 'completely satisfied' or 'top box' rate of 88–93% depending on your brand. The number matters less than the percentile. And the most direct path to improving that percentile is ensuring every service customer hears from you before the OEM survey does.",
+  },
+
+  {
+    slug: "automotive-bdc-contact-rate-benchmarks",
+    category: "SALES & BDC",
+    title: "Automotive BDC Contact Rate Benchmarks: What Good Looks Like",
+    excerpt:
+      "Most dealership BDCs reach 15–20% of unsold leads. Top performers using AI follow-up hit 70%. Here's what the benchmarks actually look like - and what drives the gap.",
+    date: "May 2026",
+    readTime: "4 min read",
+    intro:
+      "Contact rate is the most important metric in automotive BDC performance - and the most misunderstood. Most BDC managers track it, but few benchmark it against anything meaningful. Here's what the data actually shows about what separates a high-performing BDC from an average one.",
+    keyTakeaways: [
+      "The average dealership BDC manually contacts 15–20% of unsold showroom customers",
+      "Top-performing BDCs using AI outreach average 65–75% contact rate",
+      "78% of car buyers choose the first dealership to follow up (NADA, 2025)",
+      "41% of automotive leads are mishandled due to missed calls or lapsed follow-up (Foureyes, 2025)",
+    ],
+    sections: [
+      {
+        heading: "What Is BDC Contact Rate and Why Does It Matter?",
+        paragraphs: [
+          "BDC contact rate is the percentage of leads or unsold customers your business development center successfully reaches via phone, text, or email. A 'contact' typically means a live conversation - voicemail left does not count as a contact in most industry definitions.",
+          "Contact rate matters because the rest of your follow-up process only works on customers you actually reach. A conversion rate, appointment rate, and close rate are all calculated on contacted customers. A dealership with a 15% contact rate is effectively making all its other metrics look better than they are - because 85% of its potential opportunities never enter the funnel.",
+        ],
+      },
+      {
+        heading: "What Is the Average BDC Contact Rate at a Dealership?",
+        paragraphs: [
+          "Industry data from multiple benchmark studies shows the average dealership BDC manually contacts 15–20% of unsold showroom customers. Some BDC managers report higher - 25–35% - but these figures typically include voicemail as a 'contact' or count multiple attempts to the same customer as separate contacts. Live conversation rates are consistently in the 15–20% range for manual outreach.",
+          "Foureyes' 2025 automotive benchmark study found that 41.2% of qualified automotive sales leads were mishandled - including missed calls, unlogged leads, and lapsed follow-up. 14.1% of leads never made it into dealer CRMs at all. These are not edge cases; they are the median experience across the industry.",
+        ],
+        pullQuote: "41% of automotive leads are mishandled - missed calls, unlogged leads, or no follow-up after day one.",
+      },
+      {
+        heading: "What Does a High BDC Contact Rate Look Like?",
+        paragraphs: [
+          "Dealerships using AI-powered outbound calling consistently achieve 65–75% contact rate on the same desklog populations that manual BDCs reach at 15–20%. The gap is driven by three factors: timing, volume, and caller ID.",
+          "Timing: AI systems can call within 12–24 hours of a showroom visit, before the lead goes cold. Manual BDCs often have a backlog that pushes first contact to day 3 or later, by which point many customers have already decided elsewhere.",
+          "Volume: A BDC team of 3–5 people cannot make 500 quality calls per month while also handling inbound traffic, responding to texts, and managing appointment schedules. AI outreach has no volume ceiling.",
+          "Caller ID: Unknown numbers are answered less than 20% of the time nationally (Hiya, 2025). AI systems using branded caller ID - displaying the dealership's name - see answer rates 2–3x higher than unregistered numbers.",
+        ],
+      },
+      {
+        heading: "How Should You Measure BDC Contact Rate at Your Store?",
+        paragraphs: [
+          "The right way to calculate contact rate: take the total number of unsold desklogs in a given month, divide by the number you reached via live conversation (not voicemail, not email open, not text send). That's your contact rate.",
+          "Most CRMs let you pull this report directly. If yours doesn't separate live contacts from voicemails, you'll need to manually audit a sample. The number that comes back will often surprise BDC managers who thought they were performing at 40–50% - it's almost always lower when counted correctly.",
+        ],
+      },
+      {
+        heading: "What Is a Realistic Target for BDC Contact Rate?",
+        paragraphs: [
+          "For a manual BDC team with 3–5 agents handling 400–600 desklogs per month, a realistic best-case contact rate is 35–40% with disciplined process: immediate outreach within 2 hours of a visit, branded caller ID, and 5+ follow-up attempts per lead. Most stores are not hitting this consistently.",
+          "With AI-assisted outreach handling the volume work, 65–75% is achievable and sustainable. The AI handles the initial contact attempt for every lead; your BDC team takes over the moment a live buyer is identified. This is the model that's moving the needle at dealerships where contact rate has historically been the bottleneck.",
+          "The math on what that improvement means: a dealership with 500 desklogs per month moving from 20% to 70% contact rate is having 250 additional customer conversations per month. At an industry average close rate of 15–20% on re-engaged leads, that's 37–50 additional sales conversations per month that simply weren't happening before.",
+        ],
+      },
+    ],
+    conclusion:
+      "The benchmark: 15–20% contact rate is where most dealership BDCs operate. 65–75% is where the top performers are. The gap is not a people problem - your BDC team isn't less skilled than the top performers. It's a volume and timing problem that manual processes can't solve at scale. AI-assisted outreach is what's closing it.",
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
