@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     url: "https://www.lokam.ai/case-studies",
     type: "website",
     siteName: "Lokam",
+    images: [
+      {
+        url: "https://www.lokam.ai/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Dealer Case Studies | Lokam Voice AI Results",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -27,9 +35,9 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { value: "826",      label: "Detractors Caught" },
-  { value: "1,134",   label: "Unsold Showroom Traffic Recovered" },
-  { value: "$425K",   label: "Total Revenue Recovered" },
+  { value: "850+",    label: "Detractors Caught" },
+  { value: "1,200+",  label: "Unsold Showroom Traffic Recovered" },
+  { value: "$2.5M",   label: "Total Revenue Recovered" },
 ];
 
 const featuredStudy = {
@@ -114,7 +122,7 @@ export default function CaseStudiesPage() {
             {heroStats.map((s) => (
               <div key={s.label} className="text-center">
                 <p
-                  className="font-display font-bold leading-none"
+                  className="font-display font-extrabold leading-none"
                   style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "#00968B" }}
                 >
                   {s.value}

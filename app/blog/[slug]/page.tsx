@@ -37,20 +37,11 @@ export async function generateMetadata({
       url,
       type: "article",
       siteName: "Lokam",
-      images: [
-        {
-          url: `${SITE_URL}/assets/car.jpg`,
-          width: 2560,
-          height: 1911,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | Lokam`,
       description: post.excerpt,
-      images: [`${SITE_URL}/assets/car.jpg`],
     },
   };
 }

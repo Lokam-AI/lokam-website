@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
   description:
-    "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
+    "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
+      "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
     url: SITE_URL,
     siteName: "Lokam",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
+      "Lokam automates post-service follow-up and unsold lead re-engagement for automotive dealerships — improving CSI scores, Google reviews, and revenue.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };

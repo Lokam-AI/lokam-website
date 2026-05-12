@@ -128,7 +128,7 @@ function StudyCard({ study }: { study: Study }) {
         <div>
           <p
             className="font-display leading-none"
-            style={{ fontSize: "clamp(28px, 4vw, 38px)", color: "#007970", fontWeight: 950 }}
+            style={{ fontSize: "clamp(28px, 4vw, 38px)", color: "#007970", fontWeight: 700 }}
           >
             {study.metric}
           </p>

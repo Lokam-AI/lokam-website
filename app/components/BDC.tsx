@@ -23,7 +23,7 @@ const features = [
       </svg>
     ),
     title: "Branded Outbound Calling",
-    desc: "Every call appears from your dealership's number with your name - customers pick up because they recognize you, not an unknown caller ID.",
+    desc: "Every call appears from your dealership's number with your name, customers pick up because they recognize you, not an unknown caller ID.",
   },
   {
     icon: (
@@ -33,7 +33,7 @@ const features = [
       </svg>
     ),
     title: "Retries Scheduled for Peak Pick-Up Windows",
-    desc: "Lokam learns your customers' answer patterns and automatically retries during peak pick-up windows - maximizing contact without burning goodwill.",
+    desc: "Lokam learns your customers' answer patterns and automatically retries during peak pick-up windows, maximizing contact without burning goodwill.",
   },
   {
     icon: (

@@ -132,6 +132,9 @@ export default function Footer() {
             © 2026 Lokam AI, INC All rights reserved.
           </p>
           <div className="flex items-center gap-5">
+            <Link href="/roi-calculator" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
+              ROI Calculator
+            </Link>
             <Link href="/privacy-policy" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">
               Privacy Policy
             </Link>

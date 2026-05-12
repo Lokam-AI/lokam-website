@@ -7,7 +7,7 @@ import CalendlyButton from "../components/CalendlyButton";
 export const metadata: Metadata = {
   title: "DMS & CRM Integrations for Voice AI Follow-Up | Lokam",
   description:
-    "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, TEKION, Authenticom, and DealerVault. Go live in under 4 hours with your existing DMS.",
+    "Lokam connects to CDK Global, Dealertrack, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. Go live in under 4 hours with your existing DMS.",
   alternates: { canonical: "https://www.lokam.ai/integrations" },
   openGraph: {
     title: "DMS & CRM Integrations | Lokam Voice AI",
@@ -40,6 +40,38 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lokam.ai" },
     { "@type": "ListItem", position: 2, name: "Integrations", item: "https://www.lokam.ai/integrations" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How long does integration take?",
+      acceptedAnswer: { "@type": "Answer", text: "Most dealerships are live in under 4 hours. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations." },
+    },
+    {
+      "@type": "Question",
+      name: "What data does Lokam access from my DMS?",
+      acceptedAnswer: { "@type": "Answer", text: "Lokam reads customer contact information, repair order status, and appointment records. We do not access financial records, deal financials, or any data outside what's needed for follow-up outreach." },
+    },
+    {
+      "@type": "Question",
+      name: "Does Lokam write data back to my DMS?",
+      acceptedAnswer: { "@type": "Answer", text: "Currently Lokam is read-only from your DMS. Call outcomes, transcripts, and escalations are available in your Lokam dashboard. DMS write-back is on the roadmap." },
+    },
+    {
+      "@type": "Question",
+      name: "How is customer data protected during transfer?",
+      acceptedAnswer: { "@type": "Answer", text: "Data exchange through Authenticom and DealerVault uses encrypted, permissioned connections with full audit trails. Lokam does not store raw DMS data beyond what's needed to place and log each call." },
+    },
+    {
+      "@type": "Question",
+      name: "My DMS isn't on this list. Can I still use Lokam?",
+      acceptedAnswer: { "@type": "Answer", text: "Contact us. We add new integrations regularly, and Authenticom covers a broad range of DMS platforms. In many cases we can get you live even without a native integration." },
+    },
   ],
 };
 
@@ -145,6 +177,10 @@ export default function IntegrationsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Nav />
       <main style={{ background: "linear-gradient(to bottom, rgba(25,171,141,0.06) 0%, #ffffff 320px)" }}>

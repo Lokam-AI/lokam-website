@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "why-your-bdc-is-losing-customers-before-the-workday-even-starts",
     category: "SERVICES & CSI",
-    title: "Why Your BDC Is Losing Customers Before the Workday Even Starts",
+    title: "Why Your BDC Loses Customers Before 9 AM",
     excerpt:
       "Late response times are silently costing dealerships leads, deals, and reputation,and most stores don't know it's happening.",
     date: "Jan 2026",
@@ -141,7 +141,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-unsold-customers-actually-want-to-hear-and-when",
     category: "SALES & BDC",
-    title: "What Unsold Customers Actually Want to Hear (And When)",
+    title: "What Unsold Customers Want to Hear (And When)",
     excerpt:
       "Most dealerships follow up too late, too generically, or not at all. Here's what actually moves the needle on unsold desklog re-engagement.",
     date: "Feb 2026",
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "nada-2026-the-5-biggest-themes-for-fixed-ops-and-bdc-leaders",
     category: "RECENT NEWS",
-    title: "NADA 2026: The 5 Biggest Themes for Fixed Ops and BDC Leaders",
+    title: "NADA 2026: 5 Key Themes for Fixed Ops and BDC Leaders",
     excerpt:
       "From AI-driven follow-up to electrification headwinds, here's what dealership operators were talking about on the show floor.",
     date: "Feb 2026",
@@ -260,7 +260,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "multilingual-customers-monolingual-dealerships-the-nada-gap",
     category: "SERVICES & CSI",
-    title: "Multilingual Customers, Monolingual Dealerships: The NADA Gap",
+    title: "Multilingual Customers vs. Monolingual Dealerships",
     excerpt:
       "A surprising number of dealerships are losing service retention among Spanish-speaking customers simply because no one calls them back in their language.",
     date: "Feb 2026",
@@ -320,7 +320,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "branded-caller-id-the-single-biggest-lever-for-contact-rate",
     category: "AI AUTOMATIONS",
-    title: "Branded Caller ID: The Single Biggest Lever for Contact Rate",
+    title: "Branded Caller ID: The Top Lever for Contact Rate",
     excerpt:
       "Contact rates double when customers see the dealership name on their phone. Here's the simple change that separates top performers from the rest.",
     date: "Mar 2026",
