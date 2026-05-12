@@ -495,6 +495,180 @@ export const blogPosts: BlogPost[] = [
     conclusion:
       "The benchmark: 15–20% contact rate is where most dealership BDCs operate. 65–75% is where the top performers are. The gap is not a people problem - your BDC team isn't less skilled than the top performers. It's a volume and timing problem that manual processes can't solve at scale. AI-assisted outreach is what's closing it.",
   },
+
+  {
+    slug: "how-to-improve-csi-scores-dealership",
+    category: "SERVICES & CSI",
+    title: "How to Improve CSI Scores at a Dealership: What Actually Works",
+    excerpt:
+      "Most CSI improvement programs focus on training. The dealers who actually move the needle focus on contact rate first - reaching every service customer before the OEM survey does.",
+    date: "May 2026",
+    readTime: "5 min read",
+    intro:
+      "Every dealership wants better CSI scores. Most approach it the same way: service advisor training, mystery shops, exit surveys. These aren't wrong - but they're not what separates the top-quartile stores from the rest. The dealers who sustainably improve CSI scores share one thing: they reach every service customer within 24 hours before the OEM survey arrives.",
+    keyTakeaways: [
+      "The #1 driver of CSI improvement is contact rate - reaching customers before the OEM survey",
+      "Dealers who catch detractors before the survey can reduce negative responses by 30–50%",
+      "Manual BDC follow-up averages 15–20% contact rate; AI outreach averages 65–75%",
+      "World Hyundai Matteson improved from 4.0 to 4.8 Google rating in 8 weeks with proactive follow-up",
+    ],
+    sections: [
+      {
+        heading: "Why Do CSI Scores Drop in the First Place?",
+        paragraphs: [
+          "CSI scores drop when dissatisfied customers reach the OEM survey uncontacted. A customer who felt their wait was too long, their invoice was confusing, or their service advisor was dismissive will fill out the OEM survey honestly - and those honest responses move your score down. The OEM doesn't know whether the issue was addressed after the visit. They only see what the customer reported.",
+          "The mechanics: OEM surveys typically go out 3–7 days after a service visit. A dealership that contacts every service customer within 24 hours has a 2–6 day window to identify and resolve dissatisfied customers before the survey lands. Dealerships that don't have a systematic follow-up process are essentially letting detractors go straight to the OEM with no opportunity for intervention.",
+        ],
+      },
+      {
+        heading: "What Is the Highest-Impact Way to Improve CSI?",
+        paragraphs: [
+          "The research and dealer data consistently point to the same answer: proactive outbound follow-up within 24 hours of every service visit. Not a text survey. Not an email. A phone call, where a real or AI-assisted voice asks how the visit went and listens for dissatisfaction signals.",
+          "Why phone specifically? Service customers who had a frustrating experience often don't respond to texts or emails. They delete them. The same customer will frequently take a call, especially from a recognizable caller ID, and will tell you what went wrong if you ask. That conversation is your window to resolve the issue before the OEM survey arrives.",
+        ],
+        pullQuote: "A dissatisfied customer who talks to you before the OEM survey is far less likely to file a negative response.",
+      },
+      {
+        heading: "How Many Service Customers Is Your BDC Actually Reaching?",
+        paragraphs: [
+          "Most dealers assume their BDC is handling follow-up. The question is how many customers they're actually reaching via live conversation - not voicemail, not texts with no reply. Industry benchmarks show manual BDC follow-up averages 15–20% live contact rate on repair order volume. That means 80–85% of your service customers are going to the OEM survey with no touchpoint from you.",
+          "The math: a dealership running 800 repair orders per month at 15% contact rate is having 120 follow-up conversations. At 70% contact rate (achieved by dealers using AI outreach), that's 560 conversations - 440 more customers where you had a chance to catch a problem before it became a negative survey response.",
+        ],
+      },
+      {
+        heading: "Does Service Advisor Training Actually Move CSI Scores?",
+        paragraphs: [
+          "Training matters, but its impact on CSI scores is indirect and slow. A service advisor who improves their communication skills will gradually generate fewer dissatisfied customers - but that improvement compounds over months or years, not weeks. Training also doesn't help you recover the customers who already had a frustrating experience this week.",
+          "The dealers who see fast CSI improvement (15–20 points in 60–90 days) are almost never the ones who just ran a training program. They're the ones who plugged the follow-up gap - who started reaching the customers who would have otherwise gone straight to the OEM survey with unresolved complaints.",
+        ],
+      },
+      {
+        heading: "How Do You Sustain CSI Improvement Over Time?",
+        paragraphs: [
+          "Sustainable CSI improvement requires a system, not a campaign. A training initiative or a focused month of manual follow-up will temporarily lift scores; when the initiative ends, scores drift back. What sustains it is a process that runs automatically regardless of staffing, volume, or management attention.",
+          "Automated post-service follow-up - where every repair order triggers an outbound call within 24 hours - removes the human bottleneck from the equation. The calls happen at the same rate whether it's a Tuesday in January or the week before Thanksgiving. Volume spikes don't create gaps. Staff turnover doesn't create gaps. The contact rate stays consistent, and the CSI score reflects that consistency.",
+        ],
+      },
+    ],
+    conclusion:
+      "Improving CSI scores comes down to one question: what percentage of your service customers are you reaching before the OEM survey does? If the answer is below 50%, the fastest path to score improvement is not training - it's building a system that closes that gap. The stores that have moved CSI scores 15–20 points in 90 days did it by reaching 65–75% of their repair order volume with a follow-up call. That's the benchmark to chase.",
+  },
+
+  {
+    slug: "unsold-showroom-follow-up-guide",
+    category: "SALES & BDC",
+    title: "The Unsold Showroom Follow-Up Guide: Timing, Scripts, and Contact Rate",
+    excerpt:
+      "Most dealerships follow up with 20–30% of unsold showroom visitors. The ones recovering the most revenue are reaching 70%+ within 24 hours. Here's how the math works - and what it takes to get there.",
+    date: "May 2026",
+    readTime: "5 min read",
+    intro:
+      "Every unsold showroom visitor represents a customer who came in, looked, and left without buying. That's not a rejection - it's an open conversation. The dealers who recover the most from that population are not necessarily better at selling; they're better at following up. Specifically, they follow up faster, with more customers, before the buyer signs somewhere else.",
+    keyTakeaways: [
+      "78% of buyers choose the first dealership to follow up after a showroom visit (NADA, 2025)",
+      "The average dealership follows up with 20–30% of unsold showroom visitors",
+      "Buyers who don't hear back within 24 hours are 60% less likely to return to that store",
+      "AI outreach systems reach 65–75% of desklog volume vs. 20–30% for manual BDC teams",
+    ],
+    sections: [
+      {
+        heading: "Why Do Most Dealerships Fail at Unsold Follow-Up?",
+        paragraphs: [
+          "The problem isn't motivation - most BDC teams understand that unsold showroom visitors are warm leads. The problem is volume. A mid-size dealership logging 300–500 showroom visits per month cannot systematically contact all of them with a 3–5 person BDC team that also handles inbound calls, service follow-up, and internet leads.",
+          "What happens in practice: the freshest leads get worked first. Visits from the past 2 days get calls. Visits from last week slide. Visits from two weeks ago get marked as cold and dropped. The result is that the majority of desklog volume is never followed up with at all - not because the BDC doesn't want to, but because there aren't enough hours.",
+        ],
+      },
+      {
+        heading: "What Is the Right Timing for Unsold Showroom Follow-Up?",
+        paragraphs: [
+          "The window is narrow. Research from NADA and multiple dealer groups consistently shows the same pattern: buyers who don't hear from a dealership within 24 hours of a showroom visit are significantly less likely to return to that store. By 48 hours, many have already researched alternatives. By 72 hours, a meaningful percentage have signed with a competitor.",
+          "The 24-hour rule isn't a benchmark - it's a hard deadline. A call placed 36 hours after a showroom visit is not meaningfully better than no call. The customer has moved on mentally. The follow-up that works is the one that catches them while they're still in the decision window.",
+        ],
+        pullQuote: "78% of buyers choose the first dealership to follow up. Not the one they liked best - the first one to call.",
+      },
+      {
+        heading: "What Should an Unsold Showroom Follow-Up Call Actually Say?",
+        paragraphs: [
+          "The most common mistake in unsold follow-up scripts is being too aggressive about selling. A customer who visited yesterday and didn't buy is not a customer who needs to be convinced again immediately - they need to be acknowledged and given an easy path back.",
+          "Effective follow-up calls open with context (referencing the specific visit and vehicle), ask an open question about where the customer is in their decision ('Are you still considering the Camry, or did something change?'), and listen before pitching. The goal of the first call is to identify where the buyer is in the process, not to close on the phone. A buyer who says 'I'm still thinking about it' is a buyer who can be booked for a second visit.",
+        ],
+      },
+      {
+        heading: "How Many Times Should You Follow Up With an Unsold Customer?",
+        paragraphs: [
+          "Industry data supports 5–7 follow-up attempts across 30 days for unsold showroom visitors - distributed across phone, text, and email. The key is that the first contact should always be phone, within 24 hours. Subsequent attempts can shift to text and email for customers who don't answer.",
+          "The cadence that works: call on day 1, call again on day 3 if no answer, text on day 5, call on day 7, text on day 14, email on day 21. After 30 days without contact, move to monthly nurture. This is aggressive by most BDC standards - which is exactly why most stores aren't doing it at full desklog volume.",
+        ],
+      },
+      {
+        heading: "How Do You Scale Unsold Follow-Up Without Burning Out Your BDC?",
+        paragraphs: [
+          "The structural solution is to separate the volume problem from the conversion problem. AI-assisted outreach handles the first call - reaching every desklog entry within 24 hours, identifying which customers are still in the market, and routing the live buyers to your BDC team. Your team focuses on the customers who are ready to engage, not on cold-calling a list that's 70% non-responsive.",
+          "The economics are significant: a dealership with 400 unsold desklogs per month, moving from 25% to 70% contact rate, is having 180 additional conversations per month. At a 15% re-engagement rate, that's 27 additional appointments. At a 30% close rate on those appointments, that's 8 additional units per month from the same desklog volume they already had.",
+        ],
+      },
+    ],
+    conclusion:
+      "Unsold showroom follow-up is a volume and timing problem, not a skills problem. The dealers winning this are not better at selling - they're better at reaching customers within the 24-hour window before the competition does. If your BDC is reaching 20–30% of your desklog, you have a structural gap that training and process alone won't close at scale. The stores that are recovering 65–75% of their desklog volume are doing it with AI-assisted outreach that removes the volume ceiling from the equation.",
+  },
+
+  {
+    slug: "ai-bdc-vs-human-bdc",
+    category: "AI AUTOMATIONS",
+    title: "AI BDC vs Human BDC: What Each Does Better and When to Use Both",
+    excerpt:
+      "AI BDC handles volume. Human BDC handles complexity. The dealerships winning aren't choosing one - they're running both in the right combination.",
+    date: "May 2026",
+    readTime: "4 min read",
+    intro:
+      "The question dealers keep asking is whether AI can replace their BDC team. That's the wrong question. The right question is: what's making your BDC team ineffective right now, and is the problem better solved by AI or by better humans? The answer, for most dealerships, is both - in the right roles.",
+    keyTakeaways: [
+      "AI BDC achieves 65–75% contact rate vs. 15–20% for manual outreach on the same desklog volume",
+      "AI handles volume; human BDC handles objections, negotiation, and complex scheduling",
+      "Dealers using AI for first contact report BDC team performance improving - not declining",
+      "The cost of a full AI BDC deployment is typically 60–70% lower than equivalent human BDC headcount",
+    ],
+    sections: [
+      {
+        heading: "What Is an AI BDC?",
+        paragraphs: [
+          "An AI BDC (business development center) uses AI voice technology to make outbound calls to dealership leads - unsold showroom visitors, service customers, and internet leads - and handles the initial conversation automatically. The AI can identify whether a customer is still in the market, capture their current interest level, answer basic questions, and route warm buyers to a human BDC agent or sales team.",
+          "Unlike a chatbot or email automation, an AI BDC makes real phone calls. It speaks, listens, detects sentiment, and responds dynamically. From the customer's perspective, the experience is a phone call from the dealership. The difference is that the AI can make 500 calls in the same window that a human BDC rep can make 40.",
+        ],
+      },
+      {
+        heading: "What Does AI BDC Do Better Than Human BDC?",
+        paragraphs: [
+          "Volume and consistency. An AI system calls every lead, every time, at the right interval. It doesn't skip the 200th desklog on a Friday afternoon. It doesn't have a bad call streak that affects its tone. It doesn't take vacation. For the raw work of outbound coverage - ensuring every customer in your CRM gets a first-contact attempt within 24 hours - AI is categorically better than humans at any cost-equivalent staffing level.",
+          "Contact rate reflects this directly. Dealers using AI outreach on desklog volume consistently see 65–75% contact rate. Manual BDC teams average 15–20% on the same populations. The gap is not about skill - it's about physics. There are only so many calls a human team can make before running out of hours.",
+        ],
+        pullQuote: "AI BDC doesn't run out of hours. That's not a small advantage - it's the entire gap between 20% and 70% contact rate.",
+      },
+      {
+        heading: "What Does Human BDC Do Better Than AI?",
+        paragraphs: [
+          "Complexity and relationship. A customer who brings up a specific financing objection, who wants to negotiate over the phone, or who is emotionally upset about a past service experience needs a human. AI can identify that the customer has a complex need and route the call - but the resolution itself requires a trained human who can adapt in real time beyond scripted paths.",
+          "Human BDC agents also build rapport in ways that AI currently doesn't replicate well over extended conversations. For a customer on their 4th follow-up call, a consistent human voice who remembers their previous conversations is more effective at eventually converting than an AI that treats each call as a fresh interaction.",
+        ],
+      },
+      {
+        heading: "What Happens to Your BDC Team When You Add AI?",
+        paragraphs: [
+          "The experience at dealers who have deployed AI alongside their existing BDC teams is counterintuitive: BDC performance tends to improve. Here's why - when AI handles the volume work, human BDC agents spend their time on pre-qualified, already-interested customers. Their conversion rate goes up because their call quality improves when they're not grinding through cold lists.",
+          "Churn also drops. BDC is a high-turnover role in part because the work is repetitive and demoralizing - calling the same cold leads over and over with low answer rates. When AI handles the bulk of that volume and routes live buyers to the human team, the job becomes more engaging and the close rates become more motivating.",
+        ],
+      },
+      {
+        heading: "How Should a Dealership Structure AI BDC and Human BDC Together?",
+        paragraphs: [
+          "The model that works: AI owns first contact on all desklog volume - every unsold lead, every service customer, every internet lead gets an AI-placed call within 24 hours. The AI's job is to identify which customers are actively in the market. Those customers get routed immediately to the human BDC team.",
+          "Human BDC owns all follow-up beyond the first contact with warm buyers. They handle scheduling, negotiation, objection handling, and the multi-touch nurture process for customers who are interested but not ready to commit. They also own inbound calls, where the interaction style requires more flexibility than outbound AI systems provide.",
+        ],
+      },
+    ],
+    conclusion:
+      "AI BDC and human BDC are not competitors - they're different tools for different parts of the same problem. AI solves the volume and timing problem: getting to every lead within 24 hours, regardless of how many there are. Humans solve the complexity and relationship problem: converting the buyers who need more than a first call. The dealerships getting the most from both are not replacing their BDC teams with AI - they're using AI to make the first call so their teams can focus on the calls that actually close.",
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

@@ -1,87 +1,17 @@
 "use client";
 import { useState } from "react";
+import { blogPosts, CHIP_STYLES } from "../../lib/blog-posts";
 
-type Post = {
-  category: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  href: string;
-};
+const POSTS_PER_PAGE = 6;
 
-const posts: Post[] = [
-  {
-    category: "SERVICES & CSI",
-    title: "Why Your BDC Is Losing Customers Before the Workday Even Starts",
-    excerpt:
-      "Late response times are silently costing dealerships leads, deals, and reputation - and most dealerships don't know it's happening.",
-    date: "Jan 2026",
-    readTime: "4 min read",
-    href: "/blog/why-your-bdc-is-losing-customers-before-the-workday-even-starts",
-  },
-  {
-    category: "SERVICES & CSI",
-    title: "The Hidden Cost of a Single Missed CSI Call",
-    excerpt:
-      "A missed CSI call isn't just a missed survey - it's a negative review waiting to happen and a customer walking to your competitor.",
-    date: "Jan 2026",
-    readTime: "3 min read",
-    href: "/blog/the-hidden-cost-of-a-single-missed-csi-call",
-  },
-  {
-    category: "SALES & BDC",
-    title: "What Unsold Customers Actually Want to Hear (And When)",
-    excerpt:
-      "Most dealerships follow up too late, too generically, or not at all. Here's what actually moves the needle on unsold desklog re-engagement.",
-    date: "Feb 2026",
-    readTime: "5 min read",
-    href: "/blog/what-unsold-customers-actually-want-to-hear-and-when",
-  },
-  {
-    category: "RECENT NEWS",
-    title: "NADA 2026: The 5 Biggest Themes for Fixed Ops and BDC Leaders",
-    excerpt:
-      "From AI-driven follow-up to electrification headwinds, here's what dealership operators were talking about on the show floor.",
-    date: "Feb 2026",
-    readTime: "6 min read",
-    href: "/blog/nada-2026-the-5-biggest-themes-for-fixed-ops-and-bdc-leaders",
-  },
-  {
-    category: "SERVICES & CSI",
-    title: "Multilingual Customers, Monolingual Dealerships: The NADA Gap",
-    excerpt:
-      "A surprising number of dealerships are losing service retention among Spanish-speaking customers simply because no one calls them back in their language.",
-    date: "Feb 2026",
-    readTime: "4 min read",
-    href: "/blog/multilingual-customers-monolingual-dealerships-the-nada-gap",
-  },
-  {
-    category: "AI AUTOMATIONS",
-    title: "Branded Caller ID: The Single Biggest Lever for Contact Rate",
-    excerpt:
-      "Contact rates double when customers see the dealership name on their phone. Here's the simple change that separates top performers from the rest.",
-    date: "Mar 2026",
-    readTime: "3 min read",
-    href: "/blog/branded-caller-id-the-single-biggest-lever-for-contact-rate",
-  },
-];
+const CATEGORIES = ["All", "Service & CSI", "Sales & BDC", "AI Automations", "Industry Reads"];
 
-const CATEGORIES = ["All", "Service & CSI", "Sales & BDC", "AI Automations", "Industry Reads", "Case Studies"];
-
-const CHIP_STYLES: Record<string, { bg: string; color: string }> = {
-  "SERVICES & CSI":  { bg: "#D6F5EF", color: "#0C8074" },
-  "SALES & BDC":     { bg: "#D6EBF5", color: "#1B6A8A" },
-  "AI AUTOMATIONS":  { bg: "#E8E4FA", color: "#5A4FC0" },
-  "RECENT NEWS":     { bg: "#FFF0D4", color: "#9A6200" },
-};
-
-function matchesCategory(post: Post, category: string): boolean {
-  if (category === "All") return true;
-  if (category === "Service & CSI") return post.category === "SERVICES & CSI";
-  if (category === "Sales & BDC") return post.category === "SALES & BDC";
-  if (category === "AI Automations") return post.category === "AI AUTOMATIONS";
-  if (category === "Industry Reads") return post.category === "RECENT NEWS";
+function matchesCategory(category: string, filter: string): boolean {
+  if (filter === "All") return true;
+  if (filter === "Service & CSI") return category === "SERVICES & CSI";
+  if (filter === "Sales & BDC") return category === "SALES & BDC";
+  if (filter === "AI Automations") return category === "AI AUTOMATIONS";
+  if (filter === "Industry Reads") return category === "RECENT NEWS";
   return false;
 }
 
@@ -97,7 +27,7 @@ function CategoryChip({ label }: { label: string }) {
   );
 }
 
-function BlogCard({ post }: { post: Post }) {
+function BlogCard({ post }: { post: typeof blogPosts[number] }) {
   return (
     <article
       className="flex flex-col rounded-2xl bg-white p-6 gap-3 h-full"
@@ -118,7 +48,7 @@ function BlogCard({ post }: { post: Post }) {
           {post.date} · {post.readTime}
         </span>
         <a
-          href={post.href}
+          href={`/blog/${post.slug}`}
           className="font-sans text-sm font-medium text-[#0CB4A7] hover:underline"
         >
           Read →
@@ -134,6 +64,7 @@ export default function BlogFilter() {
   const [query, setQuery] = useState("");
   const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [trap, setTrap] = useState("");
+  const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,12 +84,25 @@ export default function BlogFilter() {
     }
   };
 
-  const filteredPosts = posts.filter((p) => {
+  const filteredPosts = blogPosts.filter((p) => {
     const q = query.trim().toLowerCase();
-    const matchesCat = matchesCategory(p, activeCategory);
+    const matchesCat = matchesCategory(p.category, activeCategory);
     const matchesQuery = !q || p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q);
     return matchesCat && matchesQuery;
   });
+
+  const visiblePosts = filteredPosts.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredPosts.length;
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setVisibleCount(POSTS_PER_PAGE);
+  };
+
+  const handleQueryChange = (q: string) => {
+    setQuery(q);
+    setVisibleCount(POSTS_PER_PAGE);
+  };
 
   return (
     <>
@@ -175,7 +119,7 @@ export default function BlogFilter() {
             type="text"
             placeholder="Search articles..."
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => handleQueryChange(e.target.value)}
             className="flex-1 bg-transparent text-sm font-sans text-[#0A2E2B] placeholder-[#8AADA8] outline-none"
           />
         </div>
@@ -187,7 +131,7 @@ export default function BlogFilter() {
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className="flex-shrink-0 px-4 py-2 rounded-full font-sans font-medium text-sm transition-colors"
               style={
                 activeCategory === cat
@@ -201,12 +145,26 @@ export default function BlogFilter() {
         </div>
 
         {/* Blog Grid */}
-        {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredPosts.map((post) => (
-              <BlogCard key={post.title} post={post} />
-            ))}
-          </div>
+        {visiblePosts.length > 0 ? (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {visiblePosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+
+            {hasMore && (
+              <div className="flex justify-center mt-10">
+                <button
+                  onClick={() => setVisibleCount((c) => c + POSTS_PER_PAGE)}
+                  className="px-8 py-3 rounded-xl font-sans font-medium text-sm transition-colors"
+                  style={{ background: "#F0FBF9", color: "#0C8074", border: "1px solid #C8E8E0" }}
+                >
+                  Load more articles
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="flex flex-col items-center justify-center py-20 gap-2">
             <p className="font-sans font-semibold text-[#0A2E2B]" style={{ fontSize: 16 }}>
@@ -247,7 +205,7 @@ export default function BlogFilter() {
               style={{ maxWidth: 420 }}
               onSubmit={handleSubscribe}
             >
-              {/* Honeypot — hidden from humans, bots fill it in */}
+              {/* Honeypot */}
               <input
                 type="text"
                 name="website"

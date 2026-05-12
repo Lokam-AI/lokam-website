@@ -6,6 +6,13 @@ import SmoothAnchor from "./SmoothAnchor";
 import { Menu, X, ChevronDown } from "lucide-react";
 import CalendlyButton from "./CalendlyButton";
 
+const solutionLinks = [
+  { label: "CSI Follow-Up Automation", href: "/csi-follow-up-automation" },
+  { label: "BDC Automation", href: "/dealership-bdc-software" },
+  { label: "Unsold Lead Recovery", href: "/unsold-lead-recovery-software" },
+  { label: "AI Voice Agent", href: "/ai-voice-agent-dealership" },
+];
+
 const caseStudyLinks = [
   { label: "World Hyundai – Service",  href: "/case-studies/world-hyundai" },
   { label: "World Hyundai – Sales",    href: "/case-studies/world-hyundai-sales" },
@@ -20,6 +27,11 @@ const blogLinks = [
   { label: "NADA 2026: 5 Themes for BDC Leaders",  href: "/blog/nada-2026-the-5-biggest-themes-for-fixed-ops-and-bdc-leaders" },
   { label: "Multilingual Customers: The NADA Gap", href: "/blog/multilingual-customers-monolingual-dealerships-the-nada-gap" },
   { label: "Branded Caller ID & Contact Rate",      href: "/blog/branded-caller-id-the-single-biggest-lever-for-contact-rate" },
+  { label: "What Is a Good CSI Score?",             href: "/blog/what-is-a-good-csi-score-for-a-dealership" },
+  { label: "BDC Contact Rate Benchmarks",           href: "/blog/automotive-bdc-contact-rate-benchmarks" },
+  { label: "How to Improve CSI Scores",             href: "/blog/how-to-improve-csi-scores-dealership" },
+  { label: "Unsold Showroom Follow-Up Guide",       href: "/blog/unsold-showroom-follow-up-guide" },
+  { label: "AI BDC vs Human BDC",                  href: "/blog/ai-bdc-vs-human-bdc" },
 ];
 
 function DropdownMenu({
