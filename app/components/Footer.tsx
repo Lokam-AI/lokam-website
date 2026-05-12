@@ -58,6 +58,18 @@ export default function Footer() {
                 </svg>
               </a>
               <a
+                href="https://x.com/lokam_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lokam on X (Twitter)"
+                className="flex items-center justify-center w-8 h-8 rounded-lg transition-opacity opacity-60 hover:opacity-100"
+                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+              <a
                 href="https://www.instagram.com/lokam_ai/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -74,9 +86,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Lokam Inc. */}
+          {/* Col 2 — Lokam AI, INC */}
           <div>
-            <h4 className="font-sans font-semibold text-white text-sm mb-3">Lokam Inc.</h4>
+            <h4 className="font-sans font-semibold text-white text-sm mb-3">Lokam AI, INC</h4>
             <div className="flex items-start gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
                 <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
@@ -117,7 +129,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-[#0a1628]/20 sm:border-white/45">
           <p className="font-sans text-xs text-[#0a1628] sm:text-white/70">
-            © 2026 Lokam Inc. All rights reserved.
+            © 2026 Lokam AI, INC All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             <Link href="/privacy-policy" className="font-sans text-xs text-[#0a1628] sm:text-white/70 hover:sm:text-white transition-colors">

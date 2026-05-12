@@ -187,7 +187,7 @@ export default function Nav() {
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/assets/image-47.png"
-              alt="Lokam — Voice AI for Automotive Dealerships"
+              alt="Lokam - Voice AI for Automotive Dealerships"
               width={108}
               height={34}
               className="object-contain block"

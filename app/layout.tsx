@@ -21,16 +21,16 @@ const SITE_URL = "https://www.lokam.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Lokam — Voice AI for Automotive Dealerships",
+  title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
   description:
-    "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
+    "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Lokam — Voice AI for Automotive Dealerships",
+    title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
+      "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
     url: SITE_URL,
     siteName: "Lokam",
     type: "website",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lokam — Voice AI for Automotive Dealerships",
+    title: "Lokam - Voice AI Follow Up for Automotive Dealerships",
     description:
-      "Lokam is Voice AI for automotive dealerships — automating CSI follow-up calls, recovering unsold leads, and improving Google ratings. Book a demo to see it live at your dealership.",
+      "Lokam is a Voice AI follow up platform for automotive dealerships that recovers unsold showroom traffic, automates CSI follow-up calls and improves Google ratings.",
     images: [`${SITE_URL}/opengraph-image`],
   },
 };
@@ -81,7 +81,7 @@ const websiteSchema = {
   name: "Lokam",
   url: SITE_URL,
   description:
-    "Voice AI platform for automotive dealerships — automates CSI follow-up, lead re-engagement, and service retention calls.",
+    "Voice AI platform for automotive dealerships - automates CSI follow-up, lead re-engagement, and service retention calls.",
 };
 
 const softwareSchema = {
@@ -92,7 +92,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "AI-powered voice platform that automatically calls automotive dealership customers after service visits and showroom appointments — recovering at-risk relationships, automating CSI surveys, and re-engaging unsold leads.",
+    "AI-powered voice platform that automatically calls automotive dealership customers after service visits and showroom appointments - recovering at-risk relationships, automating CSI surveys, and re-engaging unsold leads.",
   featureList: [
     "AI-automated post-service customer follow-up calls",
     "CSI score automation and survey completion",
@@ -103,7 +103,7 @@ const softwareSchema = {
   ],
   offers: {
     "@type": "Offer",
-    description: "Book a demo — plans tailored to your dealership and use case.",
+    description: "Book a demo - plans tailored to your dealership and use case.",
     url: "https://calendly.com/saleeq-lokam/30-minutes-meeting",
   },
   provider: {

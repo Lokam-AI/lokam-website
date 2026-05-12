@@ -292,7 +292,7 @@ export default async function BlogPostPage({
             </div>
             <div>
               <p className="font-sans font-semibold text-sm text-[#0A2E2B]">
-                Saleeq —{" "}
+                Saleeq -{" "}
                 <span className="font-normal" style={{ color: "#39B39B" }}>Co-founder &amp; CEO, Lokam</span>
               </p>
               <p className="font-sans text-xs leading-6 text-[#4A6B68] mt-1">

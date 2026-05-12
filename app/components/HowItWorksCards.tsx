@@ -48,16 +48,16 @@ function formatTime(seconds: number): string {
 interface BadgeConfig { bg: string; border: string; dot: string; text: string; color: string; }
 const badgeStyles: Record<string, BadgeConfig> = {
   Positive:  { bg: "#d6f5ec", border: "#b2ead8", dot: "#3db88a", text: "Positive", color: "#2a9d6e" },
-  "In Lead": { bg: "#d6ecf5", border: "#b2d8ea", dot: "#3d8ab8", text: "In Lead", color: "#2a6e9d" },
+  Detractor: { bg: "#fde8e8", border: "#f5b8b8", dot: "#d95f5f", text: "Detractor", color: "#b84444" },
+  "In Lead": { bg: "#fff3e0", border: "#ffcc80", dot: "#ef6c00", text: "Hot Lead", color: "#e65100" },
 };
 
-function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }: {
-  label: string; name: string; badge: string; totalSeconds: number;
+function CallCard({ label, name, badge, totalSeconds, displayTotal, src, onPlay, shouldPause }: {
+  label: string; name: string; badge: string; totalSeconds: number; displayTotal: string;
   src: string; onPlay: () => void; shouldPause: boolean;
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(totalSeconds);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -71,13 +71,13 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
     else { onPlay(); audio.play(); setIsPlaying(true); }
   };
 
-  const playedBarCount = Math.floor((currentTime / duration) * waveformBars.length);
+  const playedBarCount = Math.floor((currentTime / totalSeconds) * waveformBars.length);
 
   const handleWaveformClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const audio = audioRef.current;
     if (!audio) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    audio.currentTime = ((e.clientX - rect.left) / rect.width) * duration;
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * totalSeconds;
     setCurrentTime(audio.currentTime);
   };
 
@@ -88,7 +88,6 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
       <audio
         ref={audioRef} src={src}
         onTimeUpdate={() => setCurrentTime(audioRef.current?.currentTime ?? 0)}
-        onLoadedMetadata={() => setDuration(audioRef.current?.duration ?? totalSeconds)}
         onEnded={() => { setIsPlaying(false); setCurrentTime(0); }}
       />
       <div className="flex items-center justify-between mb-6">
@@ -142,7 +141,7 @@ function CallCard({ label, name, badge, totalSeconds, src, onPlay, shouldPause }
             <svg width="18" height="18" viewBox="0 0 24 24" style={{ marginLeft: 2 }}><path d="M8 5v14l11-7L8 5z" fill="white" /></svg>
           )}
         </button>
-        <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40, textAlign: "right" }}>{formatTime(duration)}</span>
+        <span className="font-sans" style={{ fontSize: 13, color: "#004839", fontWeight: 500, minWidth: 40, textAlign: "right" }}>{displayTotal}</span>
       </div>
     </div>
   );
@@ -186,14 +185,14 @@ export default function HowItWorksCards() {
           <StepList steps={csiSteps} />
         </div>
         <div>
-          <CallCard label="Sample Service Call" name="Jane Smith" badge="Positive" totalSeconds={84} src="/assets/service.flac" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
+          <CallCard label="Sample Service Call" name="Lily Smith" badge="Detractor" totalSeconds={100} displayTotal="01:40" src="/assets/service.flac" onPlay={() => setActivePlayer("csi")} shouldPause={activePlayer === "sales"} />
         </div>
       </div>
 
       {/* ── Showroom Workflow ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         <div className="order-2 lg:order-1">
-          <CallCard label="Sample Sales Call" name="John Doe" badge="In Lead" totalSeconds={228} src="/assets/sales.flac" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
+          <CallCard label="Sample Sales Call" name="Jake Turner" badge="In Lead" totalSeconds={118} displayTotal="01:58" src="/assets/sales.flac" onPlay={() => setActivePlayer("sales")} shouldPause={activePlayer === "csi"} />
         </div>
         <div className="order-1 lg:order-2 lg:pl-10">
           <h3 className="font-sans mb-8" style={{ color: "#000", fontSize: 32, lineHeight: "1.2", fontWeight: 500 }}>

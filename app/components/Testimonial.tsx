@@ -23,9 +23,7 @@ const scottQuote = () => (
 
 const teriQuote = () => (
   <>
-    &ldquo;In just a few weeks, Lokam helped us uncover{" "}
-    <strong className="font-semibold">hidden customer issues</strong>, recover missed revenue, and gain clear visibility into service and sales, driving follow-ups on active deals and an{" "}
-    <strong className="font-semibold">extra 15 to 20 cars sold per month</strong>.&rdquo;
+    &ldquo;Lokam surfaces patterns we simply couldn&apos;t see before from advisor patterns to sales approaches driving customers to competitors. We&apos;re not just recovering revenue, we&apos;re getting better every month. <strong className="font-semibold">The ROI isn&apos;t just good, it&apos;s transformational.</strong>&rdquo;
   </>
 );
 
@@ -38,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
     renderQuote: scottQuote,
   },
   {
-    quote: "In just a few weeks, Lokam helped us uncover hidden customer issues, recover missed revenue, and gain clear visibility into service and sales, driving follow-ups on active deals and an extra 15 to 20 cars sold per month.",
+    quote: "Lokam surfaces patterns we simply couldn't see before from advisor patterns to sales approaches driving customers to competitors. We're not just recovering revenue, we're getting better every month. The ROI isn't just good, it's transformational.",
     name: "Teri Bisbikis",
     title: "General Manager,\nWorld Hyundai Matteson.",
     playbackId: "iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M",

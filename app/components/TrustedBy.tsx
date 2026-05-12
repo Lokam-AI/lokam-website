@@ -27,10 +27,6 @@ export default function TrustedBy() {
           Trusted By
         </h2>
 
-        <p className="font-sans font-normal text-lg md:text-2xl leading-[26px] tracking-[0.72px] text-[#00483a] text-center mt-6 md:mt-[18px]">
-          Customer - First Dealerships
-        </p>
-
         <div className="mt-10 md:mt-[76px] overflow-hidden">
           <div className="flex animate-marquee-reverse gap-[126px] w-max items-center">
             {[...dealers, ...dealers, ...dealers, ...dealers].map((dealer, i) => (

@@ -4,7 +4,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What DMS and CRM systems does Lokam integrate with?",
-    a: "Lokam works with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. If you use a different system, contact us — we add new integrations regularly.",
+    a: "Lokam works with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. If you use a different system, contact us - we add new integrations regularly.",
   },
   {
     q: "Does Lokam replace my BDC team?",
@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "How does the AI know when to escalate to a human?",
-    a: "Lokam's AI detects dissatisfaction signals (negative sentiment, complaints, specific objections) in real time and instantly notifies your service manager or sales team with the full call transcript and context — so they can step in with everything they need to resolve it.",
+    a: "Lokam's AI detects dissatisfaction signals (negative sentiment, complaints, specific objections) in real time and instantly notifies your service manager or sales team with the full call transcript and context - so they can step in with everything they need to resolve it.",
   },
   {
     q: "Will customers know they're talking to an AI?",
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "How does Lokam improve CSI scores?",
-    a: "By reaching every customer within 24 hours of service — something manual BDC teams can rarely achieve — Lokam catches detractors before they submit a negative survey or leave a bad review. Escalations go directly to your service manager with full context, so issues get resolved fast.",
+    a: "By reaching every customer within 24 hours of service - something manual BDC teams can rarely achieve - Lokam catches detractors before they submit a negative survey or leave a bad review. Escalations go directly to your service manager with full context, so issues get resolved fast.",
   },
   {
     q: "How does the Google review generation work?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "What's the pricing model?",
-    a: "We offer different plans tailored to each use case. Book a demo or contact us — we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything.",
+    a: "We offer different plans tailored to each use case. Book a demo or contact us - we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything.",
   },
 ];
 

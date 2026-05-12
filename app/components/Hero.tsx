@@ -11,7 +11,7 @@ export default function Hero() {
             Top extends above the section and is cropped by overflow-hidden. */}
         <Image
           src="/assets/car.avif"
-          alt="Automotive dealership — Lokam Voice AI improves service retention and sales follow-up"
+          alt="Automotive dealership - Lokam Voice AI improves service retention and sales follow-up"
           width={2560}
           height={3391}
           priority

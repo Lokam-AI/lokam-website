@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import SmoothAnchor from "./SmoothAnchor";
+import CalendlyButton from "./CalendlyButton";
 
 const rows = [
   {
@@ -22,8 +23,8 @@ const rows = [
   },
   {
     feature: "Script compliance",
-    lokam: "100% — every call",
-    bdc: "Variable — human error",
+    lokam: "100% - every call",
+    bdc: "Variable - human error",
     lokamWins: true,
   },
   {
@@ -34,8 +35,8 @@ const rows = [
   },
   {
     feature: "Detractor escalation",
-    lokam: "Instant — with full transcript",
-    bdc: "Delayed — no context",
+    lokam: "Instant - with full transcript",
+    bdc: "Delayed - no context",
     lokamWins: true,
   },
   {
@@ -114,13 +115,12 @@ export default function ComparisonTable() {
             <p className="text-sm text-[--color-mist]">
               Ready to see the difference for your dealership?
             </p>
-            <SmoothAnchor
-              href="#contact"
+            <CalendlyButton
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[--color-teal] text-[--color-ink] font-semibold text-sm hover:bg-[--color-teal-dim] transition-colors whitespace-nowrap"
               style={{ boxShadow: "0 0 20px rgba(0,200,180,0.30)" }}
             >
               Book a Free Demo
-            </SmoothAnchor>
+            </CalendlyButton>
           </div>
         </div>
         </div>

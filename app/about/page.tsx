@@ -7,12 +7,12 @@ import CalendlyButton from "../components/CalendlyButton";
 export const metadata: Metadata = {
   title: "About Lokam | Voice AI for Automotive Dealerships",
   description:
-    "Meet the team building Lokam — Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
+    "Meet the team building Lokam - Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
   alternates: { canonical: "https://www.lokam.ai/about" },
   openGraph: {
     title: "About Lokam | Voice AI for Automotive Dealerships",
     description:
-      "Meet the team building Lokam — Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
+      "Meet the team building Lokam - Voice AI that helps automotive dealerships recover revenue, protect CSI scores, and close more deals.",
     url: "https://www.lokam.ai/about",
     type: "website",
     siteName: "Lokam",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Lokam",
-    description: "Meet the team building Lokam — Voice AI for automotive dealerships.",
+    description: "Meet the team building Lokam - Voice AI for automotive dealerships.",
   },
 };
 
@@ -54,7 +54,7 @@ const team = [
   {
     name: "Ramees",
     role: "QA Engineer",
-    bio: "Owns quality across every release — from call flow testing to full regression coverage.",
+    bio: "Owns quality across every release - from call flow testing to full regression coverage.",
     initial: "R",
   },
   {
@@ -72,7 +72,7 @@ const team = [
   {
     name: "Ishita",
     role: "AI Graphic Designer",
-    bio: "Shapes Lokam's visual identity across product and brand — making complex AI feel approachable.",
+    bio: "Shapes Lokam's visual identity across product and brand - making complex AI feel approachable.",
     initial: "I",
   },
   {
@@ -100,7 +100,7 @@ const values = [
       </svg>
     ),
     title: "Speed over perfection",
-    desc: "Dealers don't have time to wait. We ship fast, iterate with real customers, and fix things in days — not quarters.",
+    desc: "Dealers don't have time to wait. We ship fast, iterate with real customers, and fix things in days - not quarters.",
   },
   {
     icon: (
@@ -110,7 +110,7 @@ const values = [
       </svg>
     ),
     title: "Zero-friction deployment",
-    desc: "We move fast and work with your team to get you live as quickly as possible — no month-long onboarding, no excuses.",
+    desc: "We move fast and work with your team to get you live as quickly as possible - no month-long onboarding, no excuses.",
   },
   {
     icon: (
@@ -138,7 +138,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What DMS and CRM systems does Lokam integrate with?",
-      acceptedAnswer: { "@type": "Answer", text: "Lokam works with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. If you use a different system, contact us — we add new integrations regularly." },
+      acceptedAnswer: { "@type": "Answer", text: "Lokam works with CDK Global, Reynolds & Reynolds, DealerSocket, VinSolutions, and TEKION. If you use a different system, contact us - we add new integrations regularly." },
     },
     {
       "@type": "Question",
@@ -168,7 +168,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What's the pricing model?",
-      acceptedAnswer: { "@type": "Answer", text: "We offer different plans tailored to each use case. Book a demo or contact us — we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything." },
+      acceptedAnswer: { "@type": "Answer", text: "We offer different plans tailored to each use case. Book a demo or contact us - we'll walk you through the right plan and build a custom ROI model for your dealership before you commit to anything." },
     },
   ],
 };

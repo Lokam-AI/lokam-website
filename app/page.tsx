@@ -17,7 +17,7 @@ const SITE_URL = "https://www.lokam.ai";
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  name: "Scott Falcone — World Auto Group Testimonial",
+  name: "Scott Falcone - World Auto Group Testimonial",
   description:
     "Dealer principal Scott Falcone explains how Lokam boosted Google ratings from 4.0 to 4.6 in 5 weeks and helped close 15–20 extra cars per month.",
   thumbnailUrl: `https://image.mux.com/ky85x1jCLPGj01xCsPM1upXYxQvuocJPnz1MCnJ3mM600/thumbnail.jpg`,
@@ -31,7 +31,7 @@ const videoSchema = {
 const videoSchema2 = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  name: "Teri Bisbikis — World Hyundai Matteson Testimonial",
+  name: "Teri Bisbikis - World Hyundai Matteson Testimonial",
   description:
     "General Manager Teri Bisbikis explains how Lokam uncovered hidden customer issues, recovered missed revenue, and drove 15–20 additional cars sold per month.",
   thumbnailUrl: `https://image.mux.com/iqR01jOycyo02w00VGKM00eA3Zf007mgqnGy7XqnHf7tKh6M/thumbnail.jpg`,

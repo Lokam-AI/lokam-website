@@ -15,7 +15,7 @@ const posts: Post[] = [
     category: "SERVICES & CSI",
     title: "Why Your BDC Is Losing Customers Before the Workday Even Starts",
     excerpt:
-      "Late response times are silently costing dealerships leads, deals, and reputation — and most dealerships don't know it's happening.",
+      "Late response times are silently costing dealerships leads, deals, and reputation - and most dealerships don't know it's happening.",
     date: "Jan 2026",
     readTime: "4 min read",
     href: "/blog/why-your-bdc-is-losing-customers-before-the-workday-even-starts",
@@ -24,7 +24,7 @@ const posts: Post[] = [
     category: "SERVICES & CSI",
     title: "The Hidden Cost of a Single Missed CSI Call",
     excerpt:
-      "A missed CSI call isn't just a missed survey — it's a negative review waiting to happen and a customer walking to your competitor.",
+      "A missed CSI call isn't just a missed survey - it's a negative review waiting to happen and a customer walking to your competitor.",
     date: "Jan 2026",
     readTime: "3 min read",
     href: "/blog/the-hidden-cost-of-a-single-missed-csi-call",
@@ -239,7 +239,7 @@ export default function BlogFilter() {
           </p>
           {subStatus === "success" ? (
             <p className="font-sans text-sm font-semibold text-[#0CB4A7] mt-2">
-              You&apos;re subscribed — talk soon.
+              You&apos;re subscribed - talk soon.
             </p>
           ) : (
             <form
@@ -282,7 +282,7 @@ export default function BlogFilter() {
             </form>
           )}
           {subStatus === "error" && (
-            <p className="font-sans text-xs text-red-500 mt-2">Something went wrong — please try again.</p>
+            <p className="font-sans text-xs text-red-500 mt-2">Something went wrong - please try again.</p>
           )}
           <p className="font-sans text-xs text-[#8AADA8] mt-3">
             Join 1,200+ dealer principals and GMs already subscribed.

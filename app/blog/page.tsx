@@ -79,7 +79,7 @@ export default function BlogPage() {
           </h1>
 
           <p className="font-sans text-base md:text-lg text-[#4A6B68] mt-4 mx-auto" style={{ maxWidth: 520 }}>
-            Strategies, data, and real-world case studies to help your dealership recover more revenue — from service and sales.
+            Strategies, data, and real-world case studies to help your dealership recover more revenue - from service and sales.
           </p>
         </section>
 

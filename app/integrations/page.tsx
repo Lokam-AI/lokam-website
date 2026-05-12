@@ -119,7 +119,7 @@ const dataFlow = [
 const faqItems = [
   {
     q: "How long does integration take?",
-    a: "Most dealerships are live in under 4 hours. Our team handles the integration setup — you don't need to involve your IT team for most DMS configurations.",
+    a: "Most dealerships are live in under 4 hours. Our team handles the integration setup - you don't need to involve your IT team for most DMS configurations.",
   },
   {
     q: "What data does Lokam access from my DMS?",
@@ -164,7 +164,7 @@ export default function IntegrationsPage() {
             Works with your DMS. Live in under 4 hours.
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 600 }}>
-            Lokam connects directly to your dealer management system and data providers. No manual exports, no new logins for your team — it reads your ROs and customer records automatically.
+            Lokam connects directly to your dealer management system and data providers. No manual exports, no new logins for your team - it reads your ROs and customer records automatically.
           </p>
         </section>
 

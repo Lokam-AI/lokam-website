@@ -37,7 +37,7 @@ export default function Insights() {
           className="font-sans font-medium text-center mb-14 md:mb-20"
           style={{ color: "#095857", fontSize: "clamp(28px, 4.5vw, 56px)", lineHeight: "1.12", letterSpacing: "-1px" }}
         >
-          Insight To Win Back Customers<br />and Close More Deals
+          Insights to Win Back Customers<br />and Close More Deals.
         </h2>
 
         <motion.div
@@ -51,10 +51,7 @@ export default function Insights() {
           <motion.div variants={item} className="sm:col-span-3 sm:row-start-1">
             <Card className={`${cardClass} flex flex-col rounded-2xl`}>
               <div className="flex-shrink-0 px-8 pt-8 pb-6 md:px-10 md:pt-10">
-                <p className={titleClass}>Real-time win-back intelligence</p>
-                <p className={bodyClass}>
-                  Lokam surfaces high-intent signals the moment a customer goes cold — so your BDC calls at exactly the right time, every time.
-                </p>
+                <p className={titleClass}>Your NPS, Detractors, and Unsold Ups<br />Objections in One View.</p>
               </div>
               <div className="relative mx-8 mb-8 mt-auto h-60 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 sm:h-auto sm:flex-1 sm:min-h-0 md:mx-10 md:mb-10">
                 <AutoPlayVideo
@@ -74,7 +71,7 @@ export default function Insights() {
             <Card className={`${cardClass} flex flex-col rounded-2xl`}>
               <div className="flex-shrink-0 px-8 pt-8 pb-6 md:px-10 md:pt-10">
                 <p className={titleClass}>
-                  Convert missed service calls into loyal customers.
+                  Deep Dive into Issues
                 </p>
               </div>
               <div className="relative mx-6 mb-6 h-72 overflow-hidden rounded-xl border border-zinc-200 bg-white sm:h-auto sm:flex-1 sm:min-h-0 md:mx-8 md:mb-8 [mask-image:linear-gradient(to_bottom,transparent_0%,black_8%,black_92%,transparent_100%)]">
@@ -132,9 +129,6 @@ export default function Insights() {
               <div className="flex-shrink-0 px-7 pt-7 pb-4 md:px-8 md:pt-8">
                 <p className={titleClass}>
                   Track every detractor and opportunity in one tab
-                </p>
-                <p className={bodyClass}>
-                  Open issues and at-risk customers — prioritized by revenue impact so your BDC always knows where to focus.
                 </p>
               </div>
               <div className="relative mx-8 mb-8 mt-auto h-40 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 sm:h-auto sm:flex-1 sm:min-h-0 md:mx-10 md:mb-10">

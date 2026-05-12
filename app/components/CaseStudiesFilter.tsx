@@ -37,7 +37,7 @@ const studies: Study[] = [
       { value: "67%", label: "Contact rate" },
       { value: "~$90K", label: "Gross profit added" },
     ],
-    excerpt: "World Hyundai was losing ~25 deals a month to competitors with no dedicated follow-up on unsold visitors. Lokam's AI escalated 335 high-intent leads in 8 weeks — closing 38 additional cars.",
+    excerpt: "World Hyundai was losing ~25 deals a month to competitors with no dedicated follow-up on unsold visitors. Lokam's AI escalated 335 high-intent leads in 8 weeks - closing 38 additional cars.",
     href: "/case-studies/world-hyundai-sales",
   },
   {
@@ -50,7 +50,7 @@ const studies: Study[] = [
       { value: "4.1 → 4.8★", label: "Google rating" },
       { value: "160", label: "At-risk customers caught" },
     ],
-    excerpt: "With ~1,200 ROs/month and no systematic follow-up, World Kia was losing detractors before they could respond. Lokam caught 160 at-risk customers in 8 weeks — recovering $320K in lifetime value and saving $3K in BDC costs.",
+    excerpt: "With ~1,200 ROs/month and no systematic follow-up, World Kia was losing detractors before they could respond. Lokam caught 160 at-risk customers in 8 weeks - recovering $320K in lifetime value and saving $3K in BDC costs.",
     href: "/case-studies/world-kia",
   },
   {
@@ -63,7 +63,7 @@ const studies: Study[] = [
       { value: "65%", label: "Contact rate" },
       { value: "~$80K", label: "Gross profit added" },
     ],
-    excerpt: "World Kia was losing ~20 deals a month with no follow-up on unsold visitors. Lokam's bilingual AI escalated 285 high-intent leads in 8 weeks — closing 34 additional cars.",
+    excerpt: "World Kia was losing ~20 deals a month with no follow-up on unsold visitors. Lokam's bilingual AI escalated 285 high-intent leads in 8 weeks - closing 34 additional cars.",
     href: "/case-studies/world-kia-sales",
   },
 ];

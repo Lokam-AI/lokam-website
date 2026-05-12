@@ -5,7 +5,7 @@ import ROI from "../components/ROI";
 import CalendlyButton from "../components/CalendlyButton";
 
 export const metadata: Metadata = {
-  title: "Dealership AI ROI Calculator — Estimate Your Revenue Recovery | Lokam",
+  title: "Dealership AI ROI Calculator - Estimate Your Revenue Recovery | Lokam",
   description:
     "Calculate how much revenue your dealership can recover with AI-powered follow-up. Enter your monthly repair orders or unsold desklogs to see your custom ROI estimate.",
   alternates: { canonical: "https://www.lokam.ai/roi-calculator" },
@@ -48,7 +48,7 @@ const methodology = [
     label: "Sales ROI",
     points: [
       "Based on your monthly unsold desklogs",
-      "15% industry-average manual follow-up rate — Lokam reaches every one",
+      "15% industry-average manual follow-up rate - Lokam reaches every one",
       "45% close rate on re-engaged leads",
       "$2,800 average front/back gross per deal",
     ],
@@ -59,7 +59,7 @@ const methodology = [
       "Based on your monthly repair orders",
       "8% industry-average at-risk customer rate",
       "$2,500 average customer lifetime value",
-      "Lokam contacts every RO within 24 hours — vs 30% with manual BDC",
+      "Lokam contacts every RO within 24 hours - vs 30% with manual BDC",
     ],
   },
 ];
@@ -89,7 +89,7 @@ export default function ROICalculatorPage() {
             How much revenue is your dealership leaving on the table?
           </h1>
           <p className="font-sans text-base md:text-lg leading-8 text-[#4A6B68] mx-auto" style={{ maxWidth: 620 }}>
-            Enter your monthly repair orders or unsold desklogs. We'll show you exactly what Lokam can recover — based on your real numbers, not industry averages.
+            Enter your monthly repair orders or unsold desklogs. We'll show you exactly what Lokam can recover - based on your real numbers, not industry averages.
           </p>
         </section>
 

@@ -27,15 +27,15 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { value: "200+",   label: "Dealers served" },
-  { value: "$2.4M+", label: "Revenue recovered" },
-  { value: "70%",    label: "Avg. contact rate" },
+  { value: "826",      label: "Detractors Caught" },
+  { value: "1,134",   label: "Unsold Showroom Traffic Recovered" },
+  { value: "$425K",   label: "Total Revenue Recovered" },
 ];
 
 const featuredStudy = {
   title: "How World Hyundai Service Raised Its Google Reviews from 4.0 to 4.8 in 8 Weeks",
   excerpt:
-    "With 8 advisors handling 1,100 repair orders per month, less than 30% of follow-up calls were ever made. Lokam's AI caught 180 at-risk customers across 2,200 ROs, pushed Google reviews from 4.0 to 4.8, and recovered $410K in lifetime value — in just 8 weeks.",
+    "With 8 advisors handling 1,100 repair orders per month, less than 30% of follow-up calls were ever made. Lokam's AI caught 180 at-risk customers across 2,200 ROs, pushed Google reviews from 4.0 to 4.8, and recovered $410K in lifetime value - in just 8 weeks.",
   date: "May 2026",
   readTime: "4 min read",
   href: "/case-studies/world-hyundai",
@@ -99,14 +99,14 @@ export default function CaseStudiesPage() {
               whiteSpace: "nowrap",
             }}
           >
-            Real Dealers.{" "}
+            From the Service Lane to the<br />Sales Floor.
             <span style={{ display: "inline", backgroundImage: "linear-gradient(to right, #00988B, #00D3BD)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", color: "transparent" }}>
               Real Revenue.
             </span>
           </h1>
 
           <p className="font-sans text-base md:text-lg text-[#4A6B68] mt-4 mx-auto" style={{ maxWidth: 520 }}>
-            Measurable results from dealerships that replaced manual follow-up with Lokam's AI — across service, sales, and dealer groups.
+            Measurable results from dealerships that replaced manual follow-up with Lokam&apos;s AI across service and sales.
           </p>
 
           {/* Hero stats */}
@@ -236,7 +236,7 @@ export default function CaseStudiesPage() {
                 Ready to write your own case study?
               </h2>
               <p className="font-sans text-sm text-[#4A6B68]" style={{ maxWidth: 440 }}>
-                Join 200+ dealerships already using Lokam to recover revenue, protect CSI, and close more deals — with zero added headcount.
+                Join 200+ dealerships already using Lokam to recover revenue, protect CSI, and close more deals - with zero added headcount.
               </p>
               <div className="flex flex-wrap items-center gap-4 mt-1">
                 {["Plans for every use case", "Built for dealerships", "Book a demo"].map((item) => (

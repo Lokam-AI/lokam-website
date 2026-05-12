@@ -241,7 +241,7 @@ export default function ServiceROICalculatorModal({
                   style={{ color: "#114559" }}
                 >
                   Average Customer Lifetime Value
-                  <SvcTooltip text="Total revenue a service customer generates over their relationship with your dealership — includes repeat ROs, tires, parts, and future vehicle purchases." />
+                  <SvcTooltip text="Total revenue a service customer generates over their relationship with your dealership - includes repeat ROs, tires, parts, and future vehicle purchases." />
                 </label>
                 <div
                   className="flex items-center rounded-xl overflow-hidden"
