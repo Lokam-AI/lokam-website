@@ -49,7 +49,7 @@ export default function Hero() {
           <h1 className="font-sans font-medium text-center mt-[25px] w-[min(760px,90vw)]" style={{ color: "#095857", fontSize: "clamp(26px, 4vw, 50px)", lineHeight: "1.06", letterSpacing: "-1px" }}>
             Sell More Cars &amp; Increase
             <br />
-            service retention
+            Service Retention
           </h1>
 
           {/* Subtitle */}
