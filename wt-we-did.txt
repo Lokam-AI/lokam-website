@@ -1,0 +1,33 @@
+What We Did — SEO Overhaul (May 12, 2026)
+
+TRACKING & FOUNDATION
+- Added Google Analytics (gtag) to all pages via Next.js Script
+- Fixed Content Security Policy to allow Google Tag Manager
+
+PAGES BUILT
+- /integrations — full DMS/CRM integration landing page
+- /roi-calculator — interactive revenue calculator with methodology section
+- /lokam-vs-numa, /lokam-vs-conversica, /lokam-vs-stella — competitor comparison pages
+- /ai-voice-agent-dealership, /csi-follow-up-automation, /unsold-lead-recovery-software, /dealership-bdc-software — service landing pages
+
+METADATA & SEO
+- Optimized title tags and meta descriptions across all 13 pages (length, keyword, intent)
+- Added homepage-specific metadata export
+- Removed all "200+ dealerships" claims sitewide
+- Fixed em dashes → pipes/hyphens in all page titles
+
+STRUCTURED DATA
+- Added @id fragments to Organization, WebSite, SoftwareApplication schemas
+- Added SearchAction (sitelinks search box signal) to WebSite schema
+- Added WebPage + about schema on all 3 comparison pages
+- Added WebApplication schema on ROI calculator
+- Added knowsAbout, areaServed, founder.worksFor to Organization schema
+
+AI SEARCH (GEO)
+- Updated llms.txt with structured product facts and use cases
+- Allowed GPTBot, ClaudeBot, PerplexityBot in robots.ts
+- Dynamic OG images for blog and case study slugs
+
+STRATEGY DOCS
+- strategy.md — 9-phase white-hat authority-building plan
+- 90day.md — 13-article content roadmap across 3 phases
